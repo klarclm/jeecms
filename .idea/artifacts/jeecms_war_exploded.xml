@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="jeecms:war exploded">
+    <output-path>N:/apache-tomcat-6.0.39/webapps/jeecms</output-path>
+    <root id="root">
+      <element id="dir-copy" path="$PROJECT_DIR$/WebContent" />
+    </root>
+  </artifact>
+</component>
