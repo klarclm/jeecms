@@ -195,6 +195,12 @@ INSERT INTO `jc_channel` VALUES (43,5,1,42,'wyty',30,31,10,1,1);
 INSERT INTO `jc_channel` VALUES (44,5,1,42,'mrzx',32,33,10,1,1);
 INSERT INTO `jc_channel` VALUES (45,5,1,42,'whxy',34,35,10,1,1);
 INSERT INTO `jc_channel` VALUES (46,6,1,NULL,'veido',37,44,3,1,1);
+
+
+INSERT INTO `jc_channel` VALUES (101,21,1,NULL,'ttshow',37,44,3,1,1);
+INSERT INTO `jc_channel` VALUES (102,22,1,NULL,'yxzshow',37,44,3,1,1);
+INSERT INTO `jc_channel` VALUES (103,23,1,NULL,'czshow',37,44,3,1,1);
+
 INSERT INTO `jc_channel` VALUES (49,6,1,46,'tv',38,39,10,1,1);
 INSERT INTO `jc_channel` VALUES (50,6,1,46,'jlp',40,41,10,1,1);
 INSERT INTO `jc_channel` VALUES (51,6,1,46,'mv',42,43,10,1,1);
@@ -298,6 +304,9 @@ INSERT INTO `jc_channel_ext` VALUES (43,'文娱体育',NULL,NULL,'0','0','0','0'
 INSERT INTO `jc_channel_ext` VALUES (44,'美容资讯',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/pic_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (45,'文化 校园',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/pic_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (46,'视频',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'','',NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
+INSERT INTO `jc_channel_ext` VALUES (101,'台秀',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'','',NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
+INSERT INTO `jc_channel_ext` VALUES (102,'游戏展秀',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'','',NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
+INSERT INTO `jc_channel_ext` VALUES (103,'车展秀',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'','',NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (49,'电视剧',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/vedio_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (50,'纪录片',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/vedio_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (51,'电影',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/vedio_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
@@ -2253,6 +2262,9 @@ INSERT INTO `jc_model` VALUES (2,'单页','2','alone','alone',139,139,310,310,2,
 INSERT INTO `jc_model` VALUES (4,'下载','4','download','download',139,139,310,310,4,1,0,0);
 INSERT INTO `jc_model` VALUES (5,'图库','5','pic','pic',139,139,310,310,5,1,0,0);
 INSERT INTO `jc_model` VALUES (6,'视频','6','vedio','vedio',139,139,310,310,10,1,0,0);
+INSERT INTO `jc_model` VALUES (21,'台秀','21','ttshow','ttshow',139,139,310,310,10,1,0,0);
+INSERT INTO `jc_model` VALUES (22,'游戏展秀','22','yxzshow','yxzshow',139,139,310,310,10,1,0,0);
+INSERT INTO `jc_model` VALUES (23,'车展秀','23','czshow','czshow',139,139,310,310,10,1,0,0);
 INSERT INTO `jc_model` VALUES (8,'招聘','job','job','job',139,139,310,310,10,1,0,0);
 DROP TABLE IF EXISTS `jc_model_item`;
 CREATE TABLE `jc_model_item` (
@@ -2432,6 +2444,128 @@ INSERT INTO `jc_model_item` VALUES (200,6,'titleImg','标题图',10,NULL,NULL,NU
 INSERT INTO `jc_model_item` VALUES (201,6,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
 INSERT INTO `jc_model_item` VALUES (202,6,'attachments','附件',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
 INSERT INTO `jc_model_item` VALUES (203,6,'media','多媒体',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+
+
+
+INSERT INTO `jc_model_item` VALUES (426,21,'name','栏目名称',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (427,21,'path','访问路径',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (428,21,'title','meta标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (429,21,'keywords','meta关键字',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (430,21,'description','meta描述',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (431,21,'tplChannel','栏目模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (432,21,'tplContent','选择模型模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (433,21,'channelStatic','栏目静态化',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (434,21,'contentStatic','内容静态化',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (435,21,'priority','排列顺序',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (436,21,'display','显示',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (437,21,'docImg','文档图片',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (438,21,'afterCheck','审核后',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (439,21,'commentControl','评论',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (440,21,'allowUpdown','顶踩',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (441,21,'viewGroupIds','浏览权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (442,21,'contriGroupIds','投稿权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (443,21,'link','外部链接',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (444,21,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (445,21,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (446,21,'channelId','栏目',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (447,21,'title','标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (448,21,'shortTitle','简短标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (449,21,'titleColor','标题颜色',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (450,21,'tagStr','Tag标签',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (451,21,'description','内容简介',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (452,21,'author','作者',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (453,21,'origin','来源',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (454,21,'viewGroupIds','浏览权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (455,21,'topLevel','固顶级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (456,21,'releaseDate','发布时间',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (457,21,'typeId','内容类型',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (458,21,'tplContent','指定模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (459,21,'typeImg','类型图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (460,21,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (461,21,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (462,21,'attachments','附件',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (463,21,'media','多媒体',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+
+
+INSERT INTO `jc_model_item` VALUES (464,22,'name','栏目名称',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (465,22,'path','访问路径',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (466,22,'title','meta标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (467,22,'keywords','meta关键字',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (468,22,'description','meta描述',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (469,22,'tplChannel','栏目模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (470,22,'tplContent','选择模型模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (471,22,'channelStatic','栏目静态化',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (472,22,'contentStatic','内容静态化',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (473,22,'priority','排列顺序',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (474,22,'display','显示',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (475,22,'docImg','文档图片',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (476,22,'afterCheck','审核后',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (477,22,'commentControl','评论',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (478,22,'allowUpdown','顶踩',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (479,22,'viewGroupIds','浏览权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (480,22,'contriGroupIds','投稿权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (481,22,'link','外部链接',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (482,22,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (483,22,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (484,22,'channelId','栏目',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (485,22,'title','标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (486,22,'shortTitle','简短标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (487,22,'titleColor','标题颜色',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (488,22,'tagStr','Tag标签',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (489,22,'description','内容简介',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (490,22,'author','作者',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (491,22,'origin','来源',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (492,22,'viewGroupIds','浏览权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (493,22,'topLevel','固顶级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (494,22,'releaseDate','发布时间',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (495,22,'typeId','内容类型',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (496,22,'tplContent','指定模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (497,22,'typeImg','类型图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (498,22,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (499,22,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (500,22,'attachments','附件',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (501,22,'media','多媒体',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+
+
+INSERT INTO `jc_model_item` VALUES (502,23,'name','栏目名称',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (503,23,'path','访问路径',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (504,23,'title','meta标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (505,23,'keywords','meta关键字',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (506,23,'description','meta描述',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (507,23,'tplChannel','栏目模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (508,23,'tplContent','选择模型模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (509,23,'channelStatic','栏目静态化',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (510,23,'contentStatic','内容静态化',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (511,23,'priority','排列顺序',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (512,23,'display','显示',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (513,23,'docImg','文档图片',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (514,23,'afterCheck','审核后',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (515,23,'commentControl','评论',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (516,23,'allowUpdown','顶踩',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (517,23,'viewGroupIds','浏览权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (518,23,'contriGroupIds','投稿权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (519,23,'link','外部链接',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (520,23,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (521,23,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (522,23,'channelId','栏目',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (523,23,'title','标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (524,23,'shortTitle','简短标题',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (525,23,'titleColor','标题颜色',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (526,23,'tagStr','Tag标签',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (527,23,'description','内容简介',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (528,23,'author','作者',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (529,23,'origin','来源',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (530,23,'viewGroupIds','浏览权限',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (531,23,'topLevel','固顶级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (532,23,'releaseDate','发布时间',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (533,23,'typeId','内容类型',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (534,23,'tplContent','指定模板',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (535,23,'typeImg','类型图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (536,23,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (537,23,'contentImg','内容图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (538,23,'attachments','附件',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (539,23,'media','多媒体',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+
 INSERT INTO `jc_model_item` VALUES (246,4,'titleImg','标题图',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
 INSERT INTO `jc_model_item` VALUES (249,8,'name','栏目名称',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (250,8,'path','访问路径',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
@@ -2476,9 +2610,31 @@ INSERT INTO `jc_model_item` VALUES (403,6,'Director','导演',10,'','','','1','2
 INSERT INTO `jc_model_item` VALUES (404,6,'Starring','主演',10,'','','','1','30','','',1,0,0,1,1);
 INSERT INTO `jc_model_item` VALUES (405,6,'VideoType','视频类型',10,NULL,'历史,古装,都市,喜剧,悬疑,动作,谍战,伦理,战争,惊悚',NULL,'3','30',NULL,NULL,7,0,0,1,1);
 INSERT INTO `jc_model_item` VALUES (406,6,'Video','影片信息',10,'','正片,预告片','','3','30','','',6,0,0,1,1);
+
+INSERT INTO `jc_model_item` VALUES (540,21,'Director','导演',10,'','','','1','2','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (541,21,'Starring','主演',10,'','','','1','30','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (542,21,'VideoType','视频类型',10,NULL,'历史,古装,都市,喜剧,悬疑,动作,谍战,伦理,战争,惊悚',NULL,'3','30',NULL,NULL,7,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (543,21,'Video','影片信息',10,'','正片,预告片','','3','30','','',6,0,0,1,1);
+
+
+INSERT INTO `jc_model_item` VALUES (544,22,'Director','导演',10,'','','','1','2','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (545,22,'Starring','主演',10,'','','','1','30','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (546,22,'VideoType','视频类型',10,NULL,'历史,古装,都市,喜剧,悬疑,动作,谍战,伦理,战争,惊悚',NULL,'3','30',NULL,NULL,7,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (547,22,'Video','影片信息',10,'','正片,预告片','','3','30','','',6,0,0,1,1);
+
+INSERT INTO `jc_model_item` VALUES (548,23,'Director','导演',10,'','','','1','2','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (549,23,'Starring','主演',10,'','','','1','30','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (550,23,'VideoType','视频类型',10,NULL,'历史,古装,都市,喜剧,悬疑,动作,谍战,伦理,战争,惊悚',NULL,'3','30',NULL,NULL,7,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (551,23,'Video','影片信息',10,'','正片,预告片','','3','30','','',6,0,0,1,1);
+
 INSERT INTO `jc_model_item` VALUES (408,1,'contentImg','内容图',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
 INSERT INTO `jc_model_item` VALUES (409,5,'txt','内容',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
 INSERT INTO `jc_model_item` VALUES (410,6,'txt','内容',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+
+INSERT INTO `jc_model_item` VALUES (570,21,'txt','内容',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (571,22,'txt','内容',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (572,23,'txt','内容',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+
 INSERT INTO `jc_model_item` VALUES (412,1,'allowShare','分享',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (413,1,'allowScore','评分',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (414,1,'pictures','图片集',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
@@ -2486,6 +2642,29 @@ INSERT INTO `jc_model_item` VALUES (415,1,'finalStep','终审级别',10,NULL,NUL
 INSERT INTO `jc_model_item` VALUES (420,6,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (421,6,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (422,6,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+
+INSERT INTO `jc_model_item` VALUES (552,21,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (553,21,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (554,21,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+
+INSERT INTO `jc_model_item` VALUES (555,22,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (556,22,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (557,22,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+
+INSERT INTO `jc_model_item` VALUES (558,23,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (559,23,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (560,23,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+
+INSERT INTO `jc_model_item` VALUES (561,21,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (562,21,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (563,21,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (564,22,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (565,22,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (566,22,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (567,23,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (568,23,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (569,23,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+
 INSERT INTO `jc_model_item` VALUES (423,8,'finalStep','终审级别',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (424,8,'allowShare','分享',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
 INSERT INTO `jc_model_item` VALUES (425,8,'allowScore','评分',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
@@ -3021,6 +3200,9 @@ INSERT INTO `jc_vote_item` VALUES (8,2,'下载',1,11,9);
 INSERT INTO `jc_vote_item` VALUES (9,2,'新闻',1,8,9);
 INSERT INTO `jc_vote_item` VALUES (10,2,'图库',1,9,9);
 INSERT INTO `jc_vote_item` VALUES (11,2,'视频',1,10,9);
+INSERT INTO `jc_vote_item` VALUES (12,2,'台秀',1,10,9);
+INSERT INTO `jc_vote_item` VALUES (13,2,'游戏展秀',1,10,9);
+INSERT INTO `jc_vote_item` VALUES (14,2,'车展秀',1,10,9);
 DROP TABLE IF EXISTS `jc_vote_record`;
 CREATE TABLE `jc_vote_record` (
   `voterecored_id` int(11) NOT NULL auto_increment,
