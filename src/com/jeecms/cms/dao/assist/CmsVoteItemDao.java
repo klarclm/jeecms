@@ -5,7 +5,7 @@ import com.jeecms.common.hibernate3.Updater;
 import com.jeecms.common.page.Pagination;
 
 public interface CmsVoteItemDao {
-	public Pagination getPage(int pageNo, int pageSize);
+	public Pagination getPage(int pageNo, int pageSize );
 
 	public CmsVoteItem findById(Integer id);
 
