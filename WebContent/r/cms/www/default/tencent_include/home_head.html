@@ -1,0 +1,67 @@
+<div class="site_head">
+    <div class="head_inner">
+        <h1 class="site_logo"><a href="http://localhost" title="苹果CMS" class="link_logo"><strong
+                class="hidden">苹果CMS</strong></a></h1>
+
+        <div class="mod_ad_head"><a href="#" target="_blank" title="奥斯卡之夜"><img
+                src="http://pnewsapp.tc.qq.com/newsapp_ls/0/14132568_265100/0" alt="奥斯卡之夜"></a></div>
+        <div class="mod_search">
+            <form class="search_form" action="/sgv/index.php?m=vod-search" method="post">
+                <div class="search_inner"><i class="ico_search"></i>
+                    <input type="text" class="search_ipt" id="wd" name="wd"
+                           onBlur="if(this.value==''){this.value='提醒您请输入您要搜索的关键字';this.style.color='#aaa'};"
+                           onFocus="if(this.value=='提醒您请输入您要搜索的关键字'){this.value='';this.style.color='#aaa'};"
+                           value="提醒您请输入您要搜索的关键字" style="color: rgb(170, 170, 170);"/>
+                    <button type="submit" class="search_btn"><span class="hidden">搜索</span></button>
+                </div>
+            </form>
+        </div>
+        <div class="mod_quick">
+            <div class="quick_item"><a class="quick_history" href="#" id="history"> <i class="ico_history_26"></i> <span
+                    class="quick_txt">看过</span> <i class="divide"></i> </a></div>
+            <div class="quick_item"><a class="quick_attention" href="javascript:MAC.Fav(MAC.Url,MAC.Title)"> <i
+                    class="ico_collect_26"></i> <span class="quick_txt">关注</span> <i class="divide"></i> </a></div>
+            <div class="quick_item"><a class="quick_attention" href="#"> <i class="ico_upload_26"></i> <span
+                    class="quick_txt">上传</span> <i class="divide"></i> </a></div>
+            <div class="quick_item"><a class="quick_attention" href="javascript:void(0)" id="login"><img
+                    src="http://imgcache.qq.com/tencentvideo_v1/vstyle/web/v3/style/images/default_avatar.png"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="site_navigation">
+        <div class="navigation_main">
+            <div class="navigation_top"></div>
+            <div class="navigation_inner">
+                <ul class="navigation_area">
+                    <li class="list_item"><a href="${site.url!}" target="_self" class="link_nav"><span
+                            class="link_inner">首 页</span><i class="nav_sign"></i></a>
+                    </li>
+                </ul>
+
+                [@cms_channel_list ]
+                [#list tag_list as a]
+                [#if a.display == true]
+                <ul class="navigation_area">
+                    <li class="list_item"><a href="${a.url}" class="link_nav"><span
+                            class="link_inner">${a.channelExt.name}</span><i class="nav_sign"></i></a>
+
+                        <div class="navigation_sub">
+                            <ul>
+                                [#list a.child as child]
+                                [#if child.display == true]
+                                <li><a href="${child.url}" class="link_nav_sub"><span
+                                        class="link_inner">${child.channelExt.name}</span></a></li>
+                                [/#if]
+                                [/#list]
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                [/#if]
+                [/#list]
+                [/@cms_channel_list ]
+
+            </div>
+        </div>
+    </div>
+</div>
