@@ -2,18 +2,18 @@
     <div class="w1240">
         <div class="tip" id="focusTip">
             <ul>
-                [@cms_content_list typeId='3' count='10' titLen='8' channelOption='1' channelId='42' orderBy='4']
+                [@cms_content_list count='8' orderBy='4' titLen='10' channelId="${channel.id!46}" channelOption='1']
                 [#list tag_list as a]
-                  <li class="tab${a_index} navigation"><a href="${a.url}"><img src="${a.typeImg!site.defImg}" width="100" height="50" /></a></li>
+                  <li class="tab${a_index} navigation"><a href="${a.url}"><img src="${a.titleImg!site.defImg}" width="100" height="50" /></a></li>
                 [/#list]
                 [/@cms_content_list]
             </ul>
         </div>
         <div class="list" id="focusList">
             <ul>
-                [@cms_content_list typeId='3' count='10' titLen='8' channelOption='1' channelId='42' orderBy='4']
+                [@cms_content_list count='8' orderBy='4' titLen='10' channelId="${channel.id!46}" channelOption='1']
                 [#list tag_list as a]
-                    <li><a href="${a.url}  target="_blank""><img src="${a.typeImg!site.defImg}" alt="${a.title}"  /></a></li>
+                    <li><a href="${a.url}  target="_blank""><img src="${a.titleImg!site.defImg}" alt="${a.title}"  /></a></li>
                 </a>
                 [/#list]
 
