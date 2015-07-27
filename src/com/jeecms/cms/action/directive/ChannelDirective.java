@@ -25,6 +25,14 @@ import freemarker.template.TemplateModel;
 
 /**
  * 栏目对象标签
+ 参数详解：
+ id：栏目ID
+ path：栏目路径
+ siteId: 站点ID，存在时获取该站点栏目，不存在时获取当前站点栏目
+ 具体例子：
+ @cms_channel id='1']
+ <ahref="${tag_bean.url}" target="_blank">${tag_bean.name}</a>
+ [/@cms_channel]
  */
 public class ChannelDirective implements TemplateDirectiveModel {
 	

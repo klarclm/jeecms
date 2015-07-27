@@ -17,6 +17,7 @@
 	<bean id="attachmentAct" class="com.jeecms.cms.action.front.AttachmentAct"/>
 	<bean id="commentAct" class="com.jeecms.cms.action.front.CommentAct"/>
 	<bean id="guestbookAct" class="com.jeecms.cms.action.front.GuestbookAct"/>
+	<bean id="vedioAct" class="com.jeecms.cms.action.front.VedioAct"/>
 	<bean id="rssAct" class="com.jeecms.cms.action.front.RssAct"/>
 	<bean id="csiCustomAct" class="com.jeecms.cms.action.front.CsiCustomAct"/>
 	<bean id="advertisingAct" class="com.jeecms.cms.action.front.AdvertisingAct"/>

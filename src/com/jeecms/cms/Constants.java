@@ -33,6 +33,10 @@ public class Constants {
 	 */
 	public static final String TPLDIR_SPECIAL = "special";
 	/**
+	 * 视频模板
+	 */
+	public static final String TPLDIR_VEDIO = "vedio";
+	/**
 	 * 可视化编辑模板
 	 */
 	public static final String TPLDIR_VISUAL = "visual";
