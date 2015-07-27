@@ -1,0 +1,27 @@
+.jdt/*Õºø‚¿Ô√ÊµƒΩπµ„ÕºCSS*/{ float:left; width:700px;}
+.mod_focus_show{ width:100%; position:relative; overflow:hidden; margin:0; background-color:#000;}
+.mod_focus_show .mod_focus_pic{ display:block; width:100%; margin-top:46%;}
+.mod_focus_show .mod_focus_pic li, .mod_focus_show .mod_focus_pic a, .mod_focus_show .mod_focus_pic img{ display:block; width:100%;}
+.mod_focus_show .mod_focus_pic li{ position:absolute; left:0; top:0;}
+.mod_focus_show .mod_focus_title{ left:0; overflow:hidden; zoom:1; width:100%; bottom:0; height:45px; background-color:rgba(0,0,0,.8); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#CC000000',endColorstr='#CC000000'); background-image:url(about:blank);}
+
+:root .mod_focus_title { filter:none;}
+.mod_focus_show .mod_focus_title li{ width:90%; padding:0 0 0 20px; overflow:hidden; word-break:keep-all; word-wrap:keep-all; white-space:nowrap; table-layout:fixed; -o-text-overflow:ellipsis; text-overflow:ellipsis;}
+.mod_focus_show .mod_focus_title li h3{ line-height:43px; _line-height:45px; font-size:28px; font-family: "Œ¢»Ì—≈∫⁄",Tahoma,Geneva; font-weight:500; margin:0; padding:0;}
+.mod_focus_show .mod_focus_title li h3 a{ color:#98e404;font-size:28px; font-family: "Œ¢»Ì—≈∫⁄",Tahoma,Geneva;}
+
+.focus_switch{ width:59px; height:29px; position:absolute; z-index:2; right:15px; bottom:92px;}
+.focus_switch a{ float:left; width:29px; height:29px; background-image: url(../img/tuku/icon_focus_switch.png); background-repeat:no-repeat; cursor:pointer;}
+.focus_switch .icon_prev{ background-position:0 0; margin:0 1px 0 0;}
+.focus_switch .icon_prev:hover{ background-position:-30px 0;}
+.focus_switch .icon_next { background-position:-60px 0;}
+.focus_switch .icon_next:hover{ background-position:-90px 0;}
+.mod_focus_show .mod_focus_list{ padding:0 5px 0 5px; background:#000;}
+.mod_focus_show .mod_focus_list li{ width:8.8%; float:left; margin:0 0.5882% 0 0.5882%; position:relative; *display:inline; max-height:60px; max-width:60px;}
+.mod_focus_show .mod_focus_list li a{ display:block; width:100%; height:auto;}
+.mod_focus_show .mod_focus_list li img{ display:block; width:100%; height:auto;}
+.mod_focus_show .mod_focus_list li a:hover{ _background:none; }
+.mod_focus_show .mod_focus_list li a:hover .mask, .mod_focus_show .mod_focus_list .current .mask{ display:none; }
+.mod_focus_show .mod_focus_list li .mask { display:block; height:auto; width:100%; position: relative; margin:0; eft:0; bottom:0; background:#000; opacity:.5; filter: alpha(opacity=50);}
+.mod_focus_show .mod_focus_list li .border{ display:none;}
+.mod_focus_show .mod_focus_list .current .border{ display:block; height:5px; width:100%; font-size:0; overflow:hidden; position:absolute; left:0; bottom:0; background:#98e404;}
