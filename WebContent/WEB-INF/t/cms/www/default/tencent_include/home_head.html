@@ -5,26 +5,34 @@
 
         <div class="mod_ad_head"><a href="#" target="_blank" title="奥斯卡之夜"><img
                 src="http://pnewsapp.tc.qq.com/newsapp_ls/0/14132568_265100/0" alt="奥斯卡之夜"></a></div>
-        <div class="mod_search">
-            <form class="search_form" action="/sgv/index.php?m=vod-search" method="post">
-                <div class="search_inner"><i class="ico_search"></i>
-                    <input type="text" class="search_ipt" id="wd" name="wd"
-                           onBlur="if(this.value==''){this.value='提醒您请输入您要搜索的关键字';this.style.color='#aaa'};"
-                           onFocus="if(this.value=='提醒您请输入您要搜索的关键字'){this.value='';this.style.color='#aaa'};"
-                           value="提醒您请输入您要搜索的关键字" style="color: rgb(170, 170, 170);"/>
-                    <button type="submit" class="search_btn"><span class="hidden">搜索</span></button>
-                </div>
-            </form>
-        </div>
+
+        [#include "../tencent_include/search_csi_tencent.html"/]
+
+
         <div class="mod_quick">
             <div class="quick_item"><a class="quick_history" href="#" id="history"> <i class="ico_history_26"></i> <span
                     class="quick_txt">看过</span> <i class="divide"></i> </a></div>
             <div class="quick_item"><a class="quick_attention" href="javascript:MAC.Fav(MAC.Url,MAC.Title)"> <i
                     class="ico_collect_26"></i> <span class="quick_txt">关注</span> <i class="divide"></i> </a></div>
-            <div class="quick_item"><a class="quick_attention" href="#"> <i class="ico_upload_26"></i> <span
-                    class="quick_txt">上传</span> <i class="divide"></i> </a></div>
-            <div class="quick_item"><a class="quick_attention" href="javascript:void(0)" id="login"><img
-                    src="http://imgcache.qq.com/tencentvideo_v1/vstyle/web/v3/style/images/default_avatar.png"/></a>
+            <div class="quick_item">
+
+            </div>
+            <div class="quick_item">
+                &nbsp;|&nbsp; <a href="${base}/guestbook.jspx" target="_blank">留言板</a>&nbsp;|&nbsp;
+                <Script Language=Javascript Src="${resSys}/gb2big5.js"></Script>
+            </div>
+            <div class="quick_item">
+                <div class="quick_user">
+                    [#if user??]
+                    <div>欢迎您: ${user.username} &nbsp; ${user.group.name} &nbsp; <a href="logout.jspx?returnUrl=/">退出登录</a></div>
+                    [#else]
+                    <div>
+                        <a href="${base}/login.jspx?returnUrl=${location}">会员登录</a>
+                        <a href="${base}/register.jspx">会员注册</a>
+                    </div>
+                    [/#if]
+
+                </div>
             </div>
         </div>
     </div>

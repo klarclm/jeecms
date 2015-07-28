@@ -314,6 +314,7 @@ public class FrontUtils {
 		frontData(map, site, user, location, startTime);
 	}
 
+	//添加 ${site} ${res} ${resSys} ${base} 等前端页面模板用到的公共变量
 	public static void frontData(Map<String, Object> map, CmsSite site,
 			CmsUser user, String location, Long startTime) {
 		if (startTime != null) {

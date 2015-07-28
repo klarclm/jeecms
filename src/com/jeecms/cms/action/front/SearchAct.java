@@ -87,7 +87,7 @@ public class SearchAct {
 	public void ajaxList(HttpServletRequest request,HttpServletResponse response, ModelMap model) throws JSONException {
 		JSONObject object = new JSONObject();
 		Map<String,String>wordsMap=new LinkedHashMap<String, String>();
-		String word=RequestUtils.getQueryParam(request, "term");
+ 		String word=RequestUtils.getQueryParam(request, "term");
 		if(StringUtils.isNotBlank(word)){
 			List<CmsSearchWords>words=manager.getList(word,CmsSearchWords.HIT_DESC,true);
 			for(CmsSearchWords w:words){

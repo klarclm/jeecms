@@ -121,7 +121,7 @@ var MAC={
 				html+='<ul class="logged"><li><a target="_blank" href="'+SitePath+'index.php?m=user-index">我的资料</a></li><li class="logout"><a class="logoutbt" href="javascript:;" onclick="MAC.Login.Out(\''+$id+'\');" target="_self"><i class="ui-icon user-logout"></i>退出</a></li></ul>';
 			}
 			else{
-				html+='<form id="loginform" onsubmit="return false;" action="'+SitePath+'index.php?user-check" method="post"><div class="formitem"><label>用户：</label><input name="username" type="text"  class="input" id="username"/></div><div class="formitem"><label>密码：</label><input name="userpass" type="password" class="input" id="userpass"/></div><div class="formitem"><a class="qq-login" href="'+SitePath+'index.php?m=user-reg-ref-qqlogin.html"></a> <input class="formbutton" id="loginbtn" type="submit" value="登 录"></div><div class="formitem"><a title="忘记密码" class="forgotpass" href="'+SitePath+'index.php?m=user-findpass.html">忘记密码?</a>  <a class="reg-btn" href="'+SitePath+'index.php?m=user-reg.html" target="_blank">还没有账号?</a></div></form>';
+				html+='<form id="loginform" onsubmit="return false;" action="'+SitePath+'index.php?user-check" method="post"><div class="formitem"><label>用户：</label><input name="username" type="text"  class="input" id="username"/></div><div class="formitem"><label>密码：</label><input name="userpass" type="password" class="input" id="userpass"/></div><div class="formitem"><a class="qq-login" href="/login.jspx?returnUrl=/"></a> <input class="formbutton" id="loginbtn" type="submit" value="登 录"></div><div class="formitem"><a title="忘记密码" class="forgotpass" href="/member/forgot_password.jspx">忘记密码?</a>  <a class="reg-btn" href="/register.jspx" target="_blank">还没有账号?</a></div></form>';
 			}
 			
 			html += '</div>';
