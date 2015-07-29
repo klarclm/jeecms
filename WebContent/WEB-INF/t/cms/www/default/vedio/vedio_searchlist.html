@@ -10,15 +10,15 @@
 
     <script>var SitePath = '/sgv/', SiteAid = '12', SiteTid = '1', SiteId = '';</script>
 
-    [#include "/${res}/tencent_include/home_include.html"/]
+    [#include "../tencent_include/home_include.html"/]
     <link href="/${res}/tencent_css/v280_type.css" rel="stylesheet"/>
     <script src="/${res}/tencent_js/v280_picShow.js" type="text/javascript" language="javascript"></script>
     <link href="/${res}/tencent_css/v280_list.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-[#include "/${res}/tencent_include/home_head.html"/]
-${site.url}////123123123
+[#include "../tencent_include/home_head.html"/]
+
 <div class="container" style="padding-top: 125px;">
     <div class="nvc">
         <dl>
@@ -26,7 +26,7 @@ ${site.url}////123123123
                 <span>当前位置</span>
                 <i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
             </dt>
-            <dd><a href='/sgv/'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='/sgv/?m=vod-type-id-1.html' >电影</a></dd>
+            <dd><a href='${site.url}'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='${channel.url}' >${channel.channelExt.name}</a></dd>
         </dl>
     </div>
 </div>
@@ -270,6 +270,6 @@ ${site.url}////123123123
 </div>
 
 
-[#include "/${res}/tencent_include/home_foot.html"/]
+[#include "../tencent_include/home_foot.html"/]
 </body>
 </html>

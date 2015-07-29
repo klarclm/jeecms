@@ -5,10 +5,13 @@ import static com.jeecms.cms.Constants.TPLDIR_VEDIO;
 import com.jeecms.cms.entity.assist.CmsGuestbookCtg;
 import com.jeecms.cms.entity.main.Channel;
 import com.jeecms.cms.entity.main.ContentCount;
+import com.jeecms.cms.manager.main.ChannelMng;
 import com.jeecms.cms.manager.main.ContentCountMng;
 import com.jeecms.cms.manager.main.ContentMng;
 import com.jeecms.cms.service.ChannelCountCache;
 import com.jeecms.cms.service.ContentCountCache;
+import com.jeecms.cms.web.SiteNotFoundException;
+import com.jeecms.common.web.RequestUtils;
 import com.jeecms.common.web.ResponseUtils;
 import com.jeecms.core.entity.CmsSite;
 import com.jeecms.core.web.util.CmsUtils;
@@ -28,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Map;
 
 import static com.jeecms.cms.Constants.TPLDIR_SPECIAL;
@@ -41,15 +45,20 @@ public class VedioAct {
 
     public static final String TPLNAME_VEDIOSEARCHLIST = "tpl.vediosearchlist";
 
-    @RequestMapping(value = "/vedio/vediosearchlist.jspx", method = RequestMethod.GET)
-    public String vedioSearchList(Integer typeId, Integer yearId,Integer aeraId,Integer countryId,HttpServletRequest request,
-                            HttpServletResponse response, ModelMap model) throws JSONException {
+    @RequestMapping(value = "/vedio/vediosearchlist*.jspx", method = RequestMethod.GET)
+    public String vedioSearchList(Integer typeId, Integer yearId, Integer aeraId, Integer countryId, HttpServletRequest request,
+                                  HttpServletResponse response, ModelMap model) throws JSONException {
+        String channelId = RequestUtils.getQueryParam(request, "channelId");
+        Channel channel = channelMng.findById(Integer.parseInt(channelId));
+        model.put("channel", channel);
         CmsSite site = CmsUtils.getSite(request);
         FrontUtils.frontData(request, model, site);
         FrontUtils.frontPageData(request, model);
         return FrontUtils.getTplPath(request, site.getSolutionPath(), TPLDIR_VEDIO, TPLNAME_VEDIOSEARCHLIST);
     }
 
+    @Autowired
+    private ChannelMng channelMng;
 
     @Autowired
     private ContentMng contentMng;
