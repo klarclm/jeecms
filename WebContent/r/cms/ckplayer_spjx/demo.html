@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>灯哥全能解析演示播放页</title>
+<style type="text/css"><!--
+html,body{ margin:0; padding:0;text-align:center;background:#000;}
+body,td,th {font-size: 14px;color: #FFFFFF;font-weight: bold;}
+a:link {color: #FFFFFF;text-decoration: none;}
+a:visited {color: #FFFFFF;text-decoration: none;}
+a:hover {color: #00FF00;text-decoration: none;}
+a:active {color: #00FF00;text-decoration: none;}
+-->
+</style>
+</head>
+<body><br><a href="index.html">CK演示</a> | <a href="cmp.html">CMP演示</a> | <a href="http://bbs.lhkjw.com/forum.php?mod=viewthread&tid=2">灯哥解析</a> | <a href="http://bbs.lhkjw.com/deng/free/Deng.rar">下载</a><p>
+<input id="u" type="text" size="103" value="XMTI5NzQzMDMwOA"/>
+<input type="button" value="测试播放" onClick="player()"/>
+<div id="a1"></div>
+
+
+<script type="text/javascript" src="player/player.js" charset="utf-8"></script>
+<script type="text/javascript">
+var sun=0
+function loadedHandler(){CKobject.getObjectById('ckplayer_a1').addListener('error','errorHandler');
+	CKobject.getObjectById('ckplayer_a1').addListener('sendNetStream','playHandler');}
+function playHandler(){CKobject.getObjectById('ckplayer_a1').play;sun=0;}
+function errorHandler(){sun=sun+1;if(sun<3){player();}else{sun=0;
+	var err='弹出本对话框:\n\n';
+		err=err+'说明你正在使用我们的解析！\n\n\n';
+		err=err+'可能导致的原因：\n\n';
+		err=err+'①参数错误。\n\n';
+		err=err+'②配置错误。\n\n';
+		err=err+'③服务器不支持。\n\n\n';
+		err=err+'请联系QQ:122475170解决BUG！\n\n';
+		err=err+'欢迎定制收费解析！';
+	alert(err);
+	}}
+
+function player(){
+    var str = document.getElementById("u").value;
+    console.log(str);
+    if(str!=''){var flashvars={f:'http://localhost/spjx/?skey='+str+'_youku',
+        s:2,c:0,p:1,loaded:'loadedHandler',my_url:encodeURIComponent(window.location.href)};
+        var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+        CKobject.embedSWF('player/player.swf','a1','ckplayer_a1','732','412',flashvars,params);
+    }else{alert("请填写播放地址");}
+}
+player();
+function tv(data){document.getElementById("u").value=data+'.tv';player();}
+</script><div align="center">
+
+<font color="red"></br>当前版本: V150729 版</font></div>
+<div style="display:none""><script src="http://s11.cnzz.com/stat.php?id=1254874986&web_id=1254874986&show=pic" language="JavaScript"></script></div>
+</body>
+</html>

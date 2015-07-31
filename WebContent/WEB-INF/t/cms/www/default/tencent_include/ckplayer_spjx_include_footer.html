@@ -1,0 +1,49 @@
+<script src="${resSys}/ckplayer_spjx/player/player.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var sun = 0
+    function loadedHandler() {
+        CKobject.getObjectById('ckplayer_a1').addListener('error', 'errorHandler');
+        CKobject.getObjectById('ckplayer_a1').addListener('sendNetStream', 'playHandler');
+    }
+    function playHandler() {
+        CKobject.getObjectById('ckplayer_a1').play;
+        sun = 0;
+    }
+    function errorHandler() {
+        sun = sun + 1;
+        if (sun < 3) {
+            player();
+        } else {
+            sun = 0;
+            var err = '弹出本对话框:\n\n';
+            err = err + '说明你正在使用我们的解析！\n\n\n';
+            err = err + '可能导致的原因：\n\n';
+            err = err + '①参数错误。\n\n';
+            err = err + '②配置错误。\n\n';
+            err = err + '③服务器不支持。\n\n\n';
+            err = err + '请联系QQ:122475170解决BUG！\n\n';
+            err = err + '欢迎定制收费解析！';
+            alert(err);
+        }
+    }
+
+    function player() {
+        var str = document.getElementById("u").value;
+        console.log(str);
+        if (str != '') {
+            var flashvars = {
+                f: 'http://localhost/spjx/?skey=' + str + '_youku',
+                s: 2, c: 0, p: 1, loaded: 'loadedHandler', my_url: encodeURIComponent(window.location.href)
+            };
+            var params = {bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent'};
+            CKobject.embedSWF('${resSys}/ckplayer_spjx/player/player.swf', 'ckplayerContainer', 'ckplayer_a1', '985', '554', flashvars, params);
+        } else {
+            alert("请填写播放地址");
+        }
+    }
+    player();
+    function tv(data) {
+        document.getElementById("u").value = data + '.tv';
+        player();
+    }
+</script>
