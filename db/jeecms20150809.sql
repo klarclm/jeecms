@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-08-09 18:57:45
+Date: 2015-08-09 22:43:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -266,11 +266,11 @@ INSERT INTO `jc_channel` VALUES ('15', '1', '1', '1', 'photo', '8', '9', '10', '
 INSERT INTO `jc_channel` VALUES ('37', '4', '1', '9', 'system', '12', '13', '10', '1', '1');
 INSERT INTO `jc_channel` VALUES ('38', '4', '1', '9', 'network', '14', '15', '10', '1', '1');
 INSERT INTO `jc_channel` VALUES ('39', '4', '1', '9', 'media', '16', '17', '10', '1', '1');
-INSERT INTO `jc_channel` VALUES ('42', '5', '1', null, 'picture', '23', '30', '2', '1', '0');
+INSERT INTO `jc_channel` VALUES ('42', '5', '1', null, 'picture', '23', '30', '2', '1', '1');
 INSERT INTO `jc_channel` VALUES ('43', '5', '1', '42', 'wyty', '24', '25', '10', '1', '1');
 INSERT INTO `jc_channel` VALUES ('44', '5', '1', '42', 'mrzx', '26', '27', '10', '1', '1');
 INSERT INTO `jc_channel` VALUES ('45', '5', '1', '42', 'whxy', '28', '29', '10', '1', '1');
-INSERT INTO `jc_channel` VALUES ('46', '6', '1', null, 'veido', '31', '38', '3', '1', '1');
+INSERT INTO `jc_channel` VALUES ('46', '6', '1', null, 'veido', '31', '38', '3', '1', '0');
 INSERT INTO `jc_channel` VALUES ('49', '6', '1', '46', 'tv', '32', '33', '10', '1', '1');
 INSERT INTO `jc_channel` VALUES ('50', '6', '1', '46', 'jlp', '34', '35', '10', '1', '1');
 INSERT INTO `jc_channel` VALUES ('51', '6', '1', '46', 'mv', '36', '37', '10', '1', '1');
@@ -340,7 +340,7 @@ INSERT INTO `jc_channel_count` VALUES ('44', '3', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('45', '5', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('46', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('49', '10', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('50', '26', '6', '6', '6');
+INSERT INTO `jc_channel_count` VALUES ('50', '27', '7', '7', '7');
 INSERT INTO `jc_channel_count` VALUES ('51', '30', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('57', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('60', '0', '0', '0', '0');
@@ -415,7 +415,7 @@ INSERT INTO `jc_channel_ext` VALUES ('42', '图库', null, null, '0', '0', '0', 
 INSERT INTO `jc_channel_ext` VALUES ('43', '文娱体育', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '1', '0', '67', '50', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('44', '美容资讯', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('45', '文化 校园', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('46', '视频', null, null, '0', '0', '0', '0', '20', null, null, null, '', '', null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('46', '视频', null, null, '0', '0', '0', '0', '20', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
@@ -655,7 +655,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', '', null, '8080', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.showgirlvideo.com', '40', '#FF0000', '100', '1', '0', '0', '2015-08-09', '2015-08-09 11:27:03', 'showgirlvideo', '12', null, null, null, null, null, '1', '0');
+INSERT INTO `jc_config` VALUES ('1', '', null, '8080', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.showgirlvideo.com', '40', '#FF0000', '100', '1', '0', '0', '2015-08-09', '2015-08-09 22:42:37', 'showgirlvideo', '12', null, null, null, null, null, '1', '0');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -854,7 +854,7 @@ INSERT INTO `jc_content` VALUES ('535', '44', '1', '2', '5', '1', '2013-09-12 15
 INSERT INTO `jc_content` VALUES ('536', '12', '1', '3', '5', '1', '2013-09-12 15:48:01', '0', '0', '0', '2', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content` VALUES ('539', '50', '1', '2', '6', '1', '2013-09-13 14:12:47', '0', '1', '0', '2', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content` VALUES ('540', '50', '1', '2', '6', '1', '2013-09-13 14:24:03', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('541', '50', '1', '2', '6', '1', '2013-09-13 14:29:31', '0', '1', '0', '2', '12', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('541', '50', '1', '2', '6', '1', '2013-09-13 14:29:31', '0', '1', '0', '2', '13', '0', '0', '0', '0');
 INSERT INTO `jc_content` VALUES ('559', '12', '1', '1', '1', '1', '2013-09-27 10:18:25', '0', '0', '0', '2', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content` VALUES ('560', '12', '1', '1', '1', '1', '2013-09-27 10:18:47', '0', '0', '0', '2', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content` VALUES ('561', '14', '1', '1', '1', '1', '2013-09-27 10:19:30', '0', '0', '0', '2', '0', '0', '0', '0', '0');
@@ -1410,7 +1410,7 @@ INSERT INTO `jc_content_count` VALUES ('535', '44', '1', '0', '0', '0', '0', '0'
 INSERT INTO `jc_content_count` VALUES ('536', '44', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('539', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('540', '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('541', '22', '12', '12', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('541', '23', '13', '13', '13', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('559', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('560', '40', '22', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('561', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
@@ -2637,7 +2637,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -2685,6 +2685,10 @@ INSERT INTO `jc_log` VALUES ('40', '1', '1', '3', '2015-08-09 18:55:06', '127.0.
 INSERT INTO `jc_log` VALUES ('41', '1', '1', '3', '2015-08-09 18:55:38', '127.0.0.1', '/jeeadmin/jeecms/channel/o_save.do', '增加栏目', 'id=86;title=国内车展');
 INSERT INTO `jc_log` VALUES ('42', '1', '1', '3', '2015-08-09 18:55:58', '127.0.0.1', '/jeeadmin/jeecms/channel/o_save.do', '增加栏目', 'id=87;title=韩国车展');
 INSERT INTO `jc_log` VALUES ('43', '1', '1', '3', '2015-08-09 18:57:00', '127.0.0.1', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=10;name=关于我们');
+INSERT INTO `jc_log` VALUES ('44', '1', null, '1', '2015-08-09 19:27:02', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('45', '1', '1', '3', '2015-08-09 19:27:15', '127.0.0.1', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=46;name=视频');
+INSERT INTO `jc_log` VALUES ('46', '1', null, '1', '2015-08-09 19:59:52', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('47', '1', '1', '3', '2015-08-09 20:00:07', '127.0.0.1', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=42;name=图库');
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -3335,7 +3339,7 @@ CREATE TABLE `jc_site_access` (
   PRIMARY KEY (`access_id`),
   KEY `fk_jc_access_site` (`site_id`),
   CONSTRAINT `fk_jc_access_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
 
 -- ----------------------------
 -- Records of jc_site_access
@@ -3345,6 +3349,9 @@ INSERT INTO `jc_site_access` VALUES ('4', '318EE96CDEFCD7575B5546C7FF26B4AE', '1
 INSERT INTO `jc_site_access` VALUES ('5', '686501481002E202A39AF3C6CCF9BF70', '1', '07:19:13', '2015-08-09', '127.0.0.1', '', '直接访问', null, null, 'http://localhost:8080/', 'http://localhost:8080/jlp/541.jhtml', '835', '9', 'Win 7', 'chrome 43', '');
 INSERT INTO `jc_site_access` VALUES ('6', '5DE433C8CB2FE60002CAE16E3204297E', '1', '08:15:54', '2015-08-09', '127.0.0.1', '', '直接访问', null, null, 'http://localhost:8080/', 'http://localhost:8080/jlp/541.jhtml', '743', '24', 'Win 7', 'chrome 43', '');
 INSERT INTO `jc_site_access` VALUES ('7', 'D96622BE2523231078443C1221D9B8D3', '1', '11:45:56', '2015-08-09', '127.0.0.1', '', '直接访问', null, null, 'http://localhost:8080/veido/index.jhtml', 'http://localhost:8080/veido/index.jhtml', '0', '1', 'Win 7', 'chrome 43', '');
+INSERT INTO `jc_site_access` VALUES ('8', '0811E4B6348457858D65F974FED8681D', '1', '19:00:08', '2015-08-09', '127.0.0.1', '', '直接访问', null, null, 'http://localhost:8080/cz/index.jhtml', 'http://localhost:8080/cz/index.jhtml', '3', '2', 'Win 7', 'chrome 43', '');
+INSERT INTO `jc_site_access` VALUES ('9', '40C8E1161C2214C65264E2D57C0FBA9D', '1', '19:26:42', '2015-08-09', '127.0.0.1', '', '直接访问', null, null, 'http://localhost:8080/veido/index.jhtml', 'http://localhost:8080/veido/index.jhtml', '0', '1', 'Win 7', 'chrome 43', '');
+INSERT INTO `jc_site_access` VALUES ('10', '7633C7BB0A79A12EEE4896C7FDB6D689', '1', '20:00:13', '2015-08-09', '127.0.0.1', '', '直接访问', null, null, 'http://localhost:8080/picture/index.jhtml', 'http://localhost:8080/jlp/541.jhtml', '9744', '10', 'Win 7', 'chrome 43', '');
 
 -- ----------------------------
 -- Table structure for jc_site_access_count
@@ -3382,7 +3389,7 @@ CREATE TABLE `jc_site_access_pages` (
   `site_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
 
 -- ----------------------------
 -- Records of jc_site_access_pages
@@ -3422,6 +3429,11 @@ INSERT INTO `jc_site_access_pages` VALUES ('37', 'http://localhost:8080/mtdaxjq/
 INSERT INTO `jc_site_access_pages` VALUES ('38', 'http://localhost:8080/xjds/index.jhtml', '5DE433C8CB2FE60002CAE16E3204297E', '2015-08-09', '08:23:02', '0', '22', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('39', 'http://localhost:8080/jlp/541.jhtml', '5DE433C8CB2FE60002CAE16E3204297E', '2015-08-09', '08:28:17', '0', '24', '1');
 INSERT INTO `jc_site_access_pages` VALUES ('40', 'http://localhost:8080/veido/index.jhtml', 'D96622BE2523231078443C1221D9B8D3', '2015-08-09', '11:45:56', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('41', 'http://localhost:8080/cz/index.jhtml', '0811E4B6348457858D65F974FED8681D', '2015-08-09', '19:00:09', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('42', 'http://localhost:8080/picture/index.jhtml', '7633C7BB0A79A12EEE4896C7FDB6D689', '2015-08-09', '20:00:14', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('43', 'http://localhost:8080/mrzx/index.jhtml', '7633C7BB0A79A12EEE4896C7FDB6D689', '2015-08-09', '20:56:23', '0', '4', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('44', 'http://localhost:8080/mrzx/index.jhtml', '7633C7BB0A79A12EEE4896C7FDB6D689', '2015-08-09', '22:37:15', '131', '7', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('45', 'http://localhost:8080/mrzx/index.jhtml', '7633C7BB0A79A12EEE4896C7FDB6D689', '2015-08-09', '22:39:26', '0', '8', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_statistic
@@ -3465,8 +3477,8 @@ CREATE TABLE `jc_site_attr` (
 -- ----------------------------
 -- Records of jc_site_attr
 -- ----------------------------
-INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '177');
-INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '40');
+INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '186');
+INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '43');
 
 -- ----------------------------
 -- Table structure for jc_site_cfg
@@ -3697,7 +3709,7 @@ CREATE TABLE `jc_user` (
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', 'admin', '', '2011-01-03 00:00:00', '127.0.0.1', '2015-08-09 18:50:21', '127.0.0.1', '1046', '9', '197857', '45', '2014-08-29', '1', '0', '0');
+INSERT INTO `jc_user` VALUES ('1', '1', 'admin', '', '2011-01-03 00:00:00', '127.0.0.1', '2015-08-09 19:59:52', '127.0.0.1', '1048', '9', '197857', '45', '2014-08-29', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_user_attr
