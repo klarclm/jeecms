@@ -38,7 +38,7 @@ $(function() {
 </head>
 <body>
 <div class="container">
-	[#include "../include/header.html"/]
+	[#include "../tencent_include/home_head.html"/]
     [#include "../include/search_csi.html"/]
     [#include "../include/navi.html"/]
 	<div class="position">当前位置：<a href="${base}/">首页</a> > [#list channel.nodeList as n]<a href="${n.url}" target="_blank">${n.name}</a>[#if n_has_next] > [/#if][/#list] > 正文</div>

@@ -276,19 +276,19 @@ CREATE TABLE `jc_comment_ext` (
 DROP TABLE IF EXISTS `jc_config`;
 CREATE TABLE `jc_config` (
   `config_id` int(11) NOT NULL,
-  `context_path` varchar(20) default '/JeeCms' COMMENT '部署路径',
+  `context_path` varchar(20) default '/showgirlvideo' COMMENT '部署路径',
   `servlet_point` varchar(20) default NULL COMMENT 'Servlet挂载点',
   `port` int(11) default NULL COMMENT '端口',
   `db_file_uri` varchar(50) NOT NULL default '/dbfile.svl?n=' COMMENT '数据库附件访问地址',
   `is_upload_to_db` tinyint(1) NOT NULL default '0' COMMENT '上传附件至数据库',
-  `def_img` varchar(255) NOT NULL default '/JeeCms/r/cms/www/default/no_picture.gif' COMMENT '图片不存在时默认图片',
+  `def_img` varchar(255) NOT NULL default '/showgirlvideo/r/cms/www/default/no_picture.gif' COMMENT '图片不存在时默认图片',
   `login_url` varchar(255) NOT NULL default '/login.jspx' COMMENT '登录地址',
   `process_url` varchar(255) default NULL COMMENT '登录后处理地址',
   `mark_on` tinyint(1) NOT NULL default '1' COMMENT '开启图片水印',
   `mark_width` int(11) NOT NULL default '120' COMMENT '图片最小宽度',
   `mark_height` int(11) NOT NULL default '120' COMMENT '图片最小高度',
   `mark_image` varchar(100) default '/r/cms/www/watermark.png' COMMENT '图片水印',
-  `mark_content` varchar(100) NOT NULL default 'www.jeecms.com' COMMENT '文字水印内容',
+  `mark_content` varchar(100) NOT NULL default 'www.showgirlvideo.com' COMMENT '文字水印内容',
   `mark_size` int(11) NOT NULL default '20' COMMENT '文字水印大小',
   `mark_color` varchar(10) NOT NULL default '#FF0000' COMMENT '文字水印颜色',
   `mark_alpha` int(11) NOT NULL default '50' COMMENT '水印透明度（0-100）',
@@ -297,7 +297,7 @@ CREATE TABLE `jc_config` (
   `mark_offset_y` int(11) NOT NULL default '0' COMMENT 'y坐标偏移量',
   `count_clear_time` date NOT NULL COMMENT '计数器清除时间',
   `count_copy_time` datetime NOT NULL COMMENT '计数器拷贝时间',
-  `download_code` varchar(32) NOT NULL default 'jeecms' COMMENT '下载防盗链md5混淆码',
+  `download_code` varchar(32) NOT NULL default 'showgirlvideo' COMMENT '下载防盗链md5混淆码',
   `download_time` int(11) NOT NULL default '12' COMMENT '下载有效时间（小时）',
   `email_host` varchar(50) default NULL COMMENT '邮件发送服务器',
   `email_encoding` varchar(20) default NULL COMMENT '邮件发送编码',
@@ -901,8 +901,7 @@ CREATE TABLE `jc_friendlink` (
   KEY `fk_jc_friendlink_site` (`site_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMS友情链接';
 
-INSERT INTO `jc_friendlink` VALUES (1,1,1,'JEECMS官网','http://www.jeecms.com',NULL,'jeecms@163.com','JEECMS是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。',34,'1',1);
-INSERT INTO `jc_friendlink` VALUES (2,1,1,'JEEBBS论坛','http://bbs.jeecms.com',NULL,'jeecms@163.com','JEEBBS论坛',3,'1',10);
+INSERT INTO `jc_friendlink` VALUES (1,1,1,'showgirlvideo官网','http://www.showgirlvideo.com',NULL,'showgirlvideo@163.com','showgirlvideo是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。',34,'1',1);
 INSERT INTO `jc_friendlink` VALUES (3,1,2,'京东商城','http://www.360buy.com/','/u/cms/www/201112/1910271036lr.gif','','',3,'1',10);
 INSERT INTO `jc_friendlink` VALUES (4,1,2,'当当网','http://www.dangdang.com/','/u/cms/www/201112/191408344rwj.gif','','',1,'1',10);
 INSERT INTO `jc_friendlink` VALUES (5,1,2,'亚马逊','http://www.amazon.cn/','/u/cms/www/201112/19141012lh2q.gif','','',1,'1',10);
@@ -1019,7 +1018,7 @@ CREATE TABLE `jc_keyword` (
   KEY `fk_jc_keyword_site` (`site_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMS内容关键词表';
 
-INSERT INTO `jc_keyword` VALUES (1,NULL,'内容管理系统','<a href=\"http://www.jeecms.com/\" target=\"_blank\">内容管理系统</a>',0);
+INSERT INTO `jc_keyword` VALUES (1,NULL,'内容管理系统','<a href=\"http://www.showgirlvideo.com/\" target=\"_blank\">内容管理系统</a>',0);
 DROP TABLE IF EXISTS `jc_log`;
 CREATE TABLE `jc_log` (
   `log_id` int(11) NOT NULL auto_increment,
@@ -1768,7 +1767,7 @@ CREATE TABLE `jc_vote_topic` (
   KEY `fk_jc_votetopic_site` (`site_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMS投票主题';
 
-INSERT INTO `jc_vote_topic` VALUES (2,1,'JEECMS演示站改版用户问卷调查','JEECMSv5版正式发布了，伴随着系统的完善，jeecms演示站的模板也一直在不断的改版，针对此次改版，jeecms美工团队特邀您参与“JEECMS演示站改版用户问卷调查”，希望大家能提出宝贵的意见，我们一定认真改进，谢谢大家的支持！',NULL,NULL,NULL,1,1,0,0,0,0,1);
+INSERT INTO `jc_vote_topic` VALUES (2,1,'showgirlvideo演示站改版用户问卷调查','showgirlvideov5版正式发布了，伴随着系统的完善，showgirlvideo演示站的模板也一直在不断的改版，针对此次改版，showgirlvideo美工团队特邀您参与“showgirlvideo演示站改版用户问卷调查”，希望大家能提出宝贵的意见，我们一定认真改进，谢谢大家的支持！',NULL,NULL,NULL,1,1,0,0,0,0,1);
 DROP TABLE IF EXISTS `jo_authentication`;
 CREATE TABLE `jo_authentication` (
   `authentication_id` char(32) NOT NULL COMMENT '认证ID',
@@ -1793,15 +1792,15 @@ INSERT INTO `jo_config` VALUES ('email_host','smtp.126.com');
 INSERT INTO `jo_config` VALUES ('email_password','mingming_chen');
 INSERT INTO `jo_config` VALUES ('email_personal','');
 INSERT INTO `jo_config` VALUES ('email_port',NULL);
-INSERT INTO `jo_config` VALUES ('email_username','jeecmsv5@126.com');
+INSERT INTO `jo_config` VALUES ('email_username','showgirlvideov5@126.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval','30');
 INSERT INTO `jo_config` VALUES ('login_error_times','3');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject','找回JEECMS密码');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_text','感谢您使用JEECMS系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://demo.jeecms.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
-INSERT INTO `jo_config` VALUES ('message_register_subject','欢迎您注册JEECMS用户');
-INSERT INTO `jo_config` VALUES ('message_register_text','${username}您好：\r\n欢迎您注册JEECMS系统会员\r\n请点击以下链接进行激活\r\nhttp://demo.jeecms.com/active.jspx?username=${username}&key=${activationCode}');
-INSERT INTO `jo_config` VALUES ('message_subject','JEECMS会员密码找回信息');
-INSERT INTO `jo_config` VALUES ('message_text','感谢您使用JEECMS系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject','找回showgirlvideo密码');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_text','感谢您使用showgirlvideo系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://demo.showgirlvideo.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
+INSERT INTO `jo_config` VALUES ('message_register_subject','欢迎您注册showgirlvideo用户');
+INSERT INTO `jo_config` VALUES ('message_register_text','${username}您好：\r\n欢迎您注册showgirlvideo系统会员\r\n请点击以下链接进行激活\r\nhttp://demo.showgirlvideo.com/active.jspx?username=${username}&key=${activationCode}');
+INSERT INTO `jo_config` VALUES ('message_subject','showgirlvideo会员密码找回信息');
+INSERT INTO `jo_config` VALUES ('message_text','感谢您使用showgirlvideo系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 DROP TABLE IF EXISTS `jo_ftp`;
 CREATE TABLE `jo_ftp` (
   `ftp_id` int(11) NOT NULL auto_increment,

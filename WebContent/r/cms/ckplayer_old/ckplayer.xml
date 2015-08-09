@@ -103,7 +103,7 @@
 		默认右上角一直显示的logo，不使用设置成<logo>null</logo>
 		-->
 		<pm_logo>2,0,-100,20</pm_logo>
-		<!--
+		<!--com.jeecms.cms.service.AcquisitionSvcImpl                                               j
 		播放器右上角的logo的位置
 			1、水平对齐方式，0是左，1是中，2是右
 			2、垂直对齐方式，0是上，1是中，2是下

@@ -1,11 +1,46 @@
+<script type="text/javascript" language="javascript">
+    //加入收藏
+    function AddFavorite(sURL, sTitle) {
+        sURL =encodeURI(sURL);
+        try{
+            window.external.addFavorite(sURL, sTitle);
+        }catch(e) {
+            try{
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }catch (e){
+                alert("您的浏览器不支持自动加入收藏功能，请使用Ctrl+D进行添加，或手动在浏览器里进行设置！");
+            }
+        }
+    }
+
+    //设为首页
+    function SetHome(url){
+        if (document.all) {
+            document.body.style.behavior='url(#default#homepage)';
+            document.body.setHomePage(url);
+        }else{
+            alert("您的浏览器不支持自动设置页面为首页功能，请您手动在浏览器里设置该页面为首页！");
+        }
+    }
+</script>
+<link href="/${res}/tencent_css/home.css" rel="stylesheet" type="text/css"/>
+<link href="/${res}/tencent_css/v280_head.css" rel="stylesheet" type="text/css"/>
+<script src="/${res}/tencent_js/jquery.js" type="text/javascript" language="javascript"></script>
+<script src="/${res}/tencent_js/jquery.lazyload.js" type="text/javascript" language="javascript"></script>
+<script src="/${res}/tencent_js/jquery.autocomplete.js" type="text/javascript" language="javascript"></script>
+<script src="/${res}/tencent_js/tpl.js" type="text/javascript" language="javascript"></script>
+<script src="/${res}/tencent_js/v280_home.js" type="text/javascript" language="javascript"></script>
+<script src="/${res}/tencent_js/home.js" type="text/javascript" language="javascript"></script>
+
 <div class="site_head">
     <div class="head_inner">
-        <h1 class="site_logo"><a href="http://localhost" title="苹果CMS" class="link_logo"><strong
-                class="hidden">苹果CMS</strong></a></h1>
+        <h1 class="site_logo"><a href="http://localhost" title="ShowgirlVedio" class="link_logo"><strong
+                class="hidden">ShowgirlVedio</strong></a></h1>
 
         [#include "../tencent_include/search_csi_tencent.html"/]
 
-
+        <!--<a onclick="SetHome(window.location)"href="javascript:void(0)">设为首页</a> - -->
+        <!--<a onclick="AddFavorite(window.location,document.title)"href="javascript:void(0)">加入收藏</a> - -->
         <div class="mod_quick">
             <div class="quick_item"><a class="quick_history" href="#" id="history"> <i class="ico_history_26"></i> <span
                     class="quick_txt">看过</span> <i class="divide"></i> </a></div>
@@ -14,14 +49,12 @@
             <div class="quick_item">
 
             </div>
-            <div class="quick_item">
-                &nbsp;|&nbsp; <a href="${base}/guestbook.jspx" target="_blank">留言板</a>&nbsp;|&nbsp;
-                <Script Language=Javascript Src="${resSys}/gb2big5.js"></Script>
-            </div>
+
             <div class="quick_item">
                 <div class="quick_user">
                     [#if user??]
-                    <div>欢迎您: ${user.username} &nbsp; ${user.group.name} &nbsp; <a href="logout.jspx?returnUrl=/">退出登录</a></div>
+                    <div>欢迎您: ${user.username} &nbsp; ${user.group.name} &nbsp;
+                    <a href="/logout.jspx?returnUrl=/" target="_blank">退出登录</a>
                     [#else]
                     <div>
                         <a href="${base}/login.jspx?returnUrl=${location}">会员登录</a>
