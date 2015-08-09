@@ -1,8 +1,14 @@
+[#if channel??]
+[#assign channel_id=channel.id /]
+[#else]
+[#assign channel_id=50 /]
+[/#if]
+
 <div class="mod_filter">
     <div class="filter_item">
         <h3 class="filter_title">按排行</h3>
         <ul class="filter_list">
-            <li><a href="${site.url}vedio/vediosearchlist.jspx?channelId=${channel.id}" title="今日最热">今日最热</a></li>
+            <li><a href="${site.url}vedio/vediosearchlist.jspx?channelId=${channel_id}" title="今日最热">今日最热</a></li>
             <li><a href="${site.url}vedio/vediosearchlist.jspx" title="一周最热">一周最热</a></li>
             <li><a href="${site.url}vedio/vediosearchlist.jspx" title="月度最热">月度最热</a></li>
             <li><a href="${site.url}vedio/vediosearchlist.jspx" title="今日更新">今日更新</a></li>
