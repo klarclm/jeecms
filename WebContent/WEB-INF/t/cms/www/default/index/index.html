@@ -20,14 +20,15 @@
 
 [#include "../tencent_include/home_mod_filter.html"/]
 
+<!-- 模特大赛begin  channelId="76" -->
 <div class="wrapper">
     <div class="l">
         <div class="mod_title">
-            <h2 class="title">最近更新 </h2>
+            <h2 class="title">模特大赛最近更新 </h2>
         </div>
         <div class="mod_figures">
             <ul>
-                [@cms_content_list count='8' orderBy='4' titLen='10' channelId="${channel.id!46}" channelOption='1']
+                [@cms_content_list count='8' orderBy='4' titLen='10' channelId="76" channelOption='1']
                 [#list tag_list as a]
                 <li class="list_item">
                     <a href="${a.url}" class="figure" title="${a.title}">
@@ -55,13 +56,14 @@
             </ul>
         </div>
     </div>
+    <!-- 所有的更新begin  channelId="76" -->
     <div class="r">
         <div class="mod_title">
-            <h2 class="title"><span class="text_sprite text_top">评分排行</span><i class="ico_text_top"></i></h2>
+            <h2 class="title"><span class="text_sprite text_top">所有视频的评分排行</span><i class="ico_text_top"></i></h2>
         </div>
         <div class="top_list_ver">
             <ol class="top_list">
-                [@cms_content_list count='8' orderBy='7' titLen='10' channelId="${channel.id!46}" channelOption='1']
+                [@cms_content_list count='8' orderBy='7' titLen='10'  channelOption='1']
                 [#list tag_list as a]
                 <li><a href="${a.url}" class="top_title" title="${a.title}"><i
                         class="num">1</i><span class="title_inner">${a.title}</span></a></li>
@@ -74,14 +76,15 @@
     </div>
 </div>
 
+<!-- T台秀begin  channelId="78" -->
 <div class="wrapper">
     <div class="l">
         <div class="mod_title">
-            <h2 class="title">总评论排行</h2>
+            <h2 class="title">T台秀总评论排行</h2>
         </div>
         <div class="mod_figures">
             <ul>
-                [@cms_content_list count='8' orderBy='13' titLen='10' channelId="${channel.id!46}" channelOption='1']
+                [@cms_content_list count='8' orderBy='13' titLen='10' channelId="78" channelOption='1']
                 [#list tag_list as a]
                 <li class="list_item">
                     <a href="${a.url}" class="figure" title="${a.title}">
@@ -111,11 +114,11 @@
     </div>
     <div class="r">
         <div class="mod_title">
-            <h2 class="title"><span class="text_sprite text_top">月点击排行</span><i class="ico_text_top"></i></h2>
+            <h2 class="title"><span class="text_sprite text_top">所有视频的月点击排行</span><i class="ico_text_top"></i></h2>
         </div>
         <div class="top_list_ver">
             <ol class="top_list">
-                [@cms_content_list count='8' orderBy='8' titLen='10' channelId="${channel.id!46}" channelOption='1']
+                [@cms_content_list count='8' orderBy='8' titLen='10'  channelOption='1']
                 [#list tag_list as a]
                 <li><a href="${a.url}" class="top_title" title="${a.title}"><i
                         class="num">1</i><span class="title_inner">${a.title}</span></a></li>
@@ -127,14 +130,16 @@
         </div>
     </div>
 </div>
+
+<!-- 游戏展begin  channelId="82" -->
 <div class="wrapper">
     <div class="l">
         <div class="mod_title">
-            <h2 class="title">周访问排行</h2>
+            <h2 class="title">游戏展周访问排行</h2>
         </div>
         <div class="mod_figures">
             <ul>
-                [@cms_content_list count='8' orderBy='7' titLen='10' channelId="${channel.id!46}" channelOption='1']
+                [@cms_content_list count='8' orderBy='7' titLen='10' channelId="82" channelOption='1']
                 [#list tag_list as a]
                 <li class="list_item">
                     <a href="${a.url}" class="figure" title="${a.title}">
@@ -164,11 +169,66 @@
     </div>
     <div class="r">
         <div class="mod_title">
-            <h2 class="title"><span class="text_sprite text_top">周点击排行</span><i class="ico_text_top"></i></h2>
+            <h2 class="title"><span class="text_sprite text_top">所有视频的周点击排行</span><i class="ico_text_top"></i></h2>
         </div>
         <div class="top_list_ver">
             <ol class="top_list">
-                [@cms_content_list count='8' orderBy='11' titLen='10' channelId="${channel.id!46}" channelOption='1']
+                [@cms_content_list count='8' orderBy='11' titLen='10'  channelOption='1']
+                [#list tag_list as a]
+                <li><a href="${a.url}" class="top_title" title="${a.title}"><i
+                        class="num">1</i><span class="title_inner">${a.title}</span></a></li>
+                [/#list]
+                [/@cms_content_list]
+            </ol>
+            <ol class="top_list">
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- 车展begin  channelId="85" -->
+<div class="wrapper">
+    <div class="l">
+        <div class="mod_title">
+            <h2 class="title">车展周访问排行</h2>
+        </div>
+        <div class="mod_figures">
+            <ul>
+                [@cms_content_list count='8' orderBy='7' titLen='10' channelId="85" channelOption='1']
+                [#list tag_list as a]
+                <li class="list_item">
+                    <a href="${a.url}" class="figure" title="${a.title}">
+                        <img style="visibility: visible; " class="lazy"
+                             data-original="${a.titleImg!site.defImg}"
+                             src="${a.titleImg!site.defImg}" alt="${a.title}"/>
+
+                        <div class="figure_caption figure_caption_info">
+                            <div class="figure_info">
+                                [#if a.attr.Starring != ""]
+                                <p class="figure_info_desc">${a.attr.Starring!}/p>
+                                    [/#if]
+                                <span class="figure_info_play"><i class="ico_play_12"></i><span
+                                        class="info_inner">${a.views!}次</span></span>
+                                <span class="figure_info_score"> <em class="score_l"></em><em
+                                        class="score_s">${a.score}</em></span>
+                            </div>
+                        </div>
+                    </a>
+                    <strong class="figure_title"><a href="${a.url}"
+                                                    title="${a.title}">${a.title}</a></strong>
+                </li>
+                [/#list]
+                [/@cms_content_list]
+            </ul>
+        </div>
+    </div>
+    <div class="r">
+        <div class="mod_title">
+            <h2 class="title"><span class="text_sprite text_top">所有视频的周点击排行</span><i class="ico_text_top"></i></h2>
+        </div>
+        <div class="top_list_ver">
+            <ol class="top_list">
+                [@cms_content_list count='8' orderBy='11' titLen='10'  channelOption='1']
                 [#list tag_list as a]
                 <li><a href="${a.url}" class="top_title" title="${a.title}"><i
                         class="num">1</i><span class="title_inner">${a.title}</span></a></li>
