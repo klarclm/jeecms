@@ -29,6 +29,35 @@ import freemarker.template.TemplateModel;
 
 /**
  * 内容分页标签
+ *
+ * JEECMSv6标签使用之[@cms_content_page]
+ 发布时间： 2015-05-07 15:52:43   作者：本站编辑   来源： 本站原创   浏览次数：938   我要评论(0)
+ 内容列表分页标签：
+ 参数详解：
+ tagId: TAG ID 允许多个TAG ID，用“，”分开。和tagNames之间二选一，ID优先级更高
+ tagName: TAG NAME 允许多个TAG NAME ，用“，”分开
+ topicId：专题ID
+ channelId : 栏目ID，允许多个栏目ID，用“，”分开。和channelpath之间二选一，ID优先级更高
+ channelPath : 栏目路径，允许多个栏目路径，用“，”分开
+ channelOption : 栏目选项，用于单栏目情况下。 0 ：自身栏目 1 ：包含子栏目 2: 包含副栏目
+ siteId：站点ID，可选，允许多个站点ID，用“，”分开
+ typeId：类型ID，可选，允许多个类型ID，用“，”分开
+ Recommend：是否推荐。 0 ：所有都推荐 1 ：推荐 2 ：不推荐，默认所有
+ title：标题，可以为null
+ image：标题图片， 0 ：所有 1 ：有 2 ：没有。默认所有
+ orderBy :排序方式 0：ID降序 1：ID升序 2：发布时间降序 3：发布时间升序 4：固定级别降序，发布时间降序 5：固定级别降序，发布时间升序 6：日访问降序（推荐）7：周访问降序 8：月访问降序 9：总访问降序 10：日评论降序（推荐） 11：周评论降序 12：月评论降序 13：总评论降序 14：日下载降序（推荐）15：周下载降序 16：月下载降序 17：总下载降序 18：日顶降序（推荐） 19：周顶降序 20：月顶降序 21：总顶降序
+ excludeId：不包含的文章ID，用于按tag查询相关文章
+
+ 作用：对显示的文章列表进行分页
+
+ 具体例子：
+ [@cms_content_page channelId=channel.id count='4' sysPage=’1’ titLen='15' append='...' orderBy='2' dateFormat='MM-dd' channelOption='1']
+ [#list tag_pagination.list as a]
+ <ul><li>
+ <a href="${a.url}" title="${a.title}" target="_blank">[@text_cut s=a.title len=titLen append=append/]</a> [${a.date?string(dateFormat)}]
+ </li></ul>
+ [/#list]
+ [/@cms_content_page]
  */
 public class ContentPageDirective extends AbstractContentDirective {
 	/**
