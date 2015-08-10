@@ -44,3 +44,6 @@ a:visited, a[tabindex="-1"]:focus {outline: 0 none;}
 .container .r .mod_video_list ul li .scores strong{position: absolute;right: 0;top: 0;color: #FF9805;white-space: nowrap;}
 .container .r .mod_video_list ul li p{width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
 .container .r .mod_video_list ul li p a{ margin-right:5px;}
+
+ul, li{display: inline-block;vertical-align: bottom; border: 0 none;}
+div.pagesite{text-align: center}
