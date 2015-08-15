@@ -3,9 +3,11 @@ package com.jeecms.cms.manager.assist.impl;
 import java.util.Date;
 import java.util.List;
 
+import ch.ethz.ssh2.channel.Channel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import com.jeecms.cms.dao.assist.CmsAcquisitionDao;
 import com.jeecms.cms.entity.assist.CmsAcquisition;
@@ -13,6 +15,7 @@ import com.jeecms.cms.entity.assist.CmsAcquisitionHistory;
 import com.jeecms.cms.entity.assist.CmsAcquisitionTemp;
 import com.jeecms.cms.entity.assist.CmsAcquisition.AcquisitionResultType;
 import com.jeecms.cms.entity.main.Content;
+import com.jeecms.cms.entity.main.Channel;
 import com.jeecms.cms.entity.main.ContentExt;
 import com.jeecms.cms.entity.main.ContentTxt;
 import com.jeecms.cms.manager.assist.CmsAcquisitionHistoryMng;
@@ -163,7 +166,8 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
 		CmsAcquisition acqu = findById(acquId);
 		Content c = new Content();
 		c.setSite(acqu.getSite());
-		c.setModel(modelMng.getDefModel());
+		com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
+		c.setModel(channel.getModel());
 		ContentExt cext = new ContentExt();
 		ContentTxt ctxt = new ContentTxt();
 		cext.setAuthor(author);
