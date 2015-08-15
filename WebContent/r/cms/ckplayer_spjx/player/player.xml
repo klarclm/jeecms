@@ -6,7 +6,7 @@
 		<flashvars>{b->1}{p->1}</flashvars>
 		<setup>1,1,1,1,1,2,0,1,0,0,0,1,200,0,2,1,0,1,1,1,0,10,3,0,1,2,3000,0,0,0,0,1,1,1,1,1,1,250,0,90,0,1</setup>
 		<pm_bg>0x000000,100,230,180</pm_bg>
-
+		<mylogo>logo.swf</mylogo>
 		<pm_mylogo>1,1,-100,-55</pm_mylogo>
 		<logo>cklogo.png</logo>
 		<pm_logo>2,0,-100,20</pm_logo>

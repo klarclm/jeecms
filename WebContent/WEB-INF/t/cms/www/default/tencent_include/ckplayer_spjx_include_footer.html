@@ -1,4 +1,4 @@
-<script src="${resSys}/ckplayer_spjx/player/player.js" type="text/javascript" charset="utf-8"></script>
+<script src="${resSys}/spjx/player/player.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     var sun = 0
     function loadedHandler() {
@@ -36,7 +36,7 @@
                 s: 2, c: 0, p: 1, loaded: 'loadedHandler', my_url: encodeURIComponent(window.location.href)
             };
             var params = {bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent'};
-            CKobject.embedSWF('${resSys}/ckplayer_spjx/player/player.swf', 'ckplayerContainer', 'ckplayer_a1', '985', '554', flashvars, params);
+            CKobject.embedSWF('${resSys}/spjx/player/player.swf', 'ckplayerContainer', 'ckplayer_a1', '985', '554', flashvars, params);
         } else {
             alert("«ÎÃÓ–¥≤•∑≈µÿ÷∑");
         }
