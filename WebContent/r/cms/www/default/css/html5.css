@@ -269,7 +269,7 @@ img{ border:0; -ms-interpolation-mode:bicubic;}
 
 
 /*--------------------2.1.新闻内容CSS--------------------*/
-.website/*所在位置*/{ line-height:30px; height:30px; border-bottom:1px solid #dddddd;}
+.website/*所在位置*/{ line-height:30px; height:30px; border-bottom:1px solid #dddddd;padding-top: 20px}
 .pagesite/*第几页*/{ text-align:center; line-height:24px; height:24px; margin:10px auto;}
 .newsTex/*内容标题*/{ width:97%; margin:auto;}
 .newsTex h1{ font-size:28px; padding:20px 0; font-family:"微软雅黑","黑体"; text-align:center; line-height:30px;}
