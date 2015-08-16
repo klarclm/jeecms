@@ -49,6 +49,8 @@ CREATE TABLE `jc_acquisition` (
   `origin_start` varchar(255) default NULL COMMENT '来源开始',
   `origin_end` varchar(255) default NULL COMMENT '来源结束',
   `releaseTime_format` varchar(255) default NULL COMMENT '发布时间格式',
+  `vediopath_start` varchar(50) default NULL COMMENT '视频路径',
+  `vediopath_end` varchar(50) default NULL COMMENT '视频路径',
   PRIMARY KEY  (`acquisition_id`),
   KEY `fk_jc_acquisition_channel` (`channel_id`),
   KEY `fk_jc_acquisition_contenttype` (`type_id`),

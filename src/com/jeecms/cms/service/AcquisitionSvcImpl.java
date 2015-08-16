@@ -224,6 +224,9 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			String releaseTimeEnd=acqu.getReleaseTimeEnd();
 			String descriptionStart=acqu.getDescriptionStart();
 			String descriptionEnd=acqu.getDescriptionEnd();
+			String vediopathStart=acqu.getVediopathStart();
+			String vediopathEnd=acqu.getVediopathEnd();
+
 			history.setAcquisition(acqu);
 			try {
 				int start, end;
@@ -287,7 +290,23 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 					}
 					author = html.substring(start, end);
 				}
-				
+
+				String vedioPath = null;
+				if(StringUtils.isNotBlank(vediopathStart)){
+					start = html.indexOf(vediopathStart);
+					if (start == -1) {
+						return handerResult(temp, history, null,
+								AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+					}
+					start += vediopathStart.length();
+					end = html.indexOf(vediopathEnd, start);
+					if (end == -1) {
+						return handerResult(temp, history, null,
+								AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+					}
+					vedioPath = html.substring(start, end);
+				}
+
 				String origin = null;
 				if(StringUtils.isNotBlank(originStart)){
 					start = html.indexOf(originStart);
@@ -371,7 +390,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 					view = html.substring(start, end);
 				}
 				
-				Content content = cmsAcquisitionMng.saveContent(title, txt,origin,author,description,releaseTime,
+				Content content = cmsAcquisitionMng.saveContent(title, txt,origin,vedioPath,author,description,releaseTime,
 						acquId, AcquisitionResultType.SUCCESS, temp, history);
 				if(StringUtils.isNotBlank(view)){
 					ContentCount count=content.getContentCount();

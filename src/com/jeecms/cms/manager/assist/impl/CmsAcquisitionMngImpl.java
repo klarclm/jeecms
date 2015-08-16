@@ -2,6 +2,7 @@ package com.jeecms.cms.manager.assist.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import ch.ethz.ssh2.channel.Channel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import com.jeecms.cms.entity.assist.CmsAcquisitionHistory;
 import com.jeecms.cms.entity.assist.CmsAcquisitionTemp;
 import com.jeecms.cms.entity.assist.CmsAcquisition.AcquisitionResultType;
 import com.jeecms.cms.entity.main.Content;
-import com.jeecms.cms.entity.main.Channel;
 import com.jeecms.cms.entity.main.ContentExt;
 import com.jeecms.cms.entity.main.ContentTxt;
 import com.jeecms.cms.manager.assist.CmsAcquisitionHistoryMng;
@@ -159,15 +159,18 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
 		return beans;
 	}
 
-	public Content saveContent(String title, String txt, String origin,
-			String author,String description,Date releaseDate,Integer acquId,
-			AcquisitionResultType resultType, CmsAcquisitionTemp temp,
-			CmsAcquisitionHistory history) {
+	public Content saveContent(String title, String txt, String origin, String vedioPath,
+							   String author,String description,Date releaseDate,Integer acquId,
+							   AcquisitionResultType resultType, CmsAcquisitionTemp temp,
+							   CmsAcquisitionHistory history){
 		CmsAcquisition acqu = findById(acquId);
 		Content c = new Content();
 		c.setSite(acqu.getSite());
 		com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
 		c.setModel(channel.getModel());
+		//to do
+//		if(!vedioPath.isEmpty())
+//			c.setAttr();
 		ContentExt cext = new ContentExt();
 		ContentTxt ctxt = new ContentTxt();
 		cext.setAuthor(author);

@@ -48,6 +48,12 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 	public static String PROP_DESCRIPTION_START = "descriptionStart";
 	public static String PROP_DYNAMIC_END = "dynamicEnd";
 
+	public static String PROP_VEDIOPATH_START = "vediopathStart";
+	public static String PROP_VEDIOPATH_END = "vediopathEnd";
+
+
+
+
 
 	// constructors
 	public BaseCmsAcquisition () {
@@ -149,6 +155,9 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 	private java.lang.String contentPrefix;
 	private java.lang.String imgPrefix;
 	private java.lang.Integer queue;
+
+	private java.lang.String vediopathStart;
+	private java.lang.String vediopathEnd;
 
 	// many to one
 	private com.jeecms.core.entity.CmsUser user;
@@ -836,7 +845,21 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		}
 		return this.hashCode;
 	}
+	public String getVediopathStart() {
+		return vediopathStart;
+	}
 
+	public void setVediopathStart(String vediopathStart) {
+		this.vediopathStart = vediopathStart;
+	}
+
+	public String getVediopathEnd() {
+		return vediopathEnd;
+	}
+
+	public void setVediopathEnd(String vediopathEnd) {
+		this.vediopathEnd = vediopathEnd;
+	}
 
 	public String toString () {
 		return super.toString();
