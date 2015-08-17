@@ -159,6 +159,11 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 	private java.lang.String vediopathStart;
 	private java.lang.String vediopathEnd;
 
+
+
+	private java.lang.String vediopathSetStart;
+	private java.lang.String vediopathSetEnd;
+
 	// many to one
 	private com.jeecms.core.entity.CmsUser user;
 	private com.jeecms.cms.entity.main.ContentType type;
@@ -775,7 +780,21 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		this.user = user;
 	}
 
+	public String getVediopathSetStart() {
+		return vediopathSetStart;
+	}
 
+	public void setVediopathSetStart(String vediopathSetStart) {
+		this.vediopathSetStart = vediopathSetStart;
+	}
+
+	public String getVediopathSetEnd() {
+		return vediopathSetEnd;
+	}
+
+	public void setVediopathSetEnd(String vediopathSetEnd) {
+		this.vediopathSetEnd = vediopathSetEnd;
+	}
 	/**
 	 * Return the value associated with the column: type_id
 	 */

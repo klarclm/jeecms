@@ -1,6 +1,7 @@
 package com.jeecms.cms.manager.assist.impl;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -168,9 +169,13 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
 		c.setSite(acqu.getSite());
 		com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
 		c.setModel(channel.getModel());
-		//to do
-//		if(!vedioPath.isEmpty())
-//			c.setAttr();
+
+		if(!vedioPath.isEmpty()){
+			Map<String,String> attr = new HashMap<String, String>();
+			attr.put("vedioUrl", vedioPath);
+			c.setAttr(attr);
+		}
+
 		ContentExt cext = new ContentExt();
 		ContentTxt ctxt = new ContentTxt();
 		cext.setAuthor(author);

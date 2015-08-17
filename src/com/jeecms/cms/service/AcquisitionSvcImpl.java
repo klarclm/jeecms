@@ -204,6 +204,40 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			return list;
 		}
 
+		private List<String> findbetweenContentSet(String html,String linksetStart, String linksetEnd, String linkStart,String linkEnd) {
+			List<String> list = new ArrayList<String>();
+			try {
+				int start = html.indexOf(linksetStart);
+				if (start == -1) {
+					return list;
+				}
+				start += linksetStart.length();
+				int end = html.indexOf(linksetEnd, start);
+				if (end == -1) {
+					return list;
+				}
+				String s = html.substring(start, end);
+				start = 0;
+				String match;
+				log.info(s);
+				while ((start = s.indexOf(linkStart, start)) != -1) {
+					start += linkStart.length();
+					end = s.indexOf(linkEnd, start);
+					if (end == -1) {
+						return list;
+					} else {
+						match = s.substring(start, end);
+
+						list.add(match);
+						start = end + linkEnd.length();
+					}
+				}
+			} catch (Exception e) {
+				log.warn(null, e);
+			}
+			return list;
+		}
+
 		private Content saveContent(HttpClient client, CharsetHandler handler,String contextPath,
 				String uploadPath,Integer acquId, String url, CmsAcquisitionTemp temp, CmsAcquisitionHistory history) {
 			CmsAcquisition acqu = cmsAcquisitionMng.findById(acquId);
@@ -226,6 +260,8 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			String descriptionEnd=acqu.getDescriptionEnd();
 			String vediopathStart=acqu.getVediopathStart();
 			String vediopathEnd=acqu.getVediopathEnd();
+			String vediopathSetStart=acqu.getVediopathSetStart();
+			String vediopathSetEnd=acqu.getVediopathSetEnd();
 
 			history.setAcquisition(acqu);
 			try {
@@ -292,20 +328,26 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 				}
 
 				String vedioPath = null;
-				if(StringUtils.isNotBlank(vediopathStart)){
-					start = html.indexOf(vediopathStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+				if(!vediopathSetStart.isEmpty() && !vediopathSetEnd.isEmpty()) {
+					List<String> vedioList = findbetweenContentSet(html, vediopathSetStart,vediopathSetEnd,vediopathStart,vediopathEnd);
+					vedioPath = vedioList.get(0);
+				}else {
+					if(StringUtils.isNotBlank(vediopathStart)){
+						start = html.indexOf(vediopathStart);
+						if (start == -1) {
+							return handerResult(temp, history, null,
+									AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+						}
+						start += vediopathStart.length();
+						end = html.indexOf(vediopathEnd, start);
+						if (end == -1) {
+							return handerResult(temp, history, null,
+									AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+						}
+						vedioPath = html.substring(start, end);
 					}
-					start += vediopathStart.length();
-					end = html.indexOf(vediopathEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
-					}
-					vedioPath = html.substring(start, end);
 				}
+
 
 				String origin = null;
 				if(StringUtils.isNotBlank(originStart)){
