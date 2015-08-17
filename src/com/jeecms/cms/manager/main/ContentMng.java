@@ -114,6 +114,7 @@ public interface ContentMng {
 			String[] picPaths, String[] picDescs, Integer channelId,
 			Integer typeId, Boolean draft,Boolean contribute, CmsUser user, boolean forMember);
 
+
 	public Content save(Content bean, ContentExt ext, ContentTxt txt,
 			Integer channelId,Integer typeId, Boolean draft, CmsUser user, boolean forMember);
 

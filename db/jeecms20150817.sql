@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-08-17 22:31:25
+Date: 2015-08-17 23:02:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -69,10 +69,10 @@ CREATE TABLE `jc_acquisition` (
   `origin_start` varchar(255) DEFAULT NULL COMMENT '来源开始',
   `origin_end` varchar(255) DEFAULT NULL COMMENT '来源结束',
   `releaseTime_format` varchar(255) DEFAULT NULL COMMENT '发布时间格式',
-  `vediopath_start` varchar(50) DEFAULT NULL,
-  `vediopath_end` varchar(50) DEFAULT NULL,
-  `vediopath_set_start` varchar(50) DEFAULT NULL,
-  `vediopath_set_end` varchar(50) DEFAULT NULL,
+  `vediopath_start` varchar(255) DEFAULT NULL,
+  `vediopath_end` varchar(255) DEFAULT NULL,
+  `vediopath_set_start` varchar(255) DEFAULT NULL,
+  `vediopath_set_end` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`acquisition_id`),
   KEY `fk_jc_acquisition_channel` (`channel_id`),
   KEY `fk_jc_acquisition_contenttype` (`type_id`),
@@ -88,7 +88,7 @@ CREATE TABLE `jc_acquisition` (
 -- Records of jc_acquisition
 -- ----------------------------
 INSERT INTO `jc_acquisition` VALUES ('1', '1', '84', '1', '1', '新闻采集', '2015-08-16 17:40:33', '2015-08-16 17:46:44', '0', '0', '0', '0', '500', 'GBK', 'http://roll.mil.news.sina.com.cn/col/zgjq/index_2.shtml', '', '2', '10', '<ul class=\"linkNews\">', '<style>\r\n', '<li><a href=\"', '\" target=\"_blank\">', '<meta property=\"og:title\" content=\"', '\" />', null, null, '', '', '<!-- publish_helper name=\'原始正文\' p_id=\'27\' t_id=\'1\' d_id=\'837035\' f_id=\'2\' -->', '<!-- publish_helper_end -->\r\n', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '<meta name=\"mediaid\" content=\"', '\" />\r\n', '', '', 'yyyy-MM-dd HH:mm:ss', '<meta name=\"mediaid\" content=\"', '\" />', null, null);
-INSERT INTO `jc_acquisition` VALUES ('2', '1', '84', '1', '1', '视频采集', '2015-08-16 17:47:32', '2015-08-16 17:48:00', '0', '0', '0', '0', '500', 'GBK', 'http://roll.mil.news.sina.com.cn/col/zgjq/index_2.shtml', '', '2', '10', '<ul class=\"linkNews\">', '<style>', '<li><a href=\"', '\" target=\"_blank\">', '<meta property=\"og:title\" content=\"', '\" />', null, null, '', '', '<!-- publish_helper name=\'原始正文\' p_id=\'27\' t_id=\'1\' d_id=\'837035\' f_id=\'2\' -->', '<!-- publish_helper_end -->', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '<meta property=\"og:title\" content=\"', '\" />', null, null);
+INSERT INTO `jc_acquisition` VALUES ('2', '1', '84', '1', '1', '56视频采集', '2015-08-16 17:47:32', '2015-08-16 17:48:00', '0', '0', '0', '0', '500', 'GBK', 'http://i.56.com/u/wlun24_561470882', '', '2', '10', '<ul class=\"vlist_mod clearfix slide_list\">', '</ul>', '<a href=\"', '\" title=\"', '<title>', '_视频在线观看 - 56.com</title>', null, null, '', '', '<!-- publish_helper name=\'原始正文\' p_id=\'27\' t_id=\'1\' d_id=\'837035\' f_id=\'2\' -->', '<!-- publish_helper_end -->', null, null, '0', 'NONE', '0', '', '', '<em class=\"total_play_num\">', '</em>', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '<a href=\"http://www.56.com/js/promo/miniPlayer.htm?vid=', '\" class=\"tool_btn\"', '', '');
 
 -- ----------------------------
 -- Table structure for jc_acquisition_history
@@ -3013,7 +3013,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -3093,6 +3093,8 @@ INSERT INTO `jc_log` VALUES ('72', '1', '1', '3', '2015-08-16 17:38:21', '127.0.
 INSERT INTO `jc_log` VALUES ('73', '1', '1', '3', '2015-08-16 17:40:32', '127.0.0.1', '/jeeadmin/jeecms/acquisition/o_update.do', '修改采集', 'id=1;name=新闻采集');
 INSERT INTO `jc_log` VALUES ('74', '1', '1', '3', '2015-08-16 17:47:00', '127.0.0.1', '/jeeadmin/jeecms/acquisition/o_update.do', '修改采集', 'id=1;name=新闻采集');
 INSERT INTO `jc_log` VALUES ('75', '1', '1', '3', '2015-08-16 17:47:30', '127.0.0.1', '/jeeadmin/jeecms/acquisition/o_update.do', '修改采集', 'id=2;name=视频采集');
+INSERT INTO `jc_log` VALUES ('76', '1', null, '1', '2015-08-17 22:31:39', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('77', '1', '1', '3', '2015-08-17 23:01:55', '127.0.0.1', '/jeeadmin/jeecms/acquisition/o_update.do', '修改采集', 'id=2;name=56视频采集');
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -4088,7 +4090,7 @@ CREATE TABLE `jc_user` (
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', 'admin', '', '2011-01-03 00:00:00', '127.0.0.1', '2015-08-16 17:32:59', '127.0.0.1', '1058', '9', '202425', '4568', '2015-08-15', '1', '0', '0');
+INSERT INTO `jc_user` VALUES ('1', '1', 'admin', '', '2011-01-03 00:00:00', '127.0.0.1', '2015-08-17 22:31:39', '127.0.0.1', '1059', '9', '202425', '4568', '2015-08-15', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_user_attr

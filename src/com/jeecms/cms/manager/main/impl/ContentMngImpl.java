@@ -96,7 +96,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 	}
 
 	public Pagination getPageForMember(String title, Integer channelId,Integer siteId,Integer modelId, Integer memberId, int pageNo, int pageSize) {
-		return dao.getPage(title, null,memberId,memberId, false, false,ContentStatus.all, null, siteId,modelId,  channelId, 0, pageNo,pageSize);
+		return dao.getPage(title, null, memberId, memberId, false, false, ContentStatus.all, null, siteId, modelId, channelId, 0, pageNo, pageSize);
 	}
 	
 	@Transactional(readOnly = true)
@@ -127,7 +127,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Integer[] typeIds, Boolean titleImg, Boolean recommend,
 			String title,Map<String,String[]>attr, int orderBy, int pageNo, int pageSize) {
 		return dao.getPageBySiteIdsForTag(siteIds, typeIds, titleImg,
-				recommend, title, attr,orderBy, pageNo, pageSize);
+				recommend, title, attr, orderBy, pageNo, pageSize);
 	}
 
 	@Transactional(readOnly = true)
@@ -135,7 +135,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Integer[] typeIds, Boolean titleImg, Boolean recommend,
 			String title, Map<String,String[]>attr,int orderBy, Integer first, Integer count) {
 		return dao.getListBySiteIdsForTag(siteIds, typeIds, titleImg,
-				recommend, title,attr, orderBy, first, count);
+				recommend, title, attr, orderBy, first, count);
 	}
 
 	@Transactional(readOnly = true)
@@ -143,7 +143,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Integer[] typeIds, Boolean titleImg, Boolean recommend,
 			String title,Map<String,String[]>attr, int orderBy, int option, int pageNo, int pageSize) {
 		return dao.getPageByChannelIdsForTag(channelIds, typeIds, titleImg,
-				recommend, title,attr, orderBy, option, pageNo, pageSize);
+				recommend, title, attr, orderBy, option, pageNo, pageSize);
 	}
 
 	@Transactional(readOnly = true)
@@ -151,7 +151,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Integer[] typeIds, Boolean titleImg, Boolean recommend,
 			String title, Map<String,String[]>attr,int orderBy, int option,Integer first, Integer count) {
 		return dao.getListByChannelIdsForTag(channelIds, typeIds, titleImg,
-				recommend, title,attr, orderBy, option,first, count);
+				recommend, title, attr, orderBy, option, first, count);
 	}
 
 	@Transactional(readOnly = true)
@@ -160,7 +160,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Boolean recommend, String title,Map<String,String[]>attr, int orderBy, int pageNo,
 			int pageSize) {
 		return dao.getPageByChannelPathsForTag(paths, siteIds, typeIds,
-				titleImg, recommend, title,attr, orderBy, pageNo, pageSize);
+				titleImg, recommend, title, attr, orderBy, pageNo, pageSize);
 	}
 
 	@Transactional(readOnly = true)
@@ -169,7 +169,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Boolean recommend, String title,Map<String,String[]>attr, int orderBy, Integer first,
 			Integer count) {
 		return dao.getListByChannelPathsForTag(paths, siteIds, typeIds,
-				titleImg, recommend, title,attr, orderBy, first, count);
+				titleImg, recommend, title, attr, orderBy, first, count);
 	}
 
 	@Transactional(readOnly = true)
@@ -178,7 +178,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Boolean titleImg, Boolean recommend, String title, Map<String,String[]>attr,int orderBy,
 			int pageNo, int pageSize) {
 		return dao.getPageByTopicIdForTag(topicId, siteIds, channelIds,
-				typeIds, titleImg, recommend, title,attr, orderBy, pageNo, pageSize);
+				typeIds, titleImg, recommend, title, attr, orderBy, pageNo, pageSize);
 	}
 
 	@Transactional(readOnly = true)
@@ -187,7 +187,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Boolean titleImg, Boolean recommend, String title, Map<String,String[]>attr,int orderBy,
 			Integer first, Integer count) {
 		return dao.getListByTopicIdForTag(topicId, siteIds, channelIds,
-				typeIds, titleImg, recommend, title,attr, orderBy, first, count);
+				typeIds, titleImg, recommend, title, attr, orderBy, first, count);
 	}
 
 	@Transactional(readOnly = true)
@@ -196,7 +196,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Integer excludeId, Boolean titleImg, Boolean recommend,
 			String title, Map<String,String[]>attr,int orderBy, int pageNo, int pageSize) {
 		return dao.getPageByTagIdsForTag(tagIds, siteIds, channelIds, typeIds,
-				excludeId, titleImg, recommend, title, attr,orderBy, pageNo,
+				excludeId, titleImg, recommend, title, attr, orderBy, pageNo,
 				pageSize);
 	}
 
@@ -206,7 +206,7 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 			Integer excludeId, Boolean titleImg, Boolean recommend,
 			String title, Map<String,String[]>attr,int orderBy, Integer first, Integer count) {
 		return dao.getListByTagIdsForTag(tagIds, siteIds, channelIds, typeIds,
-				excludeId, titleImg, recommend, title,attr, orderBy, first, count);
+				excludeId, titleImg, recommend, title, attr, orderBy, first, count);
 	}
 
 	@Transactional(readOnly = true)
@@ -214,6 +214,8 @@ public class ContentMngImpl implements ContentMng, ChannelDeleteChecker {
 		Content entity = dao.findById(id);
 		return entity;
 	}
+
+
 
 	public Content save(Content bean, ContentExt ext, ContentTxt txt,
 			Integer[] channelIds, Integer[] topicIds, Integer[] viewGroupIds,
