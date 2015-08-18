@@ -159,10 +159,13 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 	private java.lang.String vediopathStart;
 	private java.lang.String vediopathEnd;
 
-
-
 	private java.lang.String vediopathSetStart;
 	private java.lang.String vediopathSetEnd;
+
+	private java.lang.String linksetvediopathStart;
+	private java.lang.String linksetvediopathEnd;
+	private java.lang.String linksetpicStart;
+	private java.lang.String linksetpicEnd;
 
 	// many to one
 	private com.jeecms.core.entity.CmsUser user;
@@ -225,7 +228,37 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		this.startTime = startTime;
 	}
 
+	public String getLinksetvediopathStart() {
+		return linksetvediopathStart;
+	}
 
+	public void setLinksetvediopathStart(String linksetvediopathStart) {
+		this.linksetvediopathStart = linksetvediopathStart;
+	}
+
+	public String getLinksetvediopathEnd() {
+		return linksetvediopathEnd;
+	}
+
+	public void setLinksetvediopathEnd(String linksetvediopathEnd) {
+		this.linksetvediopathEnd = linksetvediopathEnd;
+	}
+
+	public String getLinksetpicStart() {
+		return linksetpicStart;
+	}
+
+	public void setLinksetpicStart(String linksetpicStart) {
+		this.linksetpicStart = linksetpicStart;
+	}
+
+	public String getLinksetpicEnd() {
+		return linksetpicEnd;
+	}
+
+	public void setLinksetpicEnd(String linksetpicEnd) {
+		this.linksetpicEnd = linksetpicEnd;
+	}
 	/**
 	 * Return the value associated with the column: end_time
 	 */

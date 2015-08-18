@@ -33,259 +33,263 @@ import com.jeecms.core.manager.CmsUserMng;
 @Service
 @Transactional
 public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
-		ChannelDeleteChecker {
-	@Transactional(readOnly = true)
-	public List<CmsAcquisition> getList(Integer siteId) {
-		return dao.getList(siteId);
-	}
+        ChannelDeleteChecker {
+    @Transactional(readOnly = true)
+    public List<CmsAcquisition> getList(Integer siteId) {
+        return dao.getList(siteId);
+    }
 
-	@Transactional
-	public CmsAcquisition findById(Integer id) {
-		CmsAcquisition entity = dao.findById(id);
-		return entity;
-	}
+    @Transactional
+    public CmsAcquisition findById(Integer id) {
+        CmsAcquisition entity = dao.findById(id);
+        return entity;
+    }
 
-	public void stop(Integer id) {
-		CmsAcquisition acqu = findById(id);
-		if (acqu == null) {
-			return;
-		}
-		if (acqu.getStatus() == CmsAcquisition.START) {
-			acqu.setStatus(CmsAcquisition.STOP);
-		} else if (acqu.getStatus() == CmsAcquisition.PAUSE) {
-			acqu.setCurrNum(0);
-			acqu.setCurrItem(0);
-			acqu.setTotalItem(0);
-		}
-	}
+    public void stop(Integer id) {
+        CmsAcquisition acqu = findById(id);
+        if (acqu == null) {
+            return;
+        }
+        if (acqu.getStatus() == CmsAcquisition.START) {
+            acqu.setStatus(CmsAcquisition.STOP);
+        } else if (acqu.getStatus() == CmsAcquisition.PAUSE) {
+            acqu.setCurrNum(0);
+            acqu.setCurrItem(0);
+            acqu.setTotalItem(0);
+        }
+    }
 
-	public void pause(Integer id) {
-		CmsAcquisition acqu = findById(id);
-		if (acqu == null) {
-			return;
-		}
-		if (acqu.getStatus() == CmsAcquisition.START) {
-			acqu.setStatus(CmsAcquisition.PAUSE);
-		}
-	}
+    public void pause(Integer id) {
+        CmsAcquisition acqu = findById(id);
+        if (acqu == null) {
+            return;
+        }
+        if (acqu.getStatus() == CmsAcquisition.START) {
+            acqu.setStatus(CmsAcquisition.PAUSE);
+        }
+    }
 
-	public CmsAcquisition start(Integer id) {
-		CmsAcquisition acqu = findById(id);
-		if (acqu == null) {
-			return acqu;
-		}
-		acqu.setStatus(CmsAcquisition.START);
-		acqu.setStartTime(new Date());
-		acqu.setEndTime(null);
-		if (acqu.getCurrNum() <= 0) {
-			acqu.setCurrNum(1);
-		}
-		if (acqu.getCurrItem() <= 0) {
-			acqu.setCurrItem(1);
-		}
-		acqu.setTotalItem(0);
-		return acqu;
-	}
+    public CmsAcquisition start(Integer id) {
+        CmsAcquisition acqu = findById(id);
+        if (acqu == null) {
+            return acqu;
+        }
+        acqu.setStatus(CmsAcquisition.START);
+        acqu.setStartTime(new Date());
+        acqu.setEndTime(null);
+        if (acqu.getCurrNum() <= 0) {
+            acqu.setCurrNum(1);
+        }
+        if (acqu.getCurrItem() <= 0) {
+            acqu.setCurrItem(1);
+        }
+        acqu.setTotalItem(0);
+        return acqu;
+    }
 
-	public void end(Integer id) {
-		CmsAcquisition acqu = findById(id);
-		if (acqu == null) {
-			return;
-		}
-		acqu.setStatus(CmsAcquisition.STOP);
-		acqu.setEndTime(new Date());
-		acqu.setCurrNum(0);
-		acqu.setCurrItem(0);
-		acqu.setTotalItem(0);
-		acqu.setTotalItem(0);
-	}
+    public void end(Integer id) {
+        CmsAcquisition acqu = findById(id);
+        if (acqu == null) {
+            return;
+        }
+        acqu.setStatus(CmsAcquisition.STOP);
+        acqu.setEndTime(new Date());
+        acqu.setCurrNum(0);
+        acqu.setCurrItem(0);
+        acqu.setTotalItem(0);
+        acqu.setTotalItem(0);
+    }
 
-	public boolean isNeedBreak(Integer id, int currNum, int currItem,
-			int totalItem) {
-		CmsAcquisition acqu = findById(id);
-		if (acqu == null) {
-			return true;
-		} else if (acqu.isPuase()) {
-			acqu.setCurrNum(currNum);
-			acqu.setCurrItem(currItem);
-			acqu.setTotalItem(totalItem);
-			acqu.setEndTime(new Date());
-			return true;
-		} else if (acqu.isStop()) {
-			acqu.setCurrNum(0);
-			acqu.setCurrItem(0);
-			acqu.setTotalItem(0);
-			acqu.setEndTime(new Date());
-			return true;
-		} else {
-			acqu.setCurrNum(currNum);
-			acqu.setCurrItem(currItem);
-			acqu.setTotalItem(totalItem);
-			return false;
-		}
-	}
+    public boolean isNeedBreak(Integer id, int currNum, int currItem,
+                               int totalItem) {
+        CmsAcquisition acqu = findById(id);
+        if (acqu == null) {
+            return true;
+        } else if (acqu.isPuase()) {
+            acqu.setCurrNum(currNum);
+            acqu.setCurrItem(currItem);
+            acqu.setTotalItem(totalItem);
+            acqu.setEndTime(new Date());
+            return true;
+        } else if (acqu.isStop()) {
+            acqu.setCurrNum(0);
+            acqu.setCurrItem(0);
+            acqu.setTotalItem(0);
+            acqu.setEndTime(new Date());
+            return true;
+        } else {
+            acqu.setCurrNum(currNum);
+            acqu.setCurrItem(currItem);
+            acqu.setTotalItem(totalItem);
+            return false;
+        }
+    }
 
-	public CmsAcquisition save(CmsAcquisition bean, Integer channelId,
-			Integer typeId, Integer userId, Integer siteId) {
-		bean.setChannel(channelMng.findById(channelId));
-		bean.setType(contentTypeMng.findById(typeId));
-		bean.setUser(cmsUserMng.findById(userId));
-		bean.setSite(cmsSiteMng.findById(siteId));
-		bean.init();
-		dao.save(bean);
-		return bean;
-	}
+    public CmsAcquisition save(CmsAcquisition bean, Integer channelId,
+                               Integer typeId, Integer userId, Integer siteId) {
+        bean.setChannel(channelMng.findById(channelId));
+        bean.setType(contentTypeMng.findById(typeId));
+        bean.setUser(cmsUserMng.findById(userId));
+        bean.setSite(cmsSiteMng.findById(siteId));
+        bean.init();
+        dao.save(bean);
+        return bean;
+    }
 
-	public CmsAcquisition update(CmsAcquisition bean, Integer channelId,
-			Integer typeId) {
-		Updater<CmsAcquisition> updater = new Updater<CmsAcquisition>(bean);
-		bean = dao.updateByUpdater(updater);
-		bean.setChannel(channelMng.findById(channelId));
-		bean.setType(contentTypeMng.findById(typeId));
-		return bean;
-	}
+    public CmsAcquisition update(CmsAcquisition bean, Integer channelId,
+                                 Integer typeId) {
+        Updater<CmsAcquisition> updater = new Updater<CmsAcquisition>(bean);
+        bean = dao.updateByUpdater(updater);
+        bean.setChannel(channelMng.findById(channelId));
+        bean.setType(contentTypeMng.findById(typeId));
+        return bean;
+    }
 
-	public CmsAcquisition deleteById(Integer id) {
-		//删除采集记录
-		acquisitionHistoryMng.deleteByAcquisition(id);
-		CmsAcquisition bean = dao.deleteById(id);
-		return bean;
-	}
+    public CmsAcquisition deleteById(Integer id) {
+        //删除采集记录
+        acquisitionHistoryMng.deleteByAcquisition(id);
+        CmsAcquisition bean = dao.deleteById(id);
+        return bean;
+    }
 
-	public CmsAcquisition[] deleteByIds(Integer[] ids) {
-		CmsAcquisition[] beans = new CmsAcquisition[ids.length];
-		for (int i = 0, len = ids.length; i < len; i++) {
-			beans[i] = deleteById(ids[i]);
-		}
-		return beans;
-	}
+    public CmsAcquisition[] deleteByIds(Integer[] ids) {
+        CmsAcquisition[] beans = new CmsAcquisition[ids.length];
+        for (int i = 0, len = ids.length; i < len; i++) {
+            beans[i] = deleteById(ids[i]);
+        }
+        return beans;
+    }
 
-	public Content saveContent(String title, String txt, String origin, String vedioPath,
-							   String author,String description,Date releaseDate,Integer acquId,
-							   AcquisitionResultType resultType, CmsAcquisitionTemp temp,
-							   CmsAcquisitionHistory history){
-		CmsAcquisition acqu = findById(acquId);
-		Content c = new Content();
-		c.setSite(acqu.getSite());
-		com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
-		c.setModel(channel.getModel());
+    public Content saveContent(String title, String txt, String origin, String vedioPath, String vedioPic,
+                               String author, String description, Date releaseDate, Integer acquId,
+                               AcquisitionResultType resultType, CmsAcquisitionTemp temp,
+                               CmsAcquisitionHistory history) {
+        CmsAcquisition acqu = findById(acquId);
+        Content c = new Content();
+        c.setSite(acqu.getSite());
+        com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
+        c.setModel(channel.getModel());
 
-		if(!vedioPath.isEmpty()){
-			Map<String,String> attr = new HashMap<String, String>();
-			attr.put("vedioUrl", vedioPath);
-			c.setAttr(attr);
-		}
+        if (vedioPath != null & !vedioPath.isEmpty()) {
+            Map<String, String> attr = new HashMap<String, String>();
+            attr.put("vedioUrl", vedioPath);
+            c.setAttr(attr);
+        }
 
-		ContentExt cext = new ContentExt();
-		ContentTxt ctxt = new ContentTxt();
-		cext.setAuthor(author);
-		cext.setOrigin(origin);
-		cext.setReleaseDate(releaseDate);
-		cext.setTitle(title);
-		cext.setDescription(description);
-		ctxt.setTxt(txt);
-		Content content = contentMng.save(c, cext, ctxt,null, null, null,
-				null, null, null, null, null, null, acqu.getChannel().getId(),
-				acqu.getType().getId(), false,false, acqu.getUser(), false);
-		history.setTitle(title);
-		history.setContent(content);
-		history.setDescription(resultType.name());
-		temp.setTitle(title);
-		temp.setDescription(resultType.name());
-		return content;
-	}
+        ContentExt cext = new ContentExt();
+        ContentTxt ctxt = new ContentTxt();
+        cext.setAuthor(author);
+        cext.setOrigin(origin);
+        cext.setReleaseDate(releaseDate);
+        cext.setTitle(title);
+        cext.setDescription(description);
 
-	public String checkForChannelDelete(Integer channelId) {
-		if (dao.countByChannelId(channelId) > 0) {
-			return "cmsAcquisition.error.cannotDeleteChannel";
-		} else {
-			return null;
-		}
-	}
+        if (vedioPic != null)
+            cext.setTitleImg(vedioPic);
 
-	public CmsAcquisition getStarted(Integer siteId) {
-		return dao.getStarted(siteId);
-	}
+        ctxt.setTxt(txt);
+        Content content = contentMng.save(c, cext, ctxt, null, null, null,
+                null, null, null, null, null, null, acqu.getChannel().getId(),
+                acqu.getType().getId(), false, false, acqu.getUser(), false);
+        history.setTitle(title);
+        history.setContent(content);
+        history.setDescription(resultType.name());
+        temp.setTitle(title);
+        temp.setDescription(resultType.name());
+        return content;
+    }
 
-	public Integer hasStarted(Integer siteId) {
-		return getStarted(siteId) == null ? 0 : getMaxQueue(siteId) + 1;
-	}
+    public String checkForChannelDelete(Integer channelId) {
+        if (dao.countByChannelId(channelId) > 0) {
+            return "cmsAcquisition.error.cannotDeleteChannel";
+        } else {
+            return null;
+        }
+    }
 
-	public Integer getMaxQueue(Integer siteId) {
-		return dao.getMaxQueue(siteId);
-	}
+    public CmsAcquisition getStarted(Integer siteId) {
+        return dao.getStarted(siteId);
+    }
 
-	public void addToQueue(Integer[] ids, Integer queueNum) {
-		for (Integer id : ids) {
-			CmsAcquisition acqu = findById(id);
-			if (acqu.getStatus() == CmsAcquisition.START || acqu.getQueue() > 0) {
-				continue;
-			}
-			acqu.setQueue(queueNum++);
-		}
-	}
+    public Integer hasStarted(Integer siteId) {
+        return getStarted(siteId) == null ? 0 : getMaxQueue(siteId) + 1;
+    }
 
-	public void cancel(Integer siteId, Integer id) {
-		CmsAcquisition acqu = findById(id);
-		Integer queue = acqu.getQueue();
-		for (CmsAcquisition c : getLargerQueues(siteId, queue)) {
-			c.setQueue(c.getQueue() - 1);
-		}
-		acqu.setQueue(0);
-	}
+    public Integer getMaxQueue(Integer siteId) {
+        return dao.getMaxQueue(siteId);
+    }
 
-	public List<CmsAcquisition> getLargerQueues(Integer siteId, Integer queueNum) {
-		return dao.getLargerQueues(siteId, queueNum);
-	}
+    public void addToQueue(Integer[] ids, Integer queueNum) {
+        for (Integer id : ids) {
+            CmsAcquisition acqu = findById(id);
+            if (acqu.getStatus() == CmsAcquisition.START || acqu.getQueue() > 0) {
+                continue;
+            }
+            acqu.setQueue(queueNum++);
+        }
+    }
 
-	public CmsAcquisition popAcquFromQueue(Integer siteId) {
-		CmsAcquisition acquisition = dao.popAcquFromQueue(siteId);
-		if (acquisition != null) {
-			Integer id = acquisition.getId();
-			cancel(siteId, id);
-		}
-		return acquisition;
-	}
+    public void cancel(Integer siteId, Integer id) {
+        CmsAcquisition acqu = findById(id);
+        Integer queue = acqu.getQueue();
+        for (CmsAcquisition c : getLargerQueues(siteId, queue)) {
+            c.setQueue(c.getQueue() - 1);
+        }
+        acqu.setQueue(0);
+    }
 
-	private ChannelMng channelMng;
-	private ContentMng contentMng;
-	private ContentTypeMng contentTypeMng;
-	private CmsSiteMng cmsSiteMng;
-	private CmsUserMng cmsUserMng;
-	private CmsAcquisitionDao dao;
-	@Autowired
-	private CmsModelMng modelMng;
-	@Autowired
-	private CmsAcquisitionHistoryMng acquisitionHistoryMng;
+    public List<CmsAcquisition> getLargerQueues(Integer siteId, Integer queueNum) {
+        return dao.getLargerQueues(siteId, queueNum);
+    }
 
-	@Autowired
-	public void setChannelMng(ChannelMng channelMng) {
-		this.channelMng = channelMng;
-	}
+    public CmsAcquisition popAcquFromQueue(Integer siteId) {
+        CmsAcquisition acquisition = dao.popAcquFromQueue(siteId);
+        if (acquisition != null) {
+            Integer id = acquisition.getId();
+            cancel(siteId, id);
+        }
+        return acquisition;
+    }
 
-	@Autowired
-	public void setContentMng(ContentMng contentMng) {
-		this.contentMng = contentMng;
-	}
+    private ChannelMng channelMng;
+    private ContentMng contentMng;
+    private ContentTypeMng contentTypeMng;
+    private CmsSiteMng cmsSiteMng;
+    private CmsUserMng cmsUserMng;
+    private CmsAcquisitionDao dao;
+    @Autowired
+    private CmsModelMng modelMng;
+    @Autowired
+    private CmsAcquisitionHistoryMng acquisitionHistoryMng;
 
-	@Autowired
-	public void setContentTypeMng(ContentTypeMng contentTypeMng) {
-		this.contentTypeMng = contentTypeMng;
-	}
+    @Autowired
+    public void setChannelMng(ChannelMng channelMng) {
+        this.channelMng = channelMng;
+    }
 
-	@Autowired
-	public void setCmsSiteMng(CmsSiteMng cmsSiteMng) {
-		this.cmsSiteMng = cmsSiteMng;
-	}
+    @Autowired
+    public void setContentMng(ContentMng contentMng) {
+        this.contentMng = contentMng;
+    }
 
-	@Autowired
-	public void setCmsUserMng(CmsUserMng cmsUserMng) {
-		this.cmsUserMng = cmsUserMng;
-	}
+    @Autowired
+    public void setContentTypeMng(ContentTypeMng contentTypeMng) {
+        this.contentTypeMng = contentTypeMng;
+    }
 
-	@Autowired
-	public void setDao(CmsAcquisitionDao dao) {
-		this.dao = dao;
-	}
+    @Autowired
+    public void setCmsSiteMng(CmsSiteMng cmsSiteMng) {
+        this.cmsSiteMng = cmsSiteMng;
+    }
+
+    @Autowired
+    public void setCmsUserMng(CmsUserMng cmsUserMng) {
+        this.cmsUserMng = cmsUserMng;
+    }
+
+    @Autowired
+    public void setDao(CmsAcquisitionDao dao) {
+        this.dao = dao;
+    }
 
 }

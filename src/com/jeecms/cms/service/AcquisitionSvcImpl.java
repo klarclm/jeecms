@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
@@ -110,6 +108,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			HttpClient client = new DefaultHttpClient();
 			CharsetHandler handler = new CharsetHandler(acqu.getPageEncoding());
 			List<String> contentList;
+			Map<String, String> m;
 			String url;
 			int currNum = acqu.getCurrNum();
 			int currItem = acqu.getCurrItem();
@@ -117,6 +116,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			for (int i = plans.length - currNum; i >= 0; i--) {
 				url = plans[i];
 				contentList = getContentList(client, handler, url, acqu);
+				m = getvediopicmap(client,handler,url,acqu);
 				String link;
 				for (int j = contentList.size() - currItem; j >= 0; j--) {
 					if (cmsAcquisitionMng.isNeedBreak(acqu.getId(),
@@ -144,7 +144,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 					CmsSite site=acqu.getSite();
 					site=siteMng.findById(site.getId());
 					String contextPath=cmsConfigMng.get().getContextPath();
-					saveContent(client, handler,contextPath,site.getUploadPath(),acquId, link,temp,
+					saveContent(m, client, handler,contextPath,site.getUploadPath(),acquId, link,temp,
 							history);
 				}
 				currItem = 1;
@@ -203,7 +203,29 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			}
 			return list;
 		}
-
+		private Map<String, String> getvediopicmap(HttpClient client,
+											CharsetHandler handler, String url, CmsAcquisition acqu) {
+			String linksetStart=acqu.getLinksetStart();
+			String linksetEnd=acqu.getLinksetEnd();
+			String linksetvediopathStart=acqu.getLinksetStart();
+			String linksetvediopathEnd=acqu.getLinksetEnd();
+			String linksetpicStart=acqu.getLinkStart();
+			String linksetpicEnd=acqu.getLinkEnd();
+			Map<String, String> m = new HashMap<String, String>();
+			try {
+				HttpGet httpget = new HttpGet(new URI(url));
+				String html = client.execute(httpget, handler);
+				List<String> vediopathlist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetvediopathStart, linksetvediopathEnd);
+				List<String> vediopiclist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetpicStart, linksetpicEnd);
+				if(vediopathlist!=null && vediopiclist!=null && vediopathlist.size()==vediopiclist.size() )
+					for(Integer i = 0; i < vediopathlist.size(); i++){
+						m.put(vediopathlist.get(i), vediopiclist.get(i));
+					}
+			} catch (Exception e) {
+				log.warn(null, e);
+			}
+			return m;
+		}
 		private List<String> findbetweenContentSet(String html,String linksetStart, String linksetEnd, String linkStart,String linkEnd) {
 			List<String> list = new ArrayList<String>();
 			try {
@@ -238,7 +260,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 			return list;
 		}
 
-		private Content saveContent(HttpClient client, CharsetHandler handler,String contextPath,
+		private Content saveContent(Map<String,String> m, HttpClient client, CharsetHandler handler,String contextPath,
 				String uploadPath,Integer acquId, String url, CmsAcquisitionTemp temp, CmsAcquisitionHistory history) {
 			CmsAcquisition acqu = cmsAcquisitionMng.findById(acquId);
 			String titleStart=acqu.getTitleStart();
@@ -347,7 +369,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 						vedioPath = html.substring(start, end);
 					}
 				}
-
+				log.error("vedioPath="+vedioPath);
 
 				String origin = null;
 				if(StringUtils.isNotBlank(originStart)){
@@ -431,8 +453,10 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 					}
 					view = html.substring(start, end);
 				}
-				
-				Content content = cmsAcquisitionMng.saveContent(title, txt,origin,vedioPath,author,description,releaseTime,
+				String vedioPic = null;
+				if (m!=null)
+					vedioPic = m.get(vedioPath);
+				Content content = cmsAcquisitionMng.saveContent(title, txt,origin,vedioPath,vedioPic,author,description,releaseTime,
 						acquId, AcquisitionResultType.SUCCESS, temp, history);
 				if(StringUtils.isNotBlank(view)){
 					ContentCount count=content.getContentCount();
