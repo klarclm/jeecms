@@ -39,519 +39,526 @@ import com.jeecms.core.manager.CmsSiteMng;
 
 @Service
 public class AcquisitionSvcImpl implements AcquisitionSvc {
-	private Logger log = LoggerFactory.getLogger(AcquisitionSvcImpl.class);
+    private Logger log = LoggerFactory.getLogger(AcquisitionSvcImpl.class);
 
-	public boolean start(Integer id) {
-		CmsAcquisition acqu = cmsAcquisitionMng.findById(id);
-		if (acqu == null || acqu.getStatus() == CmsAcquisition.START) {
-			return false;
-		}
-		Thread thread = new AcquisitionThread(acqu);
-		thread.start();
-		return true;
-	}
-	
-	private void end(CmsAcquisition acqu){
-		Integer siteId = acqu.getSite().getId();
-		cmsAcquisitionMng.end(acqu.getId());
-		CmsAcquisition acquisition = cmsAcquisitionMng.popAcquFromQueue(siteId);
-		if (acquisition != null) {
-			Integer id = acquisition.getId();
-			start(id);
-		}
-	}
+    public boolean start(Integer id) {
+        CmsAcquisition acqu = cmsAcquisitionMng.findById(id);
+        if (acqu == null || acqu.getStatus() == CmsAcquisition.START) {
+            return false;
+        }
+        Thread thread = new AcquisitionThread(acqu);
+        thread.start();
+        return true;
+    }
 
-	private CmsAcquisitionMng cmsAcquisitionMng;
-	private CmsAcquisitionHistoryMng cmsAcquisitionHistoryMng;
-	private CmsAcquisitionTempMng cmsAcquisitionTempMng;
-	@Autowired
-	private CmsSiteMng siteMng;
-	@Autowired
-	private CmsConfigMng cmsConfigMng;
-	@Autowired
-	private ImageSvc imgSvc;
-	@Autowired
-	private ContentCountMng contentCountMng;
+    private void end(CmsAcquisition acqu) {
+        Integer siteId = acqu.getSite().getId();
+        cmsAcquisitionMng.end(acqu.getId());
+        CmsAcquisition acquisition = cmsAcquisitionMng.popAcquFromQueue(siteId);
+        if (acquisition != null) {
+            Integer id = acquisition.getId();
+            start(id);
+        }
+    }
 
-	@Autowired
-	public void setCmsAcquisitionMng(CmsAcquisitionMng cmsAcquisitionMng) {
-		this.cmsAcquisitionMng = cmsAcquisitionMng;
-	}
+    private CmsAcquisitionMng cmsAcquisitionMng;
+    private CmsAcquisitionHistoryMng cmsAcquisitionHistoryMng;
+    private CmsAcquisitionTempMng cmsAcquisitionTempMng;
+    @Autowired
+    private CmsSiteMng siteMng;
+    @Autowired
+    private CmsConfigMng cmsConfigMng;
+    @Autowired
+    private ImageSvc imgSvc;
+    @Autowired
+    private ContentCountMng contentCountMng;
 
-	@Autowired
-	public void setCmsAcquisitionHistoryMng(
-			CmsAcquisitionHistoryMng cmsAcquisitionHistoryMng) {
-		this.cmsAcquisitionHistoryMng = cmsAcquisitionHistoryMng;
-	}
+    @Autowired
+    public void setCmsAcquisitionMng(CmsAcquisitionMng cmsAcquisitionMng) {
+        this.cmsAcquisitionMng = cmsAcquisitionMng;
+    }
 
-	@Autowired
-	public void setCmsAcquisitionTempMng(
-			CmsAcquisitionTempMng cmsAcquisitionTempMng) {
-		this.cmsAcquisitionTempMng = cmsAcquisitionTempMng;
-	}
+    @Autowired
+    public void setCmsAcquisitionHistoryMng(
+            CmsAcquisitionHistoryMng cmsAcquisitionHistoryMng) {
+        this.cmsAcquisitionHistoryMng = cmsAcquisitionHistoryMng;
+    }
 
-	private class AcquisitionThread extends Thread {
-		private CmsAcquisition acqu;
+    @Autowired
+    public void setCmsAcquisitionTempMng(
+            CmsAcquisitionTempMng cmsAcquisitionTempMng) {
+        this.cmsAcquisitionTempMng = cmsAcquisitionTempMng;
+    }
 
-		public AcquisitionThread(CmsAcquisition acqu) {
-			super(acqu.getClass().getName() + "#" + acqu.getId());
-			this.acqu = acqu;
-		}
+    private class AcquisitionThread extends Thread {
+        private CmsAcquisition acqu;
 
-		@Override
-		public void run() {
-			if (acqu == null) {
-				return;
-			}
-			acqu = cmsAcquisitionMng.start(acqu.getId());
-			String[] plans = acqu.getAllPlans();
-			HttpClient client = new DefaultHttpClient();
-			CharsetHandler handler = new CharsetHandler(acqu.getPageEncoding());
-			List<String> contentList;
-			Map<String, String> m;
-			String url;
-			int currNum = acqu.getCurrNum();
-			int currItem = acqu.getCurrItem();
-			Integer acquId = acqu.getId();
-			for (int i = plans.length - currNum; i >= 0; i--) {
-				url = plans[i];
-				contentList = getContentList(client, handler, url, acqu);
-				m = getvediopicmap(client,handler,url,acqu);
-				String link;
-				for (int j = contentList.size() - currItem; j >= 0; j--) {
-					if (cmsAcquisitionMng.isNeedBreak(acqu.getId(),
-							plans.length - i, contentList.size() - j,
-							contentList.size())) {
-						client.getConnectionManager().shutdown();
-						log.info("Acquisition#{} breaked", acqu.getId());
-						return;
-					}
-					if (acqu.getPauseTime() > 0) {
-						try {
-							Thread.sleep(acqu.getPauseTime());
-						} catch (InterruptedException e) {
-							log.warn(null, e);
-						}
-					}
-					link = contentList.get(j);
-					float curr = contentList.size() - j;
-					float total = contentList.size();
-					CmsAcquisitionTemp temp = AcquisitionSvcImpl.this.newTemp(
-							url, link, contentList.size() - j, curr, total,
-							acqu.getSite());
-					CmsAcquisitionHistory history = AcquisitionSvcImpl.this
-							.newHistory(url, link, acqu);
-					CmsSite site=acqu.getSite();
-					site=siteMng.findById(site.getId());
-					String contextPath=cmsConfigMng.get().getContextPath();
-					saveContent(m, client, handler,contextPath,site.getUploadPath(),acquId, link,temp,
-							history);
-				}
-				currItem = 1;
-			}
-			client.getConnectionManager().shutdown();
-			AcquisitionSvcImpl.this.end(acqu);
-			log.info("Acquisition#{} complete", acqu.getId());
-		}
+        public AcquisitionThread(CmsAcquisition acqu) {
+            super(acqu.getClass().getName() + "#" + acqu.getId());
+            this.acqu = acqu;
+        }
 
-		private List<String> getContentList(HttpClient client,
-				CharsetHandler handler, String url, CmsAcquisition acqu) {
-			String linksetStart=acqu.getLinksetStart();
-			String linksetEnd=acqu.getLinksetEnd();
-			String linkStart=acqu.getLinkStart();
-			String linkEnd=acqu.getLinkEnd();
-			List<String> list = new ArrayList<String>();
-			try {
-				HttpGet httpget = new HttpGet(new URI(url));
-				String base = url.substring(0, url.indexOf("/", url
-						.indexOf("//") + 2));
-				String html = client.execute(httpget, handler);
-				int start = html.indexOf(linksetStart);
-				if (start == -1) {
-					return list;
-				}
-				start += linksetStart.length();
-				int end = html.indexOf(linksetEnd, start);
-				if (end == -1) {
-					return list;
-				}
-				String s = html.substring(start, end);
-				start = 0;
-				String link;
-				log.info(s);
-				while ((start = s.indexOf(linkStart, start)) != -1) {
-					start += linkStart.length();
-					end = s.indexOf(linkEnd, start);
-					if (end == -1) {
-						return list;
-					} else {
-						link = s.substring(start, end);
-						//内容地址前缀
-						if(StringUtils.isNotBlank(acqu.getContentPrefix())){
-							link=acqu.getContentPrefix()+link;
-						}
-						if (!link.startsWith("http")) {
-							link = base + link;
-						}
-						log.debug("content link: {}", link);
-						list.add(link);
-						start = end + linkEnd.length();
-					}
-				}
-			} catch (Exception e) {
-				log.warn(null, e);
-			}
-			return list;
-		}
-		private Map<String, String> getvediopicmap(HttpClient client,
-											CharsetHandler handler, String url, CmsAcquisition acqu) {
-			String linksetStart=acqu.getLinksetStart();
-			String linksetEnd=acqu.getLinksetEnd();
-			String linksetvediopathStart=acqu.getLinksetStart();
-			String linksetvediopathEnd=acqu.getLinksetEnd();
-			String linksetpicStart=acqu.getLinkStart();
-			String linksetpicEnd=acqu.getLinkEnd();
-			Map<String, String> m = new HashMap<String, String>();
-			try {
-				HttpGet httpget = new HttpGet(new URI(url));
-				String html = client.execute(httpget, handler);
-				List<String> vediopathlist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetvediopathStart, linksetvediopathEnd);
-				List<String> vediopiclist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetpicStart, linksetpicEnd);
-				if(vediopathlist!=null && vediopiclist!=null && vediopathlist.size()==vediopiclist.size() )
-					for(Integer i = 0; i < vediopathlist.size(); i++){
-						m.put(vediopathlist.get(i), vediopiclist.get(i));
-					}
-			} catch (Exception e) {
-				log.warn(null, e);
-			}
-			return m;
-		}
-		private List<String> findbetweenContentSet(String html,String linksetStart, String linksetEnd, String linkStart,String linkEnd) {
-			List<String> list = new ArrayList<String>();
-			try {
-				int start = html.indexOf(linksetStart);
-				if (start == -1) {
-					return list;
-				}
-				start += linksetStart.length();
-				int end = html.indexOf(linksetEnd, start);
-				if (end == -1) {
-					return list;
-				}
-				String s = html.substring(start, end);
-				start = 0;
-				String match;
-				log.info(s);
-				while ((start = s.indexOf(linkStart, start)) != -1) {
-					start += linkStart.length();
-					end = s.indexOf(linkEnd, start);
-					if (end == -1) {
-						return list;
-					} else {
-						match = s.substring(start, end);
+        @Override
+        public void run() {
+            if (acqu == null) {
+                return;
+            }
+            acqu = cmsAcquisitionMng.start(acqu.getId());
+            String[] plans = acqu.getAllPlans();
+            HttpClient client = new DefaultHttpClient();
+            CharsetHandler handler = new CharsetHandler(acqu.getPageEncoding());
+            List<String> contentList;
+            Map<String, String> m;
+            String url;
+            int currNum = acqu.getCurrNum();
+            int currItem = acqu.getCurrItem();
+            Integer acquId = acqu.getId();
+            for (int i = plans.length - currNum; i >= 0; i--) {
+                url = plans[i];
+                contentList = getContentList(client, handler, url, acqu);
+                m = getvediopicmap(client, handler, url, acqu);
+                String link;
+                for (int j = contentList.size() - currItem; j >= 0; j--) {
+                    if (cmsAcquisitionMng.isNeedBreak(acqu.getId(),
+                            plans.length - i, contentList.size() - j,
+                            contentList.size())) {
+                        client.getConnectionManager().shutdown();
+                        log.info("Acquisition#{} breaked", acqu.getId());
+                        return;
+                    }
+                    if (acqu.getPauseTime() > 0) {
+                        try {
+                            Thread.sleep(acqu.getPauseTime());
+                        } catch (InterruptedException e) {
+                            log.warn(null, e);
+                        }
+                    }
+                    link = contentList.get(j);
+                    float curr = contentList.size() - j;
+                    float total = contentList.size();
+                    CmsAcquisitionTemp temp = AcquisitionSvcImpl.this.newTemp(
+                            url, link, contentList.size() - j, curr, total,
+                            acqu.getSite());
+                    CmsAcquisitionHistory history = AcquisitionSvcImpl.this
+                            .newHistory(url, link, acqu);
+                    CmsSite site = acqu.getSite();
+                    site = siteMng.findById(site.getId());
+                    String contextPath = cmsConfigMng.get().getContextPath();
+                    saveContent(m, client, handler, contextPath, site.getUploadPath(), acquId, link, temp,
+                            history);
+                }
+                currItem = 1;
+            }
+            client.getConnectionManager().shutdown();
+            AcquisitionSvcImpl.this.end(acqu);
+            log.info("Acquisition#{} complete", acqu.getId());
+        }
 
-						list.add(match);
-						start = end + linkEnd.length();
-					}
-				}
-			} catch (Exception e) {
-				log.warn(null, e);
-			}
-			return list;
-		}
+        private List<String> getContentList(HttpClient client,
+                                            CharsetHandler handler, String url, CmsAcquisition acqu) {
+            String linksetStart = acqu.getLinksetStart();
+            String linksetEnd = acqu.getLinksetEnd();
+            String linkStart = acqu.getLinkStart();
+            String linkEnd = acqu.getLinkEnd();
+            List<String> list = new ArrayList<String>();
+            try {
+                HttpGet httpget = new HttpGet(new URI(url));
+                String base = url.substring(0, url.indexOf("/", url
+                        .indexOf("//") + 2));
+                String html = client.execute(httpget, handler);
+                int start = html.indexOf(linksetStart);
+                if (start == -1) {
+                    return list;
+                }
+                start += linksetStart.length();
+                int end = html.indexOf(linksetEnd, start);
+                if (end == -1) {
+                    return list;
+                }
+                String s = html.substring(start, end);
+                start = 0;
+                String link;
+                log.info(s);
+                while ((start = s.indexOf(linkStart, start)) != -1) {
+                    start += linkStart.length();
+                    end = s.indexOf(linkEnd, start);
+                    if (end == -1) {
+                        return list;
+                    } else {
+                        link = s.substring(start, end);
+                        //内容地址前缀
+                        if (StringUtils.isNotBlank(acqu.getContentPrefix())) {
+                            link = acqu.getContentPrefix() + link;
+                        }
+                        if (!link.startsWith("http")) {
+                            link = base + link;
+                        }
+                        log.debug("content link: {}", link);
+                        list.add(link);
+                        start = end + linkEnd.length();
+                    }
+                }
+            } catch (Exception e) {
+                log.warn(null, e);
+            }
+            return list;
+        }
 
-		private Content saveContent(Map<String,String> m, HttpClient client, CharsetHandler handler,String contextPath,
-				String uploadPath,Integer acquId, String url, CmsAcquisitionTemp temp, CmsAcquisitionHistory history) {
-			CmsAcquisition acqu = cmsAcquisitionMng.findById(acquId);
-			String titleStart=acqu.getTitleStart();
-			String titleEnd=acqu.getTitleEnd();
-			String contentStart=acqu.getContentStart();
-			String contentEnd=acqu.getContentEnd();
-			String viewStart=acqu.getViewStart();
-			String viewEnd=acqu.getViewEnd();
-			String viewIdStart=acqu.getViewIdStart();
-			String viewIdEnd=acqu.getViewIdEnd();
-			String viewLink=acqu.getViewLink();
-			String authorStart=acqu.getAuthorStart();
-			String authorEnd=acqu.getAuthorEnd();
-			String originStart=acqu.getOriginStart();
-			String originEnd=acqu.getOriginEnd();
-			String releaseTimeStart=acqu.getReleaseTimeStart();
-			String releaseTimeEnd=acqu.getReleaseTimeEnd();
-			String descriptionStart=acqu.getDescriptionStart();
-			String descriptionEnd=acqu.getDescriptionEnd();
-			String vediopathStart=acqu.getVediopathStart();
-			String vediopathEnd=acqu.getVediopathEnd();
-			String vediopathSetStart=acqu.getVediopathSetStart();
-			String vediopathSetEnd=acqu.getVediopathSetEnd();
+        private Map<String, String> getvediopicmap(HttpClient client,
+                                                   CharsetHandler handler, String url, CmsAcquisition acqu) {
+            String linksetStart = acqu.getLinksetStart();
+            String linksetEnd = acqu.getLinksetEnd();
+            String linksetvediopathStart = acqu.getLinksetvediopathStart();
+            String linksetvediopathEnd = acqu.getLinksetvediopathEnd();
+            String linksetpicStart = acqu.getLinksetpicStart();
+            String linksetpicEnd = acqu.getLinksetpicEnd();
+            Map<String, String> m = new HashMap<String, String>();
+            try {
+                HttpGet httpget = new HttpGet(new URI(url));
+                String html = client.execute(httpget, handler);
+                List<String> vediopathlist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetvediopathStart, linksetvediopathEnd);
+                List<String> vediopiclist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetpicStart, linksetpicEnd);
+                if (vediopathlist != null && vediopiclist != null && vediopathlist.size() == vediopiclist.size())
+                    for (Integer i = 0; i < vediopathlist.size(); i++) {
+                        m.put(vediopathlist.get(i), vediopiclist.get(i));
+                    }
+            } catch (Exception e) {
+                log.warn(null, e);
+            }
+            return m;
+        }
 
-			history.setAcquisition(acqu);
-			try {
-				int start, end;
-				HttpGet httpget = new HttpGet(new URI(url));
-				String html = client.execute(httpget, handler);
-				start = html.indexOf(titleStart);
-				if (start == -1) {
-					return handerResult(temp, history, null,
-							AcquisitionResultType.TITLESTARTNOTFOUND);
-				}
-				start += titleStart.length();
-				end = html.indexOf(titleEnd, start);
-				if (end == -1) {
-					return handerResult(temp, history, null,
-							AcquisitionResultType.TITLEENDNOTFOUND);
-				}
-				String title = html.substring(start, end);
-				if (cmsAcquisitionHistoryMng
-						.checkExistByProperties(true, title)) {
-					return handerResult(temp, history, title,
-							AcquisitionResultType.TITLEEXIST, true);
-				}
-				start = html.indexOf(contentStart);
-				if (start == -1) {
-					return handerResult(temp, history, title,
-							AcquisitionResultType.CONTENTSTARTNOTFOUND);
-				}
-				start += contentStart.length();
-				end = html.indexOf(contentEnd, start);
-				if (end == -1) {
-					return handerResult(temp, history, title,
-							AcquisitionResultType.CONTENTENDNOTFOUND);
-				}
-				String txt = html.substring(start, end);
+        private List<String> findbetweenContentSet(String html, String linksetStart, String linksetEnd, String linkStart, String linkEnd) {
+            List<String> list = new ArrayList<String>();
+            try {
+                int start = html.indexOf(linksetStart);
+                if (start == -1) {
+                    return list;
+                }
+                start += linksetStart.length();
+                int end = html.indexOf(linksetEnd, start);
+                if (end == -1) {
+                    return list;
+                }
+                String s = html.substring(start, end);
+                start = 0;
+                String match;
+                log.info(s);
+                while ((start = s.indexOf(linkStart, start)) != -1) {
+                    start += linkStart.length();
+                    end = s.indexOf(linkEnd, start);
+                    if (end == -1) {
+                        return list;
+                    } else {
+                        match = s.substring(start, end);
 
-				if(acqu.getImgAcqu()){
-					List<String>imgUrls=ImageUtils.getImageSrc(txt);
-					for(String img:imgUrls){
-						String imgRealUrl;
-						if(StringUtils.isNotBlank(acqu.getImgPrefix())){
-							imgRealUrl=acqu.getImgPrefix()+img;
-						}else{
-							imgRealUrl=img;
-						}
-						txt=txt.replace(img, imgSvc.crawlImg(imgRealUrl,acqu.getSite()));
-					}
-				}
-				
-				String author = null;
-				if(StringUtils.isNotBlank(authorStart)){
-					start = html.indexOf(authorStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.AUTHORSTARTNOTFOUND);
-					}
-					start += authorStart.length();
-					end = html.indexOf(authorEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.AUTHORENDNOTFOUND);
-					}
-					author = html.substring(start, end);
-				}
+                        list.add(match);
+                        start = end + linkEnd.length();
+                    }
+                }
+            } catch (Exception e) {
+                log.warn(null, e);
+            }
+            return list;
+        }
 
-				String vedioPath = null;
-				if(!vediopathSetStart.isEmpty() && !vediopathSetEnd.isEmpty()) {
-					List<String> vedioList = findbetweenContentSet(html, vediopathSetStart,vediopathSetEnd,vediopathStart,vediopathEnd);
-					vedioPath = vedioList.get(0);
-				}else {
-					if(StringUtils.isNotBlank(vediopathStart)){
-						start = html.indexOf(vediopathStart);
-						if (start == -1) {
-							return handerResult(temp, history, null,
-									AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
-						}
-						start += vediopathStart.length();
-						end = html.indexOf(vediopathEnd, start);
-						if (end == -1) {
-							return handerResult(temp, history, null,
-									AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
-						}
-						vedioPath = html.substring(start, end);
-					}
-				}
-				log.error("vedioPath="+vedioPath);
+        private Content saveContent(Map<String, String> m, HttpClient client, CharsetHandler handler, String contextPath,
+                                    String uploadPath, Integer acquId, String url, CmsAcquisitionTemp temp, CmsAcquisitionHistory history) {
+            CmsAcquisition acqu = cmsAcquisitionMng.findById(acquId);
+            String titleStart = acqu.getTitleStart();
+            String titleEnd = acqu.getTitleEnd();
+            String contentStart = acqu.getContentStart();
+            String contentEnd = acqu.getContentEnd();
+            String viewStart = acqu.getViewStart();
+            String viewEnd = acqu.getViewEnd();
+            String viewIdStart = acqu.getViewIdStart();
+            String viewIdEnd = acqu.getViewIdEnd();
+            String viewLink = acqu.getViewLink();
+            String authorStart = acqu.getAuthorStart();
+            String authorEnd = acqu.getAuthorEnd();
+            String originStart = acqu.getOriginStart();
+            String originEnd = acqu.getOriginEnd();
+            String releaseTimeStart = acqu.getReleaseTimeStart();
+            String releaseTimeEnd = acqu.getReleaseTimeEnd();
+            String descriptionStart = acqu.getDescriptionStart();
+            String descriptionEnd = acqu.getDescriptionEnd();
+            String vediopathStart = acqu.getVediopathStart();
+            String vediopathEnd = acqu.getVediopathEnd();
+            String vediopathSetStart = acqu.getVediopathSetStart();
+            String vediopathSetEnd = acqu.getVediopathSetEnd();
 
-				String origin = null;
-				if(StringUtils.isNotBlank(originStart)){
-					start = html.indexOf(originStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.ORIGINSTARTNOTFOUND);
-					}
-					start += originStart.length();
-					end = html.indexOf(originEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.ORIGINENDNOTFOUND);
-					}
-					origin = html.substring(start, end);
-				}
-				
-				String description = null;
-				if(StringUtils.isNotBlank(descriptionStart)){
-					start = html.indexOf(descriptionStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.DESCRISTARTNOTFOUND);
-					}
-					start += descriptionStart.length();
-					end = html.indexOf(descriptionEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.DESCRIENDNOTFOUND);
-					}
-					description = html.substring(start, end);
-				}
-				
-				Date releaseTime = null;
-				if(StringUtils.isNotBlank(releaseTimeStart)){
-					start = html.indexOf(releaseTimeStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.RELEASESTARTNOTFOUND);
-					}
-					start += releaseTimeStart.length();
-					end = html.indexOf(releaseTimeEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.RELEASEENDNOTFOUND);
-					}
-					String releaseDate= html.substring(start, end);
-					SimpleDateFormat df=new SimpleDateFormat(acqu.getReleaseTimeFormat());
-					releaseTime=df.parse(releaseDate);
-				}
+            history.setAcquisition(acqu);
+            try {
+                int start, end;
+                HttpGet httpget = new HttpGet(new URI(url));
+                String html = client.execute(httpget, handler);
+                start = html.indexOf(titleStart);
+                if (start == -1) {
+                    return handerResult(temp, history, null,
+                            AcquisitionResultType.TITLESTARTNOTFOUND);
+                }
+                start += titleStart.length();
+                end = html.indexOf(titleEnd, start);
+                if (end == -1) {
+                    return handerResult(temp, history, null,
+                            AcquisitionResultType.TITLEENDNOTFOUND);
+                }
+                String title = html.substring(start, end);
+                if (cmsAcquisitionHistoryMng
+                        .checkExistByProperties(true, title)) {
+                    return handerResult(temp, history, title,
+                            AcquisitionResultType.TITLEEXIST, true);
+                }
+                start = html.indexOf(contentStart);
+                if (start == -1) {
+                    return handerResult(temp, history, title,
+                            AcquisitionResultType.CONTENTSTARTNOTFOUND);
+                }
+                start += contentStart.length();
+                end = html.indexOf(contentEnd, start);
+                if (end == -1) {
+                    return handerResult(temp, history, title,
+                            AcquisitionResultType.CONTENTENDNOTFOUND);
+                }
+                String txt = html.substring(start, end);
+
+                if (acqu.getImgAcqu()) {
+                    List<String> imgUrls = ImageUtils.getImageSrc(txt);
+                    for (String img : imgUrls) {
+                        String imgRealUrl;
+                        if (StringUtils.isNotBlank(acqu.getImgPrefix())) {
+                            imgRealUrl = acqu.getImgPrefix() + img;
+                        } else {
+                            imgRealUrl = img;
+                        }
+                        txt = txt.replace(img, imgSvc.crawlImg(imgRealUrl, acqu.getSite()));
+                    }
+                }
+
+                String author = null;
+                if (StringUtils.isNotBlank(authorStart)) {
+                    start = html.indexOf(authorStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.AUTHORSTARTNOTFOUND);
+                    }
+                    start += authorStart.length();
+                    end = html.indexOf(authorEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.AUTHORENDNOTFOUND);
+                    }
+                    author = html.substring(start, end);
+                }
+
+                String vedioPath = null;
+                if (!vediopathSetStart.isEmpty() && !vediopathSetEnd.isEmpty()) {
+                    List<String> vedioList = findbetweenContentSet(html, vediopathSetStart, vediopathSetEnd, vediopathStart, vediopathEnd);
+                    vedioPath = vedioList.get(0);
+                } else {
+                    if (StringUtils.isNotBlank(vediopathStart)) {
+                        start = html.indexOf(vediopathStart);
+                        if (start == -1) {
+                            return handerResult(temp, history, null,
+                                    AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+                        }
+                        start += vediopathStart.length();
+                        end = html.indexOf(vediopathEnd, start);
+                        if (end == -1) {
+                            return handerResult(temp, history, null,
+                                    AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+                        }
+                        vedioPath = html.substring(start, end);
+                    }
+                }
+                log.error("vedioPath=" + vedioPath);
+
+                String origin = null;
+                if (StringUtils.isNotBlank(originStart)) {
+                    start = html.indexOf(originStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.ORIGINSTARTNOTFOUND);
+                    }
+                    start += originStart.length();
+                    end = html.indexOf(originEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.ORIGINENDNOTFOUND);
+                    }
+                    origin = html.substring(start, end);
+                }
+
+                String description = null;
+                if (StringUtils.isNotBlank(descriptionStart)) {
+                    start = html.indexOf(descriptionStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.DESCRISTARTNOTFOUND);
+                    }
+                    start += descriptionStart.length();
+                    end = html.indexOf(descriptionEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.DESCRIENDNOTFOUND);
+                    }
+                    description = html.substring(start, end);
+                }
+
+                Date releaseTime = null;
+                if (StringUtils.isNotBlank(releaseTimeStart)) {
+                    start = html.indexOf(releaseTimeStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.RELEASESTARTNOTFOUND);
+                    }
+                    start += releaseTimeStart.length();
+                    end = html.indexOf(releaseTimeEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.RELEASEENDNOTFOUND);
+                    }
+                    String releaseDate = html.substring(start, end);
+                    SimpleDateFormat df = new SimpleDateFormat(acqu.getReleaseTimeFormat());
+                    releaseTime = df.parse(releaseDate);
+                }
 
 
-				String view = null;
-				if(StringUtils.isNotBlank(viewLink)){
-					start = html.indexOf(viewIdStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.VIEWIDSTARTNOTFOUND);
-					}
-					start += viewIdStart.length();
-					end = html.indexOf(viewIdEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.VIEWIDENDNOTFOUND);
-					}
-					viewLink+=html.substring(start, end);
-					HttpGet viewHttpGet = new HttpGet(new URI(viewLink));
-					html = client.execute(viewHttpGet, handler);
-				}
-				if(StringUtils.isNotBlank(viewStart)){
-					start = html.indexOf(viewStart);
-					if (start == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.VIEWSTARTNOTFOUND);
-					}
-					start += viewStart.length();
-					end = html.indexOf(viewEnd, start);
-					if (end == -1) {
-						return handerResult(temp, history, null,
-								AcquisitionResultType.VIEWENDNOTFOUND);
-					}
-					view = html.substring(start, end);
-				}
-				String vedioPic = null;
-				if (m!=null)
-					vedioPic = m.get(vedioPath);
+                String view = null;
+                if (StringUtils.isNotBlank(viewLink)) {
+                    start = html.indexOf(viewIdStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.VIEWIDSTARTNOTFOUND);
+                    }
+                    start += viewIdStart.length();
+                    end = html.indexOf(viewIdEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.VIEWIDENDNOTFOUND);
+                    }
+                    viewLink += html.substring(start, end);
+                    HttpGet viewHttpGet = new HttpGet(new URI(viewLink));
+                    html = client.execute(viewHttpGet, handler);
+                }
+                if (StringUtils.isNotBlank(viewStart)) {
+                    start = html.indexOf(viewStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.VIEWSTARTNOTFOUND);
+                    }
+                    start += viewStart.length();
+                    end = html.indexOf(viewEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.VIEWENDNOTFOUND);
+                    }
+                    view = html.substring(start, end);
+                }
+                String vedioPic = null;
+                if (m != null) {
+                    Iterator<String> iterator = m.keySet().iterator();
+                    while (iterator.hasNext()) {
+                        String key = iterator.next();
+                        if (-1 != key.indexOf(vedioPath))
+                            vedioPic= (String) m.get(key);
+                    }
+                }
 
-				log.error("acqu:vedioPath {}, vedioPic: {}", vedioPath, vedioPic);
+                log.error("acqu:vedioPath {}, vedioPic: {}", vedioPath, vedioPic);
 
-				Content content = cmsAcquisitionMng.saveContent(title, txt,origin,vedioPath,vedioPic,author,description,releaseTime,
-						acquId, AcquisitionResultType.SUCCESS, temp, history);
-				if(StringUtils.isNotBlank(view)){
-					ContentCount count=content.getContentCount();
-					int c=Integer.parseInt(view);
-					//采集访问一次需减一
-					if(StringUtils.isNotBlank(viewLink)){
-						c=c-1;
-					}
-					count.setViews(c);
-					contentCountMng.update(count);
-				}
-				cmsAcquisitionTempMng.save(temp);
-				cmsAcquisitionHistoryMng.save(history);
-				return content;
-			} catch (Exception e) {
-				e.printStackTrace();
-				log.warn(null, e);
-				return handerResult(temp, history, null,
-						AcquisitionResultType.UNKNOW);
-			}
-		}
+                Content content = cmsAcquisitionMng.saveContent(title, txt, origin, vedioPath, vedioPic, author, description, releaseTime,
+                        acquId, AcquisitionResultType.SUCCESS, temp, history);
+                if (StringUtils.isNotBlank(view)) {
+                    ContentCount count = content.getContentCount();
+                    int c = Integer.parseInt(view);
+                    //采集访问一次需减一
+                    if (StringUtils.isNotBlank(viewLink)) {
+                        c = c - 1;
+                    }
+                    count.setViews(c);
+                    contentCountMng.update(count);
+                }
+                cmsAcquisitionTempMng.save(temp);
+                cmsAcquisitionHistoryMng.save(history);
+                return content;
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.warn(null, e);
+                return handerResult(temp, history, null,
+                        AcquisitionResultType.UNKNOW);
+            }
+        }
 
-		
-		
-		private Content handerResult(CmsAcquisitionTemp temp,
-				CmsAcquisitionHistory history, String title,
-				AcquisitionResultType errorType) {
-			return handerResult(temp, history, title, errorType, false);
-		}
 
-		private Content handerResult(CmsAcquisitionTemp temp,
-				CmsAcquisitionHistory history, String title,
-				AcquisitionResultType errorType, Boolean repeat) {
-			temp.setDescription(errorType.name());
-			temp.setTitle(title);
-			cmsAcquisitionTempMng.save(temp);
-			if (!repeat) {
-				history.setTitle(title);
-				history.setDescription(errorType.name());
-				cmsAcquisitionHistoryMng.save(history);
-			}
-			return null;
-		}
-	}
+        private Content handerResult(CmsAcquisitionTemp temp,
+                                     CmsAcquisitionHistory history, String title,
+                                     AcquisitionResultType errorType) {
+            return handerResult(temp, history, title, errorType, false);
+        }
 
-	private CmsAcquisitionTemp newTemp(String channelUrl, String contentUrl,
-			Integer id, Float curr, Float total, CmsSite site) {
-		CmsAcquisitionTemp temp = new CmsAcquisitionTemp();
-		temp.setChannelUrl(channelUrl);
-		temp.setContentUrl(contentUrl);
-		temp.setSeq(id);
-		NumberFormat nf = NumberFormat.getPercentInstance();
-		String percent = nf.format(curr / total);
-		temp.setPercent(Integer.parseInt(percent.substring(0,
-				percent.length() - 1)));
-		temp.setSite(site);
-		return temp;
-	}
+        private Content handerResult(CmsAcquisitionTemp temp,
+                                     CmsAcquisitionHistory history, String title,
+                                     AcquisitionResultType errorType, Boolean repeat) {
+            temp.setDescription(errorType.name());
+            temp.setTitle(title);
+            cmsAcquisitionTempMng.save(temp);
+            if (!repeat) {
+                history.setTitle(title);
+                history.setDescription(errorType.name());
+                cmsAcquisitionHistoryMng.save(history);
+            }
+            return null;
+        }
+    }
 
-	private CmsAcquisitionHistory newHistory(String channelUrl,
-			String contentUrl, CmsAcquisition acqu) {
-		CmsAcquisitionHistory history = new CmsAcquisitionHistory();
-		history.setChannelUrl(channelUrl);
-		history.setContentUrl(contentUrl);
-		history.setAcquisition(acqu);
-		return history;
-	}
+    private CmsAcquisitionTemp newTemp(String channelUrl, String contentUrl,
+                                       Integer id, Float curr, Float total, CmsSite site) {
+        CmsAcquisitionTemp temp = new CmsAcquisitionTemp();
+        temp.setChannelUrl(channelUrl);
+        temp.setContentUrl(contentUrl);
+        temp.setSeq(id);
+        NumberFormat nf = NumberFormat.getPercentInstance();
+        String percent = nf.format(curr / total);
+        temp.setPercent(Integer.parseInt(percent.substring(0,
+                percent.length() - 1)));
+        temp.setSite(site);
+        return temp;
+    }
 
-	private class CharsetHandler implements ResponseHandler<String> {
-		private String charset;
+    private CmsAcquisitionHistory newHistory(String channelUrl,
+                                             String contentUrl, CmsAcquisition acqu) {
+        CmsAcquisitionHistory history = new CmsAcquisitionHistory();
+        history.setChannelUrl(channelUrl);
+        history.setContentUrl(contentUrl);
+        history.setAcquisition(acqu);
+        return history;
+    }
 
-		public CharsetHandler(String charset) {
-			this.charset = charset;
-		}
+    private class CharsetHandler implements ResponseHandler<String> {
+        private String charset;
 
-		public String handleResponse(HttpResponse response)
-				throws ClientProtocolException, IOException {
-			StatusLine statusLine = response.getStatusLine();
-			if (statusLine.getStatusCode() >= 300) {
-				throw new HttpResponseException(statusLine.getStatusCode(),
-						statusLine.getReasonPhrase());
-			}
-			HttpEntity entity = response.getEntity();
-			if (entity != null) {
-				if (!StringUtils.isBlank(charset)) {
-					return EntityUtils.toString(entity, charset);
-				} else {
-					return EntityUtils.toString(entity);
-				}
-			} else {
-				return null;
-			}
-		}
-	}
+        public CharsetHandler(String charset) {
+            this.charset = charset;
+        }
+
+        public String handleResponse(HttpResponse response)
+                throws ClientProtocolException, IOException {
+            StatusLine statusLine = response.getStatusLine();
+            if (statusLine.getStatusCode() >= 300) {
+                throw new HttpResponseException(statusLine.getStatusCode(),
+                        statusLine.getReasonPhrase());
+            }
+            HttpEntity entity = response.getEntity();
+            if (entity != null) {
+                if (!StringUtils.isBlank(charset)) {
+                    return EntityUtils.toString(entity, charset);
+                } else {
+                    return EntityUtils.toString(entity);
+                }
+            } else {
+                return null;
+            }
+        }
+    }
 }

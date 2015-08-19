@@ -6,7 +6,7 @@
             <fileNamePattern>N:\WorkSpace\jeecms\error_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
             <level>ERROR</level>
@@ -15,44 +15,62 @@
         </filter>
     </appender>
 
-    <appender name="noterrorlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>N:\WorkSpace\jeecms\noterror_level.log</file>
+    <appender name="debugtracelevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>N:\WorkSpace\jeecms\debugtrace_level.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>N:\WorkSpace\jeecms\noterror_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>N:\WorkSpace\jeecms\debugtrace_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>ERROR</level>
             <onMatch>DENY</onMatch>
-            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>DENY</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>DENY</onMatch>
         </filter>
     </appender>
 
-
-    <!-- 按照每天生成日志文件 -->
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Encoding>UTF-8</Encoding>
+    <appender name="infowarnlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>N:\WorkSpace\jeecms\infowarn_level.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--日志文件输出的文件名-->
-            <FileNamePattern>N:\WorkSpace\jeecms\file.%d{yyyy-MM-dd}.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <fileNamePattern>N:\WorkSpace\jeecms\infowarn_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-            </pattern>
-        </layout>
-        <!--日志文件最大的大小-->
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+        </filter>
     </appender>
-    <!-- show parameters for hibernate sql 专为 Hibernate 定制 -->
 
-    <!-- 日志输出级别 -->
-    <root level="INFO">
+    <!--logger 用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。<loger>仅有一个name属性，一个可选的level和一个可选的addtivity属性。&#45;&#45;
+     show parameters for hibernate sql 专为 Hibernate 定制 &ndash;&gt;-->
+    <logger name="org.hibernate" level="WARN" />
+    <logger name="org.springframework" level="WARN" />
+    <logger name="com.opensymphony" level="WARN" />
+    <logger name="org.apache" level="WARN" />
+
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+            level="TRACE" />
+    <logger name="org.hibernate.type.descriptor.sql.BasicExtractor"
+            level="DEBUG" />
+    <logger name="org.hibernate.SQL" level="DEBUG" />
+    <logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
+    <logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
+    <!-- 日志输出级别 级别排序为： TRACE < DEBUG < INFO < WARN < ERROR-->
+    <root level="TRACE">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="errorlevelAppender"/>
