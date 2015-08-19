@@ -92,11 +92,13 @@ public class DynamicPageAct {
 		// 尽量不要携带太多参数，多使用标签获取数据。
 		// 目前已知的需要携带翻页信息。
 		// 获得页号和翻页信息吧。
+
 		int pageNo = URLHelper.getPageNo(request);
 		String[] params = URLHelper.getParams(request);
 		PageInfo info = URLHelper.getPageInfo(request);
 		String[] paths = URLHelper.getPaths(request);
 		int len = paths.length;
+
 		if (len == 1) {
 			// 单页
 			return channel(paths[0],true, pageNo, params, info, request, response,

@@ -170,7 +170,7 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
         com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
         c.setModel(channel.getModel());
 
-        if (vedioPath != null & !vedioPath.isEmpty()) {
+        if (vedioPath != null && !vedioPath.isEmpty()) {
             Map<String, String> attr = new HashMap<String, String>();
             attr.put("vedioUrl", vedioPath);
             c.setAttr(attr);

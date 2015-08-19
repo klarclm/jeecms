@@ -82,6 +82,7 @@ public class CmsAcquisitionAct {
 				true);
 		model.addAttribute("channelList", channelList);
 		model.addAttribute("typeList", typeList);
+		CmsAcquisition ca = manager.findById(id);
 		model.addAttribute("cmsAcquisition", manager.findById(id));
 		return "acquisition/edit";
 	}

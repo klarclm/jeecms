@@ -456,6 +456,9 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 				String vedioPic = null;
 				if (m!=null)
 					vedioPic = m.get(vedioPath);
+
+				log.error("acqu:vedioPath {}, vedioPic: {}", vedioPath, vedioPic);
+
 				Content content = cmsAcquisitionMng.saveContent(title, txt,origin,vedioPath,vedioPic,author,description,releaseTime,
 						acquId, AcquisitionResultType.SUCCESS, temp, history);
 				if(StringUtils.isNotBlank(view)){
