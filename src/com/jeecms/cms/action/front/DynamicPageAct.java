@@ -93,6 +93,7 @@ public class DynamicPageAct {
 		// 目前已知的需要携带翻页信息。
 		// 获得页号和翻页信息吧。
 
+		log.error("cs123123");
 		int pageNo = URLHelper.getPageNo(request);
 		String[] params = URLHelper.getParams(request);
 		PageInfo info = URLHelper.getPageInfo(request);
