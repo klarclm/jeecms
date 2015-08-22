@@ -94,6 +94,8 @@ public class DynamicPageAct {
 		// 获得页号和翻页信息吧。
 
 		log.error("cs123123");
+		log.error("qwe.123");
+		log.error("cs.123123");
 		int pageNo = URLHelper.getPageNo(request);
 		String[] params = URLHelper.getParams(request);
 		PageInfo info = URLHelper.getPageInfo(request);

@@ -1,27 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <appender name="errorlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>N:\WorkSpace\jeecms\error_level.log</file>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="sqllog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>N:\WorkSpace\log\sqllog_level.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>N:\WorkSpace\jeecms\error_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+        <fileNamePattern>N:\WorkSpace\log\sqllog_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
 
         <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
-            <evaluator> <!-- defaults to type ch.qos.logback.classic.boolex.JaninoEventEvaluator -->
-                <expression>return message.contains("cs123123");</expression>
+            <evaluator>
+                <expression>
+                    <!--22:12:13.965 [http-8080-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - 82-->
+                    Boolean  isMatched = false;
+                    <!--匹配logger-->
+                    if (logger.startsWith("org.hibernate.SQL"))
+                        isMatched = true;
+                    if (logger.contains("sql.BasicBinder"))
+                        isMatched = true;
+                    return isMatched;
+                </expression>
             </evaluator>
-            <OnMismatch>DENY</OnMismatch>
             <OnMatch>NEUTRAL</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
+        </filter>
+    </appender>
+
+    <appender name="errorlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>N:\WorkSpace\log\error_level.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>N:\WorkSpace\log\error_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
+            <level>ERROR</level>
+            <OnMatch>NEUTRAL</OnMatch>
+            <OnMismatch>DENY</OnMismatch>
         </filter>
 
     </appender>
 
-    <root level="TRACE">
-        <appender-ref ref="errorlevelAppender"/>
-    </root>
+    <appender name="traceinfowarnlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>N:\WorkSpace\log\trace-warn_level.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>N:\WorkSpace\log\trace-warn_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 只打印错误日志 -->
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>NEUTRAL</onMismatch>
+        </filter>
+    </appender>
 
+
+    <logger name="org.hibernate" level="WARN" />
+    <logger name="org.springframework" level="WARN" />
+    <logger name="com.opensymphony" level="WARN" />
+    <logger name="org.apache" level="WARN" />
+
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+            level="TRACE" />
+    <logger name="org.hibernate.type.descriptor.sql.BasicExtractor"
+            level="DEBUG" />
+    <logger name="org.hibernate.SQL" level="DEBUG" />
+    <logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
+    <logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
+    <!-- 日志输出级别 级别排序为： TRACE < DEBUG < INFO < WARN < ERROR-->
+
+    <root level="TRACE">
+        <!--<appender-ref ref="stdout"/>-->
+        <appender-ref ref="sqllog"/>
+        <appender-ref ref="errorlevelAppender"/>
+        <appender-ref ref="traceinfowarnlevelAppender"/>
+    </root>
 
 </configuration>
