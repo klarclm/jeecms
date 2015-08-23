@@ -465,10 +465,12 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                     }
                 }
 
-                log.error("acqu:vedioPath {}, vedioPic: {}", vedioPath, vedioPic);
 
                 Content content = cmsAcquisitionMng.saveContent(title, txt, origin, vedioPath, vedioPic, author, description, releaseTime,
                         acquId, AcquisitionResultType.SUCCESS, temp, history);
+
+                log.error("acqu:contentid:"+content.getId()+"title:"+title+"videoPath:"+vedioPath+"vedioPic:"+vedioPic);
+
                 if (StringUtils.isNotBlank(view)) {
                     ContentCount count = content.getContentCount();
                     int c = Integer.parseInt(view);
@@ -477,8 +479,10 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                         c = c - 1;
                     }
                     count.setViews(c);
+                    log.error("acqu:contentid:"+content.getId()+"title:"+title+"views:"+c);
                     contentCountMng.update(count);
                 }
+
                 cmsAcquisitionTempMng.save(temp);
                 cmsAcquisitionHistoryMng.save(history);
                 return content;
