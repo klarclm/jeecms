@@ -26,13 +26,13 @@
             alert(err);
         }
     }
-
+//    http://localhost/spjx/index.php?v=http://v.youku.com/v_show/id_XMTMxNjQxMzY1Mg==.html?f=26018944&ev=1
     function player() {
         var str = document.getElementById("u").value;
         console.log(str);
         if (str != '') {
             var flashvars = {
-                f: 'http://localhost/spjx/?skey=' + str + '_youku',
+                f: 'http://localhost/shipin/api/deng.php?v=http://www.56.com/w25/play_album-aid-14355625_vid-MTM4NDAyNDQy.html',
                 s: 2, c: 0, p: 1, loaded: 'loadedHandler', my_url: encodeURIComponent(window.location.href)
             };
             var params = {bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent'};

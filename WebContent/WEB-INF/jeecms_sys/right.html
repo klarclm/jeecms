@@ -137,7 +137,7 @@
 		             	      <#list newcontents as c>
 		             	       <tr>
 		                        <td width="75%" height="27" align="left" style="background-color:#dceef4; border-bottom:1px solid #ffffff; text-indent:1.5em;">
-		                        <a href="${c.url}" title="${c.title}" target="_blank">
+		                        <a href="${c.url}" title="${c.title!}" target="_blank">
 				                    <span><@text_cut s=c.title len=titLen /></span>
 				                </a>
 		                        </td>

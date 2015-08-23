@@ -424,7 +424,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                 }
 
 
-                String view = null;
+
                 if (StringUtils.isNotBlank(viewLink)) {
                     start = html.indexOf(viewIdStart);
                     if (start == -1) {
@@ -441,6 +441,9 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                     HttpGet viewHttpGet = new HttpGet(new URI(viewLink));
                     html = client.execute(viewHttpGet, handler);
                 }
+
+//                56网的视频点击次数采集因为采用ajax延迟加载，代码获取到的值为空值。从业务上也不需要记录这个值
+                String view = null;
                 if (StringUtils.isNotBlank(viewStart)) {
                     start = html.indexOf(viewStart);
                     if (start == -1) {
@@ -455,6 +458,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                     }
                     view = html.substring(start, end);
                 }
+
                 String vedioPic = null;
                 if (m != null) {
                     Iterator<String> iterator = m.keySet().iterator();
