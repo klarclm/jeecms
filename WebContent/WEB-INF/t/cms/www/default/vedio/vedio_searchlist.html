@@ -12,7 +12,7 @@
     [#include "../tencent_include/home_include.html"/]
     <link href="/${res}/tencent_css/v280_type.css" rel="stylesheet"/>
     <script src="/${res}/tencent_js/v280_picShow.js" type="text/javascript" language="javascript"></script>
-    <link href="/${res}/tencent_css/v280_list.css" rel="stylesheet" type="text/css" />
+    <link href="/${res}/tencent_css/v280_list.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
@@ -26,146 +26,44 @@
                 <span>当前位置</span>
                 <i class="arrow"><b class="a_outer"></b><b class="a_inner"></b></i>
             </dt>
-            <dd><a href='${site.url}'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href='${channel.url}' >${channel.channelExt.name}</a></dd>
+            <dd><a href='${site.url}'>首页</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;
+                [#if channel.parent??]
+                <a href='${channel.parent.url}'>${channel.parent.channelExt.name}</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;
+                [/#if]
+                <a href='${channel.url}'>${channel.channelExt.name}</a>
+            </dd>
+
         </dl>
     </div>
 </div>
 
 <div class="container">
-    <!--<div class="l">-->
-        <!--<div class="mod_indexs">-->
-            <!--<div class="mod_cont">-->
-                <!--<h3>按类型</h3>-->
-                <!--<ul>-->
-                    <!--<li  class="current" ><a href="/sgv/index.php?m=vod-list-id-0-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="全部">全部</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-5-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="动作片">动作片</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-6-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="喜剧片">喜剧片</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-7-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="爱情片">爱情片</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-8-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="科幻片">科幻片</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-9-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="恐怖片">恐怖片</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-10-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="剧情片">剧情片</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-11-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="战争片">战争片</a></li>-->
-
-                <!--</ul>-->
-                <!--<h3>按年代</h3>-->
-                <!--<ul>-->
-                    <!--<li  class="current" ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="全部">全部</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2014-letter&#45;&#45;area&#45;&#45;lang-.html" title="2014年">2014</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2013-letter&#45;&#45;area&#45;&#45;lang-.html" title="2013年">2013</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2012-letter&#45;&#45;area&#45;&#45;lang-.html" title="2012年">2012</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2011-letter&#45;&#45;area&#45;&#45;lang-.html" title="2011年">2011</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2010-letter&#45;&#45;area&#45;&#45;lang-.html" title="2010年">2010</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2009-letter&#45;&#45;area&#45;&#45;lang-.html" title="2009年">2009</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2008-letter&#45;&#45;area&#45;&#45;lang-.html" title="2008年">2008</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2007-letter&#45;&#45;area&#45;&#45;lang-.html" title="2007年">2007</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2006-letter&#45;&#45;area&#45;&#45;lang-.html" title="2006年">2006</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2005-letter&#45;&#45;area&#45;&#45;lang-.html" title="2005年">2005</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2004-letter&#45;&#45;area&#45;&#45;lang-.html" title="2004年">2004</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2003-letter&#45;&#45;area&#45;&#45;lang-.html" title="2003年">2003</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2002-letter&#45;&#45;area&#45;&#45;lang-.html" title="2002年">2002</a></li>-->
-
-                    <!--<li ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year-2001-letter&#45;&#45;area&#45;&#45;lang-.html" title="2001年">2001</a></li>-->
-
-                <!--</ul>-->
-                <!--<h3>按地区</h3>-->
-                <!--<ul>-->
-                    <!--<li class="current" ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="全部">全部</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E5%A4%A7%E9%99%86-lang-.html" title="大陆">大陆</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E9%A6%99%E6%B8%AF-lang-.html" title="香港">香港</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E5%8F%B0%E6%B9%BE-lang-.html" title="台湾">台湾</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E7%BE%8E%E5%9B%BD-lang-.html" title="美国">美国</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E9%9F%A9%E5%9B%BD-lang-.html" title="韩国">韩国</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E6%97%A5%E6%9C%AC-lang-.html" title="日本">日本</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E6%B3%B0%E5%9B%BD-lang-.html" title="泰国">泰国</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E6%96%B0%E5%8A%A0%E5%9D%A1-lang-.html" title="新加坡">新加坡</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E9%A9%AC%E6%9D%A5%E8%A5%BF%E4%BA%9A-lang-.html" title="马来西亚">马来西亚</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E5%8D%B0%E5%BA%A6-lang-.html" title="印度">印度</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E8%8B%B1%E5%9B%BD-lang-.html" title="英国">英国</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E6%B3%95%E5%9B%BD-lang-.html" title="法国">法国</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E5%8A%A0%E6%8B%BF%E5%A4%A7-lang-.html" title="加拿大">加拿大</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E8%A5%BF%E7%8F%AD%E7%89%99-lang-.html" title="西班牙">西班牙</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E4%BF%84%E7%BD%97%E6%96%AF-lang-.html" title="俄罗斯">俄罗斯</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area-%E5%85%B6%E5%AE%83-lang-.html" title="其它">其它</a></li>-->
-
-                <!--</ul>-->
-                <!--<h3>语言</h3>-->
-                <!--<ul>-->
-                    <!--<li class="current" ><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html" title="全部">全部</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E5%9B%BD%E8%AF%AD.html" title="国语">国语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E8%8B%B1%E8%AF%AD.html" title="英语">英语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E7%B2%A4%E8%AF%AD.html" title="粤语">粤语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E9%97%BD%E5%8D%97%E8%AF%AD.html" title="闽南语">闽南语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E9%9F%A9%E8%AF%AD.html" title="韩语">韩语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E6%97%A5%E8%AF%AD.html" title="日语">日语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E6%B3%95%E8%AF%AD.html" title="法语">法语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E5%BE%B7%E8%AF%AD.html" title="德语">德语</a></li>-->
-
-                    <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-dayhits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-%E5%85%B6%E5%AE%83.html" title="其它">其它</a></li>-->
-
-                <!--</ul>-->
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
     <div class="r">
-        <!--<div class="mod_toolbar">-->
-            <!--<ul>-->
-                <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-time-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html">最新更新</a></li>-->
-                <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-hits-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html">最近热播</a></li>-->
-                <!--<li><a href="/sgv/index.php?m=vod-list-id-1-pg-1-order-desc-by-score-class&#45;&#45;year&#45;&#45;letter&#45;&#45;area&#45;&#45;lang-.html">最受好评</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
+        <form action="vediosearchlist.jspx">
+            <div class="mod_toolbar">
+                <ul>
+                    <input type="hidden" name="channelId" value="${channel.id}"/>
+                    <li><input type="submit" value="最新更新"/>" </li>
+                    <li><input type="submit" value="最新更新"/>" </li>
+                    <li><input type="submit" value="最新更新"/>" </li>
+
+                </ul>
+            </div>
+        </form>
+
         <div class="mod_video_list">
             <div class="tukuzlm">
                 <ul>
-                    [@cms_content_page count='3' orderBy='4' channelId=channel.id titLen='14' append='...' typeId='2' dateFormat='yyyy-MM-dd' channelOption='1']
+                    [@cms_content_page count='3' orderBy='4' channelId=channel.id titLen='14' append='...' typeId='2'
+                    dateFormat='yyyy-MM-dd' channelOption='1']
                     [#list tag_pagination.list as a]
                     <li>
-                        <a href="${a.url}" target="_blank" title="${a.title}"><img src="${a.typeImg!site.defImg}" width="140" /></a><p><a href="${a.url}" target="_blank" title="${a.title}">[@text_cut s=a.title len=titLen append=append /]</a></p>
+                        <a href="${a.url}" target="_blank" title="${a.title}"><img src="${a.typeImg!site.defImg}"
+                                                                                   width="140"/></a>
+
+                        <p><a href="${a.url}" target="_blank" title="${a.title}">[@text_cut s=a.title len=titLen
+                            append=append /]</a></p>
+
                         <p>${a.date?string(dateFormat)}</p>
                     </li>
                     [/#list]
