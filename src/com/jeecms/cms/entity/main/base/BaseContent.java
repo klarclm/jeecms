@@ -382,7 +382,7 @@ public abstract class BaseContent  implements Serializable {
 	/**
 	 * Return the value associated with the column: site_id
 	 */
-	public com.jeecms.core.entity.CmsSite getSite () {
+	public com.jeecms.core.entity.CmsSite  getSite () {
 		return site;
 	}
 
