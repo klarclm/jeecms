@@ -1,24 +1,24 @@
 <script type="text/javascript" language="javascript">
     //加入收藏
     function AddFavorite(sURL, sTitle) {
-        sURL =encodeURI(sURL);
-        try{
+        sURL = encodeURI(sURL);
+        try {
             window.external.addFavorite(sURL, sTitle);
-        }catch(e) {
-            try{
+        } catch (e) {
+            try {
                 window.sidebar.addPanel(sTitle, sURL, "");
-            }catch (e){
+            } catch (e) {
                 alert("您的浏览器不支持自动加入收藏功能，请使用Ctrl+D进行添加，或手动在浏览器里进行设置！");
             }
         }
     }
 
     //设为首页
-    function SetHome(url){
+    function SetHome(url) {
         if (document.all) {
-            document.body.style.behavior='url(#default#homepage)';
+            document.body.style.behavior = 'url(#default#homepage)';
             document.body.setHomePage(url);
-        }else{
+        } else {
             alert("您的浏览器不支持自动设置页面为首页功能，请您手动在浏览器里设置该页面为首页！");
         }
     }
@@ -38,7 +38,7 @@
                 class="hidden">ShowgirlVedio</strong></a></h1>
 
         [#include "../tencent_include/search_csi_tencent.html"/]
-
+        site.url:${site.url}---res:${res}---123123123
         <!--<a onclick="SetHome(window.location)"href="javascript:void(0)">设为首页</a> - -->
         <!--<a onclick="AddFavorite(window.location,document.title)"href="javascript:void(0)">加入收藏</a> - -->
         <div class="mod_quick">
@@ -54,52 +54,52 @@
                 <div class="quick_user">
                     [#if user??]
                     <div>欢迎您: ${user.username} &nbsp; ${user.group.name} &nbsp;
-                    <a href="/logout.jspx?returnUrl=/" target="_blank">退出登录</a>
-                    [#else]
-                    <div>
-                        <a href="${base}/login.jspx?returnUrl=${location}">会员登录</a>
-                        <a href="${base}/register.jspx">会员注册</a>
+                        <a href="/logout.jspx?returnUrl=/" target="_blank">退出登录</a>
+                        [#else]
+                        <div>
+                            <a href="${base}/login.jspx?returnUrl=${location}">会员登录</a>
+                            <a href="${base}/register.jspx">会员注册</a>
+                        </div>
+                        [/#if]
+
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="site_navigation">
+            <div class="navigation_main">
+                <div class="navigation_top"></div>
+                <div class="navigation_inner">
+                    <ul class="navigation_area">
+                        <li class="list_item"><a href="${site.url!}" target="_self" class="link_nav"><span
+                                class="link_inner">首 页</span><i class="nav_sign"></i></a>
+                        </li>
+                    </ul>
+
+                    [@cms_channel_list ]
+                    [#list tag_list as a]
+                    [#if a.display == true]
+                    <ul class="navigation_area">
+                        <li class="list_item"><a href="${a.url}" class="link_nav"><span
+                                class="link_inner">${a.channelExt.name}</span><i class="nav_sign"></i></a>
+
+                            <div class="navigation_sub">
+                                <ul>
+                                    [#list a.child as child]
+                                    [#if child.display == true]
+                                    <li><a href="${child.url}" class="link_nav_sub"><span
+                                            class="link_inner">${child.channelExt.name}</span></a></li>
+                                    [/#if]
+                                    [/#list]
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                     [/#if]
+                    [/#list]
+                    [/@cms_channel_list ]
 
                 </div>
             </div>
         </div>
     </div>
-    <div class="site_navigation">
-        <div class="navigation_main">
-            <div class="navigation_top"></div>
-            <div class="navigation_inner">
-                <ul class="navigation_area">
-                    <li class="list_item"><a href="${site.url!}" target="_self" class="link_nav"><span
-                            class="link_inner">首 页</span><i class="nav_sign"></i></a>
-                    </li>
-                </ul>
-
-                [@cms_channel_list ]
-                [#list tag_list as a]
-                [#if a.display == true]
-                <ul class="navigation_area">
-                    <li class="list_item"><a href="${a.url}" class="link_nav"><span
-                            class="link_inner">${a.channelExt.name}</span><i class="nav_sign"></i></a>
-
-                        <div class="navigation_sub">
-                            <ul>
-                                [#list a.child as child]
-                                [#if child.display == true]
-                                <li><a href="${child.url}" class="link_nav_sub"><span
-                                        class="link_inner">${child.channelExt.name}</span></a></li>
-                                [/#if]
-                                [/#list]
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                [/#if]
-                [/#list]
-                [/@cms_channel_list ]
-
-            </div>
-        </div>
-    </div>
-</div>
