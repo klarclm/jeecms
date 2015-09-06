@@ -16,6 +16,7 @@ import com.jeecms.common.web.ResponseUtils;
 import com.jeecms.core.entity.CmsSite;
 import com.jeecms.core.web.util.CmsUtils;
 import com.jeecms.core.web.util.FrontUtils;
+import com.sun.star.ucb.SearchRecursion;
 import org.apache.commons.lang.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,13 +45,20 @@ import static com.jeecms.cms.Constants.TPLDIR_SPECIAL;
 public class VedioAct {
 
     public static final String TPLNAME_VEDIOSEARCHLIST = "tpl.vediosearchlist";
+    public static final  String SEARCH_MODE_LASTUPDATE="4";
+    public static final  String SEARCH_MODE_PLAYMORE="9";
+    public static final  String SEARCH_MODE_REVIEWBEST="13";
 
     @RequestMapping(value = "/vedio/vediosearchlist*.jspx", method = RequestMethod.GET)
     public String vedioSearchList(Integer typeId, Integer yearId, Integer aeraId, Integer countryId, HttpServletRequest request,
                                   HttpServletResponse response, ModelMap model) throws JSONException {
         String channelId = RequestUtils.getQueryParam(request, "channelId");
+        String searchMode = RequestUtils.getQueryParam(request, "searchMode");
+        if(searchMode != null && searchMode.isEmpty())
+            searchMode = SEARCH_MODE_LASTUPDATE;
         Channel channel = channelMng.findById(Integer.parseInt(channelId));
         model.put("channel", channel);
+        model.put("searchMode", searchMode);
         CmsSite site = CmsUtils.getSite(request);
         FrontUtils.frontData(request, model, site);
         FrontUtils.frontPageData(request, model);
