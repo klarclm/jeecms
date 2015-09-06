@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <property name="logDir" value="N:\\WorkSpace\\log\\" />
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -7,9 +8,9 @@
     </appender>
 
     <appender name="sqllog" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>N:\WorkSpace\log\sqllog_level.log</file>
+        <file>${logDir}sqllog_level.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-        <fileNamePattern>N:\WorkSpace\log\sqllog_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+        <fileNamePattern>${logDir}sqllog_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -34,9 +35,9 @@
     </appender>
 
     <appender name="errorlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>N:\WorkSpace\log\error_level.log</file>
+        <file>${logDir}error_level.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>N:\WorkSpace\log\error_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logDir}error_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -50,9 +51,9 @@
     </appender>
 
     <appender name="traceinfowarnlevelAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>N:\WorkSpace\log\trace-warn_level.log</file>
+        <file>${logDir}trace-warn_level.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>N:\WorkSpace\log\trace-warn_level-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logDir}trace-warn_level-%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
