@@ -13,7 +13,21 @@
     <link href="/${res}/tencent_css/v280_type.css" rel="stylesheet"/>
     <script src="/${res}/tencent_js/v280_picShow.js" type="text/javascript" language="javascript"></script>
     <link href="/${res}/tencent_css/v280_list.css" rel="stylesheet" type="text/css"/>
+    <script language="javascript">
+        function submit1() {
+            $("#submitSearchMode").val(4);
+            $("#submitform").submit();
+        }
 
+        function submit2() {
+            $("#submitSearchMode").val(9);
+            $("#submitform").submit();
+        }
+        function submit2() {
+            $("#submitSearchMode").val(13);
+            $("#submitform").submit();
+        }
+    </script>
 </head>
 <body>
 
@@ -39,19 +53,23 @@
 
 <div class="container">
     <div class="r">
-        <form action="vediosearchlist.jspx">
+        <form id="submitform" action="vediosearchlist.jspx">
             <div class="mod_toolbar">
-                <input type="hidden" name="channelId" value="${channel.id}"/>
-                <input type="submit" value="最新更新"/>
-                <input type="submit" value="最近热播"/>
-                <input type="submit" value="最受好评"/>
+                <ul>
+                    <input type="hidden" name="channelId" value="${channel.id}"/>
+                    <input id="submitSearchMode" type="hidden" name="searchMode" value="1"/>
+                    <li><input type="submit" onclick="submit1()" value="最新更新"/>"</li>
+                    <li><input type="submit" onclick="submit2()" value="最近热播"/>"</li>
+                    <li><input type="submit" onclick="submit3()" value="最受好评"/>"</li>
+
+                </ul>
             </div>
         </form>
 
         <div class="mod_video_list">
             <div class="tukuzlm">
                 <ul>
-                    [@cms_content_page count='3' orderBy='4' channelId=channel.id titLen='14' append='...' typeId='2'
+                    [@cms_content_page count='3' orderBy="${searchMode}" channelId=channel.id titLen='14' append='...' typeId='2'
                     dateFormat='yyyy-MM-dd' channelOption='1']
                     [#list tag_pagination.list as a]
                     <li>
@@ -67,7 +85,7 @@
 
                     <div class="clear"></div>
                 </ul>
-                <div class="pagesite">[@cms_pagination sysPage='1'/] </div>
+                <div class="pagesite">[@cms_pagination sysPage='1'/]</div>
                 [/@cms_content_page]
             </div>
 
