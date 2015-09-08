@@ -330,7 +330,7 @@ public class FrontUtils {
 		String res = ctx + RES_PATH + "/" + site.getPath() + "/"
 				+ site.getTplSolution();
 		// res路径需要去除第一个字符'/'
-		map.put(RES_TPL, res);
+		map.put(RES_TPL, res.substring(1));
 		map.put(LOCATION, location);
 	}
 
