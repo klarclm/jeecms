@@ -204,6 +204,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
             return list;
         }
 
+        //在linksetstart linksetEnd标签模块中循环提取内容地址、视频路径、视频图片
         private Map<String, String> getvediopicmap(HttpClient client,
                                                    CharsetHandler handler, String url, CmsAcquisition acqu) {
             String linksetStart = acqu.getLinksetStart();
