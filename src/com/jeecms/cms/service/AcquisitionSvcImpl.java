@@ -353,25 +353,23 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                 }
 
                 String vedioPath = null;
-                if (!vediopathSetStart.isEmpty() && !vediopathSetEnd.isEmpty()) {
-                    List<String> vedioList = findbetweenContentSet(html, vediopathSetStart, vediopathSetEnd, vediopathStart, vediopathEnd);
-                    vedioPath = vedioList.get(0);
-                } else {
-                    if (StringUtils.isNotBlank(vediopathStart)) {
-                        start = html.indexOf(vediopathStart);
-                        if (start == -1) {
-                            return handerResult(temp, history, null,
-                                    AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
-                        }
-                        start += vediopathStart.length();
-                        end = html.indexOf(vediopathEnd, start);
-                        if (end == -1) {
-                            return handerResult(temp, history, null,
-                                    AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
-                        }
-                        vedioPath = html.substring(start, end);
+                vedioPath = url; //默认为该访问地址的url
+                if (StringUtils.isNotBlank(vediopathStart)) {
+                    start = html.indexOf(vediopathStart);
+                    if (start == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
                     }
+                    start += vediopathStart.length();
+                    end = html.indexOf(vediopathEnd, start);
+                    if (end == -1) {
+                        return handerResult(temp, history, null,
+                                AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+                    }
+                    vedioPath = html.substring(start, end);
                 }
+
+
                 log.error("vedioPath=" + vedioPath);
 
                 String origin = null;
@@ -425,7 +423,6 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                 }
 
 
-
                 if (StringUtils.isNotBlank(viewLink)) {
                     start = html.indexOf(viewIdStart);
                     if (start == -1) {
@@ -466,7 +463,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                     while (iterator.hasNext()) {
                         String key = iterator.next();
                         if (-1 != key.indexOf(vedioPath))
-                            vedioPic= (String) m.get(key);
+                            vedioPic = (String) m.get(key);
                     }
                 }
 
@@ -474,7 +471,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                 Content content = cmsAcquisitionMng.saveContent(title, txt, origin, vedioPath, vedioPic, author, description, releaseTime,
                         acquId, AcquisitionResultType.SUCCESS, temp, history);
 
-                log.error("acqu:contentid:"+content.getId()+"title:"+title+"videoPath:"+vedioPath+"vedioPic:"+vedioPic);
+                log.error("acqu:contentid:" + content.getId() + "title:" + title + "videoPath:" + vedioPath + "vedioPic:" + vedioPic);
 
                 if (StringUtils.isNotBlank(view)) {
                     ContentCount count = content.getContentCount();
@@ -484,7 +481,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                         c = c - 1;
                     }
                     count.setViews(c);
-                    log.error("acqu:contentid:"+content.getId()+"title:"+title+"views:"+c);
+                    log.error("acqu:contentid:" + content.getId() + "title:" + title + "views:" + c);
                     contentCountMng.update(count);
                 }
 

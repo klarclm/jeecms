@@ -15,20 +15,20 @@
             player();
         } else {
             sun = 0;
-            var err = 'µ¯³ö±¾¶Ô»°¿ò:\n\n';
-            err = err + 'ËµÃ÷ÄãÕýÔÚÊ¹ÓÃÎÒÃÇµÄ½âÎö£¡\n\n\n';
-            err = err + '¿ÉÄÜµ¼ÖÂµÄÔ­Òò£º\n\n';
-            err = err + '¢Ù²ÎÊý´íÎó¡£\n\n';
-            err = err + '¢ÚÅäÖÃ´íÎó¡£\n\n';
-            err = err + '¢Û·þÎñÆ÷²»Ö§³Ö¡£\n\n\n';
-            err = err + 'ÇëÁªÏµQQ:122475170½â¾öBUG£¡\n\n';
-            err = err + '»¶Ó­¶¨ÖÆÊÕ·Ñ½âÎö£¡';
+            var err = 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô»ï¿½ï¿½ï¿½:\n\n';
+            err = err + 'Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄ½ï¿½ï¿½ï¿½ï¿½ï¿½\n\n\n';
+            err = err + 'ï¿½ï¿½ï¿½Üµï¿½ï¿½Âµï¿½Ô­ï¿½ï¿½\n\n';
+            err = err + 'ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n\n';
+            err = err + 'ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½\n\n';
+            err = err + 'ï¿½Û·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½Ö¡ï¿½\n\n\n';
+            err = err + 'ï¿½ï¿½ï¿½ï¿½ÏµQQ:122475170ï¿½ï¿½ï¿½BUGï¿½ï¿½\n\n';
+            err = err + 'ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½ï¿½Õ·Ñ½ï¿½ï¿½ï¿½ï¿½ï¿½';
             alert(err);
         }
     }
 //    http://localhost/spjx/index.php?v=http://v.youku.com/v_show/id_XMTMxNjQxMzY1Mg==.html?f=26018944&ev=1
     function player() {
-        var str = document.getElementById("u").value;
+        var str = document.getElementById("vediopath").value;
         console.log(str);
         if (str != '') {
             var flashvars = {
@@ -38,7 +38,7 @@
             var params = {bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent'};
             CKobject.embedSWF('${resSys}/spjx/player/player.swf', 'ckplayerContainer', 'ckplayer_a1', '985', '554', flashvars, params);
         } else {
-            alert("ÇëÌîÐ´²¥·ÅµØÖ·");
+            alert("vedio path is null");
         }
     }
     player();
