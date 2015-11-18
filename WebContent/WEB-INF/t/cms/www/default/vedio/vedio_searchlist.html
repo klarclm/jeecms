@@ -28,6 +28,13 @@
             $("#submitform").submit();
         }
     </script>
+
+    <!--//定制网页内样式，覆盖掉v280里一些冲突样式效果-->
+    <style type="text/css">
+        .clear {clear: both}
+        .pagesite{font-size: medium; letter-spacing: normal}
+    </style>
+
 </head>
 <body>
 
@@ -66,31 +73,45 @@
             </div>
         </form>
 
-        <div class="mod_video_list">
-            <div class="tukuzlm">
-                <ul>
-                    [@cms_content_page count='3' orderBy="${searchMode}" channelId=channel.id titLen='14' append='...' typeId='2'
-                    dateFormat='yyyy-MM-dd' channelOption='1']
-                    [#list tag_pagination.list as a]
-                    <li>
-                        <a href="${a.url}" target="_blank" title="${a.title}"><img src="${a.typeImg!site.defImg}"
-                                                                                   width="140"/></a>
+        <div class="wrapper">
+            <div class="l">
+                <div class="mod_figures">
+                    <ul>
+                        <!--视频的typeid 对应的jc_content_type 为1 普通-->
+                        [@cms_content_page count='8' orderBy="${searchMode}" channelId=channel.id titLen='14' append='...' typeId='1'
+                        dateFormat='yyyy-MM-dd' channelOption='1']
+                        [#list tag_pagination.list as a]
+                        <li class="list_item">
+                            <a href="${a.url}" class="figure" title="${a.title}">
+                                <img style="visibility: visible; " class="lazy"
+                                     data-original="${a.titleImg!site.defImg}"
+                                     src="${a.titleImg!site.defImg}" alt="${a.title}"/>
 
-                        <p><a href="${a.url}" target="_blank" title="${a.title}">[@text_cut s=a.title len=titLen
-                            append=append /]</a></p>
-
-                        <p>${a.date?string(dateFormat)}</p>
-                    </li>
-                    [/#list]
-
+                                <div class="figure_caption figure_caption_info">
+                                    <div class="figure_info">
+                                        [#if a.attr.Starring??]
+                                        <p class="figure_info_desc">${a.attr.Starring!}/p>
+                                            [/#if]
+                                <span class="figure_info_play"><i class="ico_play_12"></i><span
+                                        class="info_inner">${a.views!}次</span></span>
+                                <span class="figure_info_score"> <em class="score_l"></em><em
+                                        class="score_s">${a.score}</em></span>
+                                    </div>
+                                </div>
+                            </a>
+                            <strong class="figure_title"><a href="${a.url}"
+                                                            title="${a.title}">${a.title}</a></strong>
+                        </li>
+                        [/#list]
+                        <div class="clear" ></div>
+                    </ul>
                     <div class="clear"></div>
-                </ul>
-                <div class="pagesite">[@cms_pagination sysPage='1'/]</div>
-                [/@cms_content_page]
+                    <div class="pagesite">[@cms_pagination sysPage='1'/]</div>
+                    [/@cms_content_page]
+                </div>
             </div>
-
-
         </div>
+
     </div>
 </div>
 
