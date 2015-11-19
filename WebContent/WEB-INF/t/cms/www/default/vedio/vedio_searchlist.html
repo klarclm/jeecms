@@ -59,7 +59,7 @@
 </div>
 
 <div class="container">
-    <div class="r">
+    <div class="r" style="overflow: visible; width: 1300px">
         <form id="submitform" action="vediosearchlist.jspx">
             <div class="mod_toolbar">
                 <ul>
@@ -74,11 +74,11 @@
         </form>
 
         <div class="wrapper">
-            <div class="l">
+            <div class="l" style="overflow: visible; width: 1300px">
                 <div class="mod_figures">
                     <ul>
                         <!--视频的typeid 对应的jc_content_type 为1 普通-->
-                        [@cms_content_page count='8' orderBy="${searchMode}" channelId=channel.id titLen='14' append='...' typeId='1'
+                        [@cms_content_page count='20' orderBy="${searchMode}" channelId=channel.id titLen='14' append='...' typeId='1'
                         dateFormat='yyyy-MM-dd' channelOption='1']
                         [#list tag_pagination.list as a]
                         <li class="list_item">

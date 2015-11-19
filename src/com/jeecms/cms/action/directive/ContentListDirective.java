@@ -123,9 +123,11 @@ public class ContentListDirective extends AbstractContentDirective {
 	protected List<Content> getList(Map<String, TemplateModel> params,
 			Environment env) throws TemplateException {
 		Integer[] ids = DirectiveUtils.getIntArray(PARAM_IDS, params);
-		if (ids != null) {
+		if (ids != null && ids[0] !=0) {
 			return contentMng.getListByIdsForTag(ids, getOrderBy(params));
-		} else {
+		} else if( ids != null && ids[0] == 0){
+			return (List<Content>) super.getData(params, env);
+		}else{
 			return (List<Content>) super.getData(params, env);
 		}
 	}

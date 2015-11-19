@@ -201,13 +201,13 @@ CREATE TABLE `jc_advertising_attr` (
 INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_title', '查看showgirlvideo官方网站');
 INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_url', '/v6/u/cms/www/201404/30140543hzlx.gif');
 INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_target', '_blank');
-INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_link', 'http://www.showgirlvideo.com');
+INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_link', 'http://www.ndmxw.com');
 INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_width', '735');
 INSERT INTO `jc_advertising_attr` VALUES ('1', 'image_height', '70');
 INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_title', 'showgirlvideo官方网站');
 INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_url', '/r/cms/www/red/img/banner1.jpg');
 INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_target', '_blank');
-INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_link', 'http://www.showgirlvideo.com');
+INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_link', 'http://www.ndmxw.com');
 INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_width', '960');
 INSERT INTO `jc_advertising_attr` VALUES ('2', 'image_height', '60');
 INSERT INTO `jc_advertising_attr` VALUES ('3', 'image_height', '89');
@@ -221,7 +221,7 @@ INSERT INTO `jc_advertising_attr` VALUES ('4', 'image_target', '_blank');
 INSERT INTO `jc_advertising_attr` VALUES ('4', 'image_url', '/u/cms/www/201112/17145028j3bj.jpg');
 INSERT INTO `jc_advertising_attr` VALUES ('4', 'image_width', '980');
 INSERT INTO `jc_advertising_attr` VALUES ('5', 'image_height', '109');
-INSERT INTO `jc_advertising_attr` VALUES ('5', 'image_link', 'http://3x.showgirlvideo.com');
+INSERT INTO `jc_advertising_attr` VALUES ('5', 'image_link', 'http://3x.ndmxw.com');
 INSERT INTO `jc_advertising_attr` VALUES ('5', 'image_target', '_blank');
 INSERT INTO `jc_advertising_attr` VALUES ('5', 'image_url', '/u/cms/www/201112/18155751wi1k.gif');
 INSERT INTO `jc_advertising_attr` VALUES ('5', 'image_width', '215');
@@ -499,7 +499,7 @@ CREATE TABLE `jc_channel_txt` (
 -- ----------------------------
 -- Records of jc_channel_txt
 -- ----------------------------
-INSERT INTO `jc_channel_txt` VALUES ('10', '<p><font size=\"2\">&nbsp;&nbsp;&nbsp; showgirlvideo 是showgirl的内容视频站点，我们给您带来最新、最全的showgirl站，欢迎访问</font></p>\r\n', null, null, null);
+INSERT INTO `jc_channel_txt` VALUES ('10', '<p><font size=\"2\">&nbsp;&nbsp;&nbsp; ndmxw 是showgirl的内容视频站点，我们给您带来最新、最全的showgirl站，欢迎访问</font></p>\r\n', null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_channel_user
@@ -643,19 +643,19 @@ INSERT INTO `jc_comment_ext` VALUES ('5', '127.0.0.1', 'adsfa', null);
 DROP TABLE IF EXISTS `jc_config`;
 CREATE TABLE `jc_config` (
   `config_id` int(11) NOT NULL,
-  `context_path` varchar(20) DEFAULT '/showgirlvideo' COMMENT '部署路径',
+  `context_path` varchar(20) DEFAULT '/ndmxw' COMMENT '部署路径',
   `servlet_point` varchar(20) DEFAULT NULL COMMENT 'Servlet挂载点',
   `port` int(11) DEFAULT NULL COMMENT '端口',
   `db_file_uri` varchar(50) NOT NULL DEFAULT '/dbfile.svl?n=' COMMENT '数据库附件访问地址',
   `is_upload_to_db` tinyint(1) NOT NULL DEFAULT '0' COMMENT '上传附件至数据库',
-  `def_img` varchar(255) NOT NULL DEFAULT '/showgirlvideo/r/cms/www/default/no_picture.gif' COMMENT '图片不存在时默认图片',
+  `def_img` varchar(255) NOT NULL DEFAULT '/ndmxw/r/cms/www/default/no_picture.gif' COMMENT '图片不存在时默认图片',
   `login_url` varchar(255) NOT NULL DEFAULT '/login.jspx' COMMENT '登录地址',
   `process_url` varchar(255) DEFAULT NULL COMMENT '登录后处理地址',
   `mark_on` tinyint(1) NOT NULL DEFAULT '1' COMMENT '开启图片水印',
   `mark_width` int(11) NOT NULL DEFAULT '120' COMMENT '图片最小宽度',
   `mark_height` int(11) NOT NULL DEFAULT '120' COMMENT '图片最小高度',
   `mark_image` varchar(100) DEFAULT '/r/cms/www/watermark.png' COMMENT '图片水印',
-  `mark_content` varchar(100) NOT NULL DEFAULT 'www.showgirlvideo.com' COMMENT '文字水印内容',
+  `mark_content` varchar(100) NOT NULL DEFAULT 'www.ndmxw.com' COMMENT '文字水印内容',
   `mark_size` int(11) NOT NULL DEFAULT '20' COMMENT '文字水印大小',
   `mark_color` varchar(10) NOT NULL DEFAULT '#FF0000' COMMENT '文字水印颜色',
   `mark_alpha` int(11) NOT NULL DEFAULT '50' COMMENT '水印透明度（0-100）',
@@ -664,7 +664,7 @@ CREATE TABLE `jc_config` (
   `mark_offset_y` int(11) NOT NULL DEFAULT '0' COMMENT 'y坐标偏移量',
   `count_clear_time` date NOT NULL COMMENT '计数器清除时间',
   `count_copy_time` datetime NOT NULL COMMENT '计数器拷贝时间',
-  `download_code` varchar(32) NOT NULL DEFAULT 'showgirlvideo' COMMENT '下载防盗链md5混淆码',
+  `download_code` varchar(32) NOT NULL DEFAULT 'ndmxw' COMMENT '下载防盗链md5混淆码',
   `download_time` int(11) NOT NULL DEFAULT '12' COMMENT '下载有效时间（小时）',
   `email_host` varchar(50) DEFAULT NULL COMMENT '邮件发送服务器',
   `email_encoding` varchar(20) DEFAULT NULL COMMENT '邮件发送编码',
@@ -679,7 +679,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', '', null, '8080', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.showgirlvideo.com', '40', '#FF0000', '100', '1', '0', '0', '2015-08-26', '2015-08-25 21:58:05', 'showgirlvideo', '12', null, null, null, null, null, '1', '0');
+INSERT INTO `jc_config` VALUES ('1', '', null, '8080', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.ndmxw.com', '40', '#FF0000', '100', '1', '0', '0', '2015-08-26', '2015-08-25 21:58:05', 'ndmxw', '12', null, null, null, null, null, '1', '0');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -701,7 +701,7 @@ INSERT INTO `jc_config_attr` VALUES ('1', 'username_reserved', '');
 INSERT INTO `jc_config_attr` VALUES ('1', 'register_on', 'true');
 INSERT INTO `jc_config_attr` VALUES ('1', 'member_on', 'true');
 INSERT INTO `jc_config_attr` VALUES ('1', 'username_min_len', '3');
-INSERT INTO `jc_config_attr` VALUES ('1', 'version', 'showgirlvideo-v6');
+INSERT INTO `jc_config_attr` VALUES ('1', 'version', 'ndmxw-v6');
 INSERT INTO `jc_config_attr` VALUES ('1', 'user_img_height', '98');
 INSERT INTO `jc_config_attr` VALUES ('1', 'user_img_width', '143');
 INSERT INTO `jc_config_attr` VALUES ('1', 'check_on', 'false');
@@ -2681,8 +2681,8 @@ CREATE TABLE `jc_friendlink` (
 -- ----------------------------
 -- Records of jc_friendlink
 -- ----------------------------
-INSERT INTO `jc_friendlink` VALUES ('1', '1', '1', 'showgirlvideo官网', 'http://www.showgirlvideo.com', null, 'showgirlvideo@163.com', 'showgirlvideo是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。', '34', '1', '1');
-INSERT INTO `jc_friendlink` VALUES ('2', '1', '1', 'JEEBBS论坛', 'http://bbs.showgirlvideo.com', null, 'showgirlvideo@163.com', 'JEEBBS论坛', '3', '1', '10');
+INSERT INTO `jc_friendlink` VALUES ('1', '1', '1', 'ndmxw-你的明星网', 'http://www.ndmxw.com', null, 'ndmxw2015@163.com', 'showgirlvideo是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。', '34', '1', '1');
+INSERT INTO `jc_friendlink` VALUES ('2', '1', '1', 'JEEBBS论坛', 'http://bbs.ndmxw.com', null, 'ndmxw2015@163.com', 'JEEBBS论坛', '3', '1', '10');
 INSERT INTO `jc_friendlink` VALUES ('3', '1', '2', '京东商城', 'http://www.360buy.com/', '/u/cms/www/201112/1910271036lr.gif', '', '', '3', '1', '10');
 INSERT INTO `jc_friendlink` VALUES ('4', '1', '2', '当当网', 'http://www.dangdang.com/', '/u/cms/www/201112/191408344rwj.gif', '', '', '1', '1', '10');
 INSERT INTO `jc_friendlink` VALUES ('5', '1', '2', '亚马逊', 'http://www.amazon.cn/', '/u/cms/www/201112/19141012lh2q.gif', '', '', '1', '1', '10');
@@ -2858,7 +2858,7 @@ CREATE TABLE `jc_keyword` (
 -- ----------------------------
 -- Records of jc_keyword
 -- ----------------------------
-INSERT INTO `jc_keyword` VALUES ('1', null, '内容管理系统', '<a href=\"http://www.showgirlvideo.com/\" target=\"_blank\">内容管理系统</a>', '0');
+INSERT INTO `jc_keyword` VALUES ('1', null, '内容管理系统', '<a href=\"http://www.ndmxw.com/\" target=\"_blank\">内容管理系统</a>', '0');
 
 -- ----------------------------
 -- Table structure for jc_log
@@ -4118,7 +4118,7 @@ CREATE TABLE `jc_user_resume` (
 -- ----------------------------
 -- Records of jc_user_resume
 -- ----------------------------
-INSERT INTO `jc_user_resume` VALUES ('1', '程序员', '全职', '上海', 'java工程师', '', '家里蹲大学', null, '本科', '吃饭', '<img src=/jeeadmin/showgirlvideo/admin_global/o_update.do?password=111&groupId=1&rank=9&roleIds=1&siteIds=1&steps=2&allChannels=true&id=1＞', null, null, '11', null, null, null, '111', '111');
+INSERT INTO `jc_user_resume` VALUES ('1', '程序员', '全职', '上海', 'java工程师', '', '家里蹲大学', null, '本科', '吃饭', '<img src=/jeeadmin/ndmxw/admin_global/o_update.do?password=111&groupId=1&rank=9&roleIds=1&siteIds=1&steps=2&allChannels=true&id=1＞', null, null, '11', null, null, null, '111', '111');
 
 -- ----------------------------
 -- Table structure for jc_user_role
@@ -4328,9 +4328,9 @@ INSERT INTO `jo_config` VALUES ('email_username', 'showgirlvideov5@126.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval', '30');
 INSERT INTO `jo_config` VALUES ('login_error_times', '3');
 INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject', '找回showgirlvideo密码');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用showgirlvideo系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://demo.showgirlvideo.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_text', '感谢您使用showgirlvideo系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://demo.ndmxw.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
 INSERT INTO `jo_config` VALUES ('message_register_subject', '欢迎您注册showgirlvideo用户');
-INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册showgirlvideo系统会员\r\n请点击以下链接进行激活\r\nhttp://demo.showgirlvideo.com/active.jspx?username=${username}&key=${activationCode}');
+INSERT INTO `jo_config` VALUES ('message_register_text', '${username}您好：\r\n欢迎您注册showgirlvideo系统会员\r\n请点击以下链接进行激活\r\nhttp://demo.ndmxw.com/active.jspx?username=${username}&key=${activationCode}');
 INSERT INTO `jo_config` VALUES ('message_subject', 'showgirlvideo会员密码找回信息');
 INSERT INTO `jo_config` VALUES ('message_text', '感谢您使用showgirlvideo系统会员密码找回功能，请记住以下找回信息：\r\n用户ID：${uid}\r\n用户名：${username}\r\n您的新密码为：${resetPwd}\r\n请访问如下链接新密码才能生效：\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 

@@ -5,218 +5,218 @@ CREATE TABLE `jc_acquisition` (
   `channel_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `acq_name` varchar(50) NOT NULL COMMENT '²É¼¯Ãû³Æ',
-  `start_time` datetime default NULL COMMENT '¿ªÊ¼Ê±¼ä',
-  `end_time` datetime default NULL COMMENT 'Í£Ö¹Ê±¼ä',
-  `status` int(11) NOT NULL default '0' COMMENT 'µ±Ç°×´Ì¬(0:¾²Ö¹;1:²É¼¯;2:ÔÝÍ£)',
-  `curr_num` int(11) NOT NULL default '0' COMMENT 'µ±Ç°ºÅÂë',
-  `curr_item` int(11) NOT NULL default '0' COMMENT 'µ±Ç°ÌõÊý',
-  `total_item` int(11) NOT NULL default '0' COMMENT 'Ã¿Ò³×ÜÌõÊý',
-  `pause_time` int(11) NOT NULL default '0' COMMENT 'ÔÝÍ£Ê±¼ä(ºÁÃë)',
-  `page_encoding` varchar(20) NOT NULL default 'GBK' COMMENT 'Ò³Ãæ±àÂë',
-  `plan_list` longtext COMMENT '²É¼¯ÁÐ±í',
-  `dynamic_addr` varchar(255) default NULL COMMENT '¶¯Ì¬µØÖ·',
-  `dynamic_start` int(11) default NULL COMMENT 'Ò³Âë¿ªÊ¼',
-  `dynamic_end` int(11) default NULL COMMENT 'Ò³Âë½áÊø',
-  `linkset_start` varchar(255) default NULL COMMENT 'ÄÚÈÝÁ´½ÓÇø¿ªÊ¼',
-  `linkset_end` varchar(255) default NULL COMMENT 'ÄÚÈÝÁ´½ÓÇø½áÊø',
-  `link_start` varchar(255) default NULL COMMENT 'ÄÚÈÝÁ´½Ó¿ªÊ¼',
-  `link_end` varchar(255) default NULL COMMENT 'ÄÚÈÝÁ´½Ó½áÊø',
-  `title_start` varchar(255) default NULL COMMENT '±êÌâ¿ªÊ¼',
-  `title_end` varchar(255) default NULL COMMENT '±êÌâ½áÊø',
-  `keywords_start` varchar(255) default NULL COMMENT '¹Ø¼ü×Ö¿ªÊ¼',
-  `keywords_end` varchar(255) default NULL COMMENT '¹Ø¼ü×Ö½áÊø',
-  `description_start` varchar(255) default NULL COMMENT 'ÃèÊö¿ªÊ¼',
-  `description_end` varchar(255) default NULL COMMENT 'ÃèÊö½áÊø',
-  `content_start` varchar(255) default NULL COMMENT 'ÄÚÈÝ¿ªÊ¼',
-  `content_end` varchar(255) default NULL COMMENT 'ÄÚÈÝ½áÊø',
-  `pagination_start` varchar(255) default NULL COMMENT 'ÄÚÈÝ·ÖÒ³¿ªÊ¼',
-  `pagination_end` varchar(255) default NULL COMMENT 'ÄÚÈÝ·ÖÒ³½áÊø',
-  `queue` int(11) NOT NULL default '0' COMMENT '¶ÓÁÐ',
-  `repeat_check_type` varchar(20) NOT NULL default 'NONE' COMMENT 'ÖØ¸´ÀàÐÍ',
-  `img_acqu` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ²É¼¯Í¼Æ¬',
-  `content_prefix` varchar(255) default NULL COMMENT 'ÄÚÈÝµØÖ·²¹È«url',
-  `img_prefix` varchar(255) default NULL COMMENT 'Í¼Æ¬µØÖ·²¹È«url',
-  `view_start` varchar(255) default NULL COMMENT 'ä¯ÀÀÁ¿¿ªÊ¼',
-  `view_end` varchar(255) default NULL COMMENT 'ä¯ÀÀÁ¿½áÊø',
+  `acq_name` varchar(50) NOT NULL COMMENT 'ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `start_time` datetime default NULL COMMENT 'ï¿½ï¿½Ê¼Ê±ï¿½ï¿½',
+  `end_time` datetime default NULL COMMENT 'Í£Ö¹Ê±ï¿½ï¿½',
+  `status` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ç°×´Ì¬(0:ï¿½ï¿½Ö¹;1:ï¿½É¼ï¿½;2:ï¿½ï¿½Í£)',
+  `curr_num` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½',
+  `curr_item` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½',
+  `total_item` int(11) NOT NULL default '0' COMMENT 'Ã¿Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `pause_time` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Í£Ê±ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)',
+  `page_encoding` varchar(20) NOT NULL default 'GBK' COMMENT 'Ò³ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `plan_list` longtext COMMENT 'ï¿½É¼ï¿½ï¿½Ð±ï¿½',
+  `dynamic_addr` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ì¬ï¿½ï¿½Ö·',
+  `dynamic_start` int(11) default NULL COMMENT 'Ò³ï¿½ë¿ªÊ¼',
+  `dynamic_end` int(11) default NULL COMMENT 'Ò³ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `linkset_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼',
+  `linkset_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `link_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼',
+  `link_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½',
+  `title_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½â¿ªÊ¼',
+  `title_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `keywords_start` varchar(255) default NULL COMMENT 'ï¿½Ø¼ï¿½ï¿½Ö¿ï¿½Ê¼',
+  `keywords_end` varchar(255) default NULL COMMENT 'ï¿½Ø¼ï¿½ï¿½Ö½ï¿½ï¿½ï¿½',
+  `description_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼',
+  `description_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `content_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ý¿ï¿½Ê¼',
+  `content_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ý½ï¿½ï¿½ï¿½',
+  `pagination_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ý·ï¿½Ò³ï¿½ï¿½Ê¼',
+  `pagination_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ý·ï¿½Ò³ï¿½ï¿½ï¿½ï¿½',
+  `queue` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `repeat_check_type` varchar(20) NOT NULL default 'NONE' COMMENT 'ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `img_acqu` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½É¼ï¿½Í¼Æ¬',
+  `content_prefix` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ýµï¿½Ö·ï¿½ï¿½È«url',
+  `img_prefix` varchar(255) default NULL COMMENT 'Í¼Æ¬ï¿½ï¿½Ö·ï¿½ï¿½È«url',
+  `view_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼',
+  `view_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   `view_id_start` varchar(255) default NULL COMMENT 'idÇ°×º',
-  `view_id_end` varchar(255) default NULL COMMENT 'idºó×º',
-  `view_link` varchar(255) default NULL COMMENT 'ä¯ÀÀÁ¿¶¯Ì¬·ÃÎÊµØÖ·',
-  `releaseTime_start` varchar(255) default NULL COMMENT '·¢²¼Ê±¼ä¿ªÊ¼',
-  `releaseTime_end` varchar(255) default NULL COMMENT '·¢²¼Ê±¼ä½áÊø',
-  `author_start` varchar(255) default NULL COMMENT '×÷Õß¿ªÊ¼',
-  `author_end` varchar(255) default NULL COMMENT '×÷Õß½áÊø',
-  `origin_start` varchar(255) default NULL COMMENT 'À´Ô´¿ªÊ¼',
-  `origin_end` varchar(255) default NULL COMMENT 'À´Ô´½áÊø',
-  `releaseTime_format` varchar(255) default NULL COMMENT '·¢²¼Ê±¼ä¸ñÊ½',
-  `vediopath_start` varchar(50) default NULL COMMENT 'ÊÓÆµÂ·¾¶',
-  `vediopath_end` varchar(50) default NULL COMMENT 'ÊÓÆµÂ·¾¶',
+  `view_id_end` varchar(255) default NULL COMMENT 'idï¿½ï¿½×º',
+  `view_link` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½Êµï¿½Ö·',
+  `releaseTime_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä¿ªÊ¼',
+  `releaseTime_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `author_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ß¿ï¿½Ê¼',
+  `author_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½',
+  `origin_start` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ô´ï¿½ï¿½Ê¼',
+  `origin_end` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½',
+  `releaseTime_format` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½',
+  `vediopath_start` varchar(50) default NULL COMMENT 'ï¿½ï¿½ÆµÂ·ï¿½ï¿½',
+  `vediopath_end` varchar(50) default NULL COMMENT 'ï¿½ï¿½ÆµÂ·ï¿½ï¿½',
   PRIMARY KEY  (`acquisition_id`),
   KEY `fk_jc_acquisition_channel` (`channel_id`),
   KEY `fk_jc_acquisition_contenttype` (`type_id`),
   KEY `fk_jc_acquisition_site` (`site_id`),
   KEY `fk_jc_acquisition_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS²É¼¯±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½É¼ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_acquisition_history`;
 CREATE TABLE `jc_acquisition_history` (
   `history_id` int(11) NOT NULL auto_increment,
-  `channel_url` varchar(255) NOT NULL default '' COMMENT 'À¸Ä¿µØÖ·',
-  `content_url` varchar(255) NOT NULL default '' COMMENT 'ÄÚÈÝµØÖ·',
-  `title` varchar(255) default NULL COMMENT '±êÌâ',
-  `description` varchar(20) NOT NULL default '' COMMENT 'ÃèÊö',
-  `acquisition_id` int(11) default NULL COMMENT '²É¼¯Ô´',
-  `content_id` int(11) default NULL COMMENT 'ÄÚÈÝ',
+  `channel_url` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½Ö·',
+  `content_url` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½Ýµï¿½Ö·',
+  `title` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(20) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `acquisition_id` int(11) default NULL COMMENT 'ï¿½É¼ï¿½Ô´',
+  `content_id` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`history_id`),
   KEY `fk_acquisition_history_acquisition` (`acquisition_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='²É¼¯ÀúÊ·¼ÇÂ¼±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½É¼ï¿½ï¿½ï¿½Ê·ï¿½ï¿½Â¼ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_acquisition_temp`;
 CREATE TABLE `jc_acquisition_temp` (
   `temp_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) default NULL,
-  `channel_url` varchar(255) NOT NULL default '' COMMENT 'À¸Ä¿µØÖ·',
-  `content_url` varchar(255) NOT NULL default '' COMMENT 'ÄÚÈÝµØÖ·',
-  `title` varchar(255) default NULL COMMENT '±êÌâ',
-  `finish_percent` int(3) NOT NULL default '0' COMMENT '°Ù·Ö±È',
-  `description` varchar(20) NOT NULL default '' COMMENT 'ÃèÊö',
-  `seq` int(3) NOT NULL default '0' COMMENT 'Ë³Ðò',
+  `channel_url` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½Ö·',
+  `content_url` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½Ýµï¿½Ö·',
+  `title` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `finish_percent` int(3) NOT NULL default '0' COMMENT 'ï¿½Ù·Ö±ï¿½',
+  `description` varchar(20) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `seq` int(3) NOT NULL default '0' COMMENT 'Ë³ï¿½ï¿½',
   PRIMARY KEY  (`temp_id`),
   KEY `fk_jc_temp_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='²É¼¯½ø¶ÈÁÙÊ±±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_advertising`;
 CREATE TABLE `jc_advertising` (
   `advertising_id` int(11) NOT NULL auto_increment,
   `adspace_id` int(11) NOT NULL,
   `site_id` int(11) NOT NULL,
-  `ad_name` varchar(100) NOT NULL COMMENT '¹ã¸æÃû³Æ',
-  `category` varchar(50) NOT NULL COMMENT '¹ã¸æÀàÐÍ',
-  `ad_code` longtext COMMENT '¹ã¸æ´úÂë',
-  `ad_weight` int(11) NOT NULL default '1' COMMENT '¹ã¸æÈ¨ÖØ',
-  `display_count` bigint(20) NOT NULL default '0' COMMENT 'Õ¹ÏÖ´ÎÊý',
-  `click_count` bigint(20) NOT NULL default '0' COMMENT 'µã»÷´ÎÊý',
-  `start_time` date default NULL COMMENT '¿ªÊ¼Ê±¼ä',
-  `end_time` date default NULL COMMENT '½áÊøÊ±¼ä',
-  `is_enabled` char(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÆôÓÃ',
+  `ad_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `category` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `ad_code` longtext COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `ad_weight` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½È¨ï¿½ï¿½',
+  `display_count` bigint(20) NOT NULL default '0' COMMENT 'Õ¹ï¿½Ö´ï¿½ï¿½ï¿½',
+  `click_count` bigint(20) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `start_time` date default NULL COMMENT 'ï¿½ï¿½Ê¼Ê±ï¿½ï¿½',
+  `end_time` date default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `is_enabled` char(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`advertising_id`),
   KEY `fk_jc_advertising_site` (`site_id`),
   KEY `fk_jc_space_advertising` (`adspace_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='CMS¹ã¸æ±í';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_advertising_attr`;
 CREATE TABLE `jc_advertising_attr` (
   `advertising_id` int(11) NOT NULL,
-  `attr_name` varchar(50) NOT NULL COMMENT 'Ãû³Æ',
+  `attr_name` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `attr_value` varchar(255) default NULL COMMENT 'Öµ',
   KEY `fk_jc_params_advertising` (`advertising_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS¹ã¸æÊôÐÔ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_advertising_space`;
 CREATE TABLE `jc_advertising_space` (
   `adspace_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) NOT NULL,
-  `ad_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
-  `is_enabled` char(1) NOT NULL COMMENT 'ÊÇ·ñÆôÓÃ',
+  `ad_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `is_enabled` char(1) NOT NULL COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`adspace_id`),
   KEY `fk_jc_adspace_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMS¹ã¸æ°æÎ»±í';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_channel`;
 CREATE TABLE `jc_channel` (
   `channel_id` int(11) NOT NULL auto_increment,
-  `model_id` int(11) NOT NULL COMMENT 'Ä£ÐÍID',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µãID',
-  `parent_id` int(11) default NULL COMMENT '¸¸À¸Ä¿ID',
-  `channel_path` varchar(30) default NULL COMMENT '·ÃÎÊÂ·¾¶',
-  `lft` int(11) NOT NULL default '1' COMMENT 'Ê÷×ó±ß',
-  `rgt` int(11) NOT NULL default '2' COMMENT 'Ê÷ÓÒ±ß',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `has_content` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÓÐÄÚÈÝ',
-  `is_display` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÏÔÊ¾',
+  `model_id` int(11) NOT NULL COMMENT 'Ä£ï¿½ï¿½ID',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½ID',
+  `parent_id` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ä¿ID',
+  `channel_path` varchar(30) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',
+  `lft` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `rgt` int(11) NOT NULL default '2' COMMENT 'ï¿½ï¿½ï¿½Ò±ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `has_content` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_display` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Ê¾',
   PRIMARY KEY  (`channel_id`),
   KEY `fk_jc_channel_model` (`model_id`),
   KEY `fk_jc_channel_parent` (`parent_id`),
   KEY `fk_jc_channel_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿±í';
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_channel_attr`;
 CREATE TABLE `jc_channel_attr` (
   `channel_id` int(11) NOT NULL,
-  `attr_name` varchar(30) NOT NULL COMMENT 'Ãû³Æ',
+  `attr_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `attr_value` varchar(255) default NULL COMMENT 'Öµ',
   KEY `fk_jc_attr_channel` (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿À©Õ¹ÊôÐÔ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ô±ï¿½';
 
 DROP TABLE IF EXISTS `jc_channel_count`;
 CREATE TABLE `jc_channel_count` (
   `channel_id` int(11) NOT NULL,
-  `views` int(11) NOT NULL default '0' COMMENT '×Ü·ÃÎÊÊý',
-  `views_month` int(11) NOT NULL default '0' COMMENT 'ÔÂ·ÃÎÊÊý',
-  `views_week` int(11) NOT NULL default '0' COMMENT 'ÖÜ·ÃÎÊÊý',
-  `views_day` int(11) NOT NULL default '0' COMMENT 'ÈÕ·ÃÎÊÊý',
+  `views` int(11) NOT NULL default '0' COMMENT 'ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `views_month` int(11) NOT NULL default '0' COMMENT 'ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `views_week` int(11) NOT NULL default '0' COMMENT 'ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `views_day` int(11) NOT NULL default '0' COMMENT 'ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿·ÃÎÊÁ¿¼ÆÊý±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_channel_ext`;
 CREATE TABLE `jc_channel_ext` (
   `channel_id` int(11) NOT NULL,
-  `channel_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `final_step` tinyint(4) default '2' COMMENT 'ÖÕÉó¼¶±ð',
-  `after_check` tinyint(4) default NULL COMMENT 'ÉóºËºó(1:²»ÄÜÐÞ¸ÄÉ¾³ý;2:ÐÞ¸ÄºóÍË»Ø;3:ÐÞ¸Äºó²»±ä)',
-  `is_static_channel` char(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÀ¸Ä¿¾²Ì¬»¯',
-  `is_static_content` char(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÄÚÈÝ¾²Ì¬»¯',
-  `is_access_by_dir` char(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÊ¹ÓÃÄ¿Â¼·ÃÎÊ',
-  `is_list_child` char(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÊ¹ÓÃ×ÓÀ¸Ä¿ÁÐ±í',
-  `page_size` int(11) NOT NULL default '20' COMMENT 'Ã¿Ò³¶àÉÙÌõ¼ÇÂ¼',
-  `channel_rule` varchar(150) default NULL COMMENT 'À¸Ä¿Ò³Éú³É¹æÔò',
-  `content_rule` varchar(150) default NULL COMMENT 'ÄÚÈÝÒ³Éú³É¹æÔò',
-  `link` varchar(255) default NULL COMMENT 'Íâ²¿Á´½Ó',
-  `tpl_channel` varchar(100) default NULL COMMENT 'À¸Ä¿Ò³Ä£°å',
-  `tpl_content` varchar(100) default NULL COMMENT 'ÄÚÈÝÒ³Ä£°å',
-  `title_img` varchar(100) default NULL COMMENT 'ËõÂÔÍ¼',
-  `content_img` varchar(100) default NULL COMMENT 'ÄÚÈÝÍ¼',
-  `has_title_img` tinyint(1) NOT NULL default '0' COMMENT 'ÄÚÈÝÊÇ·ñÓÐËõÂÔÍ¼',
-  `has_content_img` tinyint(1) NOT NULL default '0' COMMENT 'ÄÚÈÝÊÇ·ñÓÐÄÚÈÝÍ¼',
-  `title_img_width` int(11) NOT NULL default '139' COMMENT 'ÄÚÈÝ±êÌâÍ¼¿í¶È',
-  `title_img_height` int(11) NOT NULL default '139' COMMENT 'ÄÚÈÝ±êÌâÍ¼¸ß¶È',
-  `content_img_width` int(11) NOT NULL default '310' COMMENT 'ÄÚÈÝÄÚÈÝÍ¼¿í¶È',
-  `content_img_height` int(11) NOT NULL default '310' COMMENT 'ÄÚÈÝÄÚÈÝÍ¼¸ß¶È',
-  `comment_control` int(11) NOT NULL default '0' COMMENT 'ÆÀÂÛ(0:ÄäÃû;1:»áÔ±;2:¹Ø±Õ)',
-  `allow_updown` tinyint(1) NOT NULL default '1' COMMENT '¶¥²È(true:¿ª·Å;false:¹Ø±Õ)',
-  `is_blank` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÐÂ´°¿Ú´ò¿ª',
+  `channel_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `final_step` tinyint(4) default '2' COMMENT 'ï¿½ï¿½ï¿½ó¼¶±ï¿½',
+  `after_check` tinyint(4) default NULL COMMENT 'ï¿½ï¿½Ëºï¿½(1:ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½É¾ï¿½ï¿½;2:ï¿½Þ¸Äºï¿½ï¿½Ë»ï¿½;3:ï¿½Þ¸Äºó²»±ï¿½)',
+  `is_static_channel` char(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ì¬ï¿½ï¿½',
+  `is_static_content` char(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½Ì¬ï¿½ï¿½',
+  `is_access_by_dir` char(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½Ê¹ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½',
+  `is_list_child` char(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ð±ï¿½',
+  `page_size` int(11) NOT NULL default '20' COMMENT 'Ã¿Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼',
+  `channel_rule` varchar(150) default NULL COMMENT 'ï¿½ï¿½Ä¿Ò³ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½',
+  `content_rule` varchar(150) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½',
+  `link` varchar(255) default NULL COMMENT 'ï¿½â²¿ï¿½ï¿½ï¿½ï¿½',
+  `tpl_channel` varchar(100) default NULL COMMENT 'ï¿½ï¿½Ä¿Ò³Ä£ï¿½ï¿½',
+  `tpl_content` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ò³Ä£ï¿½ï¿½',
+  `title_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼',
+  `content_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼',
+  `has_title_img` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼',
+  `has_content_img` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼',
+  `title_img_width` int(11) NOT NULL default '139' COMMENT 'ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½',
+  `title_img_height` int(11) NOT NULL default '139' COMMENT 'ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½Í¼ï¿½ß¶ï¿½',
+  `content_img_width` int(11) NOT NULL default '310' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½',
+  `content_img_height` int(11) NOT NULL default '310' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ß¶ï¿½',
+  `comment_control` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½(0:ï¿½ï¿½ï¿½ï¿½;1:ï¿½ï¿½Ô±;2:ï¿½Ø±ï¿½)',
+  `allow_updown` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½(true:ï¿½ï¿½ï¿½ï¿½;false:ï¿½Ø±ï¿½)',
+  `is_blank` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½Â´ï¿½ï¿½Ú´ï¿½',
   `title` varchar(255) default NULL COMMENT 'TITLE',
   `keywords` varchar(255) default NULL COMMENT 'KEYWORDS',
   `description` varchar(255) default NULL COMMENT 'DESCRIPTION',
-  `allow_share` tinyint(1) NOT NULL default '0' COMMENT '·ÖÏí(true:¿ª·Å;false:¹Ø±Õ)',
-  `allow_score` tinyint(1) NOT NULL default '0' COMMENT 'ÆÀ·Ö(true:¿ª·Å;false:¹Ø±Õ)',
+  `allow_share` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½(true:ï¿½ï¿½ï¿½ï¿½;false:ï¿½Ø±ï¿½)',
+  `allow_score` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½(true:ï¿½ï¿½ï¿½ï¿½;false:ï¿½Ø±ï¿½)',
   PRIMARY KEY  (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿ÄÚÈÝ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ý±ï¿½';
 
 DROP TABLE IF EXISTS `jc_channel_model`;
 CREATE TABLE `jc_channel_model` (
   `channel_id` int(11) NOT NULL,
-  `model_id` int(11) NOT NULL COMMENT 'Ä£ÐÍid',
-  `tpl_content` varchar(100) default NULL COMMENT 'ÄÚÈÝÄ£°å',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÐò',
+  `model_id` int(11) NOT NULL COMMENT 'Ä£ï¿½ï¿½id',
+  `tpl_content` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`channel_id`,`priority`),
   KEY `fk_jc_model_channel_m` (`model_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='À¸Ä¿¿ÉÑ¡ÄÚÈÝÄ£ÐÍ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½Ä¿ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Ä£ï¿½Í±ï¿½';
 
 DROP TABLE IF EXISTS `jc_channel_txt`;
 CREATE TABLE `jc_channel_txt` (
   `channel_id` int(11) NOT NULL,
-  `txt` longtext COMMENT 'À¸Ä¿ÄÚÈÝ',
-  `txt1` longtext COMMENT 'À©Õ¹ÄÚÈÝ1',
-  `txt2` longtext COMMENT 'À©Õ¹ÄÚÈÝ2',
-  `txt3` longtext COMMENT 'À©Õ¹ÄÚÈÝ3',
+  `txt` longtext COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',
+  `txt1` longtext COMMENT 'ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½1',
+  `txt2` longtext COMMENT 'ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½2',
+  `txt3` longtext COMMENT 'ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½3',
   PRIMARY KEY  (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿ÎÄ±¾±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½Ä±ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_channel_user`;
 CREATE TABLE `jc_channel_user` (
@@ -224,7 +224,7 @@ CREATE TABLE `jc_channel_user` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY  (`channel_id`,`user_id`),
   KEY `fk_jc_channel_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿ÓÃ»§¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_chnl_group_contri`;
 CREATE TABLE `jc_chnl_group_contri` (
@@ -232,7 +232,7 @@ CREATE TABLE `jc_chnl_group_contri` (
   `group_id` int(11) NOT NULL,
   PRIMARY KEY  (`channel_id`,`group_id`),
   KEY `fk_jc_channel_group_c` (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿Í¶¸å»áÔ±×é¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿Í¶ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_chnl_group_view`;
@@ -241,153 +241,153 @@ CREATE TABLE `jc_chnl_group_view` (
   `group_id` int(11) NOT NULL,
   PRIMARY KEY  (`channel_id`,`group_id`),
   KEY `fk_jc_channel_group_v` (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÀ¸Ä¿ä¯ÀÀ»áÔ±×é¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_comment`;
 CREATE TABLE `jc_comment` (
   `comment_id` int(11) NOT NULL auto_increment,
-  `comment_user_id` int(11) default NULL COMMENT 'ÆÀÂÛÓÃ»§ID',
-  `reply_user_id` int(11) default NULL COMMENT '»Ø¸´ÓÃ»§ID',
-  `content_id` int(11) NOT NULL COMMENT 'ÄÚÈÝID',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µãID',
-  `create_time` datetime NOT NULL COMMENT 'ÆÀÂÛÊ±¼ä',
-  `reply_time` datetime default NULL COMMENT '»Ø¸´Ê±¼ä',
-  `ups` smallint(6) NOT NULL default '0' COMMENT 'Ö§³ÖÊý',
-  `downs` smallint(6) NOT NULL default '0' COMMENT '·´¶ÔÊý',
-  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÍÆ¼ö',
-  `is_checked` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÉóºË',
-  `score` int(11) default NULL COMMENT 'ÆÀ·Ö',
+  `comment_user_id` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ID',
+  `reply_user_id` int(11) default NULL COMMENT 'ï¿½Ø¸ï¿½ï¿½Ã»ï¿½ID',
+  `content_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ID',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½ID',
+  `create_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `reply_time` datetime default NULL COMMENT 'ï¿½Ø¸ï¿½Ê±ï¿½ï¿½',
+  `ups` smallint(6) NOT NULL default '0' COMMENT 'Ö§ï¿½ï¿½ï¿½ï¿½',
+  `downs` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½Æ¼ï¿½',
+  `is_checked` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
+  `score` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`comment_id`),
   KEY `fk_jc_comment_content` (`content_id`),
   KEY `fk_jc_comment_reply` (`reply_user_id`),
   KEY `fk_jc_comment_site` (`site_id`),
   KEY `fk_jc_comment_user` (`comment_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='CMSÆÀÂÛ±í';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Û±ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_comment_ext`;
 CREATE TABLE `jc_comment_ext` (
   `comment_id` int(11) NOT NULL,
-  `ip` varchar(50) default NULL COMMENT 'IPµØÖ·',
-  `text` longtext COMMENT 'ÆÀÂÛÄÚÈÝ',
-  `reply` longtext COMMENT '»Ø¸´ÄÚÈÝ',
+  `ip` varchar(50) default NULL COMMENT 'IPï¿½ï¿½Ö·',
+  `text` longtext COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `reply` longtext COMMENT 'ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½',
   KEY `fk_jc_ext_comment` (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÆÀÂÛÀ©Õ¹±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_config`;
 CREATE TABLE `jc_config` (
   `config_id` int(11) NOT NULL,
-  `context_path` varchar(20) default '/showgirlvideo' COMMENT '²¿ÊðÂ·¾¶',
-  `servlet_point` varchar(20) default NULL COMMENT 'Servlet¹ÒÔØµã',
-  `port` int(11) default NULL COMMENT '¶Ë¿Ú',
-  `db_file_uri` varchar(50) NOT NULL default '/dbfile.svl?n=' COMMENT 'Êý¾Ý¿â¸½¼þ·ÃÎÊµØÖ·',
-  `is_upload_to_db` tinyint(1) NOT NULL default '0' COMMENT 'ÉÏ´«¸½¼þÖÁÊý¾Ý¿â',
-  `def_img` varchar(255) NOT NULL default '/showgirlvideo/r/cms/www/default/no_picture.gif' COMMENT 'Í¼Æ¬²»´æÔÚÊ±Ä¬ÈÏÍ¼Æ¬',
-  `login_url` varchar(255) NOT NULL default '/login.jspx' COMMENT 'µÇÂ¼µØÖ·',
-  `process_url` varchar(255) default NULL COMMENT 'µÇÂ¼ºó´¦ÀíµØÖ·',
-  `mark_on` tinyint(1) NOT NULL default '1' COMMENT '¿ªÆôÍ¼Æ¬Ë®Ó¡',
-  `mark_width` int(11) NOT NULL default '120' COMMENT 'Í¼Æ¬×îÐ¡¿í¶È',
-  `mark_height` int(11) NOT NULL default '120' COMMENT 'Í¼Æ¬×îÐ¡¸ß¶È',
+  `context_path` varchar(20) default '/ndmxw' COMMENT 'ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',
+  `servlet_point` varchar(20) default NULL COMMENT 'Servletï¿½ï¿½ï¿½Øµï¿½',
+  `port` int(11) default NULL COMMENT 'ï¿½Ë¿ï¿½',
+  `db_file_uri` varchar(50) NOT NULL default '/dbfile.svl?n=' COMMENT 'ï¿½ï¿½ï¿½Ý¿â¸½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö·',
+  `is_upload_to_db` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½',
+  `def_img` varchar(255) NOT NULL default '/ndmxw/r/cms/www/default/no_picture.gif' COMMENT 'Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ä¬ï¿½ï¿½Í¼Æ¬',
+  `login_url` varchar(255) NOT NULL default '/login.jspx' COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½Ö·',
+  `process_url` varchar(255) default NULL COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ö·',
+  `mark_on` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼Æ¬Ë®Ó¡',
+  `mark_width` int(11) NOT NULL default '120' COMMENT 'Í¼Æ¬ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½',
+  `mark_height` int(11) NOT NULL default '120' COMMENT 'Í¼Æ¬ï¿½ï¿½Ð¡ï¿½ß¶ï¿½',
   `mark_image` varchar(100) default '/r/cms/www/watermark.png' COMMENT 'Í¼Æ¬Ë®Ó¡',
-  `mark_content` varchar(100) NOT NULL default 'www.showgirlvideo.com' COMMENT 'ÎÄ×ÖË®Ó¡ÄÚÈÝ',
-  `mark_size` int(11) NOT NULL default '20' COMMENT 'ÎÄ×ÖË®Ó¡´óÐ¡',
-  `mark_color` varchar(10) NOT NULL default '#FF0000' COMMENT 'ÎÄ×ÖË®Ó¡ÑÕÉ«',
-  `mark_alpha` int(11) NOT NULL default '50' COMMENT 'Ë®Ó¡Í¸Ã÷¶È£¨0-100£©',
-  `mark_position` int(11) NOT NULL default '1' COMMENT 'Ë®Ó¡Î»ÖÃ(0-5)',
-  `mark_offset_x` int(11) NOT NULL default '0' COMMENT 'x×ø±êÆ«ÒÆÁ¿',
-  `mark_offset_y` int(11) NOT NULL default '0' COMMENT 'y×ø±êÆ«ÒÆÁ¿',
-  `count_clear_time` date NOT NULL COMMENT '¼ÆÊýÆ÷Çå³ýÊ±¼ä',
-  `count_copy_time` datetime NOT NULL COMMENT '¼ÆÊýÆ÷¿½±´Ê±¼ä',
-  `download_code` varchar(32) NOT NULL default 'showgirlvideo' COMMENT 'ÏÂÔØ·ÀµÁÁ´md5»ìÏýÂë',
-  `download_time` int(11) NOT NULL default '12' COMMENT 'ÏÂÔØÓÐÐ§Ê±¼ä£¨Ð¡Ê±£©',
-  `email_host` varchar(50) default NULL COMMENT 'ÓÊ¼þ·¢ËÍ·þÎñÆ÷',
-  `email_encoding` varchar(20) default NULL COMMENT 'ÓÊ¼þ·¢ËÍ±àÂë',
-  `email_username` varchar(100) default NULL COMMENT 'ÓÊÏäÓÃ»§Ãû',
-  `email_password` varchar(100) default NULL COMMENT 'ÓÊÏäÃÜÂë',
-  `email_personal` varchar(100) default NULL COMMENT 'ÓÊÏä·¢¼þÈË',
-  `email_validate` tinyint(1) default '0' COMMENT '¿ªÆôÓÊÏäÑéÖ¤',
-  `view_only_checked` tinyint(1) NOT NULL default '0' COMMENT 'Ö»ÓÐÖÕÉó²ÅÄÜä¯ÀÀÄÚÈÝÒ³',
+  `mark_content` varchar(100) NOT NULL default 'www.ndmxw.com' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë®Ó¡ï¿½ï¿½ï¿½ï¿½',
+  `mark_size` int(11) NOT NULL default '20' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë®Ó¡ï¿½ï¿½Ð¡',
+  `mark_color` varchar(10) NOT NULL default '#FF0000' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë®Ó¡ï¿½ï¿½É«',
+  `mark_alpha` int(11) NOT NULL default '50' COMMENT 'Ë®Ó¡Í¸ï¿½ï¿½ï¿½È£ï¿½0-100ï¿½ï¿½',
+  `mark_position` int(11) NOT NULL default '1' COMMENT 'Ë®Ó¡Î»ï¿½ï¿½(0-5)',
+  `mark_offset_x` int(11) NOT NULL default '0' COMMENT 'xï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½',
+  `mark_offset_y` int(11) NOT NULL default '0' COMMENT 'yï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½ï¿½ï¿½',
+  `count_clear_time` date NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `count_copy_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `download_code` varchar(32) NOT NULL default 'ndmxw' COMMENT 'ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½md5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `download_time` int(11) NOT NULL default '12' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§Ê±ï¿½ä£¨Ð¡Ê±ï¿½ï¿½',
+  `email_host` varchar(50) default NULL COMMENT 'ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `email_encoding` varchar(20) default NULL COMMENT 'ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½',
+  `email_username` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½',
+  `email_password` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `email_personal` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ä·¢ï¿½ï¿½ï¿½ï¿½',
+  `email_validate` tinyint(1) default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤',
+  `view_only_checked` tinyint(1) NOT NULL default '0' COMMENT 'Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³',
   PRIMARY KEY  (`config_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÅäÖÃ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ã±ï¿½';
 
 DROP TABLE IF EXISTS `jc_config_attr`;
 CREATE TABLE `jc_config_attr` (
   `config_id` int(11) NOT NULL,
-  `attr_name` varchar(30) NOT NULL COMMENT 'Ãû³Æ',
+  `attr_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `attr_value` varchar(255) default NULL COMMENT 'Öµ',
   KEY `fk_jc_attr_config` (`config_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÅäÖÃÊôÐÔ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_config_item`;
 CREATE TABLE `jc_config_item` (
   `modelitem_id` int(11) NOT NULL auto_increment,
   `config_id` int(11) NOT NULL,
-  `field` varchar(50) NOT NULL COMMENT '×Ö¶Î',
-  `item_label` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `priority` int(11) NOT NULL default '70' COMMENT 'ÅÅÁÐË³Ðò',
-  `def_value` varchar(255) default NULL COMMENT 'Ä¬ÈÏÖµ',
-  `opt_value` varchar(255) default NULL COMMENT '¿ÉÑ¡Ïî',
-  `text_size` varchar(20) default NULL COMMENT '³¤¶È',
-  `area_rows` varchar(3) default NULL COMMENT 'ÎÄ±¾ÐÐÊý',
-  `area_cols` varchar(3) default NULL COMMENT 'ÎÄ±¾ÁÐÊý',
-  `help` varchar(255) default NULL COMMENT '°ïÖúÐÅÏ¢',
-  `help_position` varchar(1) default NULL COMMENT '°ïÖúÎ»ÖÃ',
-  `data_type` int(11) NOT NULL default '1' COMMENT 'Êý¾ÝÀàÐÍ "1":"×Ö·û´®ÎÄ±¾","2":"ÕûÐÍÎÄ±¾","3":"¸¡µãÐÍÎÄ±¾","4":"ÎÄ±¾Çø","5":"ÈÕÆÚ","6":"ÏÂÀ­ÁÐ±í","7":"¸´Ñ¡¿ò","8":"µ¥Ñ¡¿ò"',
-  `is_required` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ±ØÌî',
-  `category` int(11) NOT NULL default '1' COMMENT 'Ä£ÐÍÏîÄ¿ËùÊô·ÖÀà£¨1×¢²áÄ£ÐÍ£©',
+  `field` varchar(50) NOT NULL COMMENT 'ï¿½Ö¶ï¿½',
+  `item_label` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '70' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `def_value` varchar(255) default NULL COMMENT 'Ä¬ï¿½ï¿½Öµ',
+  `opt_value` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ñ¡ï¿½ï¿½',
+  `text_size` varchar(20) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `area_rows` varchar(3) default NULL COMMENT 'ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `area_cols` varchar(3) default NULL COMMENT 'ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `help` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢',
+  `help_position` varchar(1) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½',
+  `data_type` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ "1":"ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä±ï¿½","2":"ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½","3":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½","4":"ï¿½Ä±ï¿½ï¿½ï¿½","5":"ï¿½ï¿½ï¿½ï¿½","6":"ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½","7":"ï¿½ï¿½Ñ¡ï¿½ï¿½","8":"ï¿½ï¿½Ñ¡ï¿½ï¿½"',
+  `is_required` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
+  `category` int(11) NOT NULL default '1' COMMENT 'Ä£ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£¨1×¢ï¿½ï¿½Ä£ï¿½Í£ï¿½',
   PRIMARY KEY  (`modelitem_id`),
   KEY `fk_jc_item_config` (`config_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='CMSÅäÖÃÄ£ÐÍÏî±í';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content`;
 CREATE TABLE `jc_content` (
   `content_id` int(11) NOT NULL auto_increment,
-  `channel_id` int(11) NOT NULL COMMENT 'À¸Ä¿ID',
-  `user_id` int(11) NOT NULL COMMENT 'ÓÃ»§ID',
-  `type_id` int(11) NOT NULL COMMENT 'ÊôÐÔID',
-  `model_id` int(11) NOT NULL COMMENT 'Ä£ÐÍID',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µãID',
-  `sort_date` datetime NOT NULL COMMENT 'ÅÅÐòÈÕÆÚ',
-  `top_level` tinyint(4) NOT NULL default '0' COMMENT '¹Ì¶¥¼¶±ð',
-  `has_title_img` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÓÐ±êÌâÍ¼',
-  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÍÆ¼ö',
-  `status` tinyint(4) NOT NULL default '2' COMMENT '×´Ì¬(0:²Ý¸å;1:ÉóºËÖÐ;2:ÉóºËÍ¨¹ý;3:»ØÊÕÕ¾£»4:Í¶¸å)',
-  `views_day` int(11) NOT NULL default '0' COMMENT 'ÈÕ·ÃÎÊÊý',
-  `comments_day` smallint(6) NOT NULL default '0' COMMENT 'ÈÕÆÀÂÛÊý',
-  `downloads_day` smallint(6) NOT NULL default '0' COMMENT 'ÈÕÏÂÔØÊý',
-  `ups_day` smallint(6) NOT NULL default '0' COMMENT 'ÈÕ¶¥Êý',
-  `score` int(11) NOT NULL default '0' COMMENT 'µÃ·Ö',
+  `channel_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½Ä¿ID',
+  `user_id` int(11) NOT NULL COMMENT 'ï¿½Ã»ï¿½ID',
+  `type_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ID',
+  `model_id` int(11) NOT NULL COMMENT 'Ä£ï¿½ï¿½ID',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½ID',
+  `sort_date` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `top_level` tinyint(4) NOT NULL default '0' COMMENT 'ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `has_title_img` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Í¼',
+  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½Æ¼ï¿½',
+  `status` tinyint(4) NOT NULL default '2' COMMENT '×´Ì¬(0:ï¿½Ý¸ï¿½;1:ï¿½ï¿½ï¿½ï¿½ï¿½;2:ï¿½ï¿½ï¿½Í¨ï¿½ï¿½;3:ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½4:Í¶ï¿½ï¿½)',
+  `views_day` int(11) NOT NULL default '0' COMMENT 'ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `comments_day` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `downloads_day` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `ups_day` smallint(6) NOT NULL default '0' COMMENT 'ï¿½Õ¶ï¿½ï¿½ï¿½',
+  `score` int(11) NOT NULL default '0' COMMENT 'ï¿½Ã·ï¿½',
   PRIMARY KEY  (`content_id`),
   KEY `fk_jc_content_site` (`site_id`),
   KEY `fk_jc_content_type` (`type_id`),
   KEY `fk_jc_content_user` (`user_id`),
   KEY `fk_jc_contentchannel` (`channel_id`),
   KEY `fk_jc_content_model` (`model_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=565 DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝ±í';
+) ENGINE=InnoDB AUTO_INCREMENT=565 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ý±ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_attachment`;
 CREATE TABLE `jc_content_attachment` (
   `content_id` int(11) NOT NULL,
-  `priority` int(11) NOT NULL COMMENT 'ÅÅÁÐË³Ðò',
-  `attachment_path` varchar(255) NOT NULL COMMENT '¸½¼þÂ·¾¶',
-  `attachment_name` varchar(100) NOT NULL COMMENT '¸½¼þÃû³Æ',
-  `filename` varchar(100) default NULL COMMENT 'ÎÄ¼þÃû',
-  `download_count` int(11) NOT NULL default '0' COMMENT 'ÏÂÔØ´ÎÊý',
+  `priority` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `attachment_path` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',
+  `attachment_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `filename` varchar(100) default NULL COMMENT 'ï¿½Ä¼ï¿½ï¿½ï¿½',
+  `download_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½',
   KEY `fk_jc_attachment_content` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝ¸½¼þ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_attr`;
 CREATE TABLE `jc_content_attr` (
   `content_id` int(11) NOT NULL,
-  `attr_name` varchar(30) NOT NULL COMMENT 'Ãû³Æ',
+  `attr_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `attr_value` varchar(255) default NULL COMMENT 'Öµ',
   KEY `fk_jc_attr_content` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÀ©Õ¹ÊôÐÔ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ô±ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_channel`;
@@ -396,68 +396,68 @@ CREATE TABLE `jc_content_channel` (
   `content_id` int(11) NOT NULL,
   PRIMARY KEY  (`channel_id`,`content_id`),
   KEY `fk_jc_channel_content` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÀ¸Ä¿¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_check`;
 CREATE TABLE `jc_content_check` (
   `content_id` int(11) NOT NULL,
-  `check_step` tinyint(4) NOT NULL default '0' COMMENT 'ÉóºË²½Êý',
-  `check_opinion` varchar(255) default NULL COMMENT 'ÉóºËÒâ¼û',
-  `is_rejected` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÍË»Ø',
-  `reviewer` int(11) default NULL COMMENT 'ÖÕÉóÕß',
-  `check_date` datetime default NULL COMMENT 'ÖÕÉóÊ±¼ä',
+  `check_step` tinyint(4) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ë²ï¿½ï¿½ï¿½',
+  `check_opinion` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_rejected` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½Ë»ï¿½',
+  `reviewer` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `check_date` datetime default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
   PRIMARY KEY  (`content_id`),
   KEY `fk_jc_content_check_user` (`reviewer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÉóºËÐÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_count`;
 CREATE TABLE `jc_content_count` (
   `content_id` int(11) NOT NULL,
-  `views` int(11) NOT NULL default '0' COMMENT '×Ü·ÃÎÊÊý',
-  `views_month` int(11) NOT NULL default '0' COMMENT 'ÔÂ·ÃÎÊÊý',
-  `views_week` int(11) NOT NULL default '0' COMMENT 'ÖÜ·ÃÎÊÊý',
-  `views_day` int(11) NOT NULL default '0' COMMENT 'ÈÕ·ÃÎÊÊý',
-  `comments` int(11) NOT NULL default '0' COMMENT '×ÜÆÀÂÛÊý',
-  `comments_month` int(11) NOT NULL default '0' COMMENT 'ÔÂÆÀÂÛÊý',
-  `comments_week` smallint(6) NOT NULL default '0' COMMENT 'ÖÜÆÀÂÛÊý',
-  `comments_day` smallint(6) NOT NULL default '0' COMMENT 'ÈÕÆÀÂÛÊý',
-  `downloads` int(11) NOT NULL default '0' COMMENT '×ÜÏÂÔØÊý',
-  `downloads_month` int(11) NOT NULL default '0' COMMENT 'ÔÂÏÂÔØÊý',
-  `downloads_week` smallint(6) NOT NULL default '0' COMMENT 'ÖÜÏÂÔØÊý',
-  `downloads_day` smallint(6) NOT NULL default '0' COMMENT 'ÈÕÏÂÔØÊý',
-  `ups` int(11) NOT NULL default '0' COMMENT '×Ü¶¥Êý',
-  `ups_month` int(11) NOT NULL default '0' COMMENT 'ÔÂ¶¥Êý',
-  `ups_week` smallint(6) NOT NULL default '0' COMMENT 'ÖÜ¶¥Êý',
-  `ups_day` smallint(6) NOT NULL default '0' COMMENT 'ÈÕ¶¥Êý',
-  `downs` int(11) NOT NULL default '0' COMMENT '×Ü²ÈÊý',
+  `views` int(11) NOT NULL default '0' COMMENT 'ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `views_month` int(11) NOT NULL default '0' COMMENT 'ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `views_week` int(11) NOT NULL default '0' COMMENT 'ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `views_day` int(11) NOT NULL default '0' COMMENT 'ï¿½Õ·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `comments` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `comments_month` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `comments_week` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `comments_day` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `downloads` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `downloads_month` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `downloads_week` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `downloads_day` smallint(6) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `ups` int(11) NOT NULL default '0' COMMENT 'ï¿½Ü¶ï¿½ï¿½ï¿½',
+  `ups_month` int(11) NOT NULL default '0' COMMENT 'ï¿½Â¶ï¿½ï¿½ï¿½',
+  `ups_week` smallint(6) NOT NULL default '0' COMMENT 'ï¿½Ü¶ï¿½ï¿½ï¿½',
+  `ups_day` smallint(6) NOT NULL default '0' COMMENT 'ï¿½Õ¶ï¿½ï¿½ï¿½',
+  `downs` int(11) NOT NULL default '0' COMMENT 'ï¿½Ü²ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝ¼ÆÊý±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_ext`;
 CREATE TABLE `jc_content_ext` (
   `content_id` int(11) NOT NULL,
-  `title` varchar(150) NOT NULL COMMENT '±êÌâ',
-  `short_title` varchar(150) default NULL COMMENT '¼ò¶Ì±êÌâ',
-  `author` varchar(100) default NULL COMMENT '×÷Õß',
-  `origin` varchar(100) default NULL COMMENT 'À´Ô´',
-  `origin_url` varchar(255) default NULL COMMENT 'À´Ô´Á´½Ó',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
-  `release_date` datetime NOT NULL COMMENT '·¢²¼ÈÕÆÚ',
-  `media_path` varchar(255) default NULL COMMENT 'Ã½ÌåÂ·¾¶',
-  `media_type` varchar(20) default NULL COMMENT 'Ã½ÌåÀàÐÍ',
-  `title_color` varchar(10) default NULL COMMENT '±êÌâÑÕÉ«',
-  `is_bold` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ¼Ó´Ö',
-  `title_img` varchar(100) default NULL COMMENT '±êÌâÍ¼Æ¬',
-  `content_img` varchar(100) default NULL COMMENT 'ÄÚÈÝÍ¼Æ¬',
-  `type_img` varchar(100) default NULL COMMENT 'ÀàÐÍÍ¼Æ¬',
-  `link` varchar(255) default NULL COMMENT 'Íâ²¿Á´½Ó',
-  `tpl_content` varchar(100) default NULL COMMENT 'Ö¸¶¨Ä£°å',
-  `need_regenerate` tinyint(1) NOT NULL default '1' COMMENT 'ÐèÒªÖØÐÂÉú³É¾²Ì¬Ò³',
+  `title` varchar(150) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `short_title` varchar(150) default NULL COMMENT 'ï¿½ï¿½Ì±ï¿½ï¿½ï¿½',
+  `author` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `origin` varchar(100) default NULL COMMENT 'ï¿½ï¿½Ô´',
+  `origin_url` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `release_date` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `media_path` varchar(255) default NULL COMMENT 'Ã½ï¿½ï¿½Â·ï¿½ï¿½',
+  `media_type` varchar(20) default NULL COMMENT 'Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `title_color` varchar(10) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«',
+  `is_bold` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ó´ï¿½',
+  `title_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼Æ¬',
+  `content_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼Æ¬',
+  `type_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼Æ¬',
+  `link` varchar(255) default NULL COMMENT 'ï¿½â²¿ï¿½ï¿½ï¿½ï¿½',
+  `tpl_content` varchar(100) default NULL COMMENT 'Ö¸ï¿½ï¿½Ä£ï¿½ï¿½',
+  `need_regenerate` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½Ì¬Ò³',
   PRIMARY KEY  (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÀ©Õ¹±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_content_group_view`;
 CREATE TABLE `jc_content_group_view` (
@@ -465,26 +465,26 @@ CREATE TABLE `jc_content_group_view` (
   `group_id` int(11) NOT NULL,
   PRIMARY KEY  (`content_id`,`group_id`),
   KEY `fk_jc_content_group_v` (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝä¯ÀÀ»áÔ±×é¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_content_picture`;
 CREATE TABLE `jc_content_picture` (
   `content_id` int(11) NOT NULL,
-  `priority` int(11) NOT NULL COMMENT 'ÅÅÁÐË³Ðò',
-  `img_path` varchar(100) NOT NULL COMMENT 'Í¼Æ¬µØÖ·',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
+  `priority` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `img_path` varchar(100) NOT NULL COMMENT 'Í¼Æ¬ï¿½ï¿½Ö·',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`content_id`,`priority`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÍ¼Æ¬±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½';
 
 
 DROP TABLE IF EXISTS `jc_content_tag`;
 CREATE TABLE `jc_content_tag` (
   `tag_id` int(11) NOT NULL auto_increment,
-  `tag_name` varchar(50) NOT NULL COMMENT 'tagÃû³Æ',
-  `ref_counter` int(11) NOT NULL default '1' COMMENT '±»ÒýÓÃµÄ´ÎÊý',
+  `tag_name` varchar(50) NOT NULL COMMENT 'tagï¿½ï¿½ï¿½ï¿½',
+  `ref_counter` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ´ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`tag_id`),
   UNIQUE KEY `ak_tag_name` (`tag_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝTAG±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½TAGï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_content_topic`;
 CREATE TABLE `jc_content_topic` (
@@ -492,34 +492,34 @@ CREATE TABLE `jc_content_topic` (
   `topic_id` int(11) NOT NULL,
   PRIMARY KEY  (`content_id`,`topic_id`),
   KEY `fk_jc_content_topic` (`topic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS×¨ÌâÄÚÈÝ¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS×¨ï¿½ï¿½ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_content_txt`;
 CREATE TABLE `jc_content_txt` (
   `content_id` int(11) NOT NULL,
-  `txt` longtext COMMENT 'ÎÄÕÂÄÚÈÝ',
-  `txt1` longtext COMMENT 'À©Õ¹ÄÚÈÝ1',
-  `txt2` longtext COMMENT 'À©Õ¹ÄÚÈÝ2',
-  `txt3` longtext COMMENT 'À©Õ¹ÄÚÈÝ3',
+  `txt` longtext COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `txt1` longtext COMMENT 'ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½1',
+  `txt2` longtext COMMENT 'ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½2',
+  `txt3` longtext COMMENT 'ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½3',
   PRIMARY KEY  (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÎÄ±¾±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_content_txt` VALUES (564,'<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ËÎÌå;\">½üÄêÀ´£¬ÔÚÎÒ¹ú¿ÉÄÜÃ»ÓÐÄÄ¸öÀíÂÛÊõÓï»ò¸ÅÄî±È&ldquo;ÐÂ×ÔÓÉÖ÷Òå&rdquo;¸üÈÃÈË¸Ðµ½ÆËË·ÃÔÀë¡¢ÉõÖÁ»ìÂÒ²»¿°µÄÁË¡£Ö®ËùÒÔÈç´Ë£¬¼ÈÓëÐÂ×ÔÓÉÖ÷ÒåËùÉæ¼°µÄÄÚÈÝÅÓÔÓÓÐ¹Ø£¬Ò²ÓëÈËÃÇ¶ÔÐÂ×ÔÓÉÖ÷ÒåÑÐ¾¿²»Éî¡¢¹éÄÉ²»×¼ÓÐ¹Ø¡£ÆäÊµ£¬Ö»Òª×ÐÏ¸¶ÁÒ»¶ÁÆä´ú±íÈËÎïµÄÖ÷Òª×÷Æ·¾Í²»ÄÑ·¢ÏÖ£¬ÈËÃÇÌ¸ÂÛµÄÐÂ×ÔÓÉÖ÷Òå¼È·ÇÒ»¸öµäÐÍµÄ¾­¼ÃÑ§·¶³ë£¬Ò²·ÇÒ»¸öÈ·ÇÐµÄ¾­¼ÃÑ§Á÷ÅÉ£¬¶øÊÇÒ»¸ö¾­¼ÃÀíÂÛ¡¢Éç»áË¼³±ºÍÕþ²ßÖ÷ÕÅµÄ&ldquo;»ìºÏÌå&rdquo;£¬»òÕßÓÃ¸üÍ¨Ë×µÄ»°ËµÊÇÒ»¸ö&ldquo;´óÔÓ»â&rdquo;¡£</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ËÎÌå;\">¡¡¡¡Ê×ÏÈ£¬ÈËÃÇÍ¨³£ËùÌ¸ÂÛµÄÐÂ×ÔÓÉÖ÷Òå£¬ÊÇÒ»¸öÒÔÐÂ×ÔÓÉÖ÷Òå¾­¼ÃÀíÂÛÎªÖ÷ÒªÔØÌå¶ø´æÔÚºÍÑÝ½øµÄË¼Ïë·¶³ë¡£·­ÔÄÒ»ÏÂÐÂ×ÔÓÉÖ÷ÒåÖ÷Òª´ú±íÈËÎï¡¢ÌØ±ðÊÇÏÁÒåÐÂ×ÔÓÉÖ÷Òå´ú±íÈËÎï¹þÒ®¿Ë¡¢¸¥ÀïµÂÂüµÈÈËµÄÖ÷ÒªÂÛÖø±ã¿É·¢ÏÖ£¬ËûÃÇ²»½öÔÚºÜ´ó³Ì¶ÈÉÏ½ÓÊÜºÍ¼Ì³ÐÁË¹Åµä¾­¼ÃÑ§ºÍÐÂ¹Åµä¾­¼ÃÑ§£¬¶øÇÒÔÚºÜ¶àÎÊÌâÉÏ×ö³öÁËÐÂµÄ½âÊÍºÍÕýÈ··¢»Ó¡£ÀýÈç£¬¹þÒ®¿Ë¹ØÓÚÉÌÒµÑ­»·ºÍ»õ±Ò¡¢ÐÅÓÃÕþ²ßÐ§Ó¦µÄ·ÖÎöÒÔ¼°¸¥ÀïµÂÂü¹ØÓÚ»õ±ÒÀíÂÛµÄ²ûÊöµÈ£¬Æðµ½ÁËÎªÏÖ´ú¾­¼ÃÀíÂÛ½¨ÉèÌí×©¼ÓÍß¡¢´Ù½ø¾­¼ÃÀíÂÛÑÐ¾¿Éî»¯µÄ×÷ÓÃ£¬ËûÃÇÒ²Òò´ËÏÈºó»ñµÃÅµ±´¶û¾­¼ÃÑ§½±¡£È»¶ø£¬ËûÃÇµÄºÜ¶àÀíÂÛºÍÕþ²ßÖ÷ÕÅ¡¢ÌØ±ðÊÇ&ldquo;È¥Õþ¸®&rdquo;ÂÛÈ´³äÂúÁË²»µ±ÉõÖÁÃýÎó¡£¹éÄÉÆðÀ´£¬ËûÃÇµÄ&ldquo;È¥Õþ¸®&rdquo;ÂÛÖ÷Òª°üÀ¨Èý¸ö·½ÃæÄÚÈÝ¡£Ò»ÊÇÐ¡Õþ¸®»ò²»ÒªÕþ¸®ÂÛ¡£¹þÒ®¿ËÒ»Ö±·´¶ÔÕþ¸®¸ÉÔ¤¾­¼Ã¡£ËûÈÏÎª£¬ÈÎºÎÐÎÊ½µÄÖÐÑë¼¯È¨¶¼ÊÇÓ×ÖÉºÍÓÐº¦µÄ£¬×·Çó¼Æ»®¾­¼Ã±ØÈ»µ¼ÖÂ¼«È¨Ö÷Òå¡£ËûÖ÷ÕÅ°Ñ°üÀ¨»õ±Ò·¢ÐÐÈ¨ÔÚÄÚµÄÊÐ³¡È¨Á¦Í³Í³¹é»¹¸ø²ÎÓëÊÐ³¡¾ºÕùµÄË½ÈË¡£²»¹ý£¬ËûµÄÕâÐ©ÀíÂÛ¹ÛµãºÍÕþ²ßÖ÷ÕÅÖ±µ½20ÊÀ¼Í70Äê´ú&ldquo;ÖÍÕÍ&rdquo;·¢Éúºó£¬Ëæ×Å¿­¶÷Ë¹Ö÷ÒåµÄÏûÍË£¬²Å»ñµÃ¹ã·ºÖØÊÓ¡£ÌØ±ðÊÇËûÓÚ1974Äê»ñµÃÅµ±´¶û¾­¼ÃÑ§½±ºó£¬ÔÚÃÀ¹ú£¬ËûÉõÖÁ³ÉÁË&ldquo;¹«ÃñÓµÓÐ³ä·Ö×ÔÓÉÈ¨&rdquo;ÔË¶¯µÄÁìÐä£»ÔÚÓ¢¹ú£¬±£ÊØµÄÈöÇÐ¶û·òÈËÒ²×Ô³ÆÊÇ¹þÒ®¿ËµÄÐÅÍ½¡£¸¥ÀïµÂÂüÔò´ÓÏÖ´ú»õ±ÒÀíÂÛ½Ç¶È£¬ÂÛÖ¤ºÍ²ûÃ÷ÁË¹ØÓÚÕþ¸®¸ÉÔ¤¾­¼Ã»î¶¯»á¼Ó¾ç¾­¼Ã²¨¶¯µÄ¹Ûµã£¬²¢¾Ý´ËÌá³öÕþ¸®²»±Ø¸ÉÔ¤¾­¼ÃµÄÀíÂÛÖ÷ÕÅ¡£¶þÊÇË½ÓÐ²úÈ¨ÓÐÐ§ÂÛ¡£ÒÔ¿ÆË¹Îª´ú±íµÄ²úÈ¨ÀíÂÛÌá³ö²¢·ÖÎöÁË²úÈ¨¡¢ÌØ±ðÊÇË½ÓÐ²úÈ¨¶ÔÓÚ½»Ò×±ß½çµÄÈ·¶¨¼°Æä¶ÔÓÚ½µµÍ½»Ò×³É±¾¡¢ÌáÉýÊÐ³¡Ð§ÂÊµÄÒâÒå¡£ÈýÊÇ¹«¹²ÎïÆ·¹©¸øÊÐ³¡»¯ÂÛ¡£ÓëÖ÷Á÷¾­¼ÃÑ§¹ØÓÚÕþ¸®Ìá¹©¹«¹²ÎïÆ·µÄÀíÂÛÂß¼­²»Í¬£¬¸¥ÀïµÂÂüµÈÈË×ÅÁ¦·ÖÎöºÍ²ûÊöÁË¹«¹²ÎïÆ·ºÍ·þÎñ(°üÀ¨½ÌÓý¡¢¹«¹²ÎÀÉú¡¢Éç»á±£ÏÕµÈ)ÊÐ³¡»¯µÄÀíÂÛ¹ÛµãºÍÕþ²ßÖ÷ÕÅ¡£</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ËÎÌå;\">¡¡¡¡Æä´Î£¬ÐÂ×ÔÓÉÖ÷ÒåÓÖ³£³£ÒÔ¾ßÓÐÌØ¶¨ÕþÖÎËßÇóµÄÉç»áË¼³±ÐÎÊ½±íÏÖ³öÀ´¡£ÐÂ×ÔÓÉÖ÷ÒåË¼³±ÊÇÒ»ÖÖÒÔ&ldquo;¿­¶÷Ë¹¸ïÃüµÄ·´¸ïÃü&rdquo;ÎªÖ÷ÒªÌØÕ÷¡¢ÒÔ¿ä´óµÄÐÎÊ½°ÑÔ­±¾¾ßÓÐÒ»¶¨Ñ§Êõ¼ÛÖµµÄ¾­¼ÃÀíÂÛÍÆÏòÊÐ³¡¼«¶ËµÄÉç»áË¼³±¡£ÐÂ×ÔÓÉÖ÷ÒåË¼³±¾ßÓÐ¶àÖÖ´æÔÚÐÎÌ¬£¬ÆäÖÐ£¬×î¾ßµäÐÍÒâÒåµÄµ±ÍÆÊ¢ÐÐÒ»Ê±µÄÊÐ³¡ÍòÄÜÂÛ¡£ÆäÍ»³öÌØµãÊÇÐûÑïºÍ¹Ä´µ&ldquo;ÊÐ³¡ÊÇ×îÓÐÐ§µÄ×ÊÔ´ÅäÖÃ»úÖÆ&rdquo;£¬Æ¬Ãæ¿ä´óÊÐ³¡×ÔÐÞÕýºÍ×Ô¸´ºâ¹¦ÄÜ£¬·ñ¶¨Õþ¸®¸ÉÔ¤¶ÔÓÚÃÖ²¹ÊÐ³¡È±ÏÝ¡¢¿Ë·þÊÐ³¡Ê§ÁéµÄ»ý¼«×÷ÓÃ£¬ÉõÖÁÈÏÎª³ýÁËÎ¬»¤·¨ÖÆºÍÉç»áÖÈÐòÒÔÍâµÄÈÎºÎÐÎÊ½µÄÕþ¸®¸ÉÔ¤¶¼ÓÐËðÓÚÊÐ³¡Ð§ÂÊ¼°ÊÐ³¡µÄ½¡¿µÔËÐÐ¡£¹þÒ®¿Ë×÷ÎªÐÂ×ÔÓÉÖ÷ÒåË¼³±µÄ´ú±íÈËÎï£¬ÔçÔÚ19ÊÀ¼Í40Äê´ú³õ¾ÍÖøÊéÁ¢Ëµ£¬°Ñ¼¯ÌåÖ÷ÒåºÍÉç»áÖ÷ÒåÊÓÎª&ldquo;Í¨ÍùÅ«ÒÛÖ®Â·&rdquo;¡£ËûÔø²»ÒÅÓàÁ¦µØÐûÑï&ldquo;×ÔÓÉÖ÷ÒåÖ»¹Ø×¢½»»»ÕýÒå£¬¶ø²»¹Ø×¢ËùÎ½µÄ·ÖÅäÕýÒå»òÏÖÔÚ¸üÎªÊ¢ÐÐµÄ&lsquo;Éç»á&rsquo;ÕýÒå&rdquo;£¬ÉõÖÁÉù³Æ&ldquo;¼á¶¨µÄ×ÔÓÉÖ÷ÒåÕß&hellip;&hellip;±ØÐë¾Ü³â·ÖÅäÕýÒå&rdquo;¡£</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ËÎÌå;\">¡¡¡¡×îºó£¬ÐÂ×ÔÓÉÖ÷Òå»¹ÊÇÒÔ¾ßÓÐÌØ¶¨Ä¿±êÖ¸ÏòµÄÕþ²ßÖ÷ÕÅÐÎÊ½´æÔÚºÍ·¢Õ¹µÄ¡£ÐÂ×ÔÓÉÖ÷ÒåÕþ²ßÖ÷ÕÅµÄµäÐÍ±íÏÖÐÎÊ½ÊÇ&ldquo;»ªÊ¢¶Ù¹²Ê¶&rdquo;¡£1989Äê£¬ÓÉÃÀ¹ú¹ú¼Ê¾­¼ÃÑÐ¾¿ËùÇ£Í·£¬ÔÚÃÀ¹ú²ÆÕþ²¿µÄÖ§³ÖÏÂ£¬ÔÚ»ªÊ¢¶ÙÕÙ¿ªÁËÒ»´ÎÖ¼ÔÚ½â¾öÀ­ÃÀ¹ú¼Ò¾­¼ÃË¥ÍËµÄ¹ú¼ÊÑÐÌÖ»á¡£»áºó£¬ÃÀ¹ú¹ú¼Ê¾­¼ÃÑÐ¾¿Ëù¸ß¼¶ÑÐ¾¿Ô±Ô¼º²&middot;ÍþÁ®Ä·É­½«»áÒéÈ¡µÃµÄÊÕ»ñ½øÐÐÁË×Ü½áºÍ¸ÅÀ¨£¬²¢³ÆÖ®Îª&ldquo;»ªÊ¢¶Ù¹²Ê¶&rdquo;¡£»ªÊ¢¶Ù¹²Ê¶Ö÷ÒªÓÉÈý´ó·½ÃæÄÚÈÝ×é³É£ºÒ»ÊÇ3Ïî¸Ä¸ï´ëÊ©£¬Ö÷Òª°üÀ¨¼ÓÇ¿²Æ¾­¼ÍÂÉ£¬°ÑÕþ¸®¿ªÖ§µÄÖØµã×ªÏò¾­¼ÃÐ§Òæ¸ßµÄÁìÓòºÍÓÐÀûÓÚ¸ÄÉÆÊÕÈë·ÖÅäµÄÎÄ½ÌÎÀÉúºÍ»ù´¡ÉèÊ©½¨ÉèÁìÓò£¬¿ªÕ¹°üÀ¨½µµÍ±ß¼ÊË°ÂÊºÍÀ©´óË°»ùµÄ¸Ä¸ïµÈ£»¶þÊÇ4ÏîÊÐ³¡¿ª·ÅÔ­Ôò£¬Ö÷Òª°üÀ¨ÊµÐÐÀûÂÊ×ÔÓÉ»¯ºÍ¸ü¾ß¾ºÕùÐÔµÄ»ãÂÊÖÆ¶ÈÒÔ¼°Ã³Ò××ÔÓÉ»¯ºÍ·ÅËÉÍâ¹úÖ±½ÓÍ¶×ÊÏÞÖÆµÈ£»ÈýÊÇ3Ïî&ldquo;È¥Õþ¸®&rdquo;¸ÉÔ¤ÒªÇó£¬Ö÷Òª°üÀ¨¹úÓÐÆóÒµË½ÓÐ»¯¡¢·ÅËÉ½øÈëºÍÍË³öµÄÕþ¸®¹ÜÖÆÒÔ¼°ÓÐÐ§±£»¤Ë½ÈË²Æ²úÈ¨µÈ¡£Õâ10¸ö·½ÃæµÄÕþ²ßÖ÷ÕÅËäÈ»²»·¦ºÏÀíÒòËØ£¬µ«Ã¬¶ÜºÍÎÊÌâÍ¬ÑùÊ®·ÖÍ»³ö£¬ÌØ±ðÊÇÆäÖÐµÄ4ÏîÊÐ³¡¿ª·ÅÔ­ÔòºÍ3Ïî&ldquo;È¥Õþ¸®&rdquo;¸ÉÔ¤ÒªÇó£¬¸üÊÇÑÏÖØÍÑÀëÁËÀ­ÃÀ¹ú¼ÒµÄÊµ¼Ê£¬×ÅÊµÎóµ¼ÁËÕâÐ©¹ú¼ÒµÄ·¢Õ¹£¬ÉõÖÁ½øÒ»²½¼ÓÉîÁËÕâÐ©¹ú¼ÒµÄÎ£»ú¡£»ªÊ¢¶Ù¹²Ê¶²»½ö¼¯ÖÐÌåÏÖÁËÐÂ×ÔÓÉÖ÷ÒåË¼³±µÄ»ù±¾ÒªÇó£¬¶øÇÒ¼¯ÖÐ·´Ó³ÁËÒÔ¹þÒ®¿ËºÍ¸¥ÀïµÂÂüÎª´ú±íµÄ&ldquo;ÏÁÒåÐÂ×ÔÓÉÖ÷Òå&rdquo;µÄÕþÖÎÖ÷ÕÅ¡£</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ËÎÌå;\">¡¡¡¡Ò»°ãÀ´Ëµ£¬ÀíÂÛ×ÜÊÇÍ¨¹ý¶ÔÊµ¼ù»òÊÂÎï·¢Õ¹¹ý³ÌµÄÏµÍ³¹Û²ì¡¢·ÖÎöºÍÑÐ¾¿£¬½èÖúÓÚÌØ¶¨ÀíÂÛ·¶³ë½øÐÐ³éÏóºÍ¸ÅÀ¨ÐÎ³ÉµÄÄÜ¹»±íÃ÷ÊÂÎïÄÚÔÚÁªÏµµÄÏµÍ³µÄË¼ÏëºÍ¹Ûµã¡£¶øË¼³±Í¨³£ÊÇÌØ¶¨Éç»áÈºÌå¶ÔÌØ¶¨ÀíÂÛ²úÉúË¼Ïë¹²Ãùºó¼ÓÒÔÒýÉê¡¢¿ä´ó(ÓÐÊ±Ò²ÓÐÎó¶Á)¶øÐÎ³ÉµÄÒ»ÖÖÓ°ÏìÃæ½Ï´ó¡¢´«²¥½Ï¿ìµÄË¼Ïë³±¡¢ÒâÊ¶Á÷»òÇãÏò¡£ÌØ¶¨Ë¼³±µÄÐÎ³ÉÍùÍùÓëÌØ¶¨Éç»áÈºÌåµÄÀûÒæËßÇó¼°ÐÄÀíÒªÇóÃÜÇÐÏà¹Ø¡£Òò´Ë£¬ÓëÀíÂÛÏà±È£¬Ë¼³±¸ü¾ßÂþ»­»¯ÌØÕ÷ºÍÐÎÊ½Ò×±äÐÔ¡¢½çÏÞÄ£ºýÐÔ¡¢´«²¥Ñ¸ËÙÐÔºÍÓ°Ïì¹ã·ºÐÔµÈÌØµã¡£ÖÁÓÚÕþ²ßÖ÷ÕÅ£¬Ôò¾ßÓÐÖ¸ÏòÃ÷È·¡¢ÒªÇóÇåÎú¡¢Ç¿µ÷Êµ¼ùµÈÌØµã¡£Ò»¶¨µÄÕþ²ßÖ÷ÕÅÊÇÔÚÌØ¶¨»·¾³ÏÂÓÉÌØ¶¨ÀíÂÛºÍË¼³±ÍÆ¶¯ÐÎ³ÉµÄÌØ¶¨ÒªÇó»òËßÇó¡£ÐÂ×ÔÓÉÖ÷Òå×÷Îª¾­¼ÃÀíÂÛ¡¢Éç»áË¼³±ºÍÕþ²ßÖ÷ÕÅµÄ»ìºÏÌå£¬´øÓÐ¸ü´óµÄÀíÂÛÆÛÆ­ÐÔºÍÉç»áÓ°ÏìÁ¦¡£²»¹ÜÐÂ×ÔÓÉÖ÷ÒåÕßËù²ûÊöµÄ¾­¼ÃÀíÂÛÓÐ¶àÉÙºÏÀí³É·Ö£¬ÎÒÃÇ¶¼Òª¸ß¶È¾¯ÌèÐÂ×ÔÓÉÖ÷ÒåË¼³±¿ÉÄÜ´øÀ´µÄÉç»áÓ°Ïì£¬¶øÇÒÒªÌØ±ð×¢Òâ·ÀÖ¹ÐÂ×ÔÓÉÖ÷ÒåÕþ²ßÖ÷ÕÅ¿ÉÄÜÔì³ÉµÄÉç»áÎ£º¦¡£¡ø(×÷ÕßÊÇÖÐ¹úÉç»á¿ÆÑ§ÔºÃñÓª¾­¼ÃÑÐ¾¿ÖÐÐÄÖ÷ÈÎ¡¢ÑÐ¾¿Ô±¡¢²©Ê¿Éúµ¼Ê¦)</p>\r\n',NULL,NULL,NULL);
+INSERT INTO `jc_content_txt` VALUES (564,'<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ï¿½ï¿½ï¿½ï¿½;\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¹ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸Ðµï¿½ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¼°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹Ø£ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½î¡¢ï¿½ï¿½ï¿½É²ï¿½×¼ï¿½Ð¹Ø¡ï¿½ï¿½ï¿½Êµï¿½ï¿½Ö»Òªï¿½ï¿½Ï¸ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Æ·ï¿½Í²ï¿½ï¿½Ñ·ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½Ûµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÍµÄ¾ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ë£¬Ò²ï¿½ï¿½Ò»ï¿½ï¿½È·ï¿½ÐµÄ¾ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¡ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½Í¨ï¿½×µÄ»ï¿½Ëµï¿½ï¿½Ò»ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½Ó»ï¿½&rdquo;ï¿½ï¿½</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ï¿½ï¿½ï¿½ï¿½;\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½Ûµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¾­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½ï¿½Ý½ï¿½ï¿½ï¿½Ë¼ï¿½ë·¶ï¿½ë¡£ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡¢ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò®ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É·ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ÚºÜ´ï¿½Ì¶ï¿½ï¿½Ï½ï¿½ï¿½ÜºÍ¼Ì³ï¿½ï¿½Ë¹Åµä¾­ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½Â¹Åµä¾­ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚºÜ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÂµÄ½ï¿½ï¿½Íºï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ç£¬ï¿½ï¿½Ò®ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ÒµÑ­ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ò¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§Ó¦ï¿½Ä·ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÛµÄ²ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û½ï¿½ï¿½ï¿½ï¿½ï¿½×©ï¿½ï¿½ï¿½ß¡ï¿½ï¿½Ù½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½î»¯ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Èºï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄºÜ¶ï¿½ï¿½ï¿½ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½Ø±ï¿½ï¿½ï¿½&ldquo;È¥ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó¡£¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½&ldquo;È¥ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¡ï¿½Ò»ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Û¡ï¿½ï¿½ï¿½Ò®ï¿½ï¿½Ò»Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½Ã¡ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ë¼¯È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½Ðºï¿½ï¿½Ä£ï¿½×·ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½Ã±ï¿½È»ï¿½ï¿½ï¿½Â¼ï¿½È¨ï¿½ï¿½ï¿½å¡£ï¿½ï¿½ï¿½ï¿½ï¿½Å°Ñ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½È¨ï¿½ï¿½ï¿½Úµï¿½ï¿½Ð³ï¿½È¨ï¿½ï¿½Í³Í³ï¿½é»¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë½ï¿½Ë¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½Û¹Ûµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½20ï¿½ï¿½ï¿½ï¿½70ï¿½ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½Å»ï¿½Ã¹ã·ºï¿½ï¿½ï¿½Ó¡ï¿½ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1974ï¿½ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½Óµï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨&rdquo;ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä£»ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ô³ï¿½ï¿½Ç¹ï¿½Ò®ï¿½Ëµï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û½Ç¶È£ï¿½ï¿½ï¿½Ö¤ï¿½Í²ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½Ã»î¶¯ï¿½ï¿½Ó¾ç¾­ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Ä¹Ûµã£¬ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½Ô¤ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½Ë½ï¿½Ð²ï¿½È¨ï¿½ï¿½Ð§ï¿½Û¡ï¿½ï¿½Ô¿ï¿½Ë¹Îªï¿½ï¿½ï¿½ï¿½Ä²ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½È¨ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Ë½ï¿½Ð²ï¿½È¨ï¿½ï¿½ï¿½Ú½ï¿½ï¿½×±ß½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Í½ï¿½ï¿½×³É±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½Ð§ï¿½Êµï¿½ï¿½ï¿½ï¿½å¡£ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Û¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á¹©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½Í·ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á±£ï¿½Õµï¿½)ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¹Ûµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ï¿½ï¿½ï¿½ï¿½;\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½&rdquo;Îªï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Öµï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½Ê¢ï¿½ï¿½Ò»Ê±ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¡ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹Ä´ï¿½&ldquo;ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½â¹¦ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½Ð³ï¿½È±ï¿½Ý¡ï¿½ï¿½Ë·ï¿½ï¿½Ð³ï¿½Ê§ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½Ð§ï¿½Ê¼ï¿½ï¿½Ð³ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ò®ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½ï¿½19ï¿½ï¿½ï¿½ï¿½40ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ñ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª&ldquo;Í¨ï¿½ï¿½Å«ï¿½ï¿½Ö®Â·&rdquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½Î½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ÎªÊ¢ï¿½Ðµï¿½&lsquo;ï¿½ï¿½ï¿½&rsquo;ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&ldquo;ï¿½á¶¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&hellip;&hellip;ï¿½ï¿½ï¿½ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ï¿½ï¿½ï¿½ï¿½;\">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å»¹ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½Ä¿ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ÚºÍ·ï¿½Õ¹ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅµÄµï¿½ï¿½Í±ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½&ldquo;ï¿½ï¿½Ê¢ï¿½Ù¹ï¿½Ê¶&rdquo;ï¿½ï¿½1989ï¿½ê£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½Ç£Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Â£ï¿½ï¿½Ú»ï¿½Ê¢ï¿½ï¿½ï¿½Ù¿ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ö¼ï¿½Ú½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¾ï¿½ï¿½ï¿½Ë¥ï¿½ËµÄ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»á¡£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½Ð¾ï¿½Ô±Ô¼ï¿½ï¿½&middot;ï¿½ï¿½ï¿½ï¿½Ä·É­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ãµï¿½ï¿½Õ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®Îª&ldquo;ï¿½ï¿½Ê¢ï¿½Ù¹ï¿½Ê¶&rdquo;ï¿½ï¿½ï¿½ï¿½Ê¢ï¿½Ù¹ï¿½Ê¶ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½Ò»ï¿½ï¿½3ï¿½ï¿½Ä¸ï¿½ï¿½Ê©ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½Æ¾ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Øµï¿½×ªï¿½ò¾­¼ï¿½Ð§ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ê©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò£¬¿ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ß¼ï¿½Ë°ï¿½Êºï¿½ï¿½ï¿½ï¿½ï¿½Ë°ï¿½ï¿½ï¿½Ä¸Ä¸ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É»ï¿½ï¿½Í¸ï¿½ï¿½ß¾ï¿½ï¿½ï¿½ï¿½ÔµÄ»ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ô¼ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½É»ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Í¶ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÈ£ï¿½ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½&ldquo;È¥ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½Ô¤Òªï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒµË½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ë½ï¿½Ë²Æ²ï¿½È¨ï¿½È¡ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½Ã¬ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½Ê®ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½4ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½3ï¿½ï¿½&ldquo;È¥ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½Ô¤Òªï¿½ó£¬¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Êµï¿½Ê£ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ÒµÄ·ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½Òµï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¢ï¿½Ù¹ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Òªï¿½ó£¬¶ï¿½ï¿½Ò¼ï¿½ï¿½Ð·ï¿½Ó³ï¿½ï¿½ï¿½Ô¹ï¿½Ò®ï¿½ËºÍ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½&ldquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½&rdquo;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¡ï¿½</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: ï¿½ï¿½ï¿½ï¿½;\">ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·¢Õ¹ï¿½ï¿½ï¿½Ìµï¿½ÏµÍ³ï¿½Û²ì¡¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½Û·ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½Î³Éµï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ÏµÍ³ï¿½ï¿½Ë¼ï¿½ï¿½Í¹Ûµã¡£ï¿½ï¿½Ë¼ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½Èºï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½Û²ï¿½ï¿½ï¿½Ë¼ï¿½ë¹²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê¡¢ï¿½ï¿½ï¿½(ï¿½ï¿½Ê±Ò²ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½Î³Éµï¿½Ò»ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½Ï´ó¡¢´ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½Ë¼ï¿½ë³±ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½Èºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½×±ï¿½ï¿½Ô¡ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Ô¡ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¸ï¿½ï¿½ï¿½Ôºï¿½Ó°ï¿½ï¿½ã·ºï¿½Ôµï¿½ï¿½Øµã¡£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½Øµã¡£Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½Ûºï¿½Ë¼ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Î³Éµï¿½ï¿½Ø¶ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¡ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅµÄ»ï¿½ï¿½ï¿½å£¬ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ­ï¿½Ôºï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ùºï¿½ï¿½ï¿½É·Ö£ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½Òªï¿½ß¶È¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ì£¬ï¿½ï¿½ï¿½ï¿½Òªï¿½Ø±ï¿½×¢ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ôºï¿½ï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¡ï¿½ï¿½Ð¾ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½Ê¦)</p>\r\n',NULL,NULL,NULL);
 DROP TABLE IF EXISTS `jc_content_type`;
 CREATE TABLE `jc_content_type` (
   `type_id` int(11) NOT NULL,
-  `type_name` varchar(20) NOT NULL COMMENT 'Ãû³Æ',
-  `img_width` int(11) default NULL COMMENT 'Í¼Æ¬¿í',
-  `img_height` int(11) default NULL COMMENT 'Í¼Æ¬¸ß',
-  `has_image` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÓÐÍ¼Æ¬',
-  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ½ûÓÃ',
+  `type_name` varchar(20) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `img_width` int(11) default NULL COMMENT 'Í¼Æ¬ï¿½ï¿½',
+  `img_height` int(11) default NULL COMMENT 'Í¼Æ¬ï¿½ï¿½',
+  `has_image` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Í¼Æ¬',
+  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝÀàÐÍ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½';
 
-INSERT INTO `jc_content_type` VALUES (1,'ÆÕÍ¨',100,100,0,0);
-INSERT INTO `jc_content_type` VALUES (2,'Í¼ÎÄ',143,98,1,0);
-INSERT INTO `jc_content_type` VALUES (3,'½¹µã',280,200,1,0);
-INSERT INTO `jc_content_type` VALUES (4,'Í·Ìõ',0,0,0,0);
+INSERT INTO `jc_content_type` VALUES (1,'ï¿½ï¿½Í¨',100,100,0,0);
+INSERT INTO `jc_content_type` VALUES (2,'Í¼ï¿½ï¿½',143,98,1,0);
+INSERT INTO `jc_content_type` VALUES (3,'ï¿½ï¿½ï¿½ï¿½',280,200,1,0);
+INSERT INTO `jc_content_type` VALUES (4,'Í·ï¿½ï¿½',0,0,0,0);
 DROP TABLE IF EXISTS `jc_contenttag`;
 CREATE TABLE `jc_contenttag` (
   `content_id` int(11) NOT NULL,
@@ -527,7 +527,7 @@ CREATE TABLE `jc_contenttag` (
   `priority` int(11) NOT NULL,
   KEY `fk_jc_content_tag` (`tag_id`),
   KEY `fk_jc_tag_content` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝ±êÇ©¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ý±ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_dictionary`;
 CREATE TABLE `jc_dictionary` (
@@ -536,25 +536,25 @@ CREATE TABLE `jc_dictionary` (
   `value` varchar(255) NOT NULL COMMENT 'value',
   `type` varchar(255) NOT NULL COMMENT 'type',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='×Öµä±í';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='ï¿½Öµï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_directive_tpl`;
 CREATE TABLE `jc_directive_tpl` (
   `tpl_id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) NOT NULL COMMENT '±êÇ©Ãû³Æ',
-  `description` varchar(1000) default NULL COMMENT '±êÇ©ÃèÊö',
-  `code` text COMMENT '±êÇ©´úÂë',
-  `user_id` int(11) NOT NULL COMMENT '±êÇ©´´½¨Õß',
+  `name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(1000) default NULL COMMENT 'ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½',
+  `code` text COMMENT 'ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½',
+  `user_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`tpl_id`),
   KEY `fk_jc_directive_tpl_user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='FComment';
 
 DROP TABLE IF EXISTS `jc_file`;
 CREATE TABLE `jc_file` (
-  `file_path` varchar(255) NOT NULL default '' COMMENT 'ÎÄ¼þÂ·¾¶',
-  `file_name` varchar(255) default '' COMMENT 'ÎÄ¼þÃû×Ö',
-  `file_isvalid` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÓÐÐ§',
-  `content_id` int(11) default NULL COMMENT 'ÄÚÈÝid',
+  `file_path` varchar(255) NOT NULL default '' COMMENT 'ï¿½Ä¼ï¿½Â·ï¿½ï¿½',
+  `file_name` varchar(255) default '' COMMENT 'ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `file_isvalid` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Ð§',
+  `content_id` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½id',
   PRIMARY KEY  (`file_path`),
   KEY `fk_jc_file_content` (`content_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -890,70 +890,70 @@ CREATE TABLE `jc_friendlink` (
   `friendlink_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) NOT NULL,
   `friendlinkctg_id` int(11) NOT NULL,
-  `site_name` varchar(150) NOT NULL COMMENT 'ÍøÕ¾Ãû³Æ',
-  `domain` varchar(255) NOT NULL COMMENT 'ÍøÕ¾µØÖ·',
-  `logo` varchar(150) default NULL COMMENT 'Í¼±ê',
-  `email` varchar(100) default NULL COMMENT 'Õ¾³¤ÓÊÏä',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
-  `views` int(11) NOT NULL default '0' COMMENT 'µã»÷´ÎÊý',
-  `is_enabled` char(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÏÔÊ¾',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
+  `site_name` varchar(150) NOT NULL COMMENT 'ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½',
+  `domain` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½Õ¾ï¿½ï¿½Ö·',
+  `logo` varchar(150) default NULL COMMENT 'Í¼ï¿½ï¿½',
+  `email` varchar(100) default NULL COMMENT 'Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `views` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_enabled` char(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Ê¾',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
   PRIMARY KEY  (`friendlink_id`),
   KEY `fk_jc_ctg_friendlink` (`friendlinkctg_id`),
   KEY `fk_jc_friendlink_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMSÓÑÇéÁ´½Ó';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_friendlink` VALUES (1,1,1,'showgirlvideo¹ÙÍø','http://www.showgirlvideo.com',NULL,'showgirlvideo@163.com','showgirlvideoÊÇJavaEE°æÍøÕ¾¹ÜÀíÏµÍ³£¨Java Enterprise Edition Content Manage System£©µÄ¼ò³Æ¡£JavaÆ¾½èÆäÇ¿´ó¡¢ÎÈ¶¨¡¢°²È«¡¢¸ßÐ§µÈ¶à·½ÃæµÄÓÅÊÆ£¬Ò»Ö±ÊÇÆóÒµ¼¶Ó¦ÓÃµÄÊ×Ñ¡¡£',34,'1',1);
-INSERT INTO `jc_friendlink` VALUES (3,1,2,'¾©¶«ÉÌ³Ç','http://www.360buy.com/','/u/cms/www/201112/1910271036lr.gif','','',3,'1',10);
-INSERT INTO `jc_friendlink` VALUES (4,1,2,'µ±µ±Íø','http://www.dangdang.com/','/u/cms/www/201112/191408344rwj.gif','','',1,'1',10);
-INSERT INTO `jc_friendlink` VALUES (5,1,2,'ÑÇÂíÑ·','http://www.amazon.cn/','/u/cms/www/201112/19141012lh2q.gif','','',1,'1',10);
+INSERT INTO `jc_friendlink` VALUES (1,1,1,'ndmxwï¿½ï¿½ï¿½ï¿½','http://www.ndmxw.com',NULL,'ndmxw2015@163.com','ndmxwï¿½ï¿½JavaEEï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½Java Enterprise Edition Content Manage Systemï¿½ï¿½ï¿½Ä¼ï¿½Æ¡ï¿½JavaÆ¾ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½È¶ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ð§ï¿½È¶à·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½Ò»Ö±ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½Ó¦ï¿½Ãµï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½',34,'1',1);
+INSERT INTO `jc_friendlink` VALUES (3,1,2,'ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½','http://www.360buy.com/','/u/cms/www/201112/1910271036lr.gif','','',3,'1',10);
+INSERT INTO `jc_friendlink` VALUES (4,1,2,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','http://www.dangdang.com/','/u/cms/www/201112/191408344rwj.gif','','',1,'1',10);
+INSERT INTO `jc_friendlink` VALUES (5,1,2,'ï¿½ï¿½ï¿½ï¿½Ñ·','http://www.amazon.cn/','/u/cms/www/201112/19141012lh2q.gif','','',1,'1',10);
 INSERT INTO `jc_friendlink` VALUES (6,1,2,'ihush','http://www.ihush.com/','/u/cms/www/201112/19141255yrfb.gif','','',1,'1',10);
 DROP TABLE IF EXISTS `jc_friendlink_ctg`;
 CREATE TABLE `jc_friendlink_ctg` (
   `friendlinkctg_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) NOT NULL,
-  `friendlinkctg_name` varchar(50) NOT NULL COMMENT 'Ãû³Æ',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
+  `friendlinkctg_name` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
   PRIMARY KEY  (`friendlinkctg_id`),
   KEY `fk_jc_friendlinkctg_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSÓÑÇéÁ´½ÓÀà±ð';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_friendlink_ctg` VALUES (1,1,'ÎÄ×ÖÁ´½Ó',1);
-INSERT INTO `jc_friendlink_ctg` VALUES (2,1,'Æ·ÅÆ×¨Çø£¨Í¼Æ¬Á´½Ó£©',2);
+INSERT INTO `jc_friendlink_ctg` VALUES (1,1,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',1);
+INSERT INTO `jc_friendlink_ctg` VALUES (2,1,'Æ·ï¿½ï¿½×¨ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½Ó£ï¿½',2);
 DROP TABLE IF EXISTS `jc_group`;
 CREATE TABLE `jc_group` (
   `group_id` int(11) NOT NULL auto_increment,
-  `group_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `need_captcha` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÐèÒªÑéÖ¤Âë',
-  `need_check` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÐèÒªÉóºË',
-  `allow_per_day` int(11) NOT NULL default '4096' COMMENT 'Ã¿ÈÕÔÊÐíÉÏ´«KB',
-  `allow_max_file` int(11) NOT NULL default '1024' COMMENT 'Ã¿¸öÎÄ¼þ×î´óKB',
-  `allow_suffix` varchar(255) default 'jpg,jpeg,gif,png,bmp' COMMENT 'ÔÊÐíÉÏ´«µÄºó×º',
-  `is_reg_def` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÄ¬ÈÏ»áÔ±×é',
+  `group_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `need_captcha` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½Ö¤ï¿½ï¿½',
+  `need_check` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½',
+  `allow_per_day` int(11) NOT NULL default '4096' COMMENT 'Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½KB',
+  `allow_max_file` int(11) NOT NULL default '1024' COMMENT 'Ã¿ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½KB',
+  `allow_suffix` varchar(255) default 'jpg,jpeg,gif,png,bmp' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½Äºï¿½×º',
+  `is_reg_def` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ä¬ï¿½Ï»ï¿½Ô±ï¿½ï¿½',
   PRIMARY KEY  (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMS»áÔ±×é±í';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ô±ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_group` VALUES (1,'ÆÕÍ¨»áÔ±',10,1,1,0,0,'',1);
-INSERT INTO `jc_group` VALUES (2,'¸ß¼¶×é',10,1,1,0,0,'',0);
+INSERT INTO `jc_group` VALUES (1,'ï¿½ï¿½Í¨ï¿½ï¿½Ô±',10,1,1,0,0,'',1);
+INSERT INTO `jc_group` VALUES (2,'ï¿½ß¼ï¿½ï¿½ï¿½',10,1,1,0,0,'',0);
 DROP TABLE IF EXISTS `jc_guestbook`;
 CREATE TABLE `jc_guestbook` (
   `guestbook_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) NOT NULL,
   `guestbookctg_id` int(11) NOT NULL,
-  `member_id` int(11) default NULL COMMENT 'ÁôÑÔ»áÔ±',
-  `admin_id` int(11) default NULL COMMENT '»Ø¸´¹ÜÀíÔ±',
-  `ip` varchar(50) NOT NULL COMMENT 'ÁôÑÔIP',
-  `create_time` datetime NOT NULL COMMENT 'ÁôÑÔÊ±¼ä',
-  `replay_time` datetime default NULL COMMENT '»Ø¸´Ê±¼ä',
-  `is_checked` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÉóºË',
-  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÍÆ¼ö',
+  `member_id` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½Ô»ï¿½Ô±',
+  `admin_id` int(11) default NULL COMMENT 'ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½Ô±',
+  `ip` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½IP',
+  `create_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `replay_time` datetime default NULL COMMENT 'ï¿½Ø¸ï¿½Ê±ï¿½ï¿½',
+  `is_checked` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
+  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½Æ¼ï¿½',
   PRIMARY KEY  (`guestbook_id`),
   KEY `fk_jc_ctg_guestbook` (`guestbookctg_id`),
   KEY `fk_jc_guestbook_admin` (`admin_id`),
   KEY `fk_jc_guestbook_member` (`member_id`),
   KEY `fk_jc_guestbook_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='CMSÁôÑÔ';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½';
 
 INSERT INTO `jc_guestbook` VALUES (1,1,1,NULL,1,'127.0.0.1','2014-01-01 15:02:19',NULL,1,0);
 INSERT INTO `jc_guestbook` VALUES (2,1,1,1,NULL,'127.0.0.1','2014-04-19 16:04:19',NULL,0,0);
@@ -968,26 +968,26 @@ DROP TABLE IF EXISTS `jc_guestbook_ctg`;
 CREATE TABLE `jc_guestbook_ctg` (
   `guestbookctg_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) NOT NULL,
-  `ctg_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
+  `ctg_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`guestbookctg_id`),
   KEY `fk_jc_guestbookctg_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSÁôÑÔÀà±ð';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_guestbook_ctg` VALUES (1,1,'ÆÕÍ¨',1,'ÆÕÍ¨ÁôÑÔ');
-INSERT INTO `jc_guestbook_ctg` VALUES (2,1,'Í¶Ëß',10,'Í¶Ëß');
+INSERT INTO `jc_guestbook_ctg` VALUES (1,1,'ï¿½ï¿½Í¨',1,'ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½');
+INSERT INTO `jc_guestbook_ctg` VALUES (2,1,'Í¶ï¿½ï¿½',10,'Í¶ï¿½ï¿½');
 DROP TABLE IF EXISTS `jc_guestbook_ext`;
 CREATE TABLE `jc_guestbook_ext` (
   `guestbook_id` int(11) NOT NULL,
-  `title` varchar(255) default NULL COMMENT 'ÁôÑÔ±êÌâ',
-  `content` longtext COMMENT 'ÁôÑÔÄÚÈÝ',
-  `reply` longtext COMMENT '»Ø¸´ÄÚÈÝ',
-  `email` varchar(100) default NULL COMMENT 'µç×ÓÓÊ¼þ',
-  `phone` varchar(100) default NULL COMMENT 'µç»°',
+  `title` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½',
+  `content` longtext COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `reply` longtext COMMENT 'ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `email` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½',
+  `phone` varchar(100) default NULL COMMENT 'ï¿½ç»°',
   `qq` varchar(50) default NULL COMMENT 'QQ',
   KEY `fk_jc_ext_guestbook` (`guestbook_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÁôÑÔÄÚÈÝ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 INSERT INTO `jc_guestbook_ext` VALUES (1,'111111111111111','11','11111111111111111',NULL,NULL,NULL);
 INSERT INTO `jc_guestbook_ext` VALUES (2,'aa','a',NULL,NULL,'aa',NULL);
@@ -1001,294 +1001,294 @@ INSERT INTO `jc_guestbook_ext` VALUES (9,'<script>alert(\"dd\")</script> ','<scr
 DROP TABLE IF EXISTS `jc_job_apply`;
 CREATE TABLE `jc_job_apply` (
   `job_apply_id` int(11) NOT NULL auto_increment,
-  `user_id` int(11) NOT NULL COMMENT 'ÓÃ»§id',
+  `user_id` int(11) NOT NULL COMMENT 'ï¿½Ã»ï¿½id',
   `content_id` int(11) NOT NULL COMMENT 'Ö°Î»id',
-  `apply_time` datetime NOT NULL COMMENT 'ÉêÇëÊ±¼ä',
+  `apply_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
   PRIMARY KEY  (`job_apply_id`),
   KEY `fk_jc_job_apply_user` (`user_id`),
   KEY `fk_jc_job_apply_content` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Ö°Î»ÉêÇë±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Ö°Î»ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_keyword`;
 CREATE TABLE `jc_keyword` (
   `keyword_id` int(11) NOT NULL auto_increment,
-  `site_id` int(11) default NULL COMMENT 'Õ¾µãID',
-  `keyword_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `url` varchar(255) NOT NULL COMMENT 'Á´½Ó',
-  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ½ûÓÃ',
+  `site_id` int(11) default NULL COMMENT 'Õ¾ï¿½ï¿½ID',
+  `keyword_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `url` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`keyword_id`),
   KEY `fk_jc_keyword_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSÄÚÈÝ¹Ø¼ü´Ê±í';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ý¹Ø¼ï¿½ï¿½Ê±ï¿½';
 
-INSERT INTO `jc_keyword` VALUES (1,NULL,'ÄÚÈÝ¹ÜÀíÏµÍ³','<a href=\"http://www.showgirlvideo.com/\" target=\"_blank\">ÄÚÈÝ¹ÜÀíÏµÍ³</a>',0);
+INSERT INTO `jc_keyword` VALUES (1,NULL,'ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ÏµÍ³','<a href=\"http://www.ndmxw.com/\" target=\"_blank\">ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ÏµÍ³</a>',0);
 DROP TABLE IF EXISTS `jc_log`;
 CREATE TABLE `jc_log` (
   `log_id` int(11) NOT NULL auto_increment,
   `user_id` int(11) default NULL,
   `site_id` int(11) default NULL,
-  `category` int(11) NOT NULL COMMENT 'ÈÕÖ¾ÀàÐÍ',
-  `log_time` datetime NOT NULL COMMENT 'ÈÕÖ¾Ê±¼ä',
-  `ip` varchar(50) default NULL COMMENT 'IPµØÖ·',
-  `url` varchar(255) default NULL COMMENT 'URLµØÖ·',
-  `title` varchar(255) default NULL COMMENT 'ÈÕÖ¾±êÌâ',
-  `content` varchar(255) default NULL COMMENT 'ÈÕÖ¾ÄÚÈÝ',
+  `category` int(11) NOT NULL COMMENT 'ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½',
+  `log_time` datetime NOT NULL COMMENT 'ï¿½ï¿½Ö¾Ê±ï¿½ï¿½',
+  `ip` varchar(50) default NULL COMMENT 'IPï¿½ï¿½Ö·',
+  `url` varchar(255) default NULL COMMENT 'URLï¿½ï¿½Ö·',
+  `title` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½',
+  `content` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`log_id`),
   KEY `fk_jc_log_site` (`site_id`),
   KEY `fk_jc_log_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÈÕÖ¾±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½Ö¾ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_message`;
 CREATE TABLE `jc_message` (
-  `msg_id` int(11) NOT NULL auto_increment COMMENT 'ÏûÏ¢id',
-  `msg_title` varchar(255) NOT NULL default '' COMMENT '±êÌâ',
-  `msg_content` longtext COMMENT 'Õ¾ÄÚÐÅÏ¢ÄÚÈÝ',
-  `send_time` timestamp NULL default NULL COMMENT '·¢ËÍÊ±¼ä',
-  `msg_send_user` int(11) NOT NULL default '1' COMMENT '·¢ÐÅÏ¢ÈË',
-  `msg_receiver_user` int(11) NOT NULL default '0' COMMENT '½ÓÊÕÈË',
-  `site_id` int(11) NOT NULL default '1' COMMENT 'Õ¾µã',
-  `msg_status` tinyint(1) NOT NULL default '0' COMMENT 'ÏûÏ¢×´Ì¬0Î´¶Á£¬1ÒÑ¶Á',
-  `msg_box` int(2) NOT NULL default '1' COMMENT 'ÏûÏ¢ÐÅÏä 0ÊÕ¼þÏä 1·¢¼þÏä 2²Ý¸åÏä 3À¬»øÏä',
+  `msg_id` int(11) NOT NULL auto_increment COMMENT 'ï¿½ï¿½Ï¢id',
+  `msg_title` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `msg_content` longtext COMMENT 'Õ¾ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½',
+  `send_time` timestamp NULL default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `msg_send_user` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½',
+  `msg_receiver_user` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `site_id` int(11) NOT NULL default '1' COMMENT 'Õ¾ï¿½ï¿½',
+  `msg_status` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ï¢×´Ì¬0Î´ï¿½ï¿½ï¿½ï¿½1ï¿½Ñ¶ï¿½',
+  `msg_box` int(2) NOT NULL default '1' COMMENT 'ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ 0ï¿½Õ¼ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½Ý¸ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`msg_id`),
   KEY `fk_jc_message_user_send` (`msg_send_user`),
   KEY `fk_jc_message_user_receiver` (`msg_receiver_user`),
   KEY `fk_jc_message_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Õ¾ÄÚÐÅ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Õ¾ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_model`;
 CREATE TABLE `jc_model` (
   `model_id` int(11) NOT NULL,
-  `model_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `model_path` varchar(100) NOT NULL COMMENT 'Â·¾¶',
-  `tpl_channel_prefix` varchar(20) default NULL COMMENT 'À¸Ä¿Ä£°åÇ°×º',
-  `tpl_content_prefix` varchar(20) default NULL COMMENT 'ÄÚÈÝÄ£°åÇ°×º',
-  `title_img_width` int(11) NOT NULL default '139' COMMENT 'À¸Ä¿±êÌâÍ¼¿í¶È',
-  `title_img_height` int(11) NOT NULL default '139' COMMENT 'À¸Ä¿±êÌâÍ¼¸ß¶È',
-  `content_img_width` int(11) NOT NULL default '310' COMMENT 'À¸Ä¿ÄÚÈÝÍ¼¿í¶È',
-  `content_img_height` int(11) NOT NULL default '310' COMMENT 'À¸Ä¿ÄÚÈÝÍ¼¸ß¶È',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `has_content` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÓÐÄÚÈÝ',
-  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ½ûÓÃ',
-  `is_def` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÄ¬ÈÏÄ£ÐÍ',
+  `model_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `model_path` varchar(100) NOT NULL COMMENT 'Â·ï¿½ï¿½',
+  `tpl_channel_prefix` varchar(20) default NULL COMMENT 'ï¿½ï¿½Ä¿Ä£ï¿½ï¿½Ç°×º',
+  `tpl_content_prefix` varchar(20) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ç°×º',
+  `title_img_width` int(11) NOT NULL default '139' COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½',
+  `title_img_height` int(11) NOT NULL default '139' COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ß¶ï¿½',
+  `content_img_width` int(11) NOT NULL default '310' COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½',
+  `content_img_height` int(11) NOT NULL default '310' COMMENT 'ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ß¶ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `has_content` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
+  `is_def` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ä¬ï¿½ï¿½Ä£ï¿½ï¿½',
   PRIMARY KEY  (`model_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄ£ÐÍ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÄ£ï¿½Í±ï¿½';
 
 DROP TABLE IF EXISTS `jc_model_item`;
 CREATE TABLE `jc_model_item` (
   `modelitem_id` int(11) NOT NULL auto_increment,
   `model_id` int(11) NOT NULL,
-  `field` varchar(50) NOT NULL COMMENT '×Ö¶Î',
-  `item_label` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `priority` int(11) NOT NULL default '70' COMMENT 'ÅÅÁÐË³Ðò',
-  `def_value` varchar(255) default NULL COMMENT 'Ä¬ÈÏÖµ',
-  `opt_value` varchar(255) default NULL COMMENT '¿ÉÑ¡Ïî',
-  `text_size` varchar(20) default NULL COMMENT '³¤¶È',
-  `area_rows` varchar(3) default NULL COMMENT 'ÎÄ±¾ÐÐÊý',
-  `area_cols` varchar(3) default NULL COMMENT 'ÎÄ±¾ÁÐÊý',
-  `help` varchar(255) default NULL COMMENT '°ïÖúÐÅÏ¢',
-  `help_position` varchar(1) default NULL COMMENT '°ïÖúÎ»ÖÃ',
-  `data_type` int(11) NOT NULL default '1' COMMENT 'Êý¾ÝÀàÐÍ',
-  `is_single` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñ¶ÀÕ¼Ò»ÐÐ',
-  `is_channel` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÀ¸Ä¿Ä£ÐÍÏî',
-  `is_custom` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñ×Ô¶¨Òå',
-  `is_display` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÏÔÊ¾',
+  `field` varchar(50) NOT NULL COMMENT 'ï¿½Ö¶ï¿½',
+  `item_label` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '70' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `def_value` varchar(255) default NULL COMMENT 'Ä¬ï¿½ï¿½Öµ',
+  `opt_value` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ñ¡ï¿½ï¿½',
+  `text_size` varchar(20) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `area_rows` varchar(3) default NULL COMMENT 'ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `area_cols` varchar(3) default NULL COMMENT 'ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `help` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢',
+  `help_position` varchar(1) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½',
+  `data_type` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_single` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½Õ¼Ò»ï¿½ï¿½',
+  `is_channel` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Ä¿Ä£ï¿½ï¿½ï¿½ï¿½',
+  `is_custom` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½',
+  `is_display` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½Ê¾',
   PRIMARY KEY  (`modelitem_id`),
   KEY `fk_jc_item_model` (`model_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=426 DEFAULT CHARSET=utf8 COMMENT='CMSÄ£ÐÍÏî±í';
+) ENGINE=InnoDB AUTO_INCREMENT=426 DEFAULT CHARSET=utf8 COMMENT='CMSÄ£ï¿½ï¿½ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_model_item` VALUES (1,1,'name','À¸Ä¿Ãû³Æ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (2,1,'path','·ÃÎÊÂ·¾¶',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (3,1,'title','meta±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (4,1,'keywords','meta¹Ø¼ü×Ö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (5,1,'description','metaÃèÊö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (6,1,'tplChannel','À¸Ä¿Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (7,1,'tplContent','Ñ¡ÔñÄ£ÐÍÄ£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (8,1,'channelStatic','À¸Ä¿¾²Ì¬»¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (9,1,'contentStatic','ÄÚÈÝ¾²Ì¬»¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (10,1,'priority','ÅÅÁÐË³Ðò',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (11,1,'display','ÏÔÊ¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (12,1,'docImg','ÎÄµµÍ¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (14,1,'afterCheck','ÉóºËºó',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (15,1,'commentControl','ÆÀÂÛ',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (16,1,'allowUpdown','¶¥²È',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (17,1,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (18,1,'contriGroupIds','Í¶¸åÈ¨ÏÞ',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (20,1,'link','Íâ²¿Á´½Ó',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (21,1,'titleImg','±êÌâÍ¼',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (23,1,'title','±êÌâ',9,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (24,1,'shortTitle','¼ò¶Ì±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (25,1,'titleColor','±êÌâÑÕÉ«',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (26,1,'tagStr','Tag±êÇ©',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (1,1,'name','ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (2,1,'path','ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (3,1,'title','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (4,1,'keywords','metaï¿½Ø¼ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (5,1,'description','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (6,1,'tplChannel','ï¿½ï¿½Ä¿Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (7,1,'tplContent','Ñ¡ï¿½ï¿½Ä£ï¿½ï¿½Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (8,1,'channelStatic','ï¿½ï¿½Ä¿ï¿½ï¿½Ì¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (9,1,'contentStatic','ï¿½ï¿½ï¿½Ý¾ï¿½Ì¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (10,1,'priority','ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (11,1,'display','ï¿½ï¿½Ê¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (12,1,'docImg','ï¿½Äµï¿½Í¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (14,1,'afterCheck','ï¿½ï¿½Ëºï¿½',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (15,1,'commentControl','ï¿½ï¿½ï¿½ï¿½',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (16,1,'allowUpdown','ï¿½ï¿½ï¿½ï¿½',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (17,1,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (18,1,'contriGroupIds','Í¶ï¿½ï¿½È¨ï¿½ï¿½',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (20,1,'link','ï¿½â²¿ï¿½ï¿½ï¿½ï¿½',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (21,1,'titleImg','ï¿½ï¿½ï¿½ï¿½Í¼',12,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (23,1,'title','ï¿½ï¿½ï¿½ï¿½',9,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (24,1,'shortTitle','ï¿½ï¿½Ì±ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (25,1,'titleColor','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (26,1,'tagStr','Tagï¿½ï¿½Ç©',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
 INSERT INTO `jc_model_item` VALUES (27,1,'description','ÕªÒª',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (28,1,'author','×÷Õß',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (29,1,'origin','À´Ô´',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (30,1,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (31,1,'topLevel','¹Ì¶¥¼¶±ð',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (32,1,'releaseDate','·¢²¼Ê±¼ä',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (33,1,'typeId','ÄÚÈÝÀàÐÍ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (34,1,'tplContent','Ö¸¶¨Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (35,1,'typeImg','ÀàÐÍÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (36,1,'titleImg','±êÌâÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (37,1,'contentImg','ÄÚÈÝÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (38,1,'attachments','¸½¼þ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (39,1,'media','¶àÃ½Ìå',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (40,1,'txt','ÄÚÈÝ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (42,2,'name','À¸Ä¿Ãû³Æ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (43,2,'path','·ÃÎÊÂ·¾¶',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (44,2,'title','meta±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (45,2,'keywords','meta¹Ø¼ü×Ö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (46,2,'description','metaÃèÊö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (47,2,'tplChannel','À¸Ä¿Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (48,2,'priority','ÅÅÁÐË³Ðò',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (49,2,'display','ÏÔÊ¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (50,2,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (51,2,'link','Íâ²¿Á´½Ó',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (52,2,'contentImg','ÄÚÈÝÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (53,2,'txt','ÄÚÈÝ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (93,4,'name','À¸Ä¿Ãû³Æ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (94,4,'path','·ÃÎÊÂ·¾¶',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (95,4,'title','meta±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (96,4,'keywords','meta¹Ø¼ü×Ö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (97,4,'description','metaÃèÊö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (98,4,'tplChannel','À¸Ä¿Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (99,4,'tplContent','Ñ¡ÔñÄ£ÐÍÄ£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (100,4,'priority','ÅÅÁÐË³Ðò',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (101,4,'display','ÏÔÊ¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (102,4,'docImg','ÎÄµµÍ¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (103,4,'commentControl','ÆÀÂÛ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (104,4,'allowUpdown','¶¥²È',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (105,4,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (107,4,'channelId','À¸Ä¿',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (108,4,'title','Èí¼þÃû³Æ',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (109,4,'shortTitle','Èí¼þ¼ò³Æ',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (110,4,'titleColor','±êÌâÑÕÉ«',4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (28,1,'author','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (29,1,'origin','ï¿½ï¿½Ô´',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (30,1,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (31,1,'topLevel','ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (32,1,'releaseDate','ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (33,1,'typeId','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (34,1,'tplContent','Ö¸ï¿½ï¿½Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (35,1,'typeImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (36,1,'titleImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (37,1,'contentImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (38,1,'attachments','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (39,1,'media','ï¿½ï¿½Ã½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (40,1,'txt','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (42,2,'name','ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (43,2,'path','ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (44,2,'title','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (45,2,'keywords','metaï¿½Ø¼ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (46,2,'description','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (47,2,'tplChannel','ï¿½ï¿½Ä¿Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (48,2,'priority','ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (49,2,'display','ï¿½ï¿½Ê¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (50,2,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (51,2,'link','ï¿½â²¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (52,2,'contentImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (53,2,'txt','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (93,4,'name','ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (94,4,'path','ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (95,4,'title','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (96,4,'keywords','metaï¿½Ø¼ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (97,4,'description','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (98,4,'tplChannel','ï¿½ï¿½Ä¿Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (99,4,'tplContent','Ñ¡ï¿½ï¿½Ä£ï¿½ï¿½Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (100,4,'priority','ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (101,4,'display','ï¿½ï¿½Ê¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (102,4,'docImg','ï¿½Äµï¿½Í¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (103,4,'commentControl','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (104,4,'allowUpdown','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (105,4,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (107,4,'channelId','ï¿½ï¿½Ä¿',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (108,4,'title','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (109,4,'shortTitle','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (110,4,'titleColor','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«',4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
 INSERT INTO `jc_model_item` VALUES (111,4,'description','ÕªÒª',5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (112,4,'author','·¢²¼ÈË',6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (113,4,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',7,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (114,4,'topLevel','¹Ì¶¥¼¶±ð',8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (115,4,'releaseDate','·¢²¼Ê±¼ä',9,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (116,4,'typeId','ÄÚÈÝÀàÐÍ',21,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (117,4,'tplContent','Ö¸¶¨Ä£°å',22,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (118,4,'contentImg','ÄÚÈÝÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (119,4,'attachments','×ÊÔ´ÉÏ´«',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (120,4,'txt','Èí¼þ½éÉÜ',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (121,4,'softType','Èí¼þÀàÐÍ',12,'¹ú²úÈí¼þ','¹ú²úÈí¼þ,¹úÍâÈí¼þ','100','3','30',NULL,NULL,6,0,0,1,1);
-INSERT INTO `jc_model_item` VALUES (122,4,'warrant','Èí¼þÊÚÈ¨',13,'Ãâ·Ñ°æ','Ãâ·Ñ°æ,¹²Ïí°æ','','3','30','','',6,0,0,1,1);
-INSERT INTO `jc_model_item` VALUES (123,4,'relatedLink','Ïà¹ØÁ´½Ó',14,'http://','','50','3','30','','',1,0,0,1,1);
-INSERT INTO `jc_model_item` VALUES (124,4,'demoUrl','ÑÝÊ¾µØÖ·',15,'http://',NULL,'60','3','30',NULL,NULL,1,0,0,1,1);
-INSERT INTO `jc_model_item` VALUES (125,5,'name','À¸Ä¿Ãû³Æ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (126,5,'path','·ÃÎÊÂ·¾¶',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (127,5,'title','meta±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (128,5,'keywords','meta¹Ø¼ü×Ö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (129,5,'description','metaÃèÊö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (130,5,'tplChannel','À¸Ä¿Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (131,5,'tplContent','Ñ¡ÔñÄ£ÐÍÄ£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (132,5,'channelStatic','À¸Ä¿¾²Ì¬»¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (133,5,'contentStatic','ÄÚÈÝ¾²Ì¬»¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (134,5,'priority','ÅÅÁÐË³Ðò',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (135,5,'display','ÏÔÊ¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (136,5,'docImg','ÎÄµµÍ¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (138,5,'afterCheck','ÉóºËºó',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (139,5,'commentControl','ÆÀÂÛ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (140,5,'allowUpdown','¶¥²È',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (141,5,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (142,5,'contriGroupIds','Í¶¸åÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (144,5,'link','Íâ²¿Á´½Ó',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (145,5,'titleImg','±êÌâÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (146,5,'contentImg','ÄÚÈÝÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (147,5,'channelId','À¸Ä¿',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (148,5,'title','±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (149,5,'shortTitle','¼ò¶Ì±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (150,5,'titleColor','±êÌâÑÕÉ«',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (151,5,'tagStr','Tag±êÇ©',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (112,4,'author','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',6,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (113,4,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',7,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (114,4,'topLevel','ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½',8,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (115,4,'releaseDate','ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',9,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (116,4,'typeId','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',21,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (117,4,'tplContent','Ö¸ï¿½ï¿½Ä£ï¿½ï¿½',22,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (118,4,'contentImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (119,4,'attachments','ï¿½ï¿½Ô´ï¿½Ï´ï¿½',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (120,4,'txt','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (121,4,'softType','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',12,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','100','3','30',NULL,NULL,6,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (122,4,'warrant','ï¿½ï¿½ï¿½ï¿½ï¿½È¨',13,'ï¿½ï¿½Ñ°ï¿½','ï¿½ï¿½Ñ°ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½','','3','30','','',6,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (123,4,'relatedLink','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',14,'http://','','50','3','30','','',1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (124,4,'demoUrl','ï¿½ï¿½Ê¾ï¿½ï¿½Ö·',15,'http://',NULL,'60','3','30',NULL,NULL,1,0,0,1,1);
+INSERT INTO `jc_model_item` VALUES (125,5,'name','ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (126,5,'path','ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (127,5,'title','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (128,5,'keywords','metaï¿½Ø¼ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (129,5,'description','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (130,5,'tplChannel','ï¿½ï¿½Ä¿Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (131,5,'tplContent','Ñ¡ï¿½ï¿½Ä£ï¿½ï¿½Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (132,5,'channelStatic','ï¿½ï¿½Ä¿ï¿½ï¿½Ì¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (133,5,'contentStatic','ï¿½ï¿½ï¿½Ý¾ï¿½Ì¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (134,5,'priority','ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (135,5,'display','ï¿½ï¿½Ê¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (136,5,'docImg','ï¿½Äµï¿½Í¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (138,5,'afterCheck','ï¿½ï¿½Ëºï¿½',11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (139,5,'commentControl','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (140,5,'allowUpdown','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (141,5,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (142,5,'contriGroupIds','Í¶ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (144,5,'link','ï¿½â²¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (145,5,'titleImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (146,5,'contentImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (147,5,'channelId','ï¿½ï¿½Ä¿',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (148,5,'title','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (149,5,'shortTitle','ï¿½ï¿½Ì±ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (150,5,'titleColor','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (151,5,'tagStr','Tagï¿½ï¿½Ç©',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
 INSERT INTO `jc_model_item` VALUES (152,5,'description','ÕªÒª',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (153,5,'author','×÷Õß',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (154,5,'origin','À´Ô´',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (155,5,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (156,5,'topLevel','¹Ì¶¥¼¶±ð',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (157,5,'releaseDate','·¢²¼Ê±¼ä',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (158,5,'typeId','ÄÚÈÝÀàÐÍ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (159,5,'tplContent','Ö¸¶¨Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (160,5,'typeImg','ÀàÐÍÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (161,5,'titleImg','±êÌâÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (162,5,'contentImg','ÄÚÈÝÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (163,5,'pictures','Í¼Æ¬¼¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (164,6,'name','À¸Ä¿Ãû³Æ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (165,6,'path','·ÃÎÊÂ·¾¶',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (166,6,'title','meta±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (167,6,'keywords','meta¹Ø¼ü×Ö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (168,6,'description','metaÃèÊö',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (169,6,'tplChannel','À¸Ä¿Ä£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (170,6,'tplContent','Ñ¡ÔñÄ£ÐÍÄ£°å',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (171,6,'channelStatic','À¸Ä¿¾²Ì¬»¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (172,6,'contentStatic','ÄÚÈÝ¾²Ì¬»¯',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (173,6,'priority','ÅÅÁÐË³Ðò',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (174,6,'display','ÏÔÊ¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (175,6,'docImg','ÎÄµµÍ¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (177,6,'afterCheck','ÉóºËºó',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (178,6,'commentControl','ÆÀÂÛ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (179,6,'allowUpdown','¶¥²È',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (180,6,'viewGroupIds','ä¯ÀÀÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (181,6,'contriGroupIds','Í¶¸åÈ¨ÏÞ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
-INSERT INTO `jc_model_item` VALUES (183,6,'link','Íâ²¿Á´½Ó',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (184,6,'titleImg','±êÌâÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (185,6,'contentImg','ÄÚÈÝÍ¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
-INSERT INTO `jc_model_item` VALUES (186,6,'channelId','À¸Ä¿',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (187,6,'title','±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (188,6,'shortTitle','¼ò¶Ì±êÌâ',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (189,6,'titleColor','±êÌâÑÕÉ«',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
-INSERT INTO `jc_model_item` VALUES (190,6,'tagStr','Tag±êÇ©',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (191,6,'description','ÄÚÈÝ¼ò½é',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
-INSERT INTO `jc_model_item` VALUES (192,6,'author','×÷Õß',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (153,5,'author','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (154,5,'origin','ï¿½ï¿½Ô´',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (155,5,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (156,5,'topLevel','ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (157,5,'releaseDate','ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (158,5,'typeId','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (159,5,'tplContent','Ö¸ï¿½ï¿½Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (160,5,'typeImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (161,5,'titleImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (162,5,'contentImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (163,5,'pictures','Í¼Æ¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (164,6,'name','ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (165,6,'path','ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (166,6,'title','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (167,6,'keywords','metaï¿½Ø¼ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (168,6,'description','metaï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (169,6,'tplChannel','ï¿½ï¿½Ä¿Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (170,6,'tplContent','Ñ¡ï¿½ï¿½Ä£ï¿½ï¿½Ä£ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (171,6,'channelStatic','ï¿½ï¿½Ä¿ï¿½ï¿½Ì¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (172,6,'contentStatic','ï¿½ï¿½ï¿½Ý¾ï¿½Ì¬ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (173,6,'priority','ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (174,6,'display','ï¿½ï¿½Ê¾',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (175,6,'docImg','ï¿½Äµï¿½Í¼Æ¬',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (177,6,'afterCheck','ï¿½ï¿½Ëºï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (178,6,'commentControl','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (179,6,'allowUpdown','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (180,6,'viewGroupIds','ï¿½ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (181,6,'contriGroupIds','Í¶ï¿½ï¿½È¨ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0,1,0,1);
+INSERT INTO `jc_model_item` VALUES (183,6,'link','ï¿½â²¿ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (184,6,'titleImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (185,6,'contentImg','ï¿½ï¿½ï¿½ï¿½Í¼',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,1,0,1);
+INSERT INTO `jc_model_item` VALUES (186,6,'channelId','ï¿½ï¿½Ä¿',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (187,6,'title','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (188,6,'shortTitle','ï¿½ï¿½Ì±ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (189,6,'titleColor','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,0,0,0,1);
+INSERT INTO `jc_model_item` VALUES (190,6,'tagStr','Tagï¿½ï¿½Ç©',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (191,6,'description','ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,1,0,0,1);
+INSERT INTO `jc_model_item` VALUES (192,6,'author','ï¿½ï¿½ï¿½ï¿½',10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,0,0,0,1);
 DROP TABLE IF EXISTS `jc_origin`;
 CREATE TABLE `jc_origin` (
   `origin_id` int(11) NOT NULL auto_increment,
-  `origin_name` varchar(255) NOT NULL COMMENT 'À´Ô´Ãû³Æ',
-  `ref_count` int(11) NOT NULL default '0' COMMENT 'À´Ô´ÎÄÕÂ×ÜÊý',
+  `origin_name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½',
+  `ref_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`origin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='À´Ô´';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½Ô´';
 
-INSERT INTO `jc_origin` VALUES (1,'ÐÂÀËÎ¢²©',0);
-INSERT INTO `jc_origin` VALUES (2,'°Ù¶È',0);
-INSERT INTO `jc_origin` VALUES (3,'°Ù¶ÈÂÛÌ³',0);
-INSERT INTO `jc_origin` VALUES (4,'°Ù¶ÈÌù°É',0);
-INSERT INTO `jc_origin` VALUES (5,'ÐÂÀËÐÂÎÅ',0);
-INSERT INTO `jc_origin` VALUES (6,'ÌÚÑ¶ÐÂÎÅ',0);
+INSERT INTO `jc_origin` VALUES (1,'ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ï¿½',0);
+INSERT INTO `jc_origin` VALUES (2,'ï¿½Ù¶ï¿½',0);
+INSERT INTO `jc_origin` VALUES (3,'ï¿½Ù¶ï¿½ï¿½ï¿½Ì³',0);
+INSERT INTO `jc_origin` VALUES (4,'ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½ï¿½',0);
+INSERT INTO `jc_origin` VALUES (5,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',0);
+INSERT INTO `jc_origin` VALUES (6,'ï¿½ï¿½Ñ¶ï¿½ï¿½ï¿½ï¿½',0);
 DROP TABLE IF EXISTS `jc_plug`;
 CREATE TABLE `jc_plug` (
   `plug_id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) NOT NULL COMMENT '²å¼þÃû³Æ',
-  `path` varchar(255) NOT NULL default '' COMMENT 'ÎÄ¼þÂ·¾¶',
-  `description` varchar(2000) default NULL COMMENT 'ÃèÊö',
-  `author` varchar(255) default NULL COMMENT '×÷Õß',
-  `upload_time` datetime NOT NULL COMMENT 'ÉÏ´«Ê±¼ä',
-  `install_time` datetime default NULL COMMENT '°²×°Ê±¼ä',
-  `uninstall_time` datetime default NULL COMMENT 'Ð¶ÔØÊ±¼ä',
-  `file_conflict` tinyint(1) NOT NULL default '0' COMMENT '°üº¬ÎÄ¼þÊÇ·ñ³åÍ»',
-  `is_used` tinyint(1) NOT NULL default '0' COMMENT 'Ê¹ÓÃ×´Ì¬(0Î´Ê¹ÓÃ,1Ê¹ÓÃÖÐ)',
-  `plug_perms` varchar(255) default '' COMMENT '²å¼þÈ¨ÏÞ£¨,·Ö¸ô¸÷¸öÈ¨ÏÞÅäÖÃ£©',
+  `name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `path` varchar(255) NOT NULL default '' COMMENT 'ï¿½Ä¼ï¿½Â·ï¿½ï¿½',
+  `description` varchar(2000) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `author` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `upload_time` datetime NOT NULL COMMENT 'ï¿½Ï´ï¿½Ê±ï¿½ï¿½',
+  `install_time` datetime default NULL COMMENT 'ï¿½ï¿½×°Ê±ï¿½ï¿½',
+  `uninstall_time` datetime default NULL COMMENT 'Ð¶ï¿½ï¿½Ê±ï¿½ï¿½',
+  `file_conflict` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ç·ï¿½ï¿½Í»',
+  `is_used` tinyint(1) NOT NULL default '0' COMMENT 'Ê¹ï¿½ï¿½×´Ì¬(0Î´Ê¹ï¿½ï¿½,1Ê¹ï¿½ï¿½ï¿½ï¿½)',
+  `plug_perms` varchar(255) default '' COMMENT 'ï¿½ï¿½ï¿½È¨ï¿½Þ£ï¿½,ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½',
   PRIMARY KEY  (`plug_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='²å¼þ';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_plug` VALUES (4,'²âÊÔ1','/WEB-INF/plug/test.zip','²âÊÔ²âÊÔ','TOM','2014-01-04 16:49:47','2014-02-19 09:49:31','2014-02-19 09:49:15',0,0,'test:*');
+INSERT INTO `jc_plug` VALUES (4,'ï¿½ï¿½ï¿½ï¿½1','/WEB-INF/plug/test.zip','ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½','TOM','2014-01-04 16:49:47','2014-02-19 09:49:31','2014-02-19 09:49:15',0,0,'test:*');
 DROP TABLE IF EXISTS `jc_receiver_message`;
 CREATE TABLE `jc_receiver_message` (
-  `msg_re_id` int(11) NOT NULL auto_increment COMMENT 'ÏûÏ¢id',
-  `msg_title` varchar(255) NOT NULL default '' COMMENT '±êÌâ',
-  `msg_content` longtext COMMENT 'Õ¾ÄÚÐÅÏ¢ÄÚÈÝ',
-  `send_time` timestamp NULL default NULL COMMENT '·¢ËÍÊ±¼ä',
-  `msg_send_user` int(11) NOT NULL default '1' COMMENT '·¢ÐÅÏ¢ÈË',
-  `msg_receiver_user` int(11) NOT NULL default '0' COMMENT '½ÓÊÕÈË',
-  `site_id` int(11) NOT NULL default '1' COMMENT 'Õ¾µã',
-  `msg_status` tinyint(1) NOT NULL default '0' COMMENT 'ÏûÏ¢×´Ì¬0Î´¶Á£¬1ÒÑ¶Á',
-  `msg_box` int(2) NOT NULL default '1' COMMENT 'ÏûÏ¢ÐÅÏä 0ÊÕ¼þÏä 1·¢¼þÏä 2²Ý¸åÏä 3À¬»øÏä',
-  `msg_id` int(11) default NULL COMMENT '·¢ÐÅµÄÐÅ¼þid',
+  `msg_re_id` int(11) NOT NULL auto_increment COMMENT 'ï¿½ï¿½Ï¢id',
+  `msg_title` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `msg_content` longtext COMMENT 'Õ¾ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½',
+  `send_time` timestamp NULL default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `msg_send_user` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½',
+  `msg_receiver_user` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `site_id` int(11) NOT NULL default '1' COMMENT 'Õ¾ï¿½ï¿½',
+  `msg_status` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½Ï¢×´Ì¬0Î´ï¿½ï¿½ï¿½ï¿½1ï¿½Ñ¶ï¿½',
+  `msg_box` int(2) NOT NULL default '1' COMMENT 'ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ 0ï¿½Õ¼ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½Ý¸ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `msg_id` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½Åµï¿½ï¿½Å¼ï¿½id',
   PRIMARY KEY  (`msg_re_id`),
   KEY `jc_receiver_message_user_send` (`msg_send_user`),
   KEY `jc_receiver_message_user_receiver` (`msg_receiver_user`),
   KEY `jc_receiver_message_site` (`site_id`),
   KEY `jc_receiver_message_message` (`msg_re_id`),
   KEY `fk_jc_receiver_message_message` (`msg_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Õ¾ÄÚÐÅÊÕÐÅ±í';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å±ï¿½';
 
 INSERT INTO `jc_receiver_message` VALUES (1,'aa','aaa','2014-01-22 09:44:32',1,1,1,1,0,NULL);
 INSERT INTO `jc_receiver_message` VALUES (2,'aa','aaa','2014-01-22 09:44:32',1,1,1,0,3,NULL);
@@ -1296,29 +1296,29 @@ DROP TABLE IF EXISTS `jc_role`;
 CREATE TABLE `jc_role` (
   `role_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) default NULL,
-  `role_name` varchar(100) NOT NULL COMMENT '½ÇÉ«Ãû³Æ',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `is_super` char(1) NOT NULL default '0' COMMENT 'ÓµÓÐËùÓÐÈ¨ÏÞ',
+  `role_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `is_super` char(1) NOT NULL default '0' COMMENT 'Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½',
   PRIMARY KEY  (`role_id`),
   KEY `fk_jc_role_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMS½ÇÉ«±í';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½É«ï¿½ï¿½';
 
-INSERT INTO `jc_role` VALUES (1,NULL,'¹ÜÀíÔ±',10,'1');
+INSERT INTO `jc_role` VALUES (1,NULL,'ï¿½ï¿½ï¿½ï¿½Ô±',10,'1');
 DROP TABLE IF EXISTS `jc_role_permission`;
 CREATE TABLE `jc_role_permission` (
   `role_id` int(11) NOT NULL,
   `uri` varchar(100) NOT NULL,
   KEY `fk_jc_permission_role` (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS½ÇÉ«ÊÚÈ¨±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½É«ï¿½ï¿½È¨ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_score_group`;
 CREATE TABLE `jc_score_group` (
   `score_group_id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) NOT NULL COMMENT '·Ö×éÃû',
-  `description` varchar(1000) default NULL COMMENT 'ÃèÊö',
-  `enable` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÆôÓÃ',
-  `def` tinyint(3) NOT NULL default '0' COMMENT 'ÊÇ·ñÄ¬ÈÏ',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µã',
+  `name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(1000) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `enable` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `def` tinyint(3) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ä¬ï¿½ï¿½',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½',
   PRIMARY KEY  (`score_group_id`),
   KEY `fk_jc_score_group_site` (`site_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='FComment';
@@ -1326,279 +1326,279 @@ CREATE TABLE `jc_score_group` (
 DROP TABLE IF EXISTS `jc_score_item`;
 CREATE TABLE `jc_score_item` (
   `score_item_id` int(11) NOT NULL auto_increment,
-  `score_group_id` int(11) NOT NULL COMMENT 'ÆÀ·Ö×é',
-  `name` varchar(255) NOT NULL COMMENT 'ÆÀ·ÖÃû',
-  `score` int(11) NOT NULL COMMENT '·ÖÖµ',
-  `image_path` varchar(255) default NULL COMMENT 'ÆÀ·ÖÍ¼±êÂ·¾¶',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÐò',
+  `score_group_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `score` int(11) NOT NULL COMMENT 'ï¿½ï¿½Öµ',
+  `image_path` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Â·ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`score_item_id`),
   KEY `fk_jc_score_item_group` (`score_group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='ÆÀ·ÖÏî';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_score_record`;
 CREATE TABLE `jc_score_record` (
   `score_record_id` int(11) NOT NULL auto_increment,
-  `score_item_id` int(11) NOT NULL COMMENT 'ÆÀ·ÖÏî',
-  `content_id` int(11) NOT NULL COMMENT 'ÄÚÈÝ',
-  `score_count` int(11) NOT NULL COMMENT 'ÆÀ·Ö´ÎÊý',
+  `score_item_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `content_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `score_count` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`score_record_id`),
   KEY `fk_jc_record_score_item` (`score_item_id`),
   KEY `index_score_record_content` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÆÀ·Ö¼ÍÂ¼';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½Ö¼ï¿½Â¼';
 
 DROP TABLE IF EXISTS `jc_search_words`;
 CREATE TABLE `jc_search_words` (
   `word_id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) NOT NULL COMMENT 'ËÑË÷´Ê»ã',
-  `hit_count` int(11) NOT NULL default '0' COMMENT 'ËÑË÷´ÎÊý',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÓÅÏÈ¼¶',
-  `name_initial` varchar(500) NOT NULL default '' COMMENT 'Æ´ÒôÊ××ÖÄ¸',
+  `name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ê»ï¿½',
+  `hit_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½È¼ï¿½',
+  `name_initial` varchar(500) NOT NULL default '' COMMENT 'Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸',
   PRIMARY KEY  (`word_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='ËÑË÷ÈÈ´Ê';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½';
 
 DROP TABLE IF EXISTS `jc_sensitivity`;
 CREATE TABLE `jc_sensitivity` (
   `sensitivity_id` int(11) NOT NULL auto_increment,
-  `search` varchar(255) NOT NULL COMMENT 'Ãô¸Ð´Ê',
-  `replacement` varchar(255) NOT NULL COMMENT 'Ìæ»»´Ê',
+  `search` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½Ð´ï¿½',
+  `replacement` varchar(255) NOT NULL COMMENT 'ï¿½æ»»ï¿½ï¿½',
   PRIMARY KEY  (`sensitivity_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSÃô¸Ð´Ê±í';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½Ð´Ê±ï¿½';
 
 DROP TABLE IF EXISTS `jc_site`;
 CREATE TABLE `jc_site` (
   `site_id` int(11) NOT NULL auto_increment,
-  `config_id` int(11) NOT NULL COMMENT 'ÅäÖÃID',
-  `ftp_upload_id` int(11) default NULL COMMENT 'ÉÏ´«ftp',
-  `domain` varchar(50) NOT NULL COMMENT 'ÓòÃû',
-  `site_path` varchar(20) NOT NULL COMMENT 'Â·¾¶',
-  `site_name` varchar(100) NOT NULL COMMENT 'ÍøÕ¾Ãû³Æ',
-  `short_name` varchar(100) NOT NULL COMMENT '¼ò¶ÌÃû³Æ',
-  `protocol` varchar(20) NOT NULL default 'http://' COMMENT 'Ð­Òé',
-  `dynamic_suffix` varchar(10) NOT NULL default '.jhtml' COMMENT '¶¯Ì¬Ò³ºó×º',
-  `static_suffix` varchar(10) NOT NULL default '.html' COMMENT '¾²Ì¬Ò³ºó×º',
-  `static_dir` varchar(50) default NULL COMMENT '¾²Ì¬Ò³´æ·ÅÄ¿Â¼',
-  `is_index_to_root` char(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÊ¹ÓÃ½«Ê×Ò³·ÅÔÚ¸ùÄ¿Â¼ÏÂ',
-  `is_static_index` char(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ¾²Ì¬»¯Ê×Ò³',
-  `locale_admin` varchar(10) NOT NULL default 'zh_CN' COMMENT 'ºóÌ¨±¾µØ»¯',
-  `locale_front` varchar(10) NOT NULL default 'zh_CN' COMMENT 'Ç°Ì¨±¾µØ»¯',
-  `tpl_solution` varchar(50) NOT NULL default 'default' COMMENT 'Ä£°å·½°¸',
-  `final_step` tinyint(4) NOT NULL default '2' COMMENT 'ÖÕÉó¼¶±ð',
-  `after_check` tinyint(4) NOT NULL default '2' COMMENT 'ÉóºËºó(1:²»ÄÜÐÞ¸ÄÉ¾³ý;2:ÐÞ¸ÄºóÍË»Ø;3:ÐÞ¸Äºó²»±ä)',
-  `is_relative_path` char(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÊ¹ÓÃÏà¶ÔÂ·¾¶',
-  `is_recycle_on` char(1) NOT NULL default '1' COMMENT 'ÊÇ·ñ¿ªÆô»ØÊÕÕ¾',
-  `domain_alias` varchar(255) default NULL COMMENT 'ÓòÃû±ðÃû',
-  `domain_redirect` varchar(255) default NULL COMMENT 'ÓòÃûÖØ¶¨Ïò',
-  `tpl_index` varchar(255) default NULL COMMENT 'Ê×Ò³Ä£°å',
-  `keywords` varchar(255) default NULL COMMENT 'Õ¾µã¹Ø¼ü×Ö',
-  `description` varchar(255) default NULL COMMENT 'Õ¾µãÃèÊö',
+  `config_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ID',
+  `ftp_upload_id` int(11) default NULL COMMENT 'ï¿½Ï´ï¿½ftp',
+  `domain` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `site_path` varchar(20) NOT NULL COMMENT 'Â·ï¿½ï¿½',
+  `site_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½',
+  `short_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `protocol` varchar(20) NOT NULL default 'http://' COMMENT 'Ð­ï¿½ï¿½',
+  `dynamic_suffix` varchar(10) NOT NULL default '.jhtml' COMMENT 'ï¿½ï¿½Ì¬Ò³ï¿½ï¿½×º',
+  `static_suffix` varchar(10) NOT NULL default '.html' COMMENT 'ï¿½ï¿½Ì¬Ò³ï¿½ï¿½×º',
+  `static_dir` varchar(50) default NULL COMMENT 'ï¿½ï¿½Ì¬Ò³ï¿½ï¿½ï¿½Ä¿Â¼',
+  `is_index_to_root` char(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ê¹ï¿½Ã½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ú¸ï¿½Ä¿Â¼ï¿½ï¿½',
+  `is_static_index` char(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½Ò³',
+  `locale_admin` varchar(10) NOT NULL default 'zh_CN' COMMENT 'ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½Ø»ï¿½',
+  `locale_front` varchar(10) NOT NULL default 'zh_CN' COMMENT 'Ç°Ì¨ï¿½ï¿½ï¿½Ø»ï¿½',
+  `tpl_solution` varchar(50) NOT NULL default 'default' COMMENT 'Ä£ï¿½å·½ï¿½ï¿½',
+  `final_step` tinyint(4) NOT NULL default '2' COMMENT 'ï¿½ï¿½ï¿½ó¼¶±ï¿½',
+  `after_check` tinyint(4) NOT NULL default '2' COMMENT 'ï¿½ï¿½Ëºï¿½(1:ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½É¾ï¿½ï¿½;2:ï¿½Þ¸Äºï¿½ï¿½Ë»ï¿½;3:ï¿½Þ¸Äºó²»±ï¿½)',
+  `is_relative_path` char(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½',
+  `is_recycle_on` char(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾',
+  `domain_alias` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `domain_redirect` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½',
+  `tpl_index` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ò³Ä£ï¿½ï¿½',
+  `keywords` varchar(255) default NULL COMMENT 'Õ¾ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`site_id`),
   UNIQUE KEY `ak_domain_path` (`domain`),
   KEY `fk_jc_site_config` (`config_id`),
   KEY `fk_jc_site_upload_ftp` (`ftp_upload_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾µã±í';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_access`;
 CREATE TABLE `jc_site_access` (
   `access_id` int(11) NOT NULL auto_increment,
   `session_id` varchar(32) NOT NULL default '',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µãid',
-  `access_time` time NOT NULL COMMENT '·ÃÎÊÊ±¼ä',
-  `access_date` date NOT NULL COMMENT '·ÃÎÊÈÕÆÚ',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½id',
+  `access_time` time NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `access_date` date NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   `ip` varchar(50) NOT NULL default '',
-  `area` varchar(50) default NULL COMMENT '·ÃÎÊµØÇø',
-  `access_source` varchar(255) default NULL COMMENT '·ÃÎÊÀ´Ô´',
-  `external_link` varchar(255) default NULL COMMENT 'Íâ²¿Á´½ÓÍøÖ·',
-  `engine` varchar(50) default NULL COMMENT 'ËÑË÷ÒýÇæ',
-  `entry_page` varchar(255) default NULL COMMENT 'Èë¿ÚÒ³Ãæ',
-  `last_stop_page` varchar(255) default NULL COMMENT '×îºóÍ£ÁôÒ³Ãæ',
-  `visit_second` int(11) default NULL COMMENT '·ÃÎÊÊ±³¤(Ãë)',
-  `visit_page_count` int(11) default NULL COMMENT '·ÃÎÊÒ³ÃæÊý',
-  `operating_system` varchar(50) default NULL COMMENT '²Ù×÷ÏµÍ³',
-  `browser` varchar(50) default NULL COMMENT 'ä¯ÀÀÆ÷',
-  `keyword` varchar(255) default NULL COMMENT 'À´·Ã¹Ø¼ü×Ö',
+  `area` varchar(50) default NULL COMMENT 'ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½',
+  `access_source` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´',
+  `external_link` varchar(255) default NULL COMMENT 'ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·',
+  `engine` varchar(50) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `entry_page` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ò³ï¿½ï¿½',
+  `last_stop_page` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Í£ï¿½ï¿½Ò³ï¿½ï¿½',
+  `visit_second` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½(ï¿½ï¿½)',
+  `visit_page_count` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½',
+  `operating_system` varchar(50) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ÏµÍ³',
+  `browser` varchar(50) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `keyword` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ã¹Ø¼ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`access_id`),
   KEY `fk_jc_access_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Õ¾µã·ÃÎÊ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Õ¾ï¿½ï¿½ï¿½ï¿½Ê±ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_access_count`;
 CREATE TABLE `jc_site_access_count` (
   `access_count` int(11) NOT NULL auto_increment,
-  `page_count` int(11) NOT NULL default '1' COMMENT '·ÃÎÊÒ³Êý',
-  `visitors` int(11) NOT NULL default '0' COMMENT 'ÓÃ»§Êý',
-  `statistic_date` date NOT NULL COMMENT 'Í³¼ÆÈÕÆÚ',
-  `site_id` int(11) NOT NULL COMMENT 'Í³¼ÆÕ¾µã',
+  `page_count` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½',
+  `visitors` int(11) NOT NULL default '0' COMMENT 'ï¿½Ã»ï¿½ï¿½ï¿½',
+  `statistic_date` date NOT NULL COMMENT 'Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `site_id` int(11) NOT NULL COMMENT 'Í³ï¿½ï¿½Õ¾ï¿½ï¿½',
   PRIMARY KEY  (`access_count`),
   KEY `fk_jc_access_count_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Ã¿ÈÕÍ³¼ÆÒ³Êý·ÃÎÊÇé¿ö';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Ã¿ï¿½ï¿½Í³ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_access_pages`;
 CREATE TABLE `jc_site_access_pages` (
   `access_pages_id` int(11) NOT NULL auto_increment,
-  `access_page` varchar(255) NOT NULL COMMENT '·ÃÎÊÒ³Ãæ',
+  `access_page` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½',
   `session_id` varchar(32) NOT NULL,
-  `access_date` date NOT NULL default '0000-00-00' COMMENT '·ÃÎÊÈÕÆÚ',
-  `access_time` time NOT NULL COMMENT '·ÃÎÊÊ±¼ä',
-  `visit_second` int(11) NOT NULL default '0' COMMENT 'Í£ÁôÊ±³¤£¨Ãë£©',
-  `page_index` int(11) NOT NULL default '0' COMMENT 'ÓÃ»§·ÃÎÊÒ³ÃæµÄË÷Òý',
+  `access_date` date NOT NULL default '0000-00-00' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `access_time` time NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `visit_second` int(11) NOT NULL default '0' COMMENT 'Í£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ë£©',
+  `page_index` int(11) NOT NULL default '0' COMMENT 'ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   `site_id` int(11) NOT NULL default '1',
   PRIMARY KEY  (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='·ÃÎÊÏêÏ¸Ò³Ãæ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸Ò³ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_access_statistic`;
 CREATE TABLE `jc_site_access_statistic` (
   `access_statistic_id` int(11) NOT NULL auto_increment,
-  `statistic_date` date NOT NULL COMMENT 'Í³¼ÆÈÕÆÚ',
-  `pv` int(11) NOT NULL default '0' COMMENT 'pvÁ¿',
-  `ip` int(11) NOT NULL default '0' COMMENT 'ipÁ¿',
-  `visitors` int(11) NOT NULL default '0' COMMENT '·Ã¿ÍÊýÁ¿',
-  `pages_aver` int(11) NOT NULL default '0' COMMENT 'ÈË¾ùä¯ÀÀ´ÎÊý',
-  `visit_second_aver` int(11) NOT NULL default '0' COMMENT 'ÈË¾ù·ÃÎÊÊ±³¤£¨Ãë£©',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µãid',
-  `statisitc_type` varchar(255) NOT NULL default 'all' COMMENT 'Í³¼Æ·ÖÀà£¨all´ú±íµ±ÌìËùÓÐ·ÃÎÊÁ¿µÄÍ³¼Æ£©',
-  `statistic_column_value` varchar(255) default '' COMMENT 'Í³¼ÆÁÐÖµ',
+  `statistic_date` date NOT NULL COMMENT 'Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `pv` int(11) NOT NULL default '0' COMMENT 'pvï¿½ï¿½',
+  `ip` int(11) NOT NULL default '0' COMMENT 'ipï¿½ï¿½',
+  `visitors` int(11) NOT NULL default '0' COMMENT 'ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `pages_aver` int(11) NOT NULL default '0' COMMENT 'ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `visit_second_aver` int(11) NOT NULL default '0' COMMENT 'ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ë£©',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½id',
+  `statisitc_type` varchar(255) NOT NULL default 'all' COMMENT 'Í³ï¿½Æ·ï¿½ï¿½à£¨allï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½Æ£ï¿½',
+  `statistic_column_value` varchar(255) default '' COMMENT 'Í³ï¿½ï¿½ï¿½ï¿½Öµ',
   PRIMARY KEY  (`access_statistic_id`),
   KEY `fk_jc_access_statistic_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='·ÃÎÊÍ³¼Æ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½Í³ï¿½Æ±ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_attr`;
 CREATE TABLE `jc_site_attr` (
   `site_id` int(11) NOT NULL,
-  `attr_name` varchar(30) NOT NULL COMMENT 'Ãû³Æ',
+  `attr_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `attr_value` varchar(255) default NULL COMMENT 'Öµ',
   KEY `fk_jc_attr_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾µãÊôÐÔ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_cfg`;
 CREATE TABLE `jc_site_cfg` (
   `site_id` int(11) NOT NULL,
-  `cfg_name` varchar(30) NOT NULL COMMENT 'Ãû³Æ',
+  `cfg_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `cfg_value` varchar(255) default NULL COMMENT 'Öµ',
   KEY `fk_jc_cfg_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾µãÅäÖÃ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾ï¿½ï¿½ï¿½ï¿½ï¿½Ã±ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_company`;
 CREATE TABLE `jc_site_company` (
   `site_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL COMMENT '¹«Ë¾Ãû³Æ',
-  `scale` varchar(255) default NULL COMMENT '¹«Ë¾¹æÄ£',
-  `nature` varchar(255) default NULL COMMENT '¹«Ë¾ÐÔÖÊ',
-  `industry` varchar(1000) default NULL COMMENT '¹«Ë¾ÐÐÒµ',
-  `contact` varchar(500) default NULL COMMENT 'ÁªÏµ·½Ê½',
-  `description` text COMMENT '¹«Ë¾¼ò½é',
-  `address` varchar(500) default NULL COMMENT '¹«Ë¾µØÖ·',
-  `longitude` float(5,2) default NULL COMMENT '¾­¶È',
-  `latitude` float(4,2) default NULL COMMENT 'Î³¶È',
+  `name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½',
+  `scale` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½Ä£',
+  `nature` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½',
+  `industry` varchar(1000) default NULL COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½Òµ',
+  `contact` varchar(500) default NULL COMMENT 'ï¿½ï¿½Ïµï¿½ï¿½Ê½',
+  `description` text COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½',
+  `address` varchar(500) default NULL COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½Ö·',
+  `longitude` float(5,2) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `latitude` float(4,2) default NULL COMMENT 'Î³ï¿½ï¿½',
   PRIMARY KEY  (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='¹«Ë¾ÐÅÏ¢';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½Ë¾ï¿½ï¿½Ï¢';
 
 DROP TABLE IF EXISTS `jc_site_model`;
 CREATE TABLE `jc_site_model` (
   `model_id` int(11) NOT NULL auto_increment,
-  `field` varchar(50) NOT NULL COMMENT '×Ö¶Î',
-  `model_label` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `upload_path` varchar(100) default NULL COMMENT 'ÉÏ´«Â·¾¶',
-  `text_size` varchar(20) default NULL COMMENT '³¤¶È',
-  `area_rows` varchar(3) default NULL COMMENT 'ÎÄ±¾ÐÐÊý',
-  `area_cols` varchar(3) default NULL COMMENT 'ÎÄ±¾ÁÐÊý',
-  `help` varchar(255) default NULL COMMENT '°ïÖúÐÅÏ¢',
-  `help_position` varchar(1) default NULL COMMENT '°ïÖúÎ»ÖÃ',
-  `data_type` int(11) default '1' COMMENT '0:±à¼­Æ÷;1:ÎÄ±¾¿ò;2:ÎÄ±¾Çø;3:Í¼Æ¬;4:¸½¼þ',
-  `is_single` tinyint(1) default '1' COMMENT 'ÊÇ·ñ¶ÀÕ¼Ò»ÐÐ',
+  `field` varchar(50) NOT NULL COMMENT 'ï¿½Ö¶ï¿½',
+  `model_label` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `upload_path` varchar(100) default NULL COMMENT 'ï¿½Ï´ï¿½Â·ï¿½ï¿½',
+  `text_size` varchar(20) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `area_rows` varchar(3) default NULL COMMENT 'ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `area_cols` varchar(3) default NULL COMMENT 'ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `help` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢',
+  `help_position` varchar(1) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½',
+  `data_type` int(11) default '1' COMMENT '0:ï¿½à¼­ï¿½ï¿½;1:ï¿½Ä±ï¿½ï¿½ï¿½;2:ï¿½Ä±ï¿½ï¿½ï¿½;3:Í¼Æ¬;4:ï¿½ï¿½ï¿½ï¿½',
+  `is_single` tinyint(1) default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½Õ¼Ò»ï¿½ï¿½',
   PRIMARY KEY  (`model_id`),
   UNIQUE KEY `ak_field` (`field`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾µãÐÅÏ¢Ä£ÐÍ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾ï¿½ï¿½ï¿½ï¿½Ï¢Ä£ï¿½Í±ï¿½';
 
 DROP TABLE IF EXISTS `jc_site_txt`;
 CREATE TABLE `jc_site_txt` (
   `site_id` int(11) NOT NULL,
-  `txt_name` varchar(30) NOT NULL COMMENT 'Ãû³Æ',
+  `txt_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `txt_value` longtext COMMENT 'Öµ',
   KEY `fk_jc_txt_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾µãÎÄ±¾±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÕ¾ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_task`;
 CREATE TABLE `jc_task` (
   `task_id` int(11) NOT NULL auto_increment,
-  `task_code` varchar(255) default NULL COMMENT 'ÈÎÎñÖ´ÐÐ´úÂë',
-  `task_type` tinyint(1) NOT NULL default '0' COMMENT 'ÈÎÎñÀàÐÍ(1Ê×Ò³¾²Ì¬»¯¡¢2À¸Ä¿Ò³¾²Ì¬»¯¡¢3ÄÚÈÝÒ³¾²Ì¬»¯¡¢4²É¼¯¡¢5·Ö·¢)',
-  `task_name` varchar(255) NOT NULL COMMENT 'ÈÎÎñÃû³Æ',
-  `job_class` varchar(255) NOT NULL COMMENT 'ÈÎÎñÀà',
-  `execycle` tinyint(1) NOT NULL default '1' COMMENT 'Ö´ÐÐÖÜÆÚ·ÖÀà(1·Ç±í´ïÊ½ 2 cron±í´ïÊ½)',
-  `day_of_month` int(11) default NULL COMMENT 'Ã¿ÔÂµÄÄÄÌì',
-  `day_of_week` tinyint(1) default NULL COMMENT 'ÖÜ¼¸',
+  `task_code` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð´ï¿½ï¿½ï¿½',
+  `task_type` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(1ï¿½ï¿½Ò³ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½Ä¿Ò³ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½4ï¿½É¼ï¿½ï¿½ï¿½5ï¿½Ö·ï¿½)',
+  `task_name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `job_class` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `execycle` tinyint(1) NOT NULL default '1' COMMENT 'Ö´ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½(1ï¿½Ç±ï¿½ï¿½Ê½ 2 cronï¿½ï¿½ï¿½Ê½)',
+  `day_of_month` int(11) default NULL COMMENT 'Ã¿ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½',
+  `day_of_week` tinyint(1) default NULL COMMENT 'ï¿½Ü¼ï¿½',
   `hour` int(11) default NULL COMMENT 'Ð¡Ê±',
-  `minute` int(11) default NULL COMMENT '·ÖÖÓ',
-  `interval_hour` int(11) default NULL COMMENT '¼ä¸ôÐ¡Ê±',
-  `interval_minute` int(11) default NULL COMMENT '¼ä¸ô·ÖÖÓ',
-  `task_interval_unit` tinyint(1) default NULL COMMENT '1·ÖÖÓ¡¢2Ð¡Ê±¡¢3ÈÕ¡¢4ÖÜ¡¢5ÔÂ',
-  `cron_expression` varchar(255) default NULL COMMENT '¹æÔò±í´ïÊ½',
-  `is_enable` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÆôÓÃ',
-  `task_remark` varchar(255) default NULL COMMENT 'ÈÎÎñËµÃ÷',
-  `site_id` int(11) NOT NULL COMMENT 'Õ¾µã',
-  `user_id` int(11) NOT NULL COMMENT '´´½¨Õß',
-  `create_time` datetime NOT NULL COMMENT '´´½¨Ê±¼ä',
+  `minute` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `interval_hour` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½Ð¡Ê±',
+  `interval_minute` int(11) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `task_interval_unit` tinyint(1) default NULL COMMENT '1ï¿½ï¿½ï¿½Ó¡ï¿½2Ð¡Ê±ï¿½ï¿½3ï¿½Õ¡ï¿½4ï¿½Ü¡ï¿½5ï¿½ï¿½',
+  `cron_expression` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½',
+  `is_enable` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `task_remark` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½',
+  `site_id` int(11) NOT NULL COMMENT 'Õ¾ï¿½ï¿½',
+  `user_id` int(11) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `create_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
   PRIMARY KEY  (`task_id`),
   KEY `fk_jc_task_site` (`site_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÈÎÎñ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_task_attr`;
 CREATE TABLE `jc_task_attr` (
   `task_id` int(11) NOT NULL,
-  `param_name` varchar(30) NOT NULL COMMENT '²ÎÊýÃû³Æ',
-  `param_value` varchar(255) default NULL COMMENT '²ÎÊýÖµ',
+  `param_name` varchar(30) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `param_value` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Öµ',
   KEY `fk_jc_attr_task` (`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÈÎÎñ²ÎÊý±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_third_account`;
 CREATE TABLE `jc_third_account` (
   `account_id` bigint(20) NOT NULL auto_increment,
-  `account_key` varchar(255) NOT NULL default '' COMMENT 'µÚÈý·½ÕËºÅkey',
-  `username` varchar(100) NOT NULL default '0' COMMENT '¹ØÁªÓÃ»§Ãû',
-  `source` varchar(10) NOT NULL default '' COMMENT 'µÚÈý·½ÕËºÅÆ½Ì¨(QQ¡¢ÐÂÀËÎ¢²©µÈ)',
+  `account_key` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½key',
+  `username` varchar(100) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½',
+  `source` varchar(10) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½Æ½Ì¨(QQï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½)',
   PRIMARY KEY  (`account_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='µÚÈý·½µÇÂ¼Æ½Ì¨ÕËºÅ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼Æ½Ì¨ï¿½Ëºï¿½';
 
 DROP TABLE IF EXISTS `jc_topic`;
 CREATE TABLE `jc_topic` (
   `topic_id` int(11) NOT NULL auto_increment,
   `channel_id` int(11) default NULL,
-  `topic_name` varchar(150) NOT NULL COMMENT 'Ãû³Æ',
-  `short_name` varchar(150) default NULL COMMENT '¼ò³Æ',
-  `keywords` varchar(255) default NULL COMMENT '¹Ø¼ü×Ö',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
-  `title_img` varchar(100) default NULL COMMENT '±êÌâÍ¼',
-  `content_img` varchar(100) default NULL COMMENT 'ÄÚÈÝÍ¼',
-  `tpl_content` varchar(100) default NULL COMMENT '×¨ÌâÄ£°å',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
-  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÍÆ??',
+  `topic_name` varchar(150) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `short_name` varchar(150) default NULL COMMENT 'ï¿½ï¿½ï¿½',
+  `keywords` varchar(255) default NULL COMMENT 'ï¿½Ø¼ï¿½ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `title_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼',
+  `content_img` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Í¼',
+  `tpl_content` varchar(100) default NULL COMMENT '×¨ï¿½ï¿½Ä£ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
+  `is_recommend` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½??',
   PRIMARY KEY  (`topic_id`),
   KEY `fk_jc_topic_channel` (`channel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='CMS×¨Ìâ±í';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='CMS×¨ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_user`;
 CREATE TABLE `jc_user` (
   `user_id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL COMMENT 'ÓÃ»§Ãû',
-  `email` varchar(100) default NULL COMMENT 'ÓÊÏä',
-  `register_time` datetime NOT NULL COMMENT '×¢²áÊ±¼ä',
-  `register_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT '×¢²áIP',
-  `last_login_time` datetime NOT NULL COMMENT '×îºóµÇÂ¼Ê±¼ä',
-  `last_login_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT '×îºóµÇÂ¼IP',
-  `login_count` int(11) NOT NULL default '0' COMMENT 'µÇÂ¼´ÎÊý',
-  `rank` int(11) NOT NULL default '0' COMMENT '¹ÜÀíÔ±¼¶±ð',
-  `upload_total` bigint(20) NOT NULL default '0' COMMENT 'ÉÏ´«×Ü´óÐ¡',
-  `upload_size` int(11) NOT NULL default '0' COMMENT 'ÉÏ´«´óÐ¡',
-  `upload_date` date default NULL COMMENT 'ÉÏ´«ÈÕÆÚ',
-  `is_admin` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ¹ÜÀíÔ±',
-  `is_self_admin` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÖ»¹ÜÀí×Ô¼ºµÄÊý¾Ý',
-  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ½ûÓÃ',
+  `username` varchar(100) NOT NULL COMMENT 'ï¿½Ã»ï¿½ï¿½ï¿½',
+  `email` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `register_time` datetime NOT NULL COMMENT '×¢ï¿½ï¿½Ê±ï¿½ï¿½',
+  `register_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT '×¢ï¿½ï¿½IP',
+  `last_login_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Â¼Ê±ï¿½ï¿½',
+  `last_login_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT 'ï¿½ï¿½ï¿½ï¿½Â¼IP',
+  `login_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½',
+  `rank` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½',
+  `upload_total` bigint(20) NOT NULL default '0' COMMENT 'ï¿½Ï´ï¿½ï¿½Ü´ï¿½Ð¡',
+  `upload_size` int(11) NOT NULL default '0' COMMENT 'ï¿½Ï´ï¿½ï¿½ï¿½Ð¡',
+  `upload_date` date default NULL COMMENT 'ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_admin` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ô±',
+  `is_self_admin` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`user_id`),
   UNIQUE KEY `ak_username` (`username`),
   KEY `fk_jc_user_group` (`group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÓÃ»§±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½Ã»ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_user_attr`;
 CREATE TABLE `jc_user_attr` (
@@ -1606,67 +1606,67 @@ CREATE TABLE `jc_user_attr` (
   `attr_name` varchar(255) NOT NULL,
   `attr_value` varchar(255) default NULL,
   KEY `fk_jc_attr_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÓÃ»§ÊôÐÔ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ô±ï¿½';
 
 DROP TABLE IF EXISTS `jc_user_collection`;
 CREATE TABLE `jc_user_collection` (
-  `user_id` int(11) NOT NULL default '0' COMMENT 'ÓÃ»§id',
-  `content_id` int(11) NOT NULL default '0' COMMENT 'ÄÚÈÝid',
+  `user_id` int(11) NOT NULL default '0' COMMENT 'ï¿½Ã»ï¿½id',
+  `content_id` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½ï¿½ï¿½id',
   PRIMARY KEY  (`user_id`,`content_id`),
   KEY `fk_jc_user_collection_con` (`content_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÓÃ»§ÊÕ²Ø¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½Ã»ï¿½ï¿½Õ²Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_user_ext`;
 CREATE TABLE `jc_user_ext` (
   `user_id` int(11) NOT NULL,
-  `realname` varchar(100) default NULL COMMENT 'ÕæÊµÐÕÃû',
-  `gender` tinyint(1) default NULL COMMENT 'ÐÔ±ð',
-  `birthday` datetime default NULL COMMENT '³öÉúÈÕÆÚ',
-  `intro` varchar(255) default NULL COMMENT '¸öÈË½éÉÜ',
-  `comefrom` varchar(150) default NULL COMMENT 'À´×Ô',
+  `realname` varchar(100) default NULL COMMENT 'ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½',
+  `gender` tinyint(1) default NULL COMMENT 'ï¿½Ô±ï¿½',
+  `birthday` datetime default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `intro` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½',
+  `comefrom` varchar(150) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `qq` varchar(100) default NULL COMMENT 'QQ',
   `msn` varchar(100) default NULL COMMENT 'MSN',
-  `phone` varchar(50) default NULL COMMENT 'µç»°',
-  `mobile` varchar(50) default NULL COMMENT 'ÊÖ»ú',
-  `user_img` varchar(255) default NULL COMMENT 'ÓÃ»§Í·Ïñ',
-  `user_signature` varchar(255) default NULL COMMENT 'ÓÃ»§¸öÐÔÇ©Ãû',
+  `phone` varchar(50) default NULL COMMENT 'ï¿½ç»°',
+  `mobile` varchar(50) default NULL COMMENT 'ï¿½Ö»ï¿½',
+  `user_img` varchar(255) default NULL COMMENT 'ï¿½Ã»ï¿½Í·ï¿½ï¿½',
+  `user_signature` varchar(255) default NULL COMMENT 'ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ç©ï¿½ï¿½',
   PRIMARY KEY  (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÓÃ»§À©Õ¹ÐÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½Ã»ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½Ï¢ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_user_menu`;
 CREATE TABLE `jc_user_menu` (
   `menu_id` int(11) NOT NULL auto_increment,
-  `menu_name` varchar(255) NOT NULL COMMENT '²Ëµ¥Ãû³Æ',
-  `menu_url` varchar(255) NOT NULL COMMENT '²Ëµ¥µØÖ·',
+  `menu_name` varchar(255) NOT NULL COMMENT 'ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½',
+  `menu_url` varchar(255) NOT NULL COMMENT 'ï¿½Ëµï¿½ï¿½ï¿½Ö·',
   `priority` int(11) NOT NULL default '10',
   `user_id` int(11) NOT NULL,
   PRIMARY KEY  (`menu_id`),
   KEY `fk_jc_menu_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÓÃ»§³£ÓÃ²Ëµ¥';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ã²Ëµï¿½';
 
 DROP TABLE IF EXISTS `jc_user_resume`;
 CREATE TABLE `jc_user_resume` (
   `user_id` int(11) NOT NULL,
-  `resume_name` varchar(255) NOT NULL COMMENT '¼òÀúÃû³Æ',
-  `target_worknature` varchar(255) default NULL COMMENT 'ÆÚÍû¹¤×÷ÐÔÖÊ',
-  `target_workplace` varchar(255) default NULL COMMENT 'ÆÚÍû¹¤×÷µØµã',
-  `target_category` varchar(255) default NULL COMMENT 'ÆÚÍûÖ°Î»Àà±ð',
-  `target_salary` varchar(255) default NULL COMMENT 'ÆÚÍûÔÂÐ½',
-  `edu_school` varchar(255) default NULL COMMENT '±ÏÒµÑ§Ð£',
-  `edu_graduation` datetime default NULL COMMENT '±ÏÒµÊ±¼ä',
-  `edu_back` varchar(255) default NULL COMMENT 'Ñ§Àú',
+  `resume_name` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `target_worknature` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `target_workplace` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½',
+  `target_category` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ö°Î»ï¿½ï¿½ï¿½',
+  `target_salary` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½',
+  `edu_school` varchar(255) default NULL COMMENT 'ï¿½ï¿½ÒµÑ§Ð£',
+  `edu_graduation` datetime default NULL COMMENT 'ï¿½ï¿½ÒµÊ±ï¿½ï¿½',
+  `edu_back` varchar(255) default NULL COMMENT 'Ñ§ï¿½ï¿½',
   `edu_discipline` varchar(255) default NULL COMMENT '×¨Òµ',
-  `recent_company` varchar(500) default NULL COMMENT '×î½ü¹¤×÷¹«Ë¾Ãû³Æ',
-  `company_industry` varchar(255) default NULL COMMENT '×î½ü¹«Ë¾ËùÊôÐÐÒµ',
-  `company_scale` varchar(255) default NULL COMMENT '¹«Ë¾¹æÄ£',
-  `job_name` varchar(255) default NULL COMMENT 'Ö°Î»Ãû³Æ',
-  `job_category` varchar(255) default NULL COMMENT 'Ö°Î»Àà±ð',
-  `job_start` datetime default NULL COMMENT '¹¤×÷ÆðÊ¼Ê±¼ä',
-  `subordinates` varchar(255) default NULL COMMENT 'ÏÂÊôÈËÊý',
-  `job_description` text COMMENT '¹¤×÷ÃèÊö',
-  `self_evaluation` varchar(2000) default NULL COMMENT '×ÔÎÒÆÀ¼Û',
+  `recent_company` varchar(500) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½',
+  `company_industry` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµ',
+  `company_scale` varchar(255) default NULL COMMENT 'ï¿½ï¿½Ë¾ï¿½ï¿½Ä£',
+  `job_name` varchar(255) default NULL COMMENT 'Ö°Î»ï¿½ï¿½ï¿½ï¿½',
+  `job_category` varchar(255) default NULL COMMENT 'Ö°Î»ï¿½ï¿½ï¿½',
+  `job_start` datetime default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Ê±ï¿½ï¿½',
+  `subordinates` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `job_description` text COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `self_evaluation` varchar(2000) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÓÃ»§¼òÀú';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_user_role`;
 CREATE TABLE `jc_user_role` (
@@ -1674,120 +1674,120 @@ CREATE TABLE `jc_user_role` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY  (`role_id`,`user_id`),
   KEY `fk_jc_role_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÓÃ»§½ÇÉ«¹ØÁª±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSï¿½Ã»ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_user_site`;
 CREATE TABLE `jc_user_site` (
   `usersite_id` int(11) NOT NULL auto_increment,
   `user_id` int(11) NOT NULL,
   `site_id` int(11) NOT NULL,
-  `check_step` tinyint(4) NOT NULL default '1' COMMENT 'ÉóºË¼¶±ð',
-  `is_all_channel` tinyint(1) NOT NULL default '1' COMMENT 'ÊÇ·ñÓµÓÐËùÓÐÀ¸Ä¿µÄÈ¨ÏÞ',
+  `check_step` tinyint(4) NOT NULL default '1' COMMENT 'ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½',
+  `is_all_channel` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½Ç·ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½È¨ï¿½ï¿½',
   PRIMARY KEY  (`usersite_id`),
   KEY `fk_jc_site_user` (`user_id`),
   KEY `fk_jc_user_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMS¹ÜÀíÔ±Õ¾µã±í';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSï¿½ï¿½ï¿½ï¿½Ô±Õ¾ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_vote_item`;
 CREATE TABLE `jc_vote_item` (
   `voteitem_id` int(11) NOT NULL auto_increment,
   `votetopic_id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL COMMENT '±êÌâ',
-  `vote_count` int(11) NOT NULL default '0' COMMENT 'Í¶Æ±ÊýÁ¿',
-  `priority` int(11) NOT NULL default '10' COMMENT 'ÅÅÁÐË³Ðò',
+  `title` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `vote_count` int(11) NOT NULL default '0' COMMENT 'Í¶Æ±ï¿½ï¿½ï¿½ï¿½',
+  `priority` int(11) NOT NULL default '10' COMMENT 'ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½',
   `subtopic_id` int(11) default NULL,
   PRIMARY KEY  (`voteitem_id`),
   KEY `fk_jc_vote_item_topic` (`votetopic_id`),
   KEY `FK_jc_vote_item_subtopic` (`subtopic_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='CMSÍ¶Æ±Ïî';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='CMSÍ¶Æ±ï¿½ï¿½';
 
-INSERT INTO `jc_vote_item` VALUES (1,2,'²»Ï²»¶',0,3,12);
-INSERT INTO `jc_vote_item` VALUES (2,2,'Ï²»¶',0,2,12);
-INSERT INTO `jc_vote_item` VALUES (3,2,'ºÜÏ²»¶',1,1,12);
-INSERT INTO `jc_vote_item` VALUES (4,2,'Ã»ÓÐ¸Ä½ø',0,7,11);
-INSERT INTO `jc_vote_item` VALUES (5,2,'ÓÐ¸Ä½ø',0,5,11);
-INSERT INTO `jc_vote_item` VALUES (6,2,'¸Ä½øºÜ´ó',1,4,11);
-INSERT INTO `jc_vote_item` VALUES (7,2,'²î²»¶à',0,6,11);
-INSERT INTO `jc_vote_item` VALUES (8,2,'ÏÂÔØ',1,11,9);
-INSERT INTO `jc_vote_item` VALUES (9,2,'ÐÂÎÅ',1,8,9);
-INSERT INTO `jc_vote_item` VALUES (10,2,'Í¼¿â',1,9,9);
-INSERT INTO `jc_vote_item` VALUES (11,2,'ÊÓÆµ',1,10,9);
+INSERT INTO `jc_vote_item` VALUES (1,2,'ï¿½ï¿½Ï²ï¿½ï¿½',0,3,12);
+INSERT INTO `jc_vote_item` VALUES (2,2,'Ï²ï¿½ï¿½',0,2,12);
+INSERT INTO `jc_vote_item` VALUES (3,2,'ï¿½ï¿½Ï²ï¿½ï¿½',1,1,12);
+INSERT INTO `jc_vote_item` VALUES (4,2,'Ã»ï¿½Ð¸Ä½ï¿½',0,7,11);
+INSERT INTO `jc_vote_item` VALUES (5,2,'ï¿½Ð¸Ä½ï¿½',0,5,11);
+INSERT INTO `jc_vote_item` VALUES (6,2,'ï¿½Ä½ï¿½ï¿½Ü´ï¿½',1,4,11);
+INSERT INTO `jc_vote_item` VALUES (7,2,'ï¿½î²»ï¿½ï¿½',0,6,11);
+INSERT INTO `jc_vote_item` VALUES (8,2,'ï¿½ï¿½ï¿½ï¿½',1,11,9);
+INSERT INTO `jc_vote_item` VALUES (9,2,'ï¿½ï¿½ï¿½ï¿½',1,8,9);
+INSERT INTO `jc_vote_item` VALUES (10,2,'Í¼ï¿½ï¿½',1,9,9);
+INSERT INTO `jc_vote_item` VALUES (11,2,'ï¿½ï¿½Æµ',1,10,9);
 DROP TABLE IF EXISTS `jc_vote_record`;
 CREATE TABLE `jc_vote_record` (
   `voterecored_id` int(11) NOT NULL auto_increment,
   `user_id` int(11) default NULL,
   `votetopic_id` int(11) NOT NULL,
-  `vote_time` datetime NOT NULL COMMENT 'Í¶Æ±Ê±¼ä',
+  `vote_time` datetime NOT NULL COMMENT 'Í¶Æ±Ê±ï¿½ï¿½',
   `vote_ip` varchar(50) NOT NULL COMMENT 'Í¶Æ±IP',
   `vote_cookie` varchar(32) NOT NULL COMMENT 'Í¶Æ±COOKIE',
   PRIMARY KEY  (`voterecored_id`),
   KEY `fk_jc_vote_record_topic` (`votetopic_id`),
   KEY `fk_jc_voterecord_user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÍ¶Æ±¼ÇÂ¼';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMSÍ¶Æ±ï¿½ï¿½Â¼';
 
 DROP TABLE IF EXISTS `jc_vote_reply`;
 CREATE TABLE `jc_vote_reply` (
   `votereply_id` int(11) NOT NULL auto_increment,
-  `reply` text COMMENT '»Ø¸´ÄÚÈÝ',
+  `reply` text COMMENT 'ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½',
   `subtopic_id` int(11) default NULL,
   PRIMARY KEY  (`votereply_id`),
   KEY `FK_jc_vote_reply_sub` (`subtopic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Í¶Æ±ÎÄ±¾ÌâÄ¿»Ø¸´±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Í¶Æ±ï¿½Ä±ï¿½ï¿½ï¿½Ä¿ï¿½Ø¸ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jc_vote_subtopic`;
 CREATE TABLE `jc_vote_subtopic` (
   `subtopic_id` int(11) NOT NULL auto_increment,
-  `title` varchar(255) NOT NULL default '' COMMENT '±êÌâ',
-  `votetopic_id` int(11) NOT NULL default '0' COMMENT 'Í¶Æ±£¨µ÷²é£©',
-  `subtopic_type` int(2) NOT NULL default '1' COMMENT 'ÀàÐÍ£¨1µ¥Ñ¡£¬2¶àÑ¡£¬3ÎÄ±¾£©',
+  `title` varchar(255) NOT NULL default '' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `votetopic_id` int(11) NOT NULL default '0' COMMENT 'Í¶Æ±ï¿½ï¿½ï¿½ï¿½ï¿½é£©',
+  `subtopic_type` int(2) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½Í£ï¿½1ï¿½ï¿½Ñ¡ï¿½ï¿½2ï¿½ï¿½Ñ¡ï¿½ï¿½3ï¿½Ä±ï¿½ï¿½ï¿½',
   `priority` int(11) default NULL,
   PRIMARY KEY  (`subtopic_id`),
   KEY `FK_jc_vote_subtopic_vote` (`votetopic_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='Í¶Æ±×ÓÌâÄ¿';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='Í¶Æ±ï¿½ï¿½ï¿½ï¿½Ä¿';
 
-INSERT INTO `jc_vote_subtopic` VALUES (9,'Äú¾õµÃV5ÑÝÊ¾Õ¾ÄÄÐ©Ä£¿é×öµÄ±È½ÏºÃ',2,2,4);
-INSERT INTO `jc_vote_subtopic` VALUES (10,'ÎÒ¾õµÃÕâÀïÍêÉÆÒ»ÏÂ£º',2,3,3);
-INSERT INTO `jc_vote_subtopic` VALUES (11,'V5°æ±¾±ÈV2012sp1°æµÄÉè¼Æ·ç¸ñÓÐ¸Ä½øÂð£¿',2,1,2);
-INSERT INTO `jc_vote_subtopic` VALUES (12,'V5°æ±¾ÑÝÊ¾Õ¾ÍøÒ³µÄÉè¼Æ·ç¸ñÄúÏ²»¶Âð£¿',2,1,1);
+INSERT INTO `jc_vote_subtopic` VALUES (9,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½V5ï¿½ï¿½Ê¾Õ¾ï¿½ï¿½Ð©Ä£ï¿½ï¿½ï¿½ï¿½ï¿½Ä±È½Ïºï¿½',2,2,4);
+INSERT INTO `jc_vote_subtopic` VALUES (10,'ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½',2,3,3);
+INSERT INTO `jc_vote_subtopic` VALUES (11,'V5ï¿½æ±¾ï¿½ï¿½V2012sp1ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ð¸Ä½ï¿½ï¿½ï¿½',2,1,2);
+INSERT INTO `jc_vote_subtopic` VALUES (12,'V5ï¿½æ±¾ï¿½ï¿½Ê¾Õ¾ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½',2,1,1);
 DROP TABLE IF EXISTS `jc_vote_topic`;
 CREATE TABLE `jc_vote_topic` (
   `votetopic_id` int(11) NOT NULL auto_increment,
   `site_id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL COMMENT '±êÌâ',
-  `description` varchar(255) default NULL COMMENT 'ÃèÊö',
-  `start_time` datetime default NULL COMMENT '¿ªÊ¼Ê±¼ä',
-  `end_time` datetime default NULL COMMENT '½áÊøÊ±¼ä',
-  `repeate_hour` int(11) default NULL COMMENT 'ÖØ¸´Í¶Æ±ÏÞÖÆÊ±¼ä£¬µ¥Î»Ð¡Ê±£¬Îª¿Õ²»ÔÊÐíÖØ¸´Í¶Æ±',
-  `total_count` int(11) NOT NULL default '0' COMMENT '×ÜÍ¶Æ±Êý',
-  `multi_select` int(11) NOT NULL default '1' COMMENT '×î¶à¿ÉÒÔÑ¡Ôñ¼¸Ïî',
-  `is_restrict_member` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÏÞÖÆ»áÔ±',
-  `is_restrict_ip` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÏÞÖÆIP',
-  `is_restrict_cookie` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÏÞÖÆCOOKIE',
-  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñ½ûÓÃ',
-  `is_def` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÄ¬ÈÏÖ÷Ìâ',
+  `title` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `description` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `start_time` datetime default NULL COMMENT 'ï¿½ï¿½Ê¼Ê±ï¿½ï¿½',
+  `end_time` datetime default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `repeate_hour` int(11) default NULL COMMENT 'ï¿½Ø¸ï¿½Í¶Æ±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½Î»Ð¡Ê±ï¿½ï¿½Îªï¿½Õ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½Í¶Æ±',
+  `total_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Í¶Æ±ï¿½ï¿½',
+  `multi_select` int(11) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½',
+  `is_restrict_member` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Æ»ï¿½Ô±',
+  `is_restrict_ip` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½IP',
+  `is_restrict_cookie` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½COOKIE',
+  `is_disabled` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½ï¿½ï¿½ï¿½',
+  `is_def` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`votetopic_id`),
   KEY `fk_jc_votetopic_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSÍ¶Æ±Ö÷Ìâ';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSÍ¶Æ±ï¿½ï¿½ï¿½ï¿½';
 
-INSERT INTO `jc_vote_topic` VALUES (2,1,'showgirlvideoÑÝÊ¾Õ¾¸Ä°æÓÃ»§ÎÊ¾íµ÷²é','showgirlvideov5°æÕýÊ½·¢²¼ÁË£¬°éËæ×ÅÏµÍ³µÄÍêÉÆ£¬showgirlvideoÑÝÊ¾Õ¾µÄÄ£°åÒ²Ò»Ö±ÔÚ²»¶ÏµÄ¸Ä°æ£¬Õë¶Ô´Ë´Î¸Ä°æ£¬showgirlvideoÃÀ¹¤ÍÅ¶ÓÌØÑûÄú²ÎÓë¡°showgirlvideoÑÝÊ¾Õ¾¸Ä°æÓÃ»§ÎÊ¾íµ÷²é¡±£¬Ï£Íû´ó¼ÒÄÜÌá³ö±¦¹óµÄÒâ¼û£¬ÎÒÃÇÒ»¶¨ÈÏÕæ¸Ä½ø£¬Ð»Ð»´ó¼ÒµÄÖ§³Ö£¡',NULL,NULL,NULL,1,1,0,0,0,0,1);
+INSERT INTO `jc_vote_topic` VALUES (2,1,'ndmxwï¿½ï¿½Ê¾Õ¾ï¿½Ä°ï¿½ï¿½Ã»ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½','showgirlvideov5ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ndmxwï¿½ï¿½Ê¾Õ¾ï¿½ï¿½Ä£ï¿½ï¿½Ò²Ò»Ö±ï¿½Ú²ï¿½ï¿½ÏµÄ¸Ä°æ£¬ï¿½ï¿½Ô´Ë´Î¸Ä°æ£¬showgirlvideoï¿½ï¿½ï¿½ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡°showgirlvideoï¿½ï¿½Ê¾Õ¾ï¿½Ä°ï¿½ï¿½Ã»ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½é¡±ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½Ð»Ð»ï¿½ï¿½Òµï¿½Ö§ï¿½Ö£ï¿½',NULL,NULL,NULL,1,1,0,0,0,0,1);
 DROP TABLE IF EXISTS `jo_authentication`;
 CREATE TABLE `jo_authentication` (
-  `authentication_id` char(32) NOT NULL COMMENT 'ÈÏÖ¤ID',
-  `userid` int(11) NOT NULL COMMENT 'ÓÃ»§ID',
-  `username` varchar(100) NOT NULL COMMENT 'ÓÃ»§Ãû',
-  `email` varchar(100) default NULL COMMENT 'ÓÊÏä',
-  `login_time` datetime NOT NULL COMMENT 'µÇÂ¼Ê±¼ä',
-  `login_ip` varchar(50) NOT NULL COMMENT 'µÇÂ¼ip',
-  `update_time` datetime NOT NULL COMMENT '¸üÐÂÊ±¼ä',
+  `authentication_id` char(32) NOT NULL COMMENT 'ï¿½ï¿½Ö¤ID',
+  `userid` int(11) NOT NULL COMMENT 'ï¿½Ã»ï¿½ID',
+  `username` varchar(100) NOT NULL COMMENT 'ï¿½Ã»ï¿½ï¿½ï¿½',
+  `email` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `login_time` datetime NOT NULL COMMENT 'ï¿½ï¿½Â¼Ê±ï¿½ï¿½',
+  `login_ip` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½Â¼ip',
+  `update_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
   PRIMARY KEY  (`authentication_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÈÏÖ¤ÐÅÏ¢±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½Ö¤ï¿½ï¿½Ï¢ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jo_config`;
 CREATE TABLE `jo_config` (
-  `cfg_key` varchar(50) NOT NULL COMMENT 'ÅäÖÃKEY',
-  `cfg_value` varchar(255) default NULL COMMENT 'ÅäÖÃVALUE',
+  `cfg_key` varchar(50) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½KEY',
+  `cfg_value` varchar(255) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½VALUE',
   PRIMARY KEY  (`cfg_key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÅäÖÃ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½Ã±ï¿½';
 
 INSERT INTO `jo_config` VALUES ('email_encoding','');
 INSERT INTO `jo_config` VALUES ('email_host','smtp.126.com');
@@ -1797,66 +1797,66 @@ INSERT INTO `jo_config` VALUES ('email_port',NULL);
 INSERT INTO `jo_config` VALUES ('email_username','showgirlvideov5@126.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval','30');
 INSERT INTO `jo_config` VALUES ('login_error_times','3');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject','ÕÒ»ØshowgirlvideoÃÜÂë');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_text','¸ÐÐ»ÄúÊ¹ÓÃshowgirlvideoÏµÍ³»áÔ±ÃÜÂëÕÒ»Ø¹¦ÄÜ£¬Çë¼Ç×¡ÒÔÏÂÕÒ»ØÐÅÏ¢£º\r\nÓÃ»§ID£º${uid}\r\nÓÃ»§Ãû£º${username}\r\nÄúµÄÐÂÃÜÂëÎª£º${resetPwd}\r\nÇë·ÃÎÊÈçÏÂÁ´½ÓÐÂÃÜÂë²ÅÄÜÉúÐ§£º\r\nhttp://demo.showgirlvideo.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
-INSERT INTO `jo_config` VALUES ('message_register_subject','»¶Ó­Äú×¢²áshowgirlvideoÓÃ»§');
-INSERT INTO `jo_config` VALUES ('message_register_text','${username}ÄúºÃ£º\r\n»¶Ó­Äú×¢²áshowgirlvideoÏµÍ³»áÔ±\r\nÇëµã»÷ÒÔÏÂÁ´½Ó½øÐÐ¼¤»î\r\nhttp://demo.showgirlvideo.com/active.jspx?username=${username}&key=${activationCode}');
-INSERT INTO `jo_config` VALUES ('message_subject','showgirlvideo»áÔ±ÃÜÂëÕÒ»ØÐÅÏ¢');
-INSERT INTO `jo_config` VALUES ('message_text','¸ÐÐ»ÄúÊ¹ÓÃshowgirlvideoÏµÍ³»áÔ±ÃÜÂëÕÒ»Ø¹¦ÄÜ£¬Çë¼Ç×¡ÒÔÏÂÕÒ»ØÐÅÏ¢£º\r\nÓÃ»§ID£º${uid}\r\nÓÃ»§Ãû£º${username}\r\nÄúµÄÐÂÃÜÂëÎª£º${resetPwd}\r\nÇë·ÃÎÊÈçÏÂÁ´½ÓÐÂÃÜÂë²ÅÄÜÉúÐ§£º\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject','ï¿½Ò»ï¿½ndmxwï¿½ï¿½ï¿½ï¿½');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_text','ï¿½ï¿½Ð»ï¿½ï¿½Ê¹ï¿½ï¿½showgirlvideoÏµÍ³ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ø¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½×¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½\r\nï¿½Ã»ï¿½IDï¿½ï¿½${uid}\r\nï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½${username}\r\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½${resetPwd}\r\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½\r\nhttp://demo.ndmxw.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
+INSERT INTO `jo_config` VALUES ('message_register_subject','ï¿½ï¿½Ó­ï¿½ï¿½×¢ï¿½ï¿½ndmxwï¿½Ã»ï¿½');
+INSERT INTO `jo_config` VALUES ('message_register_text','${username}ï¿½ï¿½ï¿½Ã£ï¿½\r\nï¿½ï¿½Ó­ï¿½ï¿½×¢ï¿½ï¿½showgirlvideoÏµÍ³ï¿½ï¿½Ô±\r\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½\r\nhttp://demo.ndmxw.com/active.jspx?username=${username}&key=${activationCode}');
+INSERT INTO `jo_config` VALUES ('message_subject','ndmxwï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï¢');
+INSERT INTO `jo_config` VALUES ('message_text','ï¿½ï¿½Ð»ï¿½ï¿½Ê¹ï¿½ï¿½showgirlvideoÏµÍ³ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ø¹ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½×¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½\r\nï¿½Ã»ï¿½IDï¿½ï¿½${uid}\r\nï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½${username}\r\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½${resetPwd}\r\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 DROP TABLE IF EXISTS `jo_ftp`;
 CREATE TABLE `jo_ftp` (
   `ftp_id` int(11) NOT NULL auto_increment,
-  `ftp_name` varchar(100) NOT NULL COMMENT 'Ãû³Æ',
+  `ftp_name` varchar(100) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   `ip` varchar(50) NOT NULL COMMENT 'IP',
-  `port` int(11) NOT NULL default '21' COMMENT '¶Ë¿ÚºÅ',
-  `username` varchar(100) default NULL COMMENT 'µÇÂ¼Ãû',
-  `password` varchar(100) default NULL COMMENT 'µÇÂ½ÃÜÂë',
-  `encoding` varchar(20) NOT NULL default 'UTF-8' COMMENT '±àÂë',
-  `timeout` int(11) default NULL COMMENT '³¬Ê±Ê±¼ä',
-  `ftp_path` varchar(255) default NULL COMMENT 'Â·¾¶',
-  `url` varchar(255) NOT NULL COMMENT '·ÃÎÊURL',
+  `port` int(11) NOT NULL default '21' COMMENT 'ï¿½Ë¿Úºï¿½',
+  `username` varchar(100) default NULL COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½',
+  `password` varchar(100) default NULL COMMENT 'ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½',
+  `encoding` varchar(20) NOT NULL default 'UTF-8' COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `timeout` int(11) default NULL COMMENT 'ï¿½ï¿½Ê±Ê±ï¿½ï¿½',
+  `ftp_path` varchar(255) default NULL COMMENT 'Â·ï¿½ï¿½',
+  `url` varchar(255) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½URL',
   PRIMARY KEY  (`ftp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='FTP±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='FTPï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jo_template`;
 CREATE TABLE `jo_template` (
-  `tpl_name` varchar(150) NOT NULL COMMENT 'Ä£°åÃû³Æ',
-  `tpl_source` longtext COMMENT 'Ä£°åÄÚÈÝ',
-  `last_modified` bigint(20) NOT NULL COMMENT '×îºóÐÞ¸ÄÊ±¼ä',
-  `is_directory` tinyint(1) NOT NULL default '0' COMMENT 'ÊÇ·ñÄ¿Â¼',
+  `tpl_name` varchar(150) NOT NULL COMMENT 'Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `tpl_source` longtext COMMENT 'Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `last_modified` bigint(20) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê±ï¿½ï¿½',
+  `is_directory` tinyint(1) NOT NULL default '0' COMMENT 'ï¿½Ç·ï¿½Ä¿Â¼',
   PRIMARY KEY  (`tpl_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Ä£°å±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Ä£ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jo_upload`;
 CREATE TABLE `jo_upload` (
-  `filename` varchar(150) NOT NULL COMMENT 'ÎÄ¼þÃû',
-  `length` int(11) NOT NULL COMMENT 'ÎÄ¼þ´óÐ¡(×Ö½Ú)',
-  `last_modified` bigint(20) NOT NULL COMMENT '×îºóÐÞ¸ÄÊ±¼ä',
-  `content` longblob NOT NULL COMMENT 'ÄÚÈÝ',
+  `filename` varchar(150) NOT NULL COMMENT 'ï¿½Ä¼ï¿½ï¿½ï¿½',
+  `length` int(11) NOT NULL COMMENT 'ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡(ï¿½Ö½ï¿½)',
+  `last_modified` bigint(20) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê±ï¿½ï¿½',
+  `content` longblob NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`filename`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ÉÏ´«¸½¼þ±í';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 DROP TABLE IF EXISTS `jo_user`;
 CREATE TABLE `jo_user` (
-  `user_id` int(11) NOT NULL auto_increment COMMENT 'ÓÃ»§ID',
-  `username` varchar(100) NOT NULL COMMENT 'ÓÃ»§Ãû',
-  `email` varchar(100) default NULL COMMENT 'µç×ÓÓÊÏä',
-  `password` char(32) NOT NULL COMMENT 'ÃÜÂë',
-  `register_time` datetime NOT NULL COMMENT '×¢²áÊ±¼ä',
-  `register_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT '×¢²áIP',
-  `last_login_time` datetime NOT NULL COMMENT '×îºóµÇÂ¼Ê±¼ä',
-  `last_login_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT '×îºóµÇÂ¼IP',
-  `login_count` int(11) NOT NULL default '0' COMMENT 'µÇÂ¼´ÎÊý',
-  `reset_key` char(32) default NULL COMMENT 'ÖØÖÃÃÜÂëKEY',
-  `reset_pwd` varchar(10) default NULL COMMENT 'ÖØÖÃÃÜÂëVALUE',
-  `error_time` datetime default NULL COMMENT 'µÇÂ¼´íÎóÊ±¼ä',
-  `error_count` int(11) NOT NULL default '0' COMMENT 'µÇÂ¼´íÎó´ÎÊý',
-  `error_ip` varchar(50) default NULL COMMENT 'µÇÂ¼´íÎóIP',
-  `activation` tinyint(1) NOT NULL default '1' COMMENT '¼¤»î×´Ì¬',
-  `activation_code` char(32) default NULL COMMENT '¼¤»îÂë',
+  `user_id` int(11) NOT NULL auto_increment COMMENT 'ï¿½Ã»ï¿½ID',
+  `username` varchar(100) NOT NULL COMMENT 'ï¿½Ã»ï¿½ï¿½ï¿½',
+  `email` varchar(100) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `password` char(32) NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½',
+  `register_time` datetime NOT NULL COMMENT '×¢ï¿½ï¿½Ê±ï¿½ï¿½',
+  `register_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT '×¢ï¿½ï¿½IP',
+  `last_login_time` datetime NOT NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½Â¼Ê±ï¿½ï¿½',
+  `last_login_ip` varchar(50) NOT NULL default '127.0.0.1' COMMENT 'ï¿½ï¿½ï¿½ï¿½Â¼IP',
+  `login_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½',
+  `reset_key` char(32) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½KEY',
+  `reset_pwd` varchar(10) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½VALUE',
+  `error_time` datetime default NULL COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½',
+  `error_count` int(11) NOT NULL default '0' COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
+  `error_ip` varchar(50) default NULL COMMENT 'ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½IP',
+  `activation` tinyint(1) NOT NULL default '1' COMMENT 'ï¿½ï¿½ï¿½ï¿½×´Ì¬',
+  `activation_code` char(32) default NULL COMMENT 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',
   PRIMARY KEY  (`user_id`),
   UNIQUE KEY `ak_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='ÓÃ»§±í';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='ï¿½Ã»ï¿½ï¿½ï¿½';
 
 INSERT INTO `jo_user` VALUES (1,'admin',NULL,'5f4dcc3b5aa765d61d8327deb882cf99','2011-01-03','127.0.0.1','2013-11-06 15:09:12','127.0.0.1',131,NULL,NULL,'2013-12-24 17:01:46',1,'127.0.0.1',1,NULL);
 
@@ -1869,7 +1869,7 @@ CREATE TABLE `jc_test` (
   PRIMARY KEY  (`test_id`),
   KEY `fk_jc_test_user` (`user_id`),
   KEY `fk_jc_test_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='²âÊÔ±í';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='ï¿½ï¿½ï¿½Ô±ï¿½';
 
 ALTER TABLE `jc_test`
 ADD CONSTRAINT `fk_jc_test_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),

@@ -17,7 +17,6 @@
 
 [#include "../tencent_include/home_focus_type.html"/]
 
-
 <!-- 游戏展begin  channelId="82" -->
 <div class="wrapper">
     <div class="l">
@@ -44,10 +43,11 @@
                                 [#if a.attr.Starring??]
                                 <p class="figure_info_desc">${a.attr.Starring!}/p>
                                     [/#if]
-                                <span class="figure_info_play"><i class="ico_play_12"></i><span
-                                        class="info_inner">${a.views!}次</span></span>
-                                <span class="figure_info_score"> <em class="score_l"></em><em
-                                        class="score_s">${a.score}</em></span>
+                                <span class="figure_info_play"><i class="ico_play_12"></i>
+                                    <!--//${a.contentCount.views!}十分钟刷新一次-->
+                                    <span class="info_inner">${a.contentCount.views!}次</span></span>
+                                    <!--<span class="figure_info_score"> <em class="score_l"></em><em-->
+                                    <!--class="score_s">${a.score}</em></span>-->
                             </div>
                         </div>
                     </a>
@@ -105,7 +105,7 @@
                                 <p class="figure_info_desc">${a.attr.Starring!}/p>
                                     [/#if]
                                 <span class="figure_info_play"><i class="ico_play_12"></i><span
-                                        class="info_inner">${a.views!}次</span></span>
+                                        class="info_inner">${a.contentCount.views!}次</span></span>
                                 <span class="figure_info_score"> <em class="score_l"></em><em
                                         class="score_s">${a.score}</em></span>
                             </div>
@@ -164,7 +164,7 @@
                                 <p class="figure_info_desc">${a.attr.Starring!}/p>
                                     [/#if]
                                 <span class="figure_info_play"><i class="ico_play_12"></i><span
-                                        class="info_inner">${a.views!}次</span></span>
+                                        class="info_inner">${a.contentCount.views!}次</span></span>
                                 <span class="figure_info_score"> <em class="score_l"></em><em
                                         class="score_s">${a.score}</em></span>
                             </div>
@@ -225,7 +225,7 @@
                                 <p class="figure_info_desc">${a.attr.Starring!}/p>
                                     [/#if]
                                 <span class="figure_info_play"><i class="ico_play_12"></i><span
-                                        class="info_inner">${a.views!}次</span></span>
+                                        class="info_inner">${a.contentCount.views!}次</span></span>
                                 <span class="figure_info_score"> <em class="score_l"></em><em
                                         class="score_s">${a.score}</em></span>
                             </div>
