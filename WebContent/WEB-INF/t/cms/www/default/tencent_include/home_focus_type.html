@@ -1,6 +1,6 @@
 <head>
     <style type="text/css">
-        .focusList_big_image {width: 900px; height: 330px;margin-left: 176px}
+        .focusList_big_image {width: 900px; height: 390px;margin-left: 176px}
 
     </style>
 </head>
@@ -17,7 +17,7 @@
         <div class="tip" id="focusTip">
             <ul>
 
-                [@cms_content_list count='10' orderBy='4' titLen='10' channelId="${channel_id}" channelOption='1']
+                [@cms_content_list count='10' orderBy='8' titLen='10' channelId="${channel_id}" channelOption='1']
                 [#list tag_list as a]
                 <li class="tab${a_index} navigation"><a href="${a.url}"><img src="${a.titleImg!site.defImg}" width="100"
                                                                              height="50"/></a></li>
@@ -27,7 +27,7 @@
         </div>
         <div class="list" id="focusList">
             <ul>
-                [@cms_content_list count='10' orderBy='4' titLen='10' channelId="${channel_id}" channelOption='1']
+                [@cms_content_list count='10' orderBy='8' titLen='10' channelId="${channel_id}" channelOption='1']
                 [#list tag_list as a]
                 <li><a href="${a.url}  target=" _blank""><img class="focusList_big_image" src="${a.titleImg!site.defImg}" alt="${a.title}"/></a>
                 </li>
