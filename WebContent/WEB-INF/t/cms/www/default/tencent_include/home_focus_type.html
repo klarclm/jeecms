@@ -29,11 +29,9 @@
             <ul>
                 [@cms_content_list count='10' orderBy='8' titLen='10' channelId="${channel_id}" channelOption='1']
                 [#list tag_list as a]
-                <li><a href="${a.url}  target=" _blank""><img class="focusList_big_image" src="${a.titleImg!site.defImg}" alt="${a.title}"/></a>
+                <li><a href="${a.url}  target=" _blank""><img class="focusList_big_image" src="${a.titleImg!site.defImg}" alt="${a.title}"></a>
                 </li>
-                </a>
                 [/#list]
-
                 [/@cms_content_list]
             </ul>
         </div>
