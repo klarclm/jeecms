@@ -44,13 +44,13 @@ import static com.jeecms.cms.Constants.TPLDIR_SPECIAL;
 @Controller
 public class VedioAct {
 
-    public static final String TPLNAME_VEDIOSEARCHLIST = "tpl.vediosearchlist";
+    public static final String TPLNAME_VEDIOLIST = "tpl.vediolist";
     public static final  String SEARCH_MODE_LASTUPDATE="4";
     public static final  String SEARCH_MODE_PLAYMORE="9";
     public static final  String SEARCH_MODE_REVIEWBEST="13";
 
-    @RequestMapping(value = "/vedio/vediosearchlist*.jspx", method = RequestMethod.GET)
-    public String vedioSearchList(Integer typeId, Integer yearId, Integer aeraId, Integer countryId, HttpServletRequest request,
+    @RequestMapping(value = "/vedio/vediolist*.jspx", method = RequestMethod.GET)
+    public String vedioList(Integer typeId, Integer yearId, Integer aeraId, Integer countryId, HttpServletRequest request,
                                   HttpServletResponse response, ModelMap model) throws JSONException {
         String channelId = RequestUtils.getQueryParam(request, "channelId");
         String searchMode = RequestUtils.getQueryParam(request, "searchMode");
@@ -62,7 +62,7 @@ public class VedioAct {
         CmsSite site = CmsUtils.getSite(request);
         FrontUtils.frontData(request, model, site);
         FrontUtils.frontPageData(request, model);
-        return FrontUtils.getTplPath(request, site.getSolutionPath(), TPLDIR_VEDIO, TPLNAME_VEDIOSEARCHLIST);
+        return FrontUtils.getTplPath(request, site.getSolutionPath(), TPLDIR_VEDIO, TPLNAME_VEDIOLIST);
     }
 
     @Autowired
