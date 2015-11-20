@@ -35,7 +35,13 @@ public class SearchAct {
 	public static final String SEARCH_RESULT = "tpl.searchResult";
 	public static final String SEARCH_ERROR = "tpl.searchError";
 	public static final String SEARCH_JOB = "tpl.searchJob";
-	
+
+	public static final Integer SEARCH_TYPE_TOPIC = 1;
+	public static final Integer SEARCH_TYPE_PIC = 2;
+	public static final Integer SEARCH_TYPE_VEDIO = 3;
+
+	private Integer intSearchType = SEARCH_TYPE_VEDIO;
+
 	@RequestMapping(value = "/search*.jspx", method = RequestMethod.GET)
 	public String index(HttpServletRequest request,
 			HttpServletResponse response, ModelMap model) {
@@ -53,6 +59,7 @@ public class SearchAct {
 			String parseQ=parseKeywords(q);
 			model.addAttribute("input",q);
 			model.addAttribute("q",parseQ);
+			model.addAttribute("searchType",intSearchType);
 			searchWordsCache.cacheWord(q);
 			return FrontUtils.getTplPath(request, site.getSolutionPath(),
 					TPLDIR_SPECIAL, SEARCH_RESULT);
