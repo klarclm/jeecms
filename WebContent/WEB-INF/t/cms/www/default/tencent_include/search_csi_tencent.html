@@ -32,7 +32,6 @@ function qkeypress(){
 </script>
 <div class="mod_search">
 	<form class="search_form" action="${base}/search.jspx" target="_blank" id="searchForm">
-
 		<div class="search_inner"><i class="ico_search"></i>
 			<input type="text" class="search_ipt" name="q"
 				   onblur="if(this.value==''){this.value='提醒您请输入您要搜索的关键字';this.style.color='#aaa'};"
@@ -41,9 +40,7 @@ function qkeypress(){
 				   onfocus="if(this.value=='请输入关键词')this.value=''"
 				   onkeypress="qkeypress()"
 				   autocomplete="on"  style="color: rgb(170, 170, 170);"/>
-
 			<button type="submit" class="search_btn"><span class="hidden">搜索</span></button>
 		</div>
 	</form>
-
 </div>
