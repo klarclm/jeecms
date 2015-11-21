@@ -179,6 +179,7 @@ public class ChannelAct {
 		if (!StringUtils.isBlank(tplChannel)) {
 			tplChannel = tplChannel.substring(tplPathLength);
 		}
+
 		String tplContent = channel.getTplContent();
 		if (!StringUtils.isBlank(tplContent)) {
 			tplContent = tplContent.substring(tplPathLength);

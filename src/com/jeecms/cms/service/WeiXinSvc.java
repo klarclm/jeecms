@@ -40,7 +40,7 @@ public interface WeiXinSvc {
 	 * @param title
 	 * @param description
 	 */
-	public void  sendVedio(String access_token,String title,String description,String media_id);
+	public void  sendvideo(String access_token,String title,String description,String media_id);
 	/**
 	 * 发送图文消息
 	 * @param url

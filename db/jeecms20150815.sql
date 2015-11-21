@@ -495,24 +495,24 @@ INSERT INTO `jc_channel_ext` VALUES ('43', '文娱体育', null, null, '0', '0',
 INSERT INTO `jc_channel_ext` VALUES ('44', '美容资讯', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('45', '文化 校园', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('46', '视频', null, null, '0', '0', '0', '0', '20', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('57', '实用助手', null, null, '0', '0', '1', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_child.html', null, null, null, '1', '1', '48', '48', '180', '120', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('60', '网络调查', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/news_wldc.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '网络调查', '网络调查', '网络调查', '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('61', '招聘', null, null, '0', '0', '0', '0', '20', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '招聘', '招聘', '招聘', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('76', '模特大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '模特大赛', '模特大赛', '模特大赛', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('77', '星姐大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '星姐大赛', '星姐大赛', '星姐大赛', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('78', 'T台秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'T台秀', 'T台秀', 'T台秀', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('79', '晚礼服', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '晚礼服', '晚礼服', '晚礼服', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('80', '内衣秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '内衣秀', '内衣秀', '内衣秀', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('76', '模特大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '模特大赛', '模特大赛', '模特大赛', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('77', '星姐大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '星姐大赛', '星姐大赛', '星姐大赛', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('78', 'T台秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'T台秀', 'T台秀', 'T台秀', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('79', '晚礼服', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '晚礼服', '晚礼服', '晚礼服', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('80', '内衣秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '内衣秀', '内衣秀', '内衣秀', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('81', '新丝路大赛', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '新丝路大赛', '新丝路大赛', '新丝路大赛', '1', '1');
-INSERT INTO `jc_channel_ext` VALUES ('82', '游戏展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '游戏展', '游戏展', '游戏展', '1', '1');
-INSERT INTO `jc_channel_ext` VALUES ('83', 'chinajoy', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'chinajoy', 'chinajoy', 'chinajoy', '1', '1');
-INSERT INTO `jc_channel_ext` VALUES ('84', 'GSTAR', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '韩国GSTAR', '韩国GSTAR', '韩国GSTAR', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('82', '游戏展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '游戏展', '游戏展', '游戏展', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('83', 'chinajoy', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'chinajoy', 'chinajoy', 'chinajoy', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('84', 'GSTAR', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '韩国GSTAR', '韩国GSTAR', '韩国GSTAR', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('85', '车展', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '车展', '车展', '车展', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('86', '国内车展', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '国内车展', '国内车展', '国内车展', '1', '1');
-INSERT INTO `jc_channel_ext` VALUES ('87', '韩国车展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '韩国车展', '韩国车展', '韩国车展', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('87', '韩国车展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '韩国车展', '韩国车展', '韩国车展', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_channel_model
@@ -532,11 +532,11 @@ CREATE TABLE `jc_channel_model` (
 -- ----------------------------
 -- Records of jc_channel_model
 -- ----------------------------
-INSERT INTO `jc_channel_model` VALUES ('50', '6', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('76', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('78', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('79', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('84', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('50', '6', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('76', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('78', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('79', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('84', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
 
 -- ----------------------------
 -- Table structure for jc_channel_txt
@@ -1155,11 +1155,11 @@ INSERT INTO `jc_content_attr` VALUES ('507', 't1', '');
 INSERT INTO `jc_content_attr` VALUES ('560', 't2', '');
 INSERT INTO `jc_content_attr` VALUES ('560', 't1', '');
 INSERT INTO `jc_content_attr` VALUES ('570', 'starring', '主演1');
-INSERT INTO `jc_content_attr` VALUES ('570', 'vedioUrl', 'path');
+INSERT INTO `jc_content_attr` VALUES ('570', 'videoUrl', 'path');
 INSERT INTO `jc_content_attr` VALUES ('572', 'starring', '');
-INSERT INTO `jc_content_attr` VALUES ('572', 'vedioUrl', '');
+INSERT INTO `jc_content_attr` VALUES ('572', 'videoUrl', '');
 INSERT INTO `jc_content_attr` VALUES ('573', 'starring', '');
-INSERT INTO `jc_content_attr` VALUES ('573', 'vedioUrl', 'splj');
+INSERT INTO `jc_content_attr` VALUES ('573', 'videoUrl', 'splj');
 
 -- ----------------------------
 -- Table structure for jc_content_channel
@@ -2920,9 +2920,9 @@ INSERT INTO `jc_model` VALUES ('1', '新闻', '1', 'news', 'news', '139', '139',
 INSERT INTO `jc_model` VALUES ('2', '单页', '2', 'alone', 'alone', '139', '139', '310', '310', '2', '0', '0', '0');
 INSERT INTO `jc_model` VALUES ('4', '下载', '4', 'download', 'download', '139', '139', '310', '310', '4', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('5', '图库', '5', 'pic', 'pic', '139', '139', '310', '310', '5', '1', '0', '0');
-INSERT INTO `jc_model` VALUES ('6', '视频', '6', 'vedio', 'vedio', '139', '139', '310', '310', '10', '1', '0', '0');
+INSERT INTO `jc_model` VALUES ('6', '视频', '6', 'video', 'video', '139', '139', '310', '310', '10', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('8', '招聘', 'job', 'job', 'job', '139', '139', '310', '310', '10', '1', '0', '0');
-INSERT INTO `jc_model` VALUES ('101', '视频通用模型', 'vedio', 'vedio', 'vedio', '139', '139', '310', '310', '10', '1', '0', '0');
+INSERT INTO `jc_model` VALUES ('101', '视频通用模型', 'video', 'video', 'video', '139', '139', '310', '310', '10', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_model_item
@@ -3167,7 +3167,7 @@ INSERT INTO `jc_model_item` VALUES ('423', '8', 'finalStep', '终审级别', '10
 INSERT INTO `jc_model_item` VALUES ('424', '8', 'allowShare', '分享', '10', null, null, null, null, null, null, null, '8', '0', '1', '0', '1');
 INSERT INTO `jc_model_item` VALUES ('425', '8', 'allowScore', '评分', '10', null, null, null, null, null, null, null, '8', '0', '1', '0', '1');
 INSERT INTO `jc_model_item` VALUES ('426', '101', 'starring', '主演', '70', null, null, null, '3', '30', null, null, '1', '1', '0', '1', '1');
-INSERT INTO `jc_model_item` VALUES ('427', '101', 'vedioUrl', '视频路径', '70', null, null, null, '3', '30', null, null, '1', '1', '0', '1', '1');
+INSERT INTO `jc_model_item` VALUES ('427', '101', 'videoUrl', '视频路径', '70', null, null, null, '3', '30', null, null, '1', '1', '0', '1', '1');
 INSERT INTO `jc_model_item` VALUES ('428', '101', 'name', '栏目名称', '10', null, null, null, null, null, null, null, '1', '0', '1', '0', '1');
 INSERT INTO `jc_model_item` VALUES ('429', '101', 'path', '访问路径', '10', null, null, null, null, null, null, null, '2', '0', '1', '0', '1');
 INSERT INTO `jc_model_item` VALUES ('430', '101', 'title', 'meta标题', '10', null, null, null, null, null, null, null, '1', '0', '1', '0', '1');

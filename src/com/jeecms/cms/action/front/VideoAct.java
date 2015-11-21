@@ -1,6 +1,6 @@
 package com.jeecms.cms.action.front;
 
-import static com.jeecms.cms.Constants.TPLDIR_VEDIO;
+import static com.jeecms.cms.Constants.TPLDIR_video;
 
 import com.jeecms.cms.entity.assist.CmsGuestbookCtg;
 import com.jeecms.cms.entity.main.Channel;
@@ -42,15 +42,15 @@ import static com.jeecms.cms.Constants.TPLDIR_SPECIAL;
  * �ɲο�N:\WorkSpace\jeecms\src\com\jeecms\cms\action\front\GuestbookAct.java
  */
 @Controller
-public class VedioAct {
+public class VideoAct {
 
-    public static final String TPLNAME_VEDIOLIST = "tpl.vediolist";
+    public static final String TPLNAME_videoLIST = "tpl.videolist";
     public static final  String SEARCH_MODE_LASTUPDATE="4";
     public static final  String SEARCH_MODE_PLAYMORE="9";
     public static final  String SEARCH_MODE_REVIEWBEST="13";
 
-    @RequestMapping(value = "/vedio/vediolist*.jspx", method = RequestMethod.GET)
-    public String vedioList(Integer typeId, Integer yearId, Integer aeraId, Integer countryId, HttpServletRequest request,
+    @RequestMapping(value = "/video/videolist*.jspx", method = RequestMethod.GET)
+    public String videoList(Integer typeId, Integer yearId, Integer aeraId, Integer countryId, HttpServletRequest request,
                                   HttpServletResponse response, ModelMap model) throws JSONException {
         String channelId = RequestUtils.getQueryParam(request, "channelId");
         String searchMode = RequestUtils.getQueryParam(request, "searchMode");
@@ -62,7 +62,7 @@ public class VedioAct {
         CmsSite site = CmsUtils.getSite(request);
         FrontUtils.frontData(request, model, site);
         FrontUtils.frontPageData(request, model);
-        return FrontUtils.getTplPath(request, site.getSolutionPath(), TPLDIR_VEDIO, TPLNAME_VEDIOLIST);
+        return FrontUtils.getTplPath(request, site.getSolutionPath(), TPLDIR_video, TPLNAME_videoLIST);
     }
 
     @Autowired

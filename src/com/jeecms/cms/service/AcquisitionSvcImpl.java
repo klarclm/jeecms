@@ -116,7 +116,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
             for (int i = plans.length - currNum; i >= 0; i--) {
                 url = plans[i];
                 contentList = getContentList(client, handler, url, acqu);
-                m = getvediopicmap(client, handler, url, acqu);
+                m = getvideopicmap(client, handler, url, acqu);
                 String link;
                 for (int j = contentList.size() - currItem; j >= 0; j--) {
                     if (cmsAcquisitionMng.isNeedBreak(acqu.getId(),
@@ -205,23 +205,23 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
         }
 
         //在linksetstart linksetEnd标签模块中循环提取内容地址、视频路径、视频图片
-        private Map<String, String> getvediopicmap(HttpClient client,
+        private Map<String, String> getvideopicmap(HttpClient client,
                                                    CharsetHandler handler, String url, CmsAcquisition acqu) {
             String linksetStart = acqu.getLinksetStart();
             String linksetEnd = acqu.getLinksetEnd();
-            String linksetvediopathStart = acqu.getLinksetvediopathStart();
-            String linksetvediopathEnd = acqu.getLinksetvediopathEnd();
+            String linksetvideopathStart = acqu.getLinksetvideopathStart();
+            String linksetvideopathEnd = acqu.getLinksetvideopathEnd();
             String linksetpicStart = acqu.getLinksetpicStart();
             String linksetpicEnd = acqu.getLinksetpicEnd();
             Map<String, String> m = new HashMap<String, String>();
             try {
                 HttpGet httpget = new HttpGet(new URI(url));
                 String html = client.execute(httpget, handler);
-                List<String> vediopathlist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetvediopathStart, linksetvediopathEnd);
-                List<String> vediopiclist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetpicStart, linksetpicEnd);
-                if (vediopathlist != null && vediopiclist != null && vediopathlist.size() == vediopiclist.size())
-                    for (Integer i = 0; i < vediopathlist.size(); i++) {
-                        m.put(vediopathlist.get(i), vediopiclist.get(i));
+                List<String> videopathlist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetvideopathStart, linksetvideopathEnd);
+                List<String> videopiclist = findbetweenContentSet(html, linksetStart, linksetEnd, linksetpicStart, linksetpicEnd);
+                if (videopathlist != null && videopiclist != null && videopathlist.size() == videopiclist.size())
+                    for (Integer i = 0; i < videopathlist.size(); i++) {
+                        m.put(videopathlist.get(i), videopiclist.get(i));
                     }
             } catch (Exception e) {
                 log.warn(null, e);
@@ -283,10 +283,10 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
             String releaseTimeEnd = acqu.getReleaseTimeEnd();
             String descriptionStart = acqu.getDescriptionStart();
             String descriptionEnd = acqu.getDescriptionEnd();
-            String vediopathStart = acqu.getVediopathStart();
-            String vediopathEnd = acqu.getVediopathEnd();
-            String vediopathSetStart = acqu.getVediopathSetStart();
-            String vediopathSetEnd = acqu.getVediopathSetEnd();
+            String videopathStart = acqu.getvideopathStart();
+            String videopathEnd = acqu.getvideopathEnd();
+            String videopathSetStart = acqu.getvideopathSetStart();
+            String videopathSetEnd = acqu.getvideopathSetEnd();
 
             history.setAcquisition(acqu);
             try {
@@ -352,25 +352,25 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                     author = html.substring(start, end);
                 }
 
-                String vedioPath = null;
-                vedioPath = url; //默认为该访问地址的url
-                if (StringUtils.isNotBlank(vediopathStart)) {
-                    start = html.indexOf(vediopathStart);
+                String videoPath = null;
+                videoPath = url; //默认为该访问地址的url
+                if (StringUtils.isNotBlank(videopathStart)) {
+                    start = html.indexOf(videopathStart);
                     if (start == -1) {
                         return handerResult(temp, history, null,
-                                AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+                                AcquisitionResultType.videoPATHSTARTNOTFOUND);
                     }
-                    start += vediopathStart.length();
-                    end = html.indexOf(vediopathEnd, start);
+                    start += videopathStart.length();
+                    end = html.indexOf(videopathEnd, start);
                     if (end == -1) {
                         return handerResult(temp, history, null,
-                                AcquisitionResultType.VEDIOPATHSTARTNOTFOUND);
+                                AcquisitionResultType.videoPATHSTARTNOTFOUND);
                     }
-                    vedioPath = html.substring(start, end);
+                    videoPath = html.substring(start, end);
                 }
 
 
-                log.error("vedioPath=" + vedioPath);
+                log.error("videoPath=" + videoPath);
 
                 String origin = null;
                 if (StringUtils.isNotBlank(originStart)) {
@@ -457,21 +457,21 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
                     view = html.substring(start, end);
                 }
 
-                String vedioPic = null;
+                String videoPic = null;
                 if (m != null) {
                     Iterator<String> iterator = m.keySet().iterator();
                     while (iterator.hasNext()) {
                         String key = iterator.next();
-                        if (-1 != key.indexOf(vedioPath))
-                            vedioPic = (String) m.get(key);
+                        if (-1 != key.indexOf(videoPath))
+                            videoPic = (String) m.get(key);
                     }
                 }
 
 
-                Content content = cmsAcquisitionMng.saveContent(title, txt, origin, vedioPath, vedioPic, author, description, releaseTime,
+                Content content = cmsAcquisitionMng.saveContent(title, txt, origin, videoPath, videoPic, author, description, releaseTime,
                         acquId, AcquisitionResultType.SUCCESS, temp, history);
 
-                log.error("acqu:contentid:" + content.getId() + "title:" + title + "videoPath:" + vedioPath + "vedioPic:" + vedioPic);
+                log.error("acqu:contentid:" + content.getId() + "title:" + title + "videoPath:" + videoPath + "videoPic:" + videoPic);
 
                 if (StringUtils.isNotBlank(view)) {
                     ContentCount count = content.getContentCount();

@@ -35,7 +35,7 @@ public class Constants {
 	/**
 	 * 视频模板
 	 */
-	public static final String TPLDIR_VEDIO = "vedio";
+	public static final String TPLDIR_video = "video";
 	/**
 	 * 可视化编辑模板
 	 */

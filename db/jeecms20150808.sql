@@ -1062,10 +1062,10 @@ INSERT INTO `jc_channel_ext` VALUES ('42', '图库', null, null, '0', '0', '0', 
 INSERT INTO `jc_channel_ext` VALUES ('43', '文娱体育', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '1', '0', '67', '50', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('44', '美容资讯', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('45', '文化 校园', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('46', '视频', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('46', '视频', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('57', '实用助手', null, null, '0', '0', '1', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_child.html', null, null, null, '1', '1', '48', '48', '180', '120', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('60', '网络调查', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/news_wldc.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '网络调查', '网络调查', '网络调查', '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('61', '招聘', null, null, '0', '0', '0', '0', '20', null, null, null, '', '', null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '招聘', '招聘', '招聘', '0', '0');
@@ -1089,7 +1089,7 @@ CREATE TABLE `jc_channel_model` (
 -- ----------------------------
 -- Records of jc_channel_model
 -- ----------------------------
-INSERT INTO `jc_channel_model` VALUES ('50', '6', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('50', '6', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
 
 -- ----------------------------
 -- Table structure for jc_channel_txt
@@ -3764,12 +3764,12 @@ INSERT INTO `jc_log` VALUES ('26', '1', null, '1', '2015-07-25 10:16:43', '127.0
 INSERT INTO `jc_log` VALUES ('27', '1', '1', '3', '2015-07-25 10:16:57', '127.0.0.1', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=50;name=纪录片');
 INSERT INTO `jc_log` VALUES ('28', '1', null, '1', '2015-07-25 11:03:19', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
 INSERT INTO `jc_log` VALUES ('29', '1', null, '1', '2015-07-25 12:11:37', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
-INSERT INTO `jc_log` VALUES ('30', '1', '1', '3', '2015-07-25 12:12:16', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html');
-INSERT INTO `jc_log` VALUES ('31', '1', '1', '3', '2015-07-25 12:12:36', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html');
-INSERT INTO `jc_log` VALUES ('32', '1', '1', '3', '2015-07-25 12:12:57', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html');
-INSERT INTO `jc_log` VALUES ('33', '1', '1', '3', '2015-07-25 12:13:04', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html');
+INSERT INTO `jc_log` VALUES ('30', '1', '1', '3', '2015-07-25 12:12:16', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/video_child_tencent.html');
+INSERT INTO `jc_log` VALUES ('31', '1', '1', '3', '2015-07-25 12:12:36', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/video_child_tencent.html');
+INSERT INTO `jc_log` VALUES ('32', '1', '1', '3', '2015-07-25 12:12:57', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/video_child_tencent.html');
+INSERT INTO `jc_log` VALUES ('33', '1', '1', '3', '2015-07-25 12:13:04', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/video_child_tencent.html');
 INSERT INTO `jc_log` VALUES ('34', '1', null, '1', '2015-07-25 12:49:37', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
-INSERT INTO `jc_log` VALUES ('35', '1', '1', '3', '2015-07-25 12:50:40', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html');
+INSERT INTO `jc_log` VALUES ('35', '1', '1', '3', '2015-07-25 12:50:40', '127.0.0.1', '/jeeadmin/jeecms/template/o_ajaxUpdate.do', '修改模板', 'filename=/WEB-INF/t/cms/www/default/channel/video_child_tencent.html');
 INSERT INTO `jc_log` VALUES ('36', '1', null, '1', '2015-07-25 17:34:11', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
 INSERT INTO `jc_log` VALUES ('37', '1', null, '1', '2015-07-25 19:14:13', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
 INSERT INTO `jc_log` VALUES ('38', '1', null, '1', '2015-07-26 15:08:28', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
@@ -3841,7 +3841,7 @@ INSERT INTO `jc_model` VALUES ('1', '新闻', '1', 'news', 'news', '139', '139',
 INSERT INTO `jc_model` VALUES ('2', '单页', '2', 'alone', 'alone', '139', '139', '310', '310', '2', '0', '0', '0');
 INSERT INTO `jc_model` VALUES ('4', '下载', '4', 'download', 'download', '139', '139', '310', '310', '4', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('5', '图库', '5', 'pic', 'pic', '139', '139', '310', '310', '5', '1', '0', '0');
-INSERT INTO `jc_model` VALUES ('6', '视频', '6', 'vedio', 'vedio', '139', '139', '310', '310', '10', '1', '0', '0');
+INSERT INTO `jc_model` VALUES ('6', '视频', '6', 'video', 'video', '139', '139', '310', '310', '10', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('8', '招聘', 'job', 'job', 'job', '139', '139', '310', '310', '10', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('101', 'T台秀', 'ttshow', 'ttshow', 'ttshow', '139', '139', '310', '310', '10', '1', '0', '0');
 

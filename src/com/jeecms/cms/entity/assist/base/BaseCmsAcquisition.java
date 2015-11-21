@@ -48,8 +48,8 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 	public static String PROP_DESCRIPTION_START = "descriptionStart";
 	public static String PROP_DYNAMIC_END = "dynamicEnd";
 
-	public static String PROP_VEDIOPATH_START = "vediopathStart";
-	public static String PROP_VEDIOPATH_END = "vediopathEnd";
+	public static String PROP_videoPATH_START = "videopathStart";
+	public static String PROP_videoPATH_END = "videopathEnd";
 
 
 
@@ -156,14 +156,14 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 	private java.lang.String imgPrefix;
 	private java.lang.Integer queue;
 
-	private java.lang.String vediopathStart;
-	private java.lang.String vediopathEnd;
+	private java.lang.String videopathStart;
+	private java.lang.String videopathEnd;
 
-	private java.lang.String vediopathSetStart;
-	private java.lang.String vediopathSetEnd;
+	private java.lang.String videopathSetStart;
+	private java.lang.String videopathSetEnd;
 
-	private java.lang.String linksetvediopathStart;
-	private java.lang.String linksetvediopathEnd;
+	private java.lang.String linksetvideopathStart;
+	private java.lang.String linksetvideopathEnd;
 	private java.lang.String linksetpicStart;
 	private java.lang.String linksetpicEnd;
 
@@ -228,20 +228,20 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		this.startTime = startTime;
 	}
 
-	public String getLinksetvediopathStart() {
-		return linksetvediopathStart;
+	public String getLinksetvideopathStart() {
+		return linksetvideopathStart;
 	}
 
-	public void setLinksetvediopathStart(String linksetvediopathStart) {
-		this.linksetvediopathStart = linksetvediopathStart;
+	public void setLinksetvideopathStart(String linksetvideopathStart) {
+		this.linksetvideopathStart = linksetvideopathStart;
 	}
 
-	public String getLinksetvediopathEnd() {
-		return linksetvediopathEnd;
+	public String getLinksetvideopathEnd() {
+		return linksetvideopathEnd;
 	}
 
-	public void setLinksetvediopathEnd(String linksetvediopathEnd) {
-		this.linksetvediopathEnd = linksetvediopathEnd;
+	public void setLinksetvideopathEnd(String linksetvideopathEnd) {
+		this.linksetvideopathEnd = linksetvideopathEnd;
 	}
 
 	public String getLinksetpicStart() {
@@ -813,20 +813,20 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		this.user = user;
 	}
 
-	public String getVediopathSetStart() {
-		return vediopathSetStart;
+	public String getvideopathSetStart() {
+		return videopathSetStart;
 	}
 
-	public void setVediopathSetStart(String vediopathSetStart) {
-		this.vediopathSetStart = vediopathSetStart;
+	public void setvideopathSetStart(String videopathSetStart) {
+		this.videopathSetStart = videopathSetStart;
 	}
 
-	public String getVediopathSetEnd() {
-		return vediopathSetEnd;
+	public String getvideopathSetEnd() {
+		return videopathSetEnd;
 	}
 
-	public void setVediopathSetEnd(String vediopathSetEnd) {
-		this.vediopathSetEnd = vediopathSetEnd;
+	public void setvideopathSetEnd(String videopathSetEnd) {
+		this.videopathSetEnd = videopathSetEnd;
 	}
 	/**
 	 * Return the value associated with the column: type_id
@@ -897,20 +897,20 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		}
 		return this.hashCode;
 	}
-	public String getVediopathStart() {
-		return vediopathStart;
+	public String getvideopathStart() {
+		return videopathStart;
 	}
 
-	public void setVediopathStart(String vediopathStart) {
-		this.vediopathStart = vediopathStart;
+	public void setvideopathStart(String videopathStart) {
+		this.videopathStart = videopathStart;
 	}
 
-	public String getVediopathEnd() {
-		return vediopathEnd;
+	public String getvideopathEnd() {
+		return videopathEnd;
 	}
 
-	public void setVediopathEnd(String vediopathEnd) {
-		this.vediopathEnd = vediopathEnd;
+	public void setvideopathEnd(String videopathEnd) {
+		this.videopathEnd = videopathEnd;
 	}
 
 	public String toString () {

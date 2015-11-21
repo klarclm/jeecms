@@ -982,7 +982,7 @@ UE.parse.register('list',function(utils){
 
 
 });
-UE.parse.register('vedio',function(utils){
+UE.parse.register('video',function(utils){
     var video = this.root.getElementsByTagName('video'),
         audio = this.root.getElementsByTagName('audio');
 

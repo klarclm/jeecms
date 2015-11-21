@@ -35,7 +35,7 @@ public interface CmsAcquisitionMng {
 
 	public CmsAcquisition[] deleteByIds(Integer[] ids);
 
-	public Content saveContent(String title, String txt, String origin, String vedioPath,String vedioPic,
+	public Content saveContent(String title, String txt, String origin, String videoPath,String videoPic,
 			String author,String description,Date releaseDate,Integer acquId,
 			AcquisitionResultType resultType, CmsAcquisitionTemp temp,
 			CmsAcquisitionHistory history);

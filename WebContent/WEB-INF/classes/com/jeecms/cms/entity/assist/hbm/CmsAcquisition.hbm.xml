@@ -47,12 +47,12 @@
 		<property name="contentPrefix" column="content_prefix" type="string" not-null="false" length="255"/>
 		<property name="imgPrefix" column="img_prefix" type="string" not-null="false" length="255"/>
 		<property name="queue" type="integer" not-null="true" length="11"/>
-		<property name="vediopathStart" column="vediopath_start" type="string" not-null="false" length="50"/>
-		<property name="vediopathEnd" column="vediopath_end" type="string" not-null="false" length="50"/>
-		<property name="vediopathSetStart" column="vediopath_set_start" type="string" not-null="false" length="255"/>
-		<property name="vediopathSetEnd" column="vediopath_set_end" type="string" not-null="false" length="255"/>
-		<property name="linksetvediopathStart" column="linksetvediopath_start" type="string" not-null="false" length="255"/>
-		<property name="linksetvediopathEnd" column="linksetvediopath_end" type="string" not-null="false" length="255"/>
+		<property name="videopathStart" column="videopath_start" type="string" not-null="false" length="50"/>
+		<property name="videopathEnd" column="videopath_end" type="string" not-null="false" length="50"/>
+		<property name="videopathSetStart" column="videopath_set_start" type="string" not-null="false" length="255"/>
+		<property name="videopathSetEnd" column="videopath_set_end" type="string" not-null="false" length="255"/>
+		<property name="linksetvideopathStart" column="linksetvideopath_start" type="string" not-null="false" length="255"/>
+		<property name="linksetvideopathEnd" column="linksetvideopath_end" type="string" not-null="false" length="255"/>
 		<property name="linksetpicStart" column="linksetpic_start" type="string" not-null="false" length="255"/>
 		<property name="linksetpicEnd" column="linksetpic_end" type="string" not-null="false" length="255"/>
 		<many-to-one name="type" column="type_id" class="com.jeecms.cms.entity.main.ContentType" not-null="true"></many-to-one>

@@ -524,7 +524,7 @@ function addAttachLine() {
 <@p.td colspan="2" label="content.txtattr">
 &nbsp; <label><input type="checkbox" onclick="$('#copyimg').val(this.checked)"/><@s.m "content.copyimg"/><input type="hidden" id="copyimg" name="copyimg" value="false"/></label>
 <#if site.config.weixinEnable>
-<@p.select name="sendType"  id="sendType" onchange="Cms.selectWeiXinType()" headerKey="0" headerValue="content.selecttypetoweixin" list={"1":"content.sendText","2":"content.sendVedio","3":"content.sendContent"}/>
+<@p.select name="sendType"  id="sendType" onchange="Cms.selectWeiXinType()" headerKey="0" headerValue="content.selecttypetoweixin" list={"1":"content.sendText","2":"content.sendvideo","3":"content.sendContent"}/>
 <@p.select name="selectImg" id="selectImg" onchange="Cms.selectWeiXinImg()"  list={"1":"content.typeImg","2":"content.titleImg","3":"content.contentImg","0":"content.weixinImg"}/>
 <span id="imageHelpSpan" style="display: none;"><@s.m "content.image.help"/></span>
 </#if>

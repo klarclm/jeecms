@@ -16720,7 +16720,7 @@ UE.plugins['video'] = function (){
     me.commands["insertvideo"] = {
         execCommand: function (cmd, videoObjs, type){
             videoObjs = utils.isArray(videoObjs)?videoObjs:[videoObjs];
-            var html = [],id = 'tmpVedio', cl;
+            var html = [],id = 'tmpvideo', cl;
             for(var i=0,vi,len = videoObjs.length;i<len;i++){
                 vi = videoObjs[i];
                 cl = (type == 'upload' ? 'edui-upload-video video-js vjs-default-skin':'edui-faked-video');
@@ -16729,7 +16729,7 @@ UE.plugins['video'] = function (){
             me.execCommand("inserthtml",html.join(""),true);
             var rng = this.selection.getRange();
             for(var i= 0,len=videoObjs.length;i<len;i++){
-                var img = this.document.getElementById('tmpVedio'+i);
+                var img = this.document.getElementById('tmpvideo'+i);
                 domUtils.removeAttributes(img,'id');
                 rng.selectNode(img).select();
                 me.execCommand('imagefloat',videoObjs[i].align)

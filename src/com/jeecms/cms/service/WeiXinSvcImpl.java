@@ -172,7 +172,7 @@ public class WeiXinSvcImpl implements WeiXinSvc {
 		}
 	}
 
-	public void sendVedio(String access_token,String title, String description, String media_id) {
+	public void sendvideo(String access_token,String title, String description, String media_id) {
 		String sendGetUrl=PropertyUtils.getPropertyValue(new File(realPathResolver.get(Constants.JEECMS_CONFIG)),SEND_KEY);
         String url = sendGetUrl+"?access_token=" + access_token;
 		Set<String> openIds=getUsers(access_token);
@@ -203,13 +203,13 @@ public class WeiXinSvcImpl implements WeiXinSvc {
 			}else if(sendType==2){
 				//视频消息
 				if(StringUtils.isNotBlank(ext.getMediaPath())){
-					String vedioPath=ext.getMediaPath();
+					String videoPath=ext.getMediaPath();
 					if(StringUtils.isNotBlank(site.getContextPath())){
-						vedioPath=vedioPath.substring(site.getContextPath().length());
+						videoPath=videoPath.substring(site.getContextPath().length());
 					}
 					//上传视频
-					String media_id=uploadFile(token, realPathResolver.get(vedioPath),"video");
-					sendVedio(token, ext.getTitle(), ext.getDescription(), media_id);
+					String media_id=uploadFile(token, realPathResolver.get(videoPath),"video");
+					sendvideo(token, ext.getTitle(), ext.getDescription(), media_id);
 				}
 			}else if(sendType==3){
 				if(selectImg!=null){

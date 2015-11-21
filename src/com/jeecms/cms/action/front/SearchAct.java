@@ -38,9 +38,9 @@ public class SearchAct {
 
 	public static final Integer SEARCH_TYPE_TOPIC = 1;
 	public static final Integer SEARCH_TYPE_PIC = 2;
-	public static final Integer SEARCH_TYPE_VEDIO = 3;
+	public static final Integer SEARCH_TYPE_video = 3;
 
-	private Integer intSearchType = SEARCH_TYPE_VEDIO;
+	private Integer intSearchType = SEARCH_TYPE_video;
 
 	@RequestMapping(value = "/search*.jspx", method = RequestMethod.GET)
 	public String index(HttpServletRequest request,

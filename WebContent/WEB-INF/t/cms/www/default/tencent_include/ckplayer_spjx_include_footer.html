@@ -28,7 +28,7 @@
     }
 //    http://localhost/spjx/index.php?v=http://v.youku.com/v_show/id_XMTMxNjQxMzY1Mg==.html?f=26018944&ev=1
     function player() {
-        var str = document.getElementById("vediopath").value;
+        var str = document.getElementById("videopath").value;
         console.log(str);
         if (str != '') {
             var flashvars = {
@@ -38,7 +38,7 @@
             var params = {bgcolor: '#FFF', allowFullScreen: true, allowScriptAccess: 'always', wmode: 'transparent'};
             CKobject.embedSWF('${resSys}/spjx/player/player.swf', 'ckplayerContainer', 'ckplayer_a1', '985', '554', flashvars, params);
         } else {
-            alert("vedio path is null");
+            alert("video path is null");
         }
     }
     player();

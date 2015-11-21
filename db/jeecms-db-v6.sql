@@ -301,9 +301,9 @@ INSERT INTO `jc_channel_ext` VALUES (43,'文娱体育',NULL,NULL,'0','0','0','0'
 INSERT INTO `jc_channel_ext` VALUES (44,'美容资讯',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/pic_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (45,'文化 校园',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/pic_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (46,'视频',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'','',NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
-INSERT INTO `jc_channel_ext` VALUES (49,'电视剧',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/vedio_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
-INSERT INTO `jc_channel_ext` VALUES (50,'纪录片',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/vedio_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
-INSERT INTO `jc_channel_ext` VALUES (51,'电影',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/vedio_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
+INSERT INTO `jc_channel_ext` VALUES (49,'电视剧',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/video_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
+INSERT INTO `jc_channel_ext` VALUES (50,'纪录片',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/video_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
+INSERT INTO `jc_channel_ext` VALUES (51,'电影',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/video_child.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (57,'实用助手',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/download_child.html',NULL,NULL,NULL,1,1,48,48,180,120,0,1,0,NULL,NULL,NULL,0,0);
 INSERT INTO `jc_channel_ext` VALUES (60,'网络调查',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'/WEB-INF/t/cms/www/default/channel/news_wldc.html',NULL,NULL,NULL,0,0,139,139,310,310,0,1,0,'网络调查','网络调查','网络调查',0,0);
 INSERT INTO `jc_channel_ext` VALUES (61,'招聘',NULL,NULL,'0','0','0','0',20,NULL,NULL,NULL,'','',NULL,NULL,0,0,139,139,310,310,0,1,0,'招聘','招聘','招聘',0,0);
@@ -2255,7 +2255,7 @@ INSERT INTO `jc_model` VALUES (1,'新闻','1','news','news',139,139,310,310,1,1,
 INSERT INTO `jc_model` VALUES (2,'单页','2','alone','alone',139,139,310,310,2,0,0,0);
 INSERT INTO `jc_model` VALUES (4,'下载','4','download','download',139,139,310,310,4,1,0,0);
 INSERT INTO `jc_model` VALUES (5,'图库','5','pic','pic',139,139,310,310,5,1,0,0);
-INSERT INTO `jc_model` VALUES (6,'视频','6','vedio','vedio',139,139,310,310,10,1,0,0);
+INSERT INTO `jc_model` VALUES (6,'视频','6','video','video',139,139,310,310,10,1,0,0);
 INSERT INTO `jc_model` VALUES (8,'招聘','job','job','job',139,139,310,310,10,1,0,0);
 DROP TABLE IF EXISTS `jc_model_item`;
 CREATE TABLE `jc_model_item` (

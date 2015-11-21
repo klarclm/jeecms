@@ -160,7 +160,7 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
         return beans;
     }
 
-    public Content saveContent(String title, String txt, String origin, String vedioPath, String vedioPic,
+    public Content saveContent(String title, String txt, String origin, String videoPath, String videoPic,
                                String author, String description, Date releaseDate, Integer acquId,
                                AcquisitionResultType resultType, CmsAcquisitionTemp temp,
                                CmsAcquisitionHistory history) {
@@ -170,9 +170,9 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
         com.jeecms.cms.entity.main.Channel channel = acqu.getChannel();
         c.setModel(channel.getModel());
 
-        if (vedioPath != null && !vedioPath.isEmpty()) {
+        if (videoPath != null && !videoPath.isEmpty()) {
             Map<String, String> attr = new HashMap<String, String>();
-            attr.put("vedioUrl", vedioPath);
+            attr.put("videoUrl", videoPath);
             c.setAttr(attr);
         }
 
@@ -188,8 +188,8 @@ public class CmsAcquisitionMngImpl implements CmsAcquisitionMng,
 
         cext.setDescription(description);
 
-        if (vedioPic != null)
-            cext.setTitleImg(vedioPic);
+        if (videoPic != null)
+            cext.setTitleImg(videoPic);
 
         ctxt.setTxt(txt);
         Content content = contentMng.save(c, cext, ctxt, null, null, null,

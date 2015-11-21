@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50545
 File Encoding         : 65001
 
-Date: 2015-11-19 23:17:54
+Date: 2015-11-21 16:18:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -86,12 +86,13 @@ CREATE TABLE `jc_acquisition` (
   CONSTRAINT `fk_jc_acquisition_contenttype` FOREIGN KEY (`type_id`) REFERENCES `jc_content_type` (`type_id`),
   CONSTRAINT `fk_jc_acquisition_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_acquisition_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='CMS采集表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='CMS采集表';
 
 -- ----------------------------
 -- Records of jc_acquisition
 -- ----------------------------
-INSERT INTO `jc_acquisition` VALUES ('3', '1', '84', '1', '1', 'youku- 李晨亮40400271', '2015-11-18 15:15:54', '2015-11-18 15:16:14', '0', '0', '0', '0', '500', 'GBK', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', '', '2', '10', 'class=\"video-list\"', 'home_update_loading', 'target=\"video\"  href=\"', '\"></a>', '<h1 class=\"title\">', '</h1>', null, null, '<div class=\"text\" id=\"text_short\">', '</div>', '', '', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '', '', '', '', 'target=\"video\"  href=\"', '\"></a>', '<img src=\"', '\"');
+INSERT INTO `jc_acquisition` VALUES ('3', '1', '84', '1', '1', 'youku- 李晨亮40400271', '2015-11-21 16:05:58', '2015-11-21 16:06:59', '0', '0', '0', '0', '500', 'GBK', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', '', '2', '10', 'class=\"video-list\"', 'home_update_loading', 'target=\"video\"  href=\"', '\"></a>', '<h1 class=\"title\">', '</h1>', null, null, '<div class=\"text\" id=\"text_short\">', '</div>', '', '', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '', '', '', '', 'target=\"video\"  href=\"', '\"></a>', '<img src=\"', '\"');
+INSERT INTO `jc_acquisition` VALUES ('4', '1', '87', '1', '1', 'youku- 糖94966116', '2015-11-21 16:08:07', '2015-11-21 16:08:52', '0', '0', '0', '0', '500', 'GBK', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', '', '2', '10', 'class=\"video-list\"', 'home_update_loading', 'target=\"video\"  href=\"', '\"></a>', '<h1 class=\"title\">', '</h1>', null, null, '<div class=\"text\" id=\"text_short\">', '</div>', '', '', null, null, '0', 'NONE', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yyyy-MM-dd HH:mm:ss', '', '', '', '', 'target=\"video\"  href=\"', '\"></a>', '<img src=\"', '\"');
 
 -- ----------------------------
 -- Table structure for jc_acquisition_history
@@ -108,33 +109,55 @@ CREATE TABLE `jc_acquisition_history` (
   PRIMARY KEY (`history_id`),
   KEY `fk_acquisition_history_acquisition` (`acquisition_id`),
   CONSTRAINT `fk_jc_history_acquisition` FOREIGN KEY (`acquisition_id`) REFERENCES `jc_acquisition` (`acquisition_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='采集历史记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COMMENT='采集历史记录表';
 
 -- ----------------------------
 -- Records of jc_acquisition_history
 -- ----------------------------
-INSERT INTO `jc_acquisition_history` VALUES ('10', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4ODk0NjgwNA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 001_', 'SUCCESS', '3', '608');
-INSERT INTO `jc_acquisition_history` VALUES ('11', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4ODk1ODI3Mg==.html?from=y1.7-2', '视频: 韩国Gstar 美女模特宣传活动_007', 'SUCCESS', '3', '609');
-INSERT INTO `jc_acquisition_history` VALUES ('12', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTAyNTMwOA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 002_', 'SUCCESS', '3', '610');
-INSERT INTO `jc_acquisition_history` VALUES ('13', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 003_', 'SUCCESS', '3', '611');
-INSERT INTO `jc_acquisition_history` VALUES ('14', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA1ODE4NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 004_', 'SUCCESS', '3', '612');
-INSERT INTO `jc_acquisition_history` VALUES ('15', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA1ODc0MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 005_', 'SUCCESS', '3', '613');
-INSERT INTO `jc_acquisition_history` VALUES ('16', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA2MDIwNA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 006_', 'SUCCESS', '3', '614');
-INSERT INTO `jc_acquisition_history` VALUES ('17', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA2MzQ0MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 008_', 'SUCCESS', '3', '615');
-INSERT INTO `jc_acquisition_history` VALUES ('18', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA2NTQ4NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 009_', 'SUCCESS', '3', '616');
-INSERT INTO `jc_acquisition_history` VALUES ('19', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 003', 'SUCCESS', '3', '617');
-INSERT INTO `jc_acquisition_history` VALUES ('20', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMyMzg0NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 010', 'SUCCESS', '3', '618');
-INSERT INTO `jc_acquisition_history` VALUES ('21', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMyNDU0NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 011', 'SUCCESS', '3', '619');
-INSERT INTO `jc_acquisition_history` VALUES ('22', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMyNjU5Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 012', 'SUCCESS', '3', '620');
-INSERT INTO `jc_acquisition_history` VALUES ('23', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzMDU2OA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 013', 'SUCCESS', '3', '621');
-INSERT INTO `jc_acquisition_history` VALUES ('24', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzMjQ1Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 014', 'SUCCESS', '3', '622');
-INSERT INTO `jc_acquisition_history` VALUES ('25', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzMzE2MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 015', 'SUCCESS', '3', '623');
-INSERT INTO `jc_acquisition_history` VALUES ('26', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzNDA4MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 016', 'SUCCESS', '3', '624');
-INSERT INTO `jc_acquisition_history` VALUES ('27', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzNTIwNA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 017', 'SUCCESS', '3', '625');
-INSERT INTO `jc_acquisition_history` VALUES ('28', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM1NzYwOA==.html?from=y1.7-2', '视频: 3M车展 美女模特多', 'SUCCESS', '3', '626');
-INSERT INTO `jc_acquisition_history` VALUES ('29', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM2MDA2OA==.html?from=y1.7-2', '视频: 3M车展 美女模特多002', 'SUCCESS', '3', '627');
-INSERT INTO `jc_acquisition_history` VALUES ('30', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM2MjQ3Mg==.html?from=y1.7-2', '视频: 3M车展 美女模特多003', 'SUCCESS', '3', '628');
-INSERT INTO `jc_acquisition_history` VALUES ('31', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM2MzI4OA==.html?from=y1.7-2', '视频: 3M车展 美女模特多004', 'SUCCESS', '3', '629');
+INSERT INTO `jc_acquisition_history` VALUES ('54', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4ODk0NjgwNA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 001_', 'SUCCESS', '3', '652');
+INSERT INTO `jc_acquisition_history` VALUES ('55', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4ODk1ODI3Mg==.html?from=y1.7-2', '视频: 韩国Gstar 美女模特宣传活动_007', 'SUCCESS', '3', '653');
+INSERT INTO `jc_acquisition_history` VALUES ('56', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTAyNTMwOA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 002_', 'SUCCESS', '3', '654');
+INSERT INTO `jc_acquisition_history` VALUES ('57', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 003', 'SUCCESS', '3', '655');
+INSERT INTO `jc_acquisition_history` VALUES ('58', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA1ODE4NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 004_', 'SUCCESS', '3', '656');
+INSERT INTO `jc_acquisition_history` VALUES ('59', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA1ODc0MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 005_', 'SUCCESS', '3', '657');
+INSERT INTO `jc_acquisition_history` VALUES ('60', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA2MDIwNA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 006_', 'SUCCESS', '3', '658');
+INSERT INTO `jc_acquisition_history` VALUES ('61', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA2MzQ0MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 008_', 'SUCCESS', '3', '659');
+INSERT INTO `jc_acquisition_history` VALUES ('62', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTA2NTQ4NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 009_', 'SUCCESS', '3', '660');
+INSERT INTO `jc_acquisition_history` VALUES ('63', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMyMzg0NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 010', 'SUCCESS', '3', '661');
+INSERT INTO `jc_acquisition_history` VALUES ('64', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMyNDU0NA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 011', 'SUCCESS', '3', '662');
+INSERT INTO `jc_acquisition_history` VALUES ('65', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMyNjU5Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 012', 'SUCCESS', '3', '663');
+INSERT INTO `jc_acquisition_history` VALUES ('66', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzMDU2OA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 013', 'SUCCESS', '3', '664');
+INSERT INTO `jc_acquisition_history` VALUES ('67', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzMjQ1Ng==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 014', 'SUCCESS', '3', '665');
+INSERT INTO `jc_acquisition_history` VALUES ('68', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzMzE2MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 015', 'SUCCESS', '3', '666');
+INSERT INTO `jc_acquisition_history` VALUES ('69', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzNDA4MA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 016', 'SUCCESS', '3', '667');
+INSERT INTO `jc_acquisition_history` VALUES ('70', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTMzNTIwNA==.html?from=y1.7-2', '视频: 韩国GSTAR 美女模特宣传活动 017', 'SUCCESS', '3', '668');
+INSERT INTO `jc_acquisition_history` VALUES ('71', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM1NzYwOA==.html?from=y1.7-2', '视频: 3M车展 美女模特多', 'SUCCESS', '3', '669');
+INSERT INTO `jc_acquisition_history` VALUES ('72', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM2MDA2OA==.html?from=y1.7-2', '视频: 3M车展 美女模特多002', 'SUCCESS', '3', '670');
+INSERT INTO `jc_acquisition_history` VALUES ('73', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM2MjQ3Mg==.html?from=y1.7-2', '视频: 3M车展 美女模特多003', 'SUCCESS', '3', '671');
+INSERT INTO `jc_acquisition_history` VALUES ('74', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM4OTM2MzI4OA==.html?from=y1.7-2', '视频: 3M车展 美女模特多004', 'SUCCESS', '3', '672');
+INSERT INTO `jc_acquisition_history` VALUES ('75', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM5MDYwMTY5Mg==.html?from=y1.7-2', '视频: 3M车展 美女模特多005', 'SUCCESS', '3', '673');
+INSERT INTO `jc_acquisition_history` VALUES ('76', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM5MDYwMzM0OA==.html?from=y1.7-2', '视频: 3M车展 美女模特多006', 'SUCCESS', '3', '674');
+INSERT INTO `jc_acquisition_history` VALUES ('77', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM5MDYwNTIwMA==.html?from=y1.7-2', '视频: 3M车展 美女模特多007', 'SUCCESS', '3', '675');
+INSERT INTO `jc_acquisition_history` VALUES ('78', 'http://i.youku.com/u/UMzE2MjExODk0MA==/videos', 'http://v.youku.com/v_show/id_XMTM5MDYwODI5Ng==.html?from=y1.7-2', '视频: 3M车展 美女模特多008', 'SUCCESS', '3', '676');
+INSERT INTO `jc_acquisition_history` VALUES ('79', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ2NzU3Mg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON003', 'SUCCESS', '4', '677');
+INSERT INTO `jc_acquisition_history` VALUES ('80', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3MDAzMg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON001', 'SUCCESS', '4', '678');
+INSERT INTO `jc_acquisition_history` VALUES ('81', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQwOA==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_013', 'SUCCESS', '4', '679');
+INSERT INTO `jc_acquisition_history` VALUES ('82', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQ4MA==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_012', 'SUCCESS', '4', '680');
+INSERT INTO `jc_acquisition_history` VALUES ('83', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDAzNg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_011', 'SUCCESS', '4', '681');
+INSERT INTO `jc_acquisition_history` VALUES ('84', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDExMg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_010', 'SUCCESS', '4', '682');
+INSERT INTO `jc_acquisition_history` VALUES ('85', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NTMxMg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_009', 'SUCCESS', '4', '683');
+INSERT INTO `jc_acquisition_history` VALUES ('86', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NjMyOA==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_008', 'SUCCESS', '4', '684');
+INSERT INTO `jc_acquisition_history` VALUES ('87', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcwOTk0NA==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特7', 'SUCCESS', '4', '685');
+INSERT INTO `jc_acquisition_history` VALUES ('88', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMDEwNA==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特5', 'SUCCESS', '4', '686');
+INSERT INTO `jc_acquisition_history` VALUES ('89', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMTcyMA==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特3', 'SUCCESS', '4', '687');
+INSERT INTO `jc_acquisition_history` VALUES ('90', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMTgxNg==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特2', 'SUCCESS', '4', '688');
+INSERT INTO `jc_acquisition_history` VALUES ('91', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMjQ4MA==.html?from=y1.7-2', '视频: 2015韩国车展 火辣女模特1', 'SUCCESS', '4', '689');
+INSERT INTO `jc_acquisition_history` VALUES ('92', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTI2OA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多11', 'SUCCESS', '4', '690');
+INSERT INTO `jc_acquisition_history` VALUES ('93', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTI3Mg==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多12', 'SUCCESS', '4', '691');
+INSERT INTO `jc_acquisition_history` VALUES ('94', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTI4OA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多10', 'SUCCESS', '4', '692');
+INSERT INTO `jc_acquisition_history` VALUES ('95', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4MA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多9', 'SUCCESS', '4', '693');
+INSERT INTO `jc_acquisition_history` VALUES ('96', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4NA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多6', 'SUCCESS', '4', '694');
+INSERT INTO `jc_acquisition_history` VALUES ('97', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMjAzMg==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特8', 'SUCCESS', '4', '695');
 
 -- ----------------------------
 -- Table structure for jc_acquisition_temp
@@ -153,11 +176,30 @@ CREATE TABLE `jc_acquisition_temp` (
   PRIMARY KEY (`temp_id`),
   KEY `fk_jc_temp_site` (`site_id`),
   CONSTRAINT `fk_jc_temp_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COMMENT='采集进度临时表';
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8 COMMENT='采集进度临时表';
 
 -- ----------------------------
 -- Records of jc_acquisition_temp
 -- ----------------------------
+INSERT INTO `jc_acquisition_temp` VALUES ('165', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ2NzU3Mg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON003', '5', 'SUCCESS', '1', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('166', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3MDAzMg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON001', '11', 'SUCCESS', '2', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('167', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQwOA==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_013', '16', 'SUCCESS', '3', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('168', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQ4MA==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_012', '21', 'SUCCESS', '4', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('169', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDAzNg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_011', '26', 'SUCCESS', '5', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('170', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDExMg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_010', '32', 'SUCCESS', '6', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('171', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NTMxMg==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_009', '37', 'SUCCESS', '7', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('172', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTQ3NjMyOA==.html?from=y1.7-2', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_008', '42', 'SUCCESS', '8', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('173', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcwOTk0NA==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特7', '47', 'SUCCESS', '9', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('174', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMDEwNA==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特5', '53', 'SUCCESS', '10', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('175', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMTcyMA==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特3', '58', 'SUCCESS', '11', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('176', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMTgxNg==.html?from=y1.7-2', '视频: 2015韩国车展火辣女模特2', '63', 'SUCCESS', '12', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('177', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTcxMjQ4MA==.html?from=y1.7-2', '视频: 2015韩国车展 火辣女模特1', '68', 'SUCCESS', '13', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('178', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTI2OA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多11', '74', 'SUCCESS', '14', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('179', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTI3Mg==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多12', '79', 'SUCCESS', '15', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('180', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTI4OA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多10', '84', 'SUCCESS', '16', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('181', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4MA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多9', '89', 'SUCCESS', '17', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('182', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4NA==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特多6', '95', 'SUCCESS', '18', null);
+INSERT INTO `jc_acquisition_temp` VALUES ('183', '1', 'http://i.youku.com/u/UMzI3NTA2OTU0NA==/videos', 'http://v.youku.com/v_show/id_XMTM5MTczMjAzMg==.html?from=y1.7-2', '视频: 2015韩国车展火辣美女模特8', '100', 'SUCCESS', '19', null);
 
 -- ----------------------------
 -- Table structure for jc_advertising
@@ -385,10 +427,10 @@ INSERT INTO `jc_channel_count` VALUES ('80', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('81', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('82', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('83', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('84', '40', '18', '18', '2');
+INSERT INTO `jc_channel_count` VALUES ('84', '59', '37', '37', '1');
 INSERT INTO `jc_channel_count` VALUES ('85', '0', '0', '0', '0');
 INSERT INTO `jc_channel_count` VALUES ('86', '0', '0', '0', '0');
-INSERT INTO `jc_channel_count` VALUES ('87', '0', '0', '0', '0');
+INSERT INTO `jc_channel_count` VALUES ('87', '1', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_channel_ext
@@ -448,23 +490,23 @@ INSERT INTO `jc_channel_ext` VALUES ('43', '文娱体育', null, null, '0', '0',
 INSERT INTO `jc_channel_ext` VALUES ('44', '美容资讯', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('45', '文化 校园', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/pic_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('46', '视频', null, null, '0', '0', '0', '0', '20', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('49', '电视剧', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('50', '纪录片', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('51', '电影', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('57', '实用助手', null, null, '0', '0', '1', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/download_child.html', null, null, null, '1', '1', '48', '48', '180', '120', '0', '1', '0', null, null, null, '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('60', '网络调查', null, null, '0', '0', '0', '0', '20', null, null, null, '/WEB-INF/t/cms/www/default/channel/news_wldc.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '网络调查', '网络调查', '网络调查', '0', '0');
 INSERT INTO `jc_channel_ext` VALUES ('61', '招聘', null, null, '0', '0', '0', '0', '20', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '招聘', '招聘', '招聘', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('76', '模特大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '模特大赛', '模特大赛', '模特大赛', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('77', '星姐大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '星姐大赛', '星姐大赛', '星姐大赛', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('78', 'T台秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'T台秀', 'T台秀', 'T台秀', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('79', '晚礼服', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '晚礼服', '晚礼服', '晚礼服', '0', '0');
-INSERT INTO `jc_channel_ext` VALUES ('80', '内衣秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '内衣秀', '内衣秀', '内衣秀', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('76', '模特大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '模特大赛', '模特大赛', '模特大赛', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('77', '星姐大赛', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '星姐大赛', '星姐大赛', '星姐大赛', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('78', 'T台秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'T台秀', 'T台秀', 'T台秀', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('79', '晚礼服', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '晚礼服', '晚礼服', '晚礼服', '0', '0');
+INSERT INTO `jc_channel_ext` VALUES ('80', '内衣秀', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '内衣秀', '内衣秀', '内衣秀', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('81', '新丝路大赛', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '新丝路大赛', '新丝路大赛', '新丝路大赛', '1', '1');
-INSERT INTO `jc_channel_ext` VALUES ('82', '游戏展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '游戏展', '游戏展', '游戏展', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('82', '游戏展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/vedio_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '游戏展', '游戏展', '游戏展', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('83', 'chinajoy', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', 'chinajoy', 'chinajoy', 'chinajoy', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('84', 'GSTAR', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '韩国GSTAR', '韩国GSTAR', '韩国GSTAR', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('85', '车展', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '车展', '车展', '车展', '1', '1');
-INSERT INTO `jc_channel_ext` VALUES ('86', '国内车展', null, null, '0', '0', '0', '0', '10', null, null, null, null, null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '国内车展', '国内车展', '国内车展', '1', '1');
+INSERT INTO `jc_channel_ext` VALUES ('86', '国内车展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '国内车展', '国内车展', '国内车展', '1', '1');
 INSERT INTO `jc_channel_ext` VALUES ('87', '韩国车展', null, null, '0', '0', '0', '0', '10', null, null, null, '/WEB-INF/t/cms/www/default/channel/video_child_tencent.html', null, null, null, '0', '0', '139', '139', '310', '310', '0', '1', '0', '韩国车展', '韩国车展', '韩国车展', '1', '1');
 
 -- ----------------------------
@@ -485,11 +527,14 @@ CREATE TABLE `jc_channel_model` (
 -- ----------------------------
 -- Records of jc_channel_model
 -- ----------------------------
-INSERT INTO `jc_channel_model` VALUES ('50', '6', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('76', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('78', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
-INSERT INTO `jc_channel_model` VALUES ('79', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('50', '6', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('76', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('78', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('79', '101', '/WEB-INF/t/cms/www/default/content/vediotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('83', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
 INSERT INTO `jc_channel_model` VALUES ('84', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('86', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
+INSERT INTO `jc_channel_model` VALUES ('87', '101', '/WEB-INF/t/cms/www/default/content/videotencent.html', '0');
 
 -- ----------------------------
 -- Table structure for jc_channel_txt
@@ -620,10 +665,6 @@ CREATE TABLE `jc_comment` (
 -- ----------------------------
 -- Records of jc_comment
 -- ----------------------------
-INSERT INTO `jc_comment` VALUES ('1', '1', null, '512', '1', '2014-03-14 17:31:49', null, '0', '0', '0', '1', null);
-INSERT INTO `jc_comment` VALUES ('2', '1', null, '445', '1', '2014-03-14 17:31:58', null, '0', '0', '0', '1', null);
-INSERT INTO `jc_comment` VALUES ('4', null, null, '564', '1', '2014-04-19 16:42:02', null, '0', '0', '0', '0', null);
-INSERT INTO `jc_comment` VALUES ('5', null, null, '564', '1', '2014-04-19 17:11:37', null, '0', '0', '0', '0', null);
 
 -- ----------------------------
 -- Table structure for jc_comment_ext
@@ -641,10 +682,6 @@ CREATE TABLE `jc_comment_ext` (
 -- ----------------------------
 -- Records of jc_comment_ext
 -- ----------------------------
-INSERT INTO `jc_comment_ext` VALUES ('1', '127.0.0.1', '121212', '');
-INSERT INTO `jc_comment_ext` VALUES ('2', '127.0.0.1', 'asdfasd', null);
-INSERT INTO `jc_comment_ext` VALUES ('4', '127.0.0.1', 'adfd', null);
-INSERT INTO `jc_comment_ext` VALUES ('5', '127.0.0.1', 'adsfa', null);
 
 -- ----------------------------
 -- Table structure for jc_config
@@ -688,7 +725,7 @@ CREATE TABLE `jc_config` (
 -- ----------------------------
 -- Records of jc_config
 -- ----------------------------
-INSERT INTO `jc_config` VALUES ('1', '', null, '8080', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.showgirlvideo.com', '40', '#FF0000', '100', '1', '0', '0', '2015-11-19', '2015-11-18 23:52:19', 'showgirlvideo', '12', null, null, null, null, null, '1', '0');
+INSERT INTO `jc_config` VALUES ('1', '', null, '8080', '/dbfile.svl?n=', '0', '/r/cms/www/no_picture.gif', '/login.jspx', null, '1', '120', '120', '/r/cms/www/watermark.png', 'www.showgirlvideo.com', '40', '#FF0000', '100', '1', '0', '0', '2015-11-21', '2015-11-21 16:10:42', 'showgirlvideo', '12', null, null, null, null, null, '1', '0');
 
 -- ----------------------------
 -- Table structure for jc_config_attr
@@ -794,166 +831,99 @@ CREATE TABLE `jc_content` (
   CONSTRAINT `fk_jc_content_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_content_type` FOREIGN KEY (`type_id`) REFERENCES `jc_content_type` (`type_id`),
   CONSTRAINT `fk_jc_content_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=630 DEFAULT CHARSET=utf8 COMMENT='CMS内容表';
+) ENGINE=InnoDB AUTO_INCREMENT=696 DEFAULT CHARSET=utf8 COMMENT='CMS内容表';
 
 -- ----------------------------
 -- Records of jc_content
 -- ----------------------------
-INSERT INTO `jc_content` VALUES ('172', '39', '1', '1', '4', '1', '2013-09-27 09:55:24', '0', '1', '0', '2', '0', '0', '1', '0', '0');
-INSERT INTO `jc_content` VALUES ('173', '39', '1', '1', '4', '1', '2013-09-27 09:55:05', '0', '1', '0', '2', '0', '0', '1', '0', '0');
-INSERT INTO `jc_content` VALUES ('326', '38', '1', '1', '4', '1', '2013-09-27 09:52:39', '0', '1', '0', '2', '0', '0', '2', '0', '0');
-INSERT INTO `jc_content` VALUES ('328', '38', '1', '1', '4', '1', '2013-09-27 09:51:14', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('329', '38', '1', '1', '4', '1', '2013-09-27 09:50:33', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('330', '38', '1', '1', '4', '1', '2013-09-27 09:49:36', '0', '1', '0', '2', '0', '0', '1', '0', '0');
-INSERT INTO `jc_content` VALUES ('331', '39', '1', '1', '4', '1', '2013-09-27 09:54:05', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('332', '39', '1', '1', '4', '1', '2013-09-27 09:53:14', '0', '1', '0', '2', '0', '0', '1', '0', '0');
-INSERT INTO `jc_content` VALUES ('334', '57', '1', '1', '4', '1', '2013-09-27 09:58:05', '0', '1', '0', '2', '0', '0', '1', '0', '0');
-INSERT INTO `jc_content` VALUES ('335', '57', '1', '1', '4', '1', '2013-09-27 09:57:15', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('336', '57', '1', '1', '4', '1', '2013-09-27 09:56:51', '0', '1', '0', '2', '0', '0', '1', '0', '0');
-INSERT INTO `jc_content` VALUES ('337', '57', '1', '1', '4', '1', '2013-09-27 09:55:49', '0', '1', '0', '2', '0', '0', '3', '0', '0');
-INSERT INTO `jc_content` VALUES ('436', '13', '1', '1', '1', '1', '2013-07-08 15:34:08', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('437', '13', '1', '1', '1', '1', '2013-07-08 15:34:09', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('438', '13', '1', '1', '1', '1', '2013-07-08 15:34:11', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('439', '13', '1', '1', '1', '1', '2013-07-08 15:34:11', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('440', '13', '1', '1', '1', '1', '2013-07-08 15:34:12', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('441', '13', '1', '1', '1', '1', '2013-07-08 15:34:13', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('442', '13', '1', '1', '1', '1', '2013-07-08 15:34:14', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('443', '13', '1', '1', '1', '1', '2013-07-08 15:34:15', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('444', '11', '1', '1', '1', '1', '2013-07-08 15:34:17', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('445', '13', '1', '1', '1', '1', '2013-07-08 15:34:18', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('446', '11', '1', '1', '1', '1', '2013-07-08 15:34:18', '0', '0', '0', '2', '0', '0', '0', '0', '1');
-INSERT INTO `jc_content` VALUES ('447', '12', '1', '1', '1', '1', '2013-07-08 15:34:20', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('448', '11', '1', '1', '1', '1', '2013-07-08 15:34:21', '0', '0', '0', '2', '0', '0', '0', '0', '4');
-INSERT INTO `jc_content` VALUES ('473', '49', '1', '3', '6', '1', '2013-08-20 11:30:47', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('474', '49', '1', '2', '6', '1', '2013-08-20 11:36:14', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('475', '49', '1', '2', '6', '1', '2013-08-20 11:36:43', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('476', '49', '1', '2', '6', '1', '2013-08-20 11:43:16', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('477', '49', '1', '2', '6', '1', '2013-08-20 11:44:30', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('478', '49', '1', '2', '6', '1', '2013-08-20 11:45:42', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('479', '49', '1', '2', '6', '1', '2013-08-20 11:46:57', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('480', '49', '1', '2', '6', '1', '2013-08-20 11:47:53', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('481', '50', '1', '2', '6', '1', '2013-08-20 11:56:55', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('482', '50', '1', '2', '6', '1', '2013-08-20 12:02:03', '0', '1', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('483', '50', '1', '2', '6', '1', '2013-08-20 12:05:52', '0', '1', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('484', '50', '1', '2', '6', '1', '2013-08-20 12:09:02', '0', '1', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('487', '43', '1', '2', '5', '1', '2013-08-21 11:34:29', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('488', '43', '1', '2', '5', '1', '2013-08-21 11:59:29', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('489', '43', '1', '2', '5', '1', '2013-08-21 13:40:11', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('490', '43', '1', '2', '5', '1', '2013-08-21 14:35:35', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('491', '43', '1', '2', '5', '1', '2013-08-21 14:47:08', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('492', '43', '1', '2', '5', '1', '2013-08-21 14:49:52', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('494', '43', '1', '2', '5', '1', '2013-08-21 14:58:46', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('495', '44', '1', '1', '1', '1', '2013-08-21 15:12:25', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('496', '44', '1', '1', '1', '1', '2013-08-21 15:19:59', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('497', '44', '1', '1', '6', '1', '2013-08-21 15:24:11', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('498', '44', '1', '1', '1', '1', '2013-08-22 09:13:41', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('499', '45', '1', '1', '1', '1', '2013-08-22 09:21:00', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('500', '45', '1', '1', '1', '1', '2013-08-22 09:28:09', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('501', '45', '1', '1', '1', '1', '2013-08-22 09:45:50', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('502', '49', '1', '2', '6', '1', '2013-09-09 16:51:46', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('503', '49', '1', '2', '6', '1', '2013-09-09 16:55:35', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('504', '49', '1', '2', '6', '1', '2013-09-09 16:59:13', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('505', '49', '1', '2', '6', '1', '2013-09-09 17:00:23', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('506', '11', '1', '3', '5', '1', '2013-09-10 09:22:39', '0', '0', '1', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('507', '11', '1', '3', '1', '1', '2013-09-10 09:50:40', '0', '0', '0', '2', '0', '0', '0', '0', '4');
-INSERT INTO `jc_content` VALUES ('508', '11', '1', '3', '1', '1', '2013-09-10 09:53:55', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('509', '11', '1', '1', '1', '1', '2013-09-10 10:28:25', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('510', '11', '1', '3', '5', '1', '2013-09-10 10:38:52', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('511', '12', '1', '3', '5', '1', '2013-09-10 10:45:34', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('512', '13', '1', '2', '1', '1', '2013-09-10 14:40:05', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('513', '45', '1', '2', '5', '1', '2013-09-12 10:59:15', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('514', '45', '1', '2', '5', '1', '2013-09-12 11:04:04', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('515', '45', '1', '2', '5', '1', '2013-09-12 11:08:22', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('516', '45', '1', '2', '5', '1', '2013-09-12 11:12:45', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('517', '45', '1', '2', '5', '1', '2013-09-12 11:19:03', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('518', '45', '1', '2', '5', '1', '2013-09-12 11:22:50', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('519', '44', '1', '3', '5', '1', '2013-09-12 12:07:42', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('520', '44', '1', '3', '5', '1', '2013-09-12 13:43:06', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('521', '44', '1', '2', '5', '1', '2013-09-12 13:45:55', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('522', '44', '1', '2', '5', '1', '2013-09-12 13:49:36', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('523', '44', '1', '2', '5', '1', '2013-09-12 13:52:46', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('524', '44', '1', '3', '5', '1', '2013-09-12 13:58:30', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('525', '44', '1', '3', '5', '1', '2013-09-12 14:08:58', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('526', '44', '1', '3', '5', '1', '2013-09-12 14:14:53', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('527', '44', '1', '3', '5', '1', '2013-09-12 14:23:30', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('528', '44', '1', '2', '5', '1', '2013-09-12 14:28:33', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('529', '44', '1', '2', '5', '1', '2013-09-12 14:33:47', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('530', '44', '1', '2', '5', '1', '2013-09-12 14:57:01', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('531', '44', '1', '3', '5', '1', '2013-09-12 15:07:03', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('532', '44', '1', '3', '5', '1', '2013-09-12 15:11:43', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('533', '44', '1', '3', '5', '1', '2013-09-12 15:23:00', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('534', '44', '1', '2', '5', '1', '2013-09-12 15:36:56', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('535', '44', '1', '2', '5', '1', '2013-09-12 15:43:13', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('536', '12', '1', '3', '5', '1', '2013-09-12 15:48:01', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('539', '50', '1', '2', '6', '1', '2013-09-13 14:12:47', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('540', '50', '1', '2', '6', '1', '2013-09-13 14:24:03', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('541', '50', '1', '2', '6', '1', '2013-09-13 14:29:31', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('559', '12', '1', '1', '1', '1', '2013-09-27 10:18:25', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('560', '12', '1', '1', '1', '1', '2013-09-27 10:18:47', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('561', '14', '1', '1', '1', '1', '2013-09-27 10:19:30', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('562', '14', '1', '1', '1', '1', '2013-09-27 10:19:51', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('563', '14', '1', '1', '1', '1', '2013-09-27 10:20:09', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('564', '14', '1', '1', '1', '1', '2013-09-27 10:20:31', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('565', '11', '1', '1', '1', '1', '2015-08-15 12:43:46', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('567', '12', '1', '1', '1', '1', '2015-08-15 12:44:06', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('568', '13', '1', '1', '1', '1', '2015-08-15 13:59:45', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('569', '15', '1', '1', '1', '1', '2015-08-15 14:01:13', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('570', '84', '1', '1', '101', '1', '2015-08-15 14:16:27', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('571', '43', '1', '1', '5', '1', '2015-08-15 14:27:13', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('572', '84', '1', '1', '101', '1', '2015-08-15 16:28:48', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('573', '84', '1', '1', '101', '1', '2015-08-15 16:52:20', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('574', '11', '1', '1', '1', '1', '2015-08-16 17:46:32', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('575', '84', '1', '1', '101', '1', '2015-08-18 21:50:00', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('576', '84', '1', '1', '101', '1', '2015-08-18 21:50:01', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('577', '84', '1', '1', '101', '1', '2015-08-18 22:43:18', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('578', '84', '1', '1', '101', '1', '2015-08-18 22:43:21', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('579', '84', '1', '1', '101', '1', '2015-08-19 19:30:16', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('580', '84', '1', '1', '101', '1', '2015-08-19 19:30:17', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('581', '84', '1', '1', '101', '1', '2015-08-19 20:09:29', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('582', '84', '1', '1', '101', '1', '2015-08-19 20:09:33', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('583', '84', '1', '1', '101', '1', '2015-08-19 20:17:14', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('584', '84', '1', '1', '101', '1', '2015-08-19 20:17:15', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('585', '84', '1', '1', '101', '1', '2015-08-19 20:21:13', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('586', '84', '1', '1', '101', '1', '2015-08-19 20:21:14', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('587', '84', '1', '1', '101', '1', '2015-08-19 20:24:19', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('588', '84', '1', '1', '101', '1', '2015-08-19 20:24:20', '0', '0', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('593', '84', '1', '1', '101', '1', '2015-08-22 15:09:52', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('594', '84', '1', '1', '101', '1', '2015-08-22 15:09:53', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('595', '84', '1', '1', '101', '1', '2015-08-22 15:16:36', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('596', '84', '1', '1', '101', '1', '2015-08-22 15:16:37', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('597', '84', '1', '1', '101', '1', '2015-08-22 15:27:10', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('598', '84', '1', '1', '101', '1', '2015-08-22 17:26:17', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('599', '84', '1', '1', '101', '1', '2015-08-23 14:09:18', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('600', '84', '1', '1', '101', '1', '2015-08-23 14:09:18', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('601', '84', '1', '1', '101', '1', '2015-08-23 14:41:15', '0', '1', '0', '3', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('602', '84', '1', '1', '101', '1', '2015-08-23 14:41:16', '0', '1', '0', '3', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('603', '84', '1', '1', '101', '1', '2015-08-23 14:44:11', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('604', '84', '1', '1', '101', '1', '2015-08-23 14:44:12', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('605', '84', '1', '1', '101', '1', '2015-08-23 14:50:33', '0', '1', '0', '2', '1', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('606', '84', '1', '1', '101', '1', '2015-08-23 14:50:42', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('607', '84', '1', '1', '101', '1', '2015-08-23 17:02:25', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('608', '84', '1', '1', '101', '1', '2015-11-17 22:37:43', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('609', '84', '1', '1', '101', '1', '2015-11-17 22:37:44', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('610', '84', '1', '1', '101', '1', '2015-11-17 22:37:45', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('611', '84', '1', '1', '101', '1', '2015-11-17 22:37:46', '0', '1', '0', '2', '6', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('612', '84', '1', '1', '101', '1', '2015-11-17 22:37:46', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('613', '84', '1', '1', '101', '1', '2015-11-17 22:37:47', '0', '1', '0', '2', '1', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('614', '84', '1', '1', '101', '1', '2015-11-17 22:37:48', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('615', '84', '1', '1', '101', '1', '2015-11-17 22:37:49', '0', '1', '0', '2', '7', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('616', '84', '1', '1', '101', '1', '2015-11-17 22:37:50', '0', '1', '0', '2', '3', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('617', '84', '1', '1', '101', '1', '2015-11-18 15:15:58', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('618', '84', '1', '1', '101', '1', '2015-11-18 15:16:04', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('619', '84', '1', '1', '101', '1', '2015-11-18 15:16:05', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('620', '84', '1', '1', '101', '1', '2015-11-18 15:16:05', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('621', '84', '1', '1', '101', '1', '2015-11-18 15:16:06', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('622', '84', '1', '1', '101', '1', '2015-11-18 15:16:07', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('623', '84', '1', '1', '101', '1', '2015-11-18 15:16:08', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('624', '84', '1', '1', '101', '1', '2015-11-18 15:16:09', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('625', '84', '1', '1', '101', '1', '2015-11-18 15:16:10', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('626', '84', '1', '1', '101', '1', '2015-11-18 15:16:12', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('627', '84', '1', '1', '101', '1', '2015-11-18 15:16:12', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('628', '84', '1', '1', '101', '1', '2015-11-18 15:16:13', '0', '1', '0', '2', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content` VALUES ('629', '84', '1', '1', '101', '1', '2015-11-18 15:16:14', '0', '1', '0', '2', '2', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('608', '84', '1', '1', '101', '1', '2015-11-17 22:37:43', '0', '1', '0', '3', '3', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('609', '84', '1', '1', '101', '1', '2015-11-17 22:37:44', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('610', '84', '1', '1', '101', '1', '2015-11-17 22:37:45', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('611', '84', '1', '1', '101', '1', '2015-11-17 22:37:46', '0', '1', '0', '3', '5', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('612', '84', '1', '1', '101', '1', '2015-11-17 22:37:46', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('613', '84', '1', '1', '101', '1', '2015-11-17 22:37:47', '0', '1', '0', '3', '5', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('614', '84', '1', '1', '101', '1', '2015-11-17 22:37:48', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('615', '84', '1', '1', '101', '1', '2015-11-17 22:37:49', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('616', '84', '1', '1', '101', '1', '2015-11-17 22:37:50', '0', '1', '0', '3', '2', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('617', '84', '1', '1', '101', '1', '2015-11-18 15:15:58', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('618', '84', '1', '1', '101', '1', '2015-11-18 15:16:04', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('619', '84', '1', '1', '101', '1', '2015-11-18 15:16:05', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('620', '84', '1', '1', '101', '1', '2015-11-18 15:16:05', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('621', '84', '1', '1', '101', '1', '2015-11-18 15:16:06', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('622', '84', '1', '1', '101', '1', '2015-11-18 15:16:07', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('623', '84', '1', '1', '101', '1', '2015-11-18 15:16:08', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('624', '84', '1', '1', '101', '1', '2015-11-18 15:16:09', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('625', '84', '1', '1', '101', '1', '2015-11-18 15:16:10', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('626', '84', '1', '1', '101', '1', '2015-11-18 15:16:12', '0', '1', '0', '3', '1', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('627', '84', '1', '1', '101', '1', '2015-11-18 15:16:12', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('628', '84', '1', '1', '101', '1', '2015-11-18 15:16:13', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('629', '84', '1', '1', '101', '1', '2015-11-18 15:16:14', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('630', '87', '1', '1', '101', '1', '2015-11-20 23:25:12', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('631', '87', '1', '1', '101', '1', '2015-11-20 23:25:13', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('632', '87', '1', '1', '101', '1', '2015-11-20 23:25:13', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('633', '87', '1', '1', '101', '1', '2015-11-20 23:25:14', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('634', '87', '1', '1', '101', '1', '2015-11-20 23:25:15', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('635', '87', '1', '1', '101', '1', '2015-11-20 23:25:16', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('636', '87', '1', '1', '101', '1', '2015-11-20 23:25:17', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('637', '87', '1', '1', '101', '1', '2015-11-20 23:25:18', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('638', '87', '1', '1', '101', '1', '2015-11-20 23:25:18', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('639', '87', '1', '1', '101', '1', '2015-11-20 23:25:19', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('640', '87', '1', '1', '101', '1', '2015-11-20 23:25:20', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('641', '87', '1', '1', '101', '1', '2015-11-20 23:25:21', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('642', '87', '1', '1', '101', '1', '2015-11-20 23:25:22', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('643', '87', '1', '1', '101', '1', '2015-11-20 23:25:23', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('644', '87', '1', '1', '101', '1', '2015-11-20 23:25:24', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('645', '87', '1', '1', '101', '1', '2015-11-20 23:25:24', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('646', '87', '1', '1', '101', '1', '2015-11-20 23:25:25', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('647', '87', '1', '1', '101', '1', '2015-11-20 23:25:26', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('648', '84', '1', '1', '101', '1', '2015-11-20 23:25:49', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('649', '84', '1', '1', '101', '1', '2015-11-20 23:25:50', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('650', '84', '1', '1', '101', '1', '2015-11-20 23:25:51', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('651', '84', '1', '1', '101', '1', '2015-11-20 23:25:52', '0', '1', '0', '3', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('652', '84', '1', '1', '101', '1', '2015-11-21 16:06:01', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('653', '84', '1', '1', '101', '1', '2015-11-21 16:06:04', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('654', '84', '1', '1', '101', '1', '2015-11-21 16:06:06', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('655', '84', '1', '1', '101', '1', '2015-11-21 16:06:08', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('656', '84', '1', '1', '101', '1', '2015-11-21 16:06:11', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('657', '84', '1', '1', '101', '1', '2015-11-21 16:06:13', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('658', '84', '1', '1', '101', '1', '2015-11-21 16:06:15', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('659', '84', '1', '1', '101', '1', '2015-11-21 16:06:17', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('660', '84', '1', '1', '101', '1', '2015-11-21 16:06:20', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('661', '84', '1', '1', '101', '1', '2015-11-21 16:06:22', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('662', '84', '1', '1', '101', '1', '2015-11-21 16:06:24', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('663', '84', '1', '1', '101', '1', '2015-11-21 16:06:26', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('664', '84', '1', '1', '101', '1', '2015-11-21 16:06:28', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('665', '84', '1', '1', '101', '1', '2015-11-21 16:06:31', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('666', '84', '1', '1', '101', '1', '2015-11-21 16:06:33', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('667', '84', '1', '1', '101', '1', '2015-11-21 16:06:35', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('668', '84', '1', '1', '101', '1', '2015-11-21 16:06:38', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('669', '84', '1', '1', '101', '1', '2015-11-21 16:06:42', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('670', '84', '1', '1', '101', '1', '2015-11-21 16:06:44', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('671', '84', '1', '1', '101', '1', '2015-11-21 16:06:46', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('672', '84', '1', '1', '101', '1', '2015-11-21 16:06:49', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('673', '84', '1', '1', '101', '1', '2015-11-21 16:06:51', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('674', '84', '1', '1', '101', '1', '2015-11-21 16:06:53', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('675', '84', '1', '1', '101', '1', '2015-11-21 16:06:56', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('676', '84', '1', '1', '101', '1', '2015-11-21 16:06:58', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('677', '87', '1', '1', '101', '1', '2015-11-21 16:08:10', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('678', '87', '1', '1', '101', '1', '2015-11-21 16:08:12', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('679', '87', '1', '1', '101', '1', '2015-11-21 16:08:15', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('680', '87', '1', '1', '101', '1', '2015-11-21 16:08:17', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('681', '87', '1', '1', '101', '1', '2015-11-21 16:08:20', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('682', '87', '1', '1', '101', '1', '2015-11-21 16:08:22', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('683', '87', '1', '1', '101', '1', '2015-11-21 16:08:24', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('684', '87', '1', '1', '101', '1', '2015-11-21 16:08:27', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('685', '87', '1', '1', '101', '1', '2015-11-21 16:08:29', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('686', '87', '1', '1', '101', '1', '2015-11-21 16:08:31', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('687', '87', '1', '1', '101', '1', '2015-11-21 16:08:33', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('688', '87', '1', '1', '101', '1', '2015-11-21 16:08:36', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('689', '87', '1', '1', '101', '1', '2015-11-21 16:08:38', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('690', '87', '1', '1', '101', '1', '2015-11-21 16:08:40', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('691', '87', '1', '1', '101', '1', '2015-11-21 16:08:43', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('692', '87', '1', '1', '101', '1', '2015-11-21 16:08:45', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('693', '87', '1', '1', '101', '1', '2015-11-21 16:08:47', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('694', '87', '1', '1', '101', '1', '2015-11-21 16:08:49', '0', '1', '0', '2', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content` VALUES ('695', '87', '1', '1', '101', '1', '2015-11-21 16:08:52', '0', '1', '0', '2', '1', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_content_attachment
@@ -973,18 +943,6 @@ CREATE TABLE `jc_content_attachment` (
 -- ----------------------------
 -- Records of jc_content_attachment
 -- ----------------------------
-INSERT INTO `jc_content_attachment` VALUES ('172', '0', '/u/cms/www/201309/19115513v9k3.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('173', '0', '/u/cms/www/201309/19115459jnds.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('326', '0', '/u/cms/www/201309/19114320y7x2.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('328', '0', '/u/cms/www/201309/19120206ddre.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('329', '0', '/u/cms/www/201309/19132320u46d.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('330', '0', '/u/cms/www/201309/19134542a8qu.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('331', '0', '/u/cms/www/201309/19135345g1s7.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('332', '0', '/u/cms/www/201309/19140010z9z1.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('334', '0', '/u/cms/www/201309/191418286eoi.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('335', '0', '/u/cms/www/201309/19142201umby.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('336', '0', '/u/cms/www/201309/191425405rka.zip', '111.zip', '111.zip', '0');
-INSERT INTO `jc_content_attachment` VALUES ('337', '0', '/u/cms/www/201309/19143017qxs3.zip', '111.zip', '111.zip', '0');
 
 -- ----------------------------
 -- Table structure for jc_content_attr
@@ -1001,191 +959,94 @@ CREATE TABLE `jc_content_attr` (
 -- ----------------------------
 -- Records of jc_content_attr
 -- ----------------------------
-INSERT INTO `jc_content_attr` VALUES ('172', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('172', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('172', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('172', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('173', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('173', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('173', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('173', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('326', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('326', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('326', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('326', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('328', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('328', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('328', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('328', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('329', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('329', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('329', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('329', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('330', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('330', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('330', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('330', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('331', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('331', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('331', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('331', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('332', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('332', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('332', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('332', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('334', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('334', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('334', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('334', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('335', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('335', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('335', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('335', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('336', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('336', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('336', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('336', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('337', 'demoUrl', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('337', 'warrant', '免费版');
-INSERT INTO `jc_content_attr` VALUES ('337', 'relatedLink', 'http://');
-INSERT INTO `jc_content_attr` VALUES ('337', 'softType', '国产软件');
-INSERT INTO `jc_content_attr` VALUES ('473', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('473', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('474', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('474', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('475', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('475', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('476', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('476', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('477', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('477', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('478', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('478', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('479', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('479', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('480', 'Starring', '张国强 濮存昕 李菁菁 刘威葳 高亚麟');
-INSERT INTO `jc_content_attr` VALUES ('480', 'Director', '康洪雷');
-INSERT INTO `jc_content_attr` VALUES ('481', 'Starring', '未知');
-INSERT INTO `jc_content_attr` VALUES ('481', 'Director', '未知');
-INSERT INTO `jc_content_attr` VALUES ('482', 'Starring', '未知');
-INSERT INTO `jc_content_attr` VALUES ('482', 'Director', '未知');
-INSERT INTO `jc_content_attr` VALUES ('483', 'Starring', '未知');
-INSERT INTO `jc_content_attr` VALUES ('483', 'Director', '未知');
-INSERT INTO `jc_content_attr` VALUES ('484', 'Starring', '未知');
-INSERT INTO `jc_content_attr` VALUES ('484', 'Director', '未知');
-INSERT INTO `jc_content_attr` VALUES ('497', 'Starring', '');
-INSERT INTO `jc_content_attr` VALUES ('497', 'Director', '');
-INSERT INTO `jc_content_attr` VALUES ('502', 'VideoType', '都市,喜剧');
-INSERT INTO `jc_content_attr` VALUES ('502', 'Starring', '文章 马伊琍 朱佳煜 王耀庆 张子萱');
-INSERT INTO `jc_content_attr` VALUES ('502', 'Director', '文章');
-INSERT INTO `jc_content_attr` VALUES ('502', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('503', 'VideoType', '都市,喜剧');
-INSERT INTO `jc_content_attr` VALUES ('503', 'Starring', '文章 马伊琍 朱佳煜 王耀庆 张子萱');
-INSERT INTO `jc_content_attr` VALUES ('503', 'Director', '文章');
-INSERT INTO `jc_content_attr` VALUES ('503', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('504', 'VideoType', '都市,喜剧');
-INSERT INTO `jc_content_attr` VALUES ('504', 'Starring', '文章 马伊琍 朱佳煜 王耀庆 张子萱');
-INSERT INTO `jc_content_attr` VALUES ('504', 'Director', '文章');
-INSERT INTO `jc_content_attr` VALUES ('504', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('505', 'VideoType', '都市,喜剧');
-INSERT INTO `jc_content_attr` VALUES ('505', 'Starring', '文章 马伊琍 朱佳煜 王耀庆 张子萱');
-INSERT INTO `jc_content_attr` VALUES ('505', 'Director', '文章');
-INSERT INTO `jc_content_attr` VALUES ('505', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('480', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('480', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('479', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('479', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('478', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('478', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('477', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('477', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('473', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('473', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('474', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('474', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('475', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('475', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('476', 'VideoType', '都市');
-INSERT INTO `jc_content_attr` VALUES ('476', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('484', 'VideoType', '古装');
-INSERT INTO `jc_content_attr` VALUES ('484', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('483', 'VideoType', '惊悚');
-INSERT INTO `jc_content_attr` VALUES ('483', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('482', 'VideoType', '历史');
-INSERT INTO `jc_content_attr` VALUES ('482', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('481', 'VideoType', '谍战,战争');
-INSERT INTO `jc_content_attr` VALUES ('481', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('539', 'VideoType', '历史');
-INSERT INTO `jc_content_attr` VALUES ('539', 'Starring', '');
-INSERT INTO `jc_content_attr` VALUES ('539', 'Director', '上海纪实频道.');
-INSERT INTO `jc_content_attr` VALUES ('539', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('540', 'VideoType', '伦理,战争');
-INSERT INTO `jc_content_attr` VALUES ('540', 'Starring', '');
-INSERT INTO `jc_content_attr` VALUES ('540', 'Director', '旅游卫视');
-INSERT INTO `jc_content_attr` VALUES ('540', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('541', 'VideoType', '都市,伦理');
-INSERT INTO `jc_content_attr` VALUES ('541', 'Starring', '');
-INSERT INTO `jc_content_attr` VALUES ('541', 'Director', '江西卫视.');
-INSERT INTO `jc_content_attr` VALUES ('541', 'Video', '正片');
-INSERT INTO `jc_content_attr` VALUES ('509', 't1', '好的哦');
-INSERT INTO `jc_content_attr` VALUES ('509', 't2', '2');
-INSERT INTO `jc_content_attr` VALUES ('507', 't2', '120');
-INSERT INTO `jc_content_attr` VALUES ('507', 't1', '');
-INSERT INTO `jc_content_attr` VALUES ('560', 't2', '');
-INSERT INTO `jc_content_attr` VALUES ('560', 't1', '');
-INSERT INTO `jc_content_attr` VALUES ('570', 'starring', '主演1');
-INSERT INTO `jc_content_attr` VALUES ('570', 'videoUrl', 'path');
-INSERT INTO `jc_content_attr` VALUES ('572', 'starring', '');
-INSERT INTO `jc_content_attr` VALUES ('572', 'videoUrl', '');
-INSERT INTO `jc_content_attr` VALUES ('573', 'starring', '');
-INSERT INTO `jc_content_attr` VALUES ('573', 'videoUrl', 'splj');
-INSERT INTO `jc_content_attr` VALUES ('575', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('576', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('581', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('582', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('583', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('584', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('585', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('586', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('587', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('588', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('593', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('594', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('595', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('596', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('597', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('598', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('599', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('600', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('601', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('602', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('603', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('604', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('605', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('606', 'videoUrl', 'MTM4NDAyNDQy');
-INSERT INTO `jc_content_attr` VALUES ('607', 'videoUrl', 'MTM4NDAyNDM4');
-INSERT INTO `jc_content_attr` VALUES ('608', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4ODk0NjgwNA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('609', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4ODk1ODI3Mg==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('610', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTAyNTMwOA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('611', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('612', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA1ODE4NA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('613', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA1ODc0MA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('614', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2MDIwNA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('615', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2MzQ0MA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('616', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2NTQ4NA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('617', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('618', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyMzg0NA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('619', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyNDU0NA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('620', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyNjU5Ng==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('621', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMDU2OA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('622', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMjQ1Ng==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('623', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMzE2MA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('624', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzNDA4MA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('625', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzNTIwNA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('626', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM1NzYwOA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('627', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MDA2OA==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('628', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MjQ3Mg==.html?from=y1.7-2');
-INSERT INTO `jc_content_attr` VALUES ('629', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MzI4OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('608', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4ODk0NjgwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('609', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4ODk1ODI3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('610', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTAyNTMwOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('611', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('612', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTA1ODE4NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('613', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTA1ODc0MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('614', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2MDIwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('615', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2MzQ0MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('616', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2NTQ4NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('617', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('618', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyMzg0NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('619', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyNDU0NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('620', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyNjU5Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('621', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMDU2OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('622', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMjQ1Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('623', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMzE2MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('624', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzNDA4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('625', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzNTIwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('626', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTM1NzYwOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('627', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MDA2OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('628', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MjQ3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('629', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MzI4OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('630', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ2NzU3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('631', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ2NzU4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('632', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3MDAzMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('633', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQwOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('634', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQ4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('635', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDAzNg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('636', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDExMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('637', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NTMxMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('638', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NjMyOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('639', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTcwOTk0NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('640', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMDEwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('641', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMTcyMA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('642', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMTgxNg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('643', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMjQ4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('644', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTI3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('645', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('646', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('647', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMjAzMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('648', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwMTY5Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('649', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwMzM0OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('650', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwNTIwMA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('651', 'vedioUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwODI5Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('652', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4ODk0NjgwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('653', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4ODk1ODI3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('654', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTAyNTMwOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('655', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTAzMjM1Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('656', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA1ODE4NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('657', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA1ODc0MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('658', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2MDIwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('659', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2MzQ0MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('660', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTA2NTQ4NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('661', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyMzg0NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('662', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyNDU0NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('663', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMyNjU5Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('664', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMDU2OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('665', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMjQ1Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('666', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzMzE2MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('667', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzNDA4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('668', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTMzNTIwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('669', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM1NzYwOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('670', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MDA2OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('671', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MjQ3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('672', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM4OTM2MzI4OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('673', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwMTY5Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('674', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwMzM0OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('675', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwNTIwMA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('676', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MDYwODI5Ng==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('677', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ2NzU3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('678', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3MDAzMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('679', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQwOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('680', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3MTQ4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('681', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDAzNg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('682', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NDExMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('683', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NTMxMg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('684', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTQ3NjMyOA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('685', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTcwOTk0NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('686', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMDEwNA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('687', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMTcyMA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('688', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMTgxNg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('689', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTcxMjQ4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('690', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTI2OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('691', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTI3Mg==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('692', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTI4OA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('693', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4MA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('694', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMTY4NA==.html?from=y1.7-2');
+INSERT INTO `jc_content_attr` VALUES ('695', 'videoUrl', 'http://v.youku.com/v_show/id_XMTM5MTczMjAzMg==.html?from=y1.7-2');
 
 -- ----------------------------
 -- Table structure for jc_content_channel
@@ -1203,144 +1064,6 @@ CREATE TABLE `jc_content_channel` (
 -- ----------------------------
 -- Records of jc_content_channel
 -- ----------------------------
-INSERT INTO `jc_content_channel` VALUES ('39', '172');
-INSERT INTO `jc_content_channel` VALUES ('39', '173');
-INSERT INTO `jc_content_channel` VALUES ('38', '326');
-INSERT INTO `jc_content_channel` VALUES ('38', '328');
-INSERT INTO `jc_content_channel` VALUES ('38', '329');
-INSERT INTO `jc_content_channel` VALUES ('38', '330');
-INSERT INTO `jc_content_channel` VALUES ('39', '331');
-INSERT INTO `jc_content_channel` VALUES ('39', '332');
-INSERT INTO `jc_content_channel` VALUES ('57', '334');
-INSERT INTO `jc_content_channel` VALUES ('57', '335');
-INSERT INTO `jc_content_channel` VALUES ('57', '336');
-INSERT INTO `jc_content_channel` VALUES ('57', '337');
-INSERT INTO `jc_content_channel` VALUES ('13', '436');
-INSERT INTO `jc_content_channel` VALUES ('13', '437');
-INSERT INTO `jc_content_channel` VALUES ('13', '438');
-INSERT INTO `jc_content_channel` VALUES ('13', '439');
-INSERT INTO `jc_content_channel` VALUES ('13', '440');
-INSERT INTO `jc_content_channel` VALUES ('13', '441');
-INSERT INTO `jc_content_channel` VALUES ('13', '442');
-INSERT INTO `jc_content_channel` VALUES ('13', '443');
-INSERT INTO `jc_content_channel` VALUES ('11', '444');
-INSERT INTO `jc_content_channel` VALUES ('13', '444');
-INSERT INTO `jc_content_channel` VALUES ('13', '445');
-INSERT INTO `jc_content_channel` VALUES ('11', '446');
-INSERT INTO `jc_content_channel` VALUES ('13', '446');
-INSERT INTO `jc_content_channel` VALUES ('12', '447');
-INSERT INTO `jc_content_channel` VALUES ('13', '447');
-INSERT INTO `jc_content_channel` VALUES ('11', '448');
-INSERT INTO `jc_content_channel` VALUES ('13', '448');
-INSERT INTO `jc_content_channel` VALUES ('49', '473');
-INSERT INTO `jc_content_channel` VALUES ('49', '474');
-INSERT INTO `jc_content_channel` VALUES ('49', '475');
-INSERT INTO `jc_content_channel` VALUES ('49', '476');
-INSERT INTO `jc_content_channel` VALUES ('49', '477');
-INSERT INTO `jc_content_channel` VALUES ('49', '478');
-INSERT INTO `jc_content_channel` VALUES ('49', '479');
-INSERT INTO `jc_content_channel` VALUES ('49', '480');
-INSERT INTO `jc_content_channel` VALUES ('50', '481');
-INSERT INTO `jc_content_channel` VALUES ('50', '482');
-INSERT INTO `jc_content_channel` VALUES ('50', '483');
-INSERT INTO `jc_content_channel` VALUES ('50', '484');
-INSERT INTO `jc_content_channel` VALUES ('43', '487');
-INSERT INTO `jc_content_channel` VALUES ('43', '488');
-INSERT INTO `jc_content_channel` VALUES ('43', '489');
-INSERT INTO `jc_content_channel` VALUES ('43', '490');
-INSERT INTO `jc_content_channel` VALUES ('43', '491');
-INSERT INTO `jc_content_channel` VALUES ('43', '492');
-INSERT INTO `jc_content_channel` VALUES ('43', '494');
-INSERT INTO `jc_content_channel` VALUES ('44', '495');
-INSERT INTO `jc_content_channel` VALUES ('44', '496');
-INSERT INTO `jc_content_channel` VALUES ('44', '497');
-INSERT INTO `jc_content_channel` VALUES ('44', '498');
-INSERT INTO `jc_content_channel` VALUES ('45', '499');
-INSERT INTO `jc_content_channel` VALUES ('45', '500');
-INSERT INTO `jc_content_channel` VALUES ('45', '501');
-INSERT INTO `jc_content_channel` VALUES ('49', '502');
-INSERT INTO `jc_content_channel` VALUES ('49', '503');
-INSERT INTO `jc_content_channel` VALUES ('49', '504');
-INSERT INTO `jc_content_channel` VALUES ('49', '505');
-INSERT INTO `jc_content_channel` VALUES ('11', '506');
-INSERT INTO `jc_content_channel` VALUES ('11', '507');
-INSERT INTO `jc_content_channel` VALUES ('11', '508');
-INSERT INTO `jc_content_channel` VALUES ('11', '509');
-INSERT INTO `jc_content_channel` VALUES ('11', '510');
-INSERT INTO `jc_content_channel` VALUES ('12', '511');
-INSERT INTO `jc_content_channel` VALUES ('13', '512');
-INSERT INTO `jc_content_channel` VALUES ('45', '513');
-INSERT INTO `jc_content_channel` VALUES ('45', '514');
-INSERT INTO `jc_content_channel` VALUES ('45', '515');
-INSERT INTO `jc_content_channel` VALUES ('45', '516');
-INSERT INTO `jc_content_channel` VALUES ('45', '517');
-INSERT INTO `jc_content_channel` VALUES ('45', '518');
-INSERT INTO `jc_content_channel` VALUES ('44', '519');
-INSERT INTO `jc_content_channel` VALUES ('44', '520');
-INSERT INTO `jc_content_channel` VALUES ('44', '521');
-INSERT INTO `jc_content_channel` VALUES ('44', '522');
-INSERT INTO `jc_content_channel` VALUES ('44', '523');
-INSERT INTO `jc_content_channel` VALUES ('44', '524');
-INSERT INTO `jc_content_channel` VALUES ('44', '525');
-INSERT INTO `jc_content_channel` VALUES ('44', '526');
-INSERT INTO `jc_content_channel` VALUES ('44', '527');
-INSERT INTO `jc_content_channel` VALUES ('44', '528');
-INSERT INTO `jc_content_channel` VALUES ('44', '529');
-INSERT INTO `jc_content_channel` VALUES ('44', '530');
-INSERT INTO `jc_content_channel` VALUES ('44', '531');
-INSERT INTO `jc_content_channel` VALUES ('44', '532');
-INSERT INTO `jc_content_channel` VALUES ('44', '533');
-INSERT INTO `jc_content_channel` VALUES ('44', '534');
-INSERT INTO `jc_content_channel` VALUES ('44', '535');
-INSERT INTO `jc_content_channel` VALUES ('12', '536');
-INSERT INTO `jc_content_channel` VALUES ('50', '539');
-INSERT INTO `jc_content_channel` VALUES ('50', '540');
-INSERT INTO `jc_content_channel` VALUES ('50', '541');
-INSERT INTO `jc_content_channel` VALUES ('12', '559');
-INSERT INTO `jc_content_channel` VALUES ('11', '560');
-INSERT INTO `jc_content_channel` VALUES ('12', '560');
-INSERT INTO `jc_content_channel` VALUES ('14', '561');
-INSERT INTO `jc_content_channel` VALUES ('14', '562');
-INSERT INTO `jc_content_channel` VALUES ('14', '563');
-INSERT INTO `jc_content_channel` VALUES ('14', '564');
-INSERT INTO `jc_content_channel` VALUES ('11', '565');
-INSERT INTO `jc_content_channel` VALUES ('12', '567');
-INSERT INTO `jc_content_channel` VALUES ('13', '568');
-INSERT INTO `jc_content_channel` VALUES ('15', '569');
-INSERT INTO `jc_content_channel` VALUES ('84', '570');
-INSERT INTO `jc_content_channel` VALUES ('43', '571');
-INSERT INTO `jc_content_channel` VALUES ('84', '572');
-INSERT INTO `jc_content_channel` VALUES ('84', '573');
-INSERT INTO `jc_content_channel` VALUES ('11', '574');
-INSERT INTO `jc_content_channel` VALUES ('84', '575');
-INSERT INTO `jc_content_channel` VALUES ('84', '576');
-INSERT INTO `jc_content_channel` VALUES ('84', '577');
-INSERT INTO `jc_content_channel` VALUES ('84', '578');
-INSERT INTO `jc_content_channel` VALUES ('84', '579');
-INSERT INTO `jc_content_channel` VALUES ('84', '580');
-INSERT INTO `jc_content_channel` VALUES ('84', '581');
-INSERT INTO `jc_content_channel` VALUES ('84', '582');
-INSERT INTO `jc_content_channel` VALUES ('84', '583');
-INSERT INTO `jc_content_channel` VALUES ('84', '584');
-INSERT INTO `jc_content_channel` VALUES ('84', '585');
-INSERT INTO `jc_content_channel` VALUES ('84', '586');
-INSERT INTO `jc_content_channel` VALUES ('84', '587');
-INSERT INTO `jc_content_channel` VALUES ('84', '588');
-INSERT INTO `jc_content_channel` VALUES ('84', '593');
-INSERT INTO `jc_content_channel` VALUES ('84', '594');
-INSERT INTO `jc_content_channel` VALUES ('84', '595');
-INSERT INTO `jc_content_channel` VALUES ('84', '596');
-INSERT INTO `jc_content_channel` VALUES ('84', '597');
-INSERT INTO `jc_content_channel` VALUES ('84', '598');
-INSERT INTO `jc_content_channel` VALUES ('84', '599');
-INSERT INTO `jc_content_channel` VALUES ('84', '600');
-INSERT INTO `jc_content_channel` VALUES ('84', '601');
-INSERT INTO `jc_content_channel` VALUES ('84', '602');
-INSERT INTO `jc_content_channel` VALUES ('84', '603');
-INSERT INTO `jc_content_channel` VALUES ('84', '604');
-INSERT INTO `jc_content_channel` VALUES ('84', '605');
-INSERT INTO `jc_content_channel` VALUES ('84', '606');
-INSERT INTO `jc_content_channel` VALUES ('84', '607');
 INSERT INTO `jc_content_channel` VALUES ('84', '608');
 INSERT INTO `jc_content_channel` VALUES ('84', '609');
 INSERT INTO `jc_content_channel` VALUES ('84', '610');
@@ -1363,6 +1086,72 @@ INSERT INTO `jc_content_channel` VALUES ('84', '626');
 INSERT INTO `jc_content_channel` VALUES ('84', '627');
 INSERT INTO `jc_content_channel` VALUES ('84', '628');
 INSERT INTO `jc_content_channel` VALUES ('84', '629');
+INSERT INTO `jc_content_channel` VALUES ('87', '630');
+INSERT INTO `jc_content_channel` VALUES ('87', '631');
+INSERT INTO `jc_content_channel` VALUES ('87', '632');
+INSERT INTO `jc_content_channel` VALUES ('87', '633');
+INSERT INTO `jc_content_channel` VALUES ('87', '634');
+INSERT INTO `jc_content_channel` VALUES ('87', '635');
+INSERT INTO `jc_content_channel` VALUES ('87', '636');
+INSERT INTO `jc_content_channel` VALUES ('87', '637');
+INSERT INTO `jc_content_channel` VALUES ('87', '638');
+INSERT INTO `jc_content_channel` VALUES ('87', '639');
+INSERT INTO `jc_content_channel` VALUES ('87', '640');
+INSERT INTO `jc_content_channel` VALUES ('87', '641');
+INSERT INTO `jc_content_channel` VALUES ('87', '642');
+INSERT INTO `jc_content_channel` VALUES ('87', '643');
+INSERT INTO `jc_content_channel` VALUES ('87', '644');
+INSERT INTO `jc_content_channel` VALUES ('87', '645');
+INSERT INTO `jc_content_channel` VALUES ('87', '646');
+INSERT INTO `jc_content_channel` VALUES ('87', '647');
+INSERT INTO `jc_content_channel` VALUES ('84', '648');
+INSERT INTO `jc_content_channel` VALUES ('84', '649');
+INSERT INTO `jc_content_channel` VALUES ('84', '650');
+INSERT INTO `jc_content_channel` VALUES ('84', '651');
+INSERT INTO `jc_content_channel` VALUES ('84', '652');
+INSERT INTO `jc_content_channel` VALUES ('84', '653');
+INSERT INTO `jc_content_channel` VALUES ('84', '654');
+INSERT INTO `jc_content_channel` VALUES ('84', '655');
+INSERT INTO `jc_content_channel` VALUES ('84', '656');
+INSERT INTO `jc_content_channel` VALUES ('84', '657');
+INSERT INTO `jc_content_channel` VALUES ('84', '658');
+INSERT INTO `jc_content_channel` VALUES ('84', '659');
+INSERT INTO `jc_content_channel` VALUES ('84', '660');
+INSERT INTO `jc_content_channel` VALUES ('84', '661');
+INSERT INTO `jc_content_channel` VALUES ('84', '662');
+INSERT INTO `jc_content_channel` VALUES ('84', '663');
+INSERT INTO `jc_content_channel` VALUES ('84', '664');
+INSERT INTO `jc_content_channel` VALUES ('84', '665');
+INSERT INTO `jc_content_channel` VALUES ('84', '666');
+INSERT INTO `jc_content_channel` VALUES ('84', '667');
+INSERT INTO `jc_content_channel` VALUES ('84', '668');
+INSERT INTO `jc_content_channel` VALUES ('84', '669');
+INSERT INTO `jc_content_channel` VALUES ('84', '670');
+INSERT INTO `jc_content_channel` VALUES ('84', '671');
+INSERT INTO `jc_content_channel` VALUES ('84', '672');
+INSERT INTO `jc_content_channel` VALUES ('84', '673');
+INSERT INTO `jc_content_channel` VALUES ('84', '674');
+INSERT INTO `jc_content_channel` VALUES ('84', '675');
+INSERT INTO `jc_content_channel` VALUES ('84', '676');
+INSERT INTO `jc_content_channel` VALUES ('87', '677');
+INSERT INTO `jc_content_channel` VALUES ('87', '678');
+INSERT INTO `jc_content_channel` VALUES ('87', '679');
+INSERT INTO `jc_content_channel` VALUES ('87', '680');
+INSERT INTO `jc_content_channel` VALUES ('87', '681');
+INSERT INTO `jc_content_channel` VALUES ('87', '682');
+INSERT INTO `jc_content_channel` VALUES ('87', '683');
+INSERT INTO `jc_content_channel` VALUES ('87', '684');
+INSERT INTO `jc_content_channel` VALUES ('87', '685');
+INSERT INTO `jc_content_channel` VALUES ('87', '686');
+INSERT INTO `jc_content_channel` VALUES ('87', '687');
+INSERT INTO `jc_content_channel` VALUES ('87', '688');
+INSERT INTO `jc_content_channel` VALUES ('87', '689');
+INSERT INTO `jc_content_channel` VALUES ('87', '690');
+INSERT INTO `jc_content_channel` VALUES ('87', '691');
+INSERT INTO `jc_content_channel` VALUES ('87', '692');
+INSERT INTO `jc_content_channel` VALUES ('87', '693');
+INSERT INTO `jc_content_channel` VALUES ('87', '694');
+INSERT INTO `jc_content_channel` VALUES ('87', '695');
 
 -- ----------------------------
 -- Table structure for jc_content_check
@@ -1384,139 +1173,6 @@ CREATE TABLE `jc_content_check` (
 -- ----------------------------
 -- Records of jc_content_check
 -- ----------------------------
-INSERT INTO `jc_content_check` VALUES ('172', '2', null, '0', '1', '2011-01-04 14:34:23');
-INSERT INTO `jc_content_check` VALUES ('173', '2', null, '0', '1', '2011-01-04 14:44:02');
-INSERT INTO `jc_content_check` VALUES ('326', '2', null, '0', '1', '2011-12-19 11:42:28');
-INSERT INTO `jc_content_check` VALUES ('328', '2', null, '0', '1', '2011-12-19 12:02:07');
-INSERT INTO `jc_content_check` VALUES ('329', '2', null, '0', '1', '2011-12-19 13:17:53');
-INSERT INTO `jc_content_check` VALUES ('330', '2', null, '0', '1', '2011-12-19 13:45:17');
-INSERT INTO `jc_content_check` VALUES ('331', '2', null, '0', '1', '2011-12-19 13:53:49');
-INSERT INTO `jc_content_check` VALUES ('332', '2', null, '0', '1', '2011-12-19 13:57:03');
-INSERT INTO `jc_content_check` VALUES ('334', '2', null, '0', '1', '2011-12-19 14:18:12');
-INSERT INTO `jc_content_check` VALUES ('335', '2', null, '0', '1', '2011-12-19 14:21:32');
-INSERT INTO `jc_content_check` VALUES ('336', '2', null, '0', '1', '2011-12-19 14:25:26');
-INSERT INTO `jc_content_check` VALUES ('337', '2', null, '0', '1', '2011-12-19 14:30:04');
-INSERT INTO `jc_content_check` VALUES ('436', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('437', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('438', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('439', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('440', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('441', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('442', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('443', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('444', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('445', '3', null, '0', '1', '2014-08-27 11:09:48');
-INSERT INTO `jc_content_check` VALUES ('446', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('447', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('448', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('473', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('474', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('475', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('476', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('477', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('478', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('479', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('480', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('481', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('482', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('483', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('484', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('487', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('488', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('489', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('490', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('491', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('492', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('494', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('495', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('496', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('497', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('498', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('499', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('500', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('501', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('502', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('503', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('504', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('505', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('506', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('507', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('508', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('509', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('510', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('511', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('512', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('513', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('514', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('515', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('516', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('517', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('518', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('519', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('520', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('521', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('522', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('523', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('524', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('525', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('526', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('527', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('528', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('529', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('530', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('531', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('532', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('533', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('534', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('535', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('536', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('539', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('540', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('541', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('559', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('560', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('561', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('562', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('563', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('564', '2', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('565', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('567', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('568', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('569', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('570', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('571', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('572', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('573', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('574', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('575', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('576', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('577', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('578', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('579', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('580', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('581', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('582', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('583', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('584', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('585', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('586', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('587', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('588', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('593', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('594', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('595', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('596', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('597', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('598', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('599', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('600', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('601', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('602', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('603', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('604', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('605', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('606', '3', null, '0', null, null);
-INSERT INTO `jc_content_check` VALUES ('607', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('608', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('609', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('610', '3', null, '0', null, null);
@@ -1539,6 +1195,72 @@ INSERT INTO `jc_content_check` VALUES ('626', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('627', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('628', '3', null, '0', null, null);
 INSERT INTO `jc_content_check` VALUES ('629', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('630', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('631', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('632', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('633', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('634', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('635', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('636', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('637', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('638', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('639', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('640', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('641', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('642', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('643', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('644', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('645', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('646', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('647', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('648', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('649', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('650', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('651', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('652', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('653', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('654', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('655', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('656', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('657', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('658', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('659', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('660', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('661', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('662', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('663', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('664', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('665', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('666', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('667', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('668', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('669', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('670', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('671', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('672', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('673', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('674', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('675', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('676', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('677', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('678', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('679', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('680', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('681', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('682', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('683', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('684', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('685', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('686', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('687', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('688', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('689', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('690', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('691', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('692', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('693', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('694', '3', null, '0', null, null);
+INSERT INTO `jc_content_check` VALUES ('695', '3', null, '0', null, null);
 
 -- ----------------------------
 -- Table structure for jc_content_count
@@ -1570,119 +1292,94 @@ CREATE TABLE `jc_content_count` (
 -- ----------------------------
 -- Records of jc_content_count
 -- ----------------------------
-INSERT INTO `jc_content_count` VALUES ('492', '19', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('494', '28', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('495', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('496', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('497', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('498', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('499', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('500', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('501', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('502', '118', '0', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('503', '91', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('504', '19', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('505', '28', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('506', '10', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('507', '20', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('508', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('509', '21', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('510', '29', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('511', '34', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('512', '63', '4', '0', '0', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('513', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('514', '9', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('515', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('516', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('517', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('518', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('519', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('520', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('521', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('522', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('523', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('524', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('525', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('526', '8', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('527', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('528', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('529', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('530', '13', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('531', '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('532', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('533', '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('534', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('535', '44', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('536', '44', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('539', '12', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('540', '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('541', '43', '33', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('559', '3', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('560', '40', '22', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('561', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('562', '4', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('563', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('564', '15', '0', '0', '0', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('565', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('567', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('568', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('569', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('570', '15', '15', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('571', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('572', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('573', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('574', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('575', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('576', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('577', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('578', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('579', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('580', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('581', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('582', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('583', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('584', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('585', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('586', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('587', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('588', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('593', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('594', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('595', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('596', '2', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('597', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('598', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('599', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('600', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('601', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('602', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('603', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('604', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('605', '10', '10', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('606', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('607', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('608', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('608', '3', '3', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('609', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('610', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('611', '6', '6', '6', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('612', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('613', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('614', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('615', '7', '7', '7', '7', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('616', '3', '3', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('611', '11', '11', '11', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('612', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('613', '6', '6', '6', '5', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('614', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('615', '9', '9', '9', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('616', '5', '5', '5', '2', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('617', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('618', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('619', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('620', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('621', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('622', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('623', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('624', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('625', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('626', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('623', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('624', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('625', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('626', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('627', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 INSERT INTO `jc_content_count` VALUES ('628', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
-INSERT INTO `jc_content_count` VALUES ('629', '3', '3', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('629', '3', '3', '3', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('630', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('631', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('632', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('633', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('634', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('635', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('636', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('637', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('638', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('639', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('640', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('641', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('642', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('643', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('644', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('645', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('646', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('647', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('648', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('649', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('650', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('651', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('652', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('653', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('654', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('655', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('656', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('657', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('658', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('659', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('660', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('661', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('662', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('663', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('664', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('665', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('666', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('667', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('668', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('669', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('670', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('671', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('672', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('673', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('674', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('675', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('676', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('677', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('678', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('679', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('680', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('681', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('682', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('683', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('684', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('685', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('686', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('687', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('688', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('689', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('690', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('691', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('692', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('693', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('694', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `jc_content_count` VALUES ('695', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_content_ext
@@ -1714,13 +1411,6 @@ CREATE TABLE `jc_content_ext` (
 -- ----------------------------
 -- Records of jc_content_ext
 -- ----------------------------
-INSERT INTO `jc_content_ext` VALUES ('601', '003_지스타2013모델 0175_720p', null, null, null, null, null, '2015-08-23 14:41:15', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group3/M07/21/65/MTAuMTAuODguODM=/5_15008eb5886g104BS56_138402438_7_7b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
-INSERT INTO `jc_content_ext` VALUES ('602', '009_지스타 2013 박시현님_720p', null, null, null, null, null, '2015-08-23 14:41:16', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group2/M02/21/65/MTAuMTAuODguODI=/5_15008ec7041g102BS56_138402442_7_3b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
-INSERT INTO `jc_content_ext` VALUES ('603', '003_지스타2013모델 0175_720p', null, null, null, null, null, '2015-08-23 14:44:11', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group3/M07/21/65/MTAuMTAuODguODM=/5_15008eb5886g104BS56_138402438_7_7b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
-INSERT INTO `jc_content_ext` VALUES ('604', '009_지스타 2013 박시현님_720p', null, null, null, null, null, '2015-08-23 14:44:12', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group2/M02/21/65/MTAuMTAuODguODI=/5_15008ec7041g102BS56_138402442_7_3b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
-INSERT INTO `jc_content_ext` VALUES ('605', '003_지스타2013모델 0175_720p', null, null, null, null, null, '2015-08-23 14:50:33', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group3/M07/21/65/MTAuMTAuODguODM=/5_15008eb5886g104BS56_138402438_7_7b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
-INSERT INTO `jc_content_ext` VALUES ('606', '009_지스타 2013 박시현님_720p', null, null, null, null, null, '2015-08-23 14:50:42', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group2/M02/21/65/MTAuMTAuODguODI=/5_15008ec7041g102BS56_138402442_7_3b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
-INSERT INTO `jc_content_ext` VALUES ('607', '003_지스타2013모델 0175_720p', null, null, null, null, null, '2015-08-23 17:02:25', null, null, null, '0', 'http://001.img.pu.sohu.com.cn/group3/M07/21/65/MTAuMTAuODguODM=/5_15008eb5886g104BS56_138402438_7_7b/cut@m=resize,w=260,h=156.jpg', null, null, null, null, '1');
 INSERT INTO `jc_content_ext` VALUES ('608', '视频: 韩国GSTAR 美女模特宣传活动 001_', null, null, null, null, 'gstar系列1', '2015-11-17 22:37:43', null, null, null, '0', 'http://r4.ykimg.com/05410101564B21856A0A41045CC5C4A9', null, null, null, null, '1');
 INSERT INTO `jc_content_ext` VALUES ('609', '视频: 韩国Gstar 美女模特宣传活动_007', null, null, null, null, 'gstar系列007', '2015-11-17 22:37:44', null, null, null, '0', 'http://r3.ykimg.com/05410101564B27A26A0A46045B8C29E5', null, null, null, null, '1');
 INSERT INTO `jc_content_ext` VALUES ('610', '视频: 韩国GSTAR 美女模特宣传活动 002_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-17 22:37:45', null, null, null, '0', 'http://r4.ykimg.com/05410101564B31116A0A41045C3A5B18', null, null, null, null, '1');
@@ -1743,6 +1433,72 @@ INSERT INTO `jc_content_ext` VALUES ('626', '视频: 3M车展 美女模特多', 
 INSERT INTO `jc_content_ext` VALUES ('627', '视频: 3M车展 美女模特多002', null, null, null, null, '3M车展 美女模特多002', '2015-11-18 15:16:12', null, null, null, '0', 'http://r3.ykimg.com/05480408564BE9DC6A0A42472EA9038B', null, null, null, null, '1');
 INSERT INTO `jc_content_ext` VALUES ('628', '视频: 3M车展 美女模特多003', null, null, null, null, '3M车展 美女模特多003', '2015-11-18 15:16:13', null, null, null, '0', 'http://r2.ykimg.com/05480408564BEB236A0A492443CECB6F', null, null, null, null, '1');
 INSERT INTO `jc_content_ext` VALUES ('629', '视频: 3M车展 美女模特多004', null, null, null, null, '3M车展 美女模特多004', '2015-11-18 15:16:14', null, null, null, '0', 'http://r4.ykimg.com/05480408564BEB9D6A0A46045A4D171D', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('630', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON003', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:12', null, null, null, '0', 'http://r3.ykimg.com/05410408564EECAD6A0A440AF1F04E41', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('631', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON005', null, null, null, null, '韩国车展 美女模特多多', '2015-11-20 23:25:13', null, null, null, '0', 'http://r4.ykimg.com/05410408564EEE1B6A0A472C19C1703B', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('632', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON001', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:13', null, null, null, '0', 'http://r3.ykimg.com/05410408564EEDA76A0A4F3B7A67AA54', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('633', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_013', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:14', null, null, null, '0', 'http://r2.ykimg.com/05410408564EEE186A0A41045BF834B7', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('634', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_012', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:15', null, null, null, '0', 'http://r2.ykimg.com/05410408564EED2C6A0A400493944EA4', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('635', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_011', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:16', null, null, null, '0', 'http://r1.ykimg.com/05410408564EEDC16A0A400495902196', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('636', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_010', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:17', null, null, null, '0', 'http://r1.ykimg.com/05410408564EEED66A0A456D654B80E5', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('637', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_009', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:18', null, null, null, '0', 'http://r2.ykimg.com/05410408564EEEF06A0A456D4BE0E2AB', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('638', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_008', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:18', null, null, null, '0', 'http://r1.ykimg.com/05410408564EEF236A0A4D045AF1AA3C', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('639', '视频: 2015韩国车展火辣女模特7', null, null, null, null, '2015韩国车展美女模特多多', '2015-11-20 23:25:19', null, null, null, '0', 'http://r2.ykimg.com/05410408564F32046A0A400494FE22DF', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('640', '视频: 2015韩国车展火辣女模特5', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:20', null, null, null, '0', 'http://r1.ykimg.com/05410408564F35D26A0A3F045C5F3DA1', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('641', '视频: 2015韩国车展火辣女模特3', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:21', null, null, null, '0', 'http://r4.ykimg.com/05410408564F33D16A0A49242E24F3B7', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('642', '视频: 2015韩国车展火辣女模特2', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:22', null, null, null, '0', 'http://r1.ykimg.com/05480408564F31296A0A41044BD18616', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('643', '视频: 2015韩国车展 火辣女模特1', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:23', null, null, null, '0', 'http://r4.ykimg.com/05410408564F315E6A0A4D045F5047A9', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('644', '视频: 2015韩国车展火辣美女模特多12', null, null, null, null, '2015韩国车展美女模特', '2015-11-20 23:25:24', null, null, null, '0', 'http://r3.ykimg.com/05480408564F38726A0A4B3344AEBA3F', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('645', '视频: 2015韩国车展火辣美女模特多9', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:24', null, null, null, '0', 'http://r4.ykimg.com/05410408564F39116A0A4C0500A6B811', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('646', '视频: 2015韩国车展火辣美女模特多6', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:25', null, null, null, '0', 'http://r2.ykimg.com/05410408564F379F6A0A4604569DB542', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('647', '视频: 2015韩国车展火辣美女模特8', null, null, null, null, '稍后补充视频简介', '2015-11-20 23:25:26', null, null, null, '0', 'http://r2.ykimg.com/05480408564F385E6A0A4C05007BD937', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('648', '视频: 3M车展 美女模特多005', null, null, null, null, '3M车展 美女模特多005', '2015-11-20 23:25:49', null, null, null, '0', 'http://r3.ykimg.com/05410408564DAA116A0A456D5060382D', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('649', '视频: 3M车展 美女模特多006', null, null, null, null, '3M车展 美女模特多006', '2015-11-20 23:25:50', null, null, null, '0', 'http://r3.ykimg.com/05410408564D9C346A0A440B0B1C43BE', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('650', '视频: 3M车展 美女模特多007', null, null, null, null, '3M车展 美女模特多007', '2015-11-20 23:25:51', null, null, null, '0', 'http://r1.ykimg.com/05410408564DAAE46A0A4804E4ADA6F3', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('651', '视频: 3M车展 美女模特多008', null, null, null, null, '3M车展 美女模特多008', '2015-11-20 23:25:52', null, null, null, '0', 'http://r2.ykimg.com/05410408564DABF76A0A4F3B71E32D33', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('652', '视频: 韩国GSTAR 美女模特宣传活动 001_', null, null, null, null, 'gstar系列1', '2015-11-21 16:06:01', null, null, null, '0', 'http://r3.ykimg.com/05410101564B21856A0A41045CC5C4A9', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('653', '视频: 韩国Gstar 美女模特宣传活动_007', null, null, null, null, 'gstar系列007', '2015-11-21 16:06:04', null, null, null, '0', 'http://r1.ykimg.com/05410101564B27A26A0A46045B8C29E5', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('654', '视频: 韩国GSTAR 美女模特宣传活动 002_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:06', null, null, null, '0', 'http://r4.ykimg.com/05410101564B31116A0A41045C3A5B18', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('655', '视频: 韩国GSTAR 美女模特宣传活动 003', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:08', null, null, null, '0', 'http://r3.ykimg.com/05410101564B31966A0A4247332C85B3', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('656', '视频: 韩国GSTAR 美女模特宣传活动 004_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:11', null, null, null, '0', 'http://r2.ykimg.com/05480408564B32BE6A0A456D58F1BF3F', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('657', '视频: 韩国GSTAR 美女模特宣传活动 005_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:13', null, null, null, '0', 'http://r4.ykimg.com/05410101564B39546A0A46044581CC52', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('658', '视频: 韩国GSTAR 美女模特宣传活动 006_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:15', null, null, null, '0', 'http://r4.ykimg.com/05480408564B358D6A0A3F045E0EDD84', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('659', '视频: 韩国GSTAR 美女模特宣传活动 008_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:17', null, null, null, '0', 'http://r3.ykimg.com/05480408564B358D6A0A3F045E0EDD84', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('660', '视频: 韩国GSTAR 美女模特宣传活动 009_', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:20', null, null, null, '0', 'http://r3.ykimg.com/05480408564B39CD6A0A4D046C0E19E4', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('661', '视频: 韩国GSTAR 美女模特宣传活动 010', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:22', null, null, null, '0', 'http://r2.ykimg.com/05410408564BE00C6A0A4304E30A8027', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('662', '视频: 韩国GSTAR 美女模特宣传活动 011', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:24', null, null, null, '0', 'http://r3.ykimg.com/05410408564BE2706A0A40047D084B74', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('663', '视频: 韩国GSTAR 美女模特宣传活动 012', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:26', null, null, null, '0', 'http://r1.ykimg.com/05410408564BE3F36A0A4B33461F5BE5', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('664', '视频: 韩国GSTAR 美女模特宣传活动 013', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:28', null, null, null, '0', 'http://r4.ykimg.com/05410408564BE1E96A0A4C04FFE399D8', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('665', '视频: 韩国GSTAR 美女模特宣传活动 014', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:31', null, null, null, '0', 'http://r4.ykimg.com/05410408564BE29B6A0A3F0451E1C77E', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('666', '视频: 韩国GSTAR 美女模特宣传活动 015', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:33', null, null, null, '0', 'http://r4.ykimg.com/05410408564BE3CA6A0A49243CAC762B', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('667', '视频: 韩国GSTAR 美女模特宣传活动 016', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:35', null, null, null, '0', 'http://r4.ykimg.com/05410408564BE4556A0A4B3341A85812', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('668', '视频: 韩国GSTAR 美女模特宣传活动 017', null, null, null, null, '韩国GSTAR 美女模特宣传活动', '2015-11-21 16:06:38', null, null, null, '0', 'http://r1.ykimg.com/05410408564BE4A96A0A4804E4208766', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('669', '视频: 3M车展 美女模特多', null, null, null, null, '3M车展 美女模特多', '2015-11-21 16:06:42', null, null, null, '0', 'http://r4.ykimg.com/05480408564BE9806A0A472C33D16DC1', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('670', '视频: 3M车展 美女模特多002', null, null, null, null, '3M车展 美女模特多002', '2015-11-21 16:06:44', null, null, null, '0', 'http://r4.ykimg.com/05480408564BE9DC6A0A42472EA9038B', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('671', '视频: 3M车展 美女模特多003', null, null, null, null, '3M车展 美女模特多003', '2015-11-21 16:06:46', null, null, null, '0', 'http://r1.ykimg.com/05480408564BEB236A0A492443CECB6F', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('672', '视频: 3M车展 美女模特多004', null, null, null, null, '3M车展 美女模特多004', '2015-11-21 16:06:49', null, null, null, '0', 'http://r3.ykimg.com/05480408564BEB9D6A0A46045A4D171D', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('673', '视频: 3M车展 美女模特多005', null, null, null, null, '3M车展 美女模特多005', '2015-11-21 16:06:51', null, null, null, '0', 'http://r2.ykimg.com/05410408564DAA116A0A456D5060382D', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('674', '视频: 3M车展 美女模特多006', null, null, null, null, '3M车展 美女模特多006', '2015-11-21 16:06:53', null, null, null, '0', 'http://r2.ykimg.com/05410408564D9C346A0A440B0B1C43BE', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('675', '视频: 3M车展 美女模特多007', null, null, null, null, '3M车展 美女模特多007', '2015-11-21 16:06:56', null, null, null, '0', 'http://r3.ykimg.com/05410408564DAAE46A0A4804E4ADA6F3', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('676', '视频: 3M车展 美女模特多008', null, null, null, null, '3M车展 美女模特多008', '2015-11-21 16:06:58', null, null, null, '0', 'http://r4.ykimg.com/05410408564DABF76A0A4F3B71E32D33', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('677', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON003', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:10', null, null, null, '0', 'http://r4.ykimg.com/05410408564EECAD6A0A440AF1F04E41', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('678', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON001', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:12', null, null, null, '0', 'http://r2.ykimg.com/05410408564EEDA76A0A4F3B7A67AA54', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('679', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_013', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:15', null, null, null, '0', 'http://r1.ykimg.com/05410408564EEE186A0A41045BF834B7', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('680', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_012', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:17', null, null, null, '0', 'http://r4.ykimg.com/05410408564EED2C6A0A400493944EA4', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('681', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_011', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:20', null, null, null, '0', 'http://r4.ykimg.com/05410408564EEDC16A0A400495902196', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('682', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_010', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:22', null, null, null, '0', 'http://r3.ykimg.com/05410408564EEED66A0A456D654B80E5', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('683', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_009', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:24', null, null, null, '0', 'http://r4.ykimg.com/05410408564EEEF06A0A456D4BE0E2AB', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('684', '视频: 2014韩国首尔车展 美女模特多多SEOUL AUTO SALON_008', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:27', null, null, null, '0', 'http://r1.ykimg.com/05410408564EEF236A0A4D045AF1AA3C', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('685', '视频: 2015韩国车展火辣女模特7', null, null, null, null, '2015韩国车展美女模特多多', '2015-11-21 16:08:29', null, null, null, '0', 'http://r2.ykimg.com/05410408564F32046A0A400494FE22DF', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('686', '视频: 2015韩国车展火辣女模特5', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:31', null, null, null, '0', 'http://r3.ykimg.com/05410408564F3C356A0A400486746759', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('687', '视频: 2015韩国车展火辣女模特3', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:33', null, null, null, '0', 'http://r3.ykimg.com/05410408564F33D16A0A49242E24F3B7', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('688', '视频: 2015韩国车展火辣女模特2', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:36', null, null, null, '0', 'http://r2.ykimg.com/05480408564F31296A0A41044BD18616', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('689', '视频: 2015韩国车展 火辣女模特1', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:38', null, null, null, '0', 'http://r4.ykimg.com/05410408564F315E6A0A4D045F5047A9', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('690', '视频: 2015韩国车展火辣美女模特多11', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:40', null, null, null, '0', 'http://r3.ykimg.com/05480408564F3F186A0A4804E3DF9208', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('691', '视频: 2015韩国车展火辣美女模特多12', null, null, null, null, '2015韩国车展美女模特', '2015-11-21 16:08:43', null, null, null, '0', 'http://r2.ykimg.com/05480408564F38726A0A4B3344AEBA3F', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('692', '视频: 2015韩国车展火辣美女模特多10', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:45', null, null, null, '0', 'http://r2.ykimg.com/05410408564F3F686A0A3F045965C655', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('693', '视频: 2015韩国车展火辣美女模特多9', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:47', null, null, null, '0', 'http://r3.ykimg.com/05410408564F39116A0A4C0500A6B811', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('694', '视频: 2015韩国车展火辣美女模特多6', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:49', null, null, null, '0', 'http://r1.ykimg.com/05410408564F379F6A0A4604569DB542', null, null, null, null, '1');
+INSERT INTO `jc_content_ext` VALUES ('695', '视频: 2015韩国车展火辣美女模特8', null, null, null, null, '稍后补充视频简介', '2015-11-21 16:08:52', null, null, null, '0', 'http://r1.ykimg.com/05480408564F385E6A0A4C05007BD937', null, null, null, null, '1');
 
 -- ----------------------------
 -- Table structure for jc_content_group_view
@@ -1777,194 +1533,6 @@ CREATE TABLE `jc_content_picture` (
 -- ----------------------------
 -- Records of jc_content_picture
 -- ----------------------------
-INSERT INTO `jc_content_picture` VALUES ('487', '0', '/u/cms/www/201309/11174436pnoi.jpg', '金马50惊喜连连，金马国际影展也端出超级菜色，继公布蔡明亮新作《郊游》担任开幕片，昨天（9月9日）发布的首波片单，聚焦两位当今最受期待的大师候选人，一位是甫以《蓝色是最温暖的颜色》荣获本届戛纳影展金棕榈奖的法国导演阿布戴柯西胥，一位是以《分居风暴》囊括柏林影展金熊奖与奥斯卡最佳外语片的伊朗导演阿斯哈法哈蒂。金马影展不仅会放映他们最新得奖作品，还把两人所有影片一网打尽，让影迷完整见证他们创作历程，探勘大师如何养成。');
-INSERT INTO `jc_content_picture` VALUES ('487', '1', '/u/cms/www/201309/11174439eb3l.jpg', '《海滩的那一天》让法哈蒂首夺柏林影展最佳导演');
-INSERT INTO `jc_content_picture` VALUES ('487', '2', '/u/cms/www/201309/1117444317kg.jpg', '阿布戴柯西胥（Abdellatif Kechiche）是有北非血統的法籍导演');
-INSERT INTO `jc_content_picture` VALUES ('487', '3', '/u/cms/www/201309/111744466aux.jpg', '阿斯哈法哈蒂（Asghar Farhadi）是把伊朗从单纯写实带向错综复杂的代表性人物');
-INSERT INTO `jc_content_picture` VALUES ('488', '0', '/u/cms/www/201309/111737053v9i.jpg', '由华谊兄弟出品发行，鬼才导演徐克执导，“金手指”陈国富监制，华谊兄弟总裁王中磊任总制片的古装悬疑巨制《狄仁杰之神都龙王》近日公布了终极预告片，片中曝光了龙王、巨兽、水下神驹等令人震撼的元素，让观众瞠目结舌，而片中“手臂长出怪草”和“朝堂之上惊现毒虫”的镜头则让观众在震撼之外增添了几分好奇。');
-INSERT INTO `jc_content_picture` VALUES ('488', '1', '/u/cms/www/201309/11173708ffx2.jpg', '由华谊兄弟出品发行，鬼才导演徐克执导，“金手指”陈国富监制，华谊兄弟总裁王中磊任总制片的古装悬疑巨制《狄仁杰之神都龙王》近日公布了终极预告片，片中曝光了龙王、巨兽、水下神驹等令人震撼的元素，让观众瞠目结舌，而片中“手臂长出怪草”和“朝堂之上惊现毒虫”的镜头则让观众在震撼之外增添了几分好奇。');
-INSERT INTO `jc_content_picture` VALUES ('488', '2', '/u/cms/www/201309/11173711toqx.jpg', '由华谊兄弟出品发行，鬼才导演徐克执导，“金手指”陈国富监制，华谊兄弟总裁王中磊任总制片的古装悬疑巨制《狄仁杰之神都龙王》近日公布了终极预告片，片中曝光了龙王、巨兽、水下神驹等令人震撼的元素，让观众瞠目结舌，而片中“手臂长出怪草”和“朝堂之上惊现毒虫”的镜头则让观众在震撼之外增添了几分好奇。');
-INSERT INTO `jc_content_picture` VALUES ('488', '3', '/u/cms/www/201309/11173719ykxk.jpg', '由华谊兄弟出品发行，鬼才导演徐克执导，“金手指”陈国富监制，华谊兄弟总裁王中磊任总制片的古装悬疑巨制《狄仁杰之神都龙王》近日公布了终极预告片，片中曝光了龙王、巨兽、水下神驹等令人震撼的元素，让观众瞠目结舌，而片中“手臂长出怪草”和“朝堂之上惊现毒虫”的镜头则让观众在震撼之外增添了几分好奇。');
-INSERT INTO `jc_content_picture` VALUES ('488', '4', '/u/cms/www/201309/11173718do4k.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('488', '5', '/u/cms/www/201309/11173724ul7o.jpg', '由华谊兄弟出品发行，鬼才导演徐克执导，“金手指”陈国富监制，华谊兄弟总裁王中磊任总制片的古装悬疑巨制《狄仁杰之神都龙王》近日公布了终极预告片，片中曝光了龙王、巨兽、水下神驹等令人震撼的元素，让观众瞠目结舌，而片中“手臂长出怪草”和“朝堂之上惊现毒虫”的镜头则让观众在震撼之外增添了几分好奇。');
-INSERT INTO `jc_content_picture` VALUES ('489', '0', '/u/cms/www/201309/11173244ggfv.jpg', '“亚洲舞王”南贤俊演绎魔尸金刚“疯猿”');
-INSERT INTO `jc_content_picture` VALUES ('489', '1', '/u/cms/www/201309/1117323496nx.jpg', '《金刚王?死亡救赎》三战之“伤坛”海报');
-INSERT INTO `jc_content_picture` VALUES ('489', '2', '/u/cms/www/201309/11173222qknp.jpg', '金刚王释延能神情凝重');
-INSERT INTO `jc_content_picture` VALUES ('489', '3', '/u/cms/www/201309/111732181p5u.jpg', '魔尸金刚“疯猿”阴狠毒辣');
-INSERT INTO `jc_content_picture` VALUES ('489', '4', '/u/cms/www/201309/11173213qlec.jpg', '释延能、南贤俊“伤坛”对决');
-INSERT INTO `jc_content_picture` VALUES ('489', '5', '/u/cms/www/201309/11173208w8ji.jpg', '释延能、南贤俊水下激烈对打');
-INSERT INTO `jc_content_picture` VALUES ('490', '0', '/u/cms/www/201309/11172127ltqx.jpg', '集中焚烧染病而死的士兵');
-INSERT INTO `jc_content_picture` VALUES ('490', '1', '/u/cms/www/201309/111721308eyj.jpg', '军营病况危急 士兵带面巾制药');
-INSERT INTO `jc_content_picture` VALUES ('490', '2', '/u/cms/www/201309/11172134wikw.jpg', '满城瘟疫弥漫 士兵屠宰战马');
-INSERT INTO `jc_content_picture` VALUES ('490', '3', '/u/cms/www/201309/11172137nwy5.jpg', '孙传庭检阅出战士兵');
-INSERT INTO `jc_content_picture` VALUES ('491', '0', '/u/cms/www/201309/11171546aux9.jpg', '网易娱乐9月11日报道 由海清、张译、芦芳生联袂主演的都市生活轻喜剧《抹布女也有春天》，以火爆网络的“女汉子”都市新女性造型，及热门的抹布女话题新一轮收视正在节节攀升至0.9。该剧接连不断的搞笑故事情节和主演们夸张的漫画式表演，新婚之夜海清和张译二人在床上甜蜜一吻时，海清身下的床板突然塌陷，两人只能相视的尴尬一笑。后续中并上演着激情床戏部份，颠覆帅气女汉子。');
-INSERT INTO `jc_content_picture` VALUES ('491', '1', '/u/cms/www/201309/111715499z6t.jpg', '海清张译裸戏搞笑');
-INSERT INTO `jc_content_picture` VALUES ('491', '2', '/u/cms/www/201309/11171553t5kf.jpg', '甜蜜爱情温暖相拥');
-INSERT INTO `jc_content_picture` VALUES ('491', '3', '/u/cms/www/201309/11171558kiit.jpg', '《抹布女》剧照');
-INSERT INTO `jc_content_picture` VALUES ('491', '4', '/u/cms/www/201309/11171603em6o.jpg', '张译上裸爆笑床照');
-INSERT INTO `jc_content_picture` VALUES ('491', '5', '/u/cms/www/201309/11171606wnmy.jpg', '夫妻共枕');
-INSERT INTO `jc_content_picture` VALUES ('492', '0', '/u/cms/www/201309/11171054ja61.jpg', '张国立紧紧抱住王雅捷');
-INSERT INTO `jc_content_picture` VALUES ('492', '1', '/u/cms/www/201309/11171058td8f.jpg', '艾娇娇让人心生爱怜');
-INSERT INTO `jc_content_picture` VALUES ('492', '2', '/u/cms/www/201309/11171102ae78.jpg', '王雅捷大闹新居');
-INSERT INTO `jc_content_picture` VALUES ('492', '3', '/u/cms/www/201309/11171106qaui.jpg', '王雅捷深陷情感纠葛');
-INSERT INTO `jc_content_picture` VALUES ('492', '4', '/u/cms/www/201309/11171109m2sr.jpg', '王雅捷内心痛楚');
-INSERT INTO `jc_content_picture` VALUES ('494', '0', '/u/cms/www/201309/11165640djk4.jpg', ' 网易娱乐9月11日报道 由上海好剧影视有限公司、上海宜辰工作室联合出品，何润东、李沁、阚清子、张勋杰联袂主演的大型情感励志剧《璀璨人生》正在湖南卫视金鹰独播剧场热播。剧中，“高富帅”何润东爱上了“灰姑娘”李沁，在童话般的国度——瑞士浪漫谱写“璀璨人生”。  ');
-INSERT INTO `jc_content_picture` VALUES ('494', '1', '/u/cms/www/201309/111656366w4b.jpg', '何润东与李沁');
-INSERT INTO `jc_content_picture` VALUES ('494', '2', '/u/cms/www/201309/11165633po01.jpg', '何润东携手李沁寻真爱');
-INSERT INTO `jc_content_picture` VALUES ('494', '3', '/u/cms/www/201309/111656292jx9.jpg', '何润东恋上李沁');
-INSERT INTO `jc_content_picture` VALUES ('494', '4', '/u/cms/www/201309/11165624319n.jpg', '何润东李沁异国浪漫恋爱');
-INSERT INTO `jc_content_picture` VALUES ('494', '5', '/u/cms/www/201309/11165619lkm8.jpg', '何润东李沁情定瑞士');
-INSERT INTO `jc_content_picture` VALUES ('506', '0', '/u/cms/www/201309/22100555lytj.jpg', '9月9日，出事的客车残骸。云南省大理州云龙县只嘎村一桥梁9月8日因山洪泥石流灾害突然断裂，导致一辆大客车和一辆微型车坠河。截至目前已经导致4人死亡，7人失踪，26人受伤送往医院治疗。中新社发 王星皓 摄\r\n');
-INSERT INTO `jc_content_picture` VALUES ('506', '1', '/u/cms/www/201309/22100558gfsb.jpg', '9月9日，出事的客车残骸。云南省大理州云龙县只嘎村一桥梁9月8日因山洪泥石流灾害突然断裂，导致一辆大客车和一辆微型车坠河。截至目前已经导致4人死亡，7人失踪，26人受伤送往医院治疗。中新社发 王星皓 摄\r\n');
-INSERT INTO `jc_content_picture` VALUES ('506', '2', '/u/cms/www/201309/22100601l1us.jpg', '9月9日，出事的客车残骸。云南省大理州云龙县只嘎村一桥梁9月8日因山洪泥石流灾害突然断裂，导致一辆大客车和一辆微型车坠河。截至目前已经导致4人死亡，7人失踪，26人受伤送往医院治疗。中新社发 王星皓 摄\r\n');
-INSERT INTO `jc_content_picture` VALUES ('506', '3', '/u/cms/www/201309/22100606t8mw.jpg', '9月9日，出事的客车残骸。云南省大理州云龙县只嘎村一桥梁9月8日因山洪泥石流灾害突然断裂，导致一辆大客车和一辆微型车坠河。截至目前已经导致4人死亡，7人失踪，26人受伤送往医院治疗。中新社发 王星皓 摄\r\n');
-INSERT INTO `jc_content_picture` VALUES ('506', '4', '/u/cms/www/201309/22100611o2gl.jpg', '9月9日，出事的客车残骸。云南省大理州云龙县只嘎村一桥梁9月8日因山洪泥石流灾害突然断裂，导致一辆大客车和一辆微型车坠河。截至目前已经导致4人死亡，7人失踪，26人受伤送往医院治疗。中新社发 王星皓 摄\r\n');
-INSERT INTO `jc_content_picture` VALUES ('510', '0', '/u/cms/www/201309/22094752xoxd.jpg', '澳门大学横琴新校区围墙外，围栏上间隔一段就悬挂了“严禁翻越澳门大学围墙，违者将予以行政处罚”字样的警示横幅。\r\n ');
-INSERT INTO `jc_content_picture` VALUES ('510', '1', '/u/cms/www/201309/22094906lrj8.jpg', '澳门大学横琴新校区图书馆。新华社记者张金加摄');
-INSERT INTO `jc_content_picture` VALUES ('510', '2', '/u/cms/www/201309/22094911xe9x.jpg', '2013年7月19日拍摄的横琴岛澳门大学新校区。横琴校区采用澳门法律管治，以围栏和人工河与横琴岛其他区域隔离，并在澳门路氹城和横琴校区之间设置唯一的出入口，透过一条澳门首条的人车两用海底隧道连接两岸，方便澳大教师学生在毋须过关的情况下便可以上班上学。 新华社记者 魏蒙 摄\r\n');
-INSERT INTO `jc_content_picture` VALUES ('510', '3', '/u/cms/www/201309/22094915t8h1.jpg', ' 澳门大学横琴新校区大会堂。新华社记者张金加摄');
-INSERT INTO `jc_content_picture` VALUES ('510', '4', '/u/cms/www/201309/22094918gnze.jpg', '7月19日，工人们在横琴岛澳门大学新校区清运建筑垃圾。澳门大学校园的水、电、燃气、通讯、警察、消防和邮政等服务均由澳门提供，与澳门本地无异。 新华社记者 魏蒙 摄');
-INSERT INTO `jc_content_picture` VALUES ('511', '0', '/u/cms/www/201309/22093458gynd.jpg', '9月9日，毛泽东亲属、身边工作人员来到毛泽东纪念堂。他们是：毛泽东侄女毛小青（右五）、侄外孙女毛雅慧（左二），毛泽东身边工作人员钱嗣杰（右四）、张木齐（左四）、刘学骞（左三）、曾文（右三）。（中红网李学叶摄）');
-INSERT INTO `jc_content_picture` VALUES ('511', '1', '/u/cms/www/201309/22093502mmft.jpg', '女儿李敏率子孙向毛泽东敬献的花篮。（中红网李学叶摄）');
-INSERT INTO `jc_content_picture` VALUES ('511', '2', '/u/cms/www/201309/22093506l8pv.jpg', '毛泽东身边工作人员在毛主席纪念堂。自左至右为：曾文、周福明、林增升、张木齐、王笃恭。（中红网郑全摄）');
-INSERT INTO `jc_content_picture` VALUES ('511', '3', '/u/cms/www/201309/22093509qm3l.jpg', '毛泽东身边工作人员王笃恭（右三）、耿福东（右四）、张木齐（左二）和中国毛体书法艺术研究会常务副会长刘桂芳（左一）在毛主席纪念堂。（中红网李学叶摄）');
-INSERT INTO `jc_content_picture` VALUES ('511', '4', '/u/cms/www/201309/22093513srmf.jpg', ' 毛岸英生前妻子刘思齐（左一）与毛泽东侄外孙女毛雅慧在毛主席纪念堂。（中）（中红网李学叶摄）');
-INSERT INTO `jc_content_picture` VALUES ('513', '0', '/u/cms/www/201309/12105715powr.jpg', '北影开学第一天');
-INSERT INTO `jc_content_picture` VALUES ('513', '1', '/u/cms/www/201309/12105715u0i2.jpg', '北影开学第一天');
-INSERT INTO `jc_content_picture` VALUES ('513', '2', '/u/cms/www/201309/12105716f0ks.jpg', '北影开学第一天');
-INSERT INTO `jc_content_picture` VALUES ('513', '3', '/u/cms/www/201309/12105716avso.jpg', '北影开学第一天');
-INSERT INTO `jc_content_picture` VALUES ('513', '4', '/u/cms/www/201309/12105716u081.jpg', '北影开学第一天');
-INSERT INTO `jc_content_picture` VALUES ('513', '5', '/u/cms/www/201309/12105717rgdv.jpg', '北影开学第一天');
-INSERT INTO `jc_content_picture` VALUES ('514', '0', '/u/cms/www/201309/12110240hrzh.jpg', '北影表演系新生自曝K歌照');
-INSERT INTO `jc_content_picture` VALUES ('514', '1', '/u/cms/www/201309/12110145r34m.jpg', '北影表演系新生K歌竖中指');
-INSERT INTO `jc_content_picture` VALUES ('514', '2', '/u/cms/www/201309/121101457hlo.jpg', '北影表演系新生自曝K歌照');
-INSERT INTO `jc_content_picture` VALUES ('514', '3', '/u/cms/www/201309/12110146fexh.jpg', '北影表演系新生自曝K歌照');
-INSERT INTO `jc_content_picture` VALUES ('514', '4', '/u/cms/www/201309/12110146ynj3.jpg', '北影表演系新生自曝K歌照');
-INSERT INTO `jc_content_picture` VALUES ('515', '0', '/u/cms/www/201309/12110726rqp4.jpg', '中戏2013级开学典礼');
-INSERT INTO `jc_content_picture` VALUES ('515', '1', '/u/cms/www/201309/12110726kcxc.jpg', '中戏2013级开学典礼');
-INSERT INTO `jc_content_picture` VALUES ('515', '2', '/u/cms/www/201309/1211072762wj.jpg', '中戏2013级开学典礼');
-INSERT INTO `jc_content_picture` VALUES ('515', '3', '/u/cms/www/201309/121107270owq.jpg', '中戏2013级开学典礼');
-INSERT INTO `jc_content_picture` VALUES ('515', '4', '/u/cms/www/201309/12110728cz8z.jpg', '中戏2013级开学典礼');
-INSERT INTO `jc_content_picture` VALUES ('515', '5', '/u/cms/www/201309/12110728hvna.jpg', '中戏2013级开学典礼');
-INSERT INTO `jc_content_picture` VALUES ('516', '0', '/u/cms/www/201309/12111106zad3.jpg', '1994年8月27日，三峡坝区三斗坪镇东岳庙村10组移民黎开英的儿子望军，以651分的好成绩考入清华大学汽车工程系，该村的乡亲们纷纷来到他家祝贺。摄影/周国强/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('516', '1', '/u/cms/www/201309/12111106zedy.jpg', '1977年冬天，中断了十年又重新恢复的高考制度，开始改变这个庞大国家无数人的命运。一纸试卷废除了“推荐上大学”，给当时渴望改变命运的人们一个公平竞争的机会。很多人借此叩开了另一个世界的大门，走上辉煌的人生道路。');
-INSERT INTO `jc_content_picture` VALUES ('516', '2', '/u/cms/www/201309/12111106lobh.jpg', '1977年的招生对象为工人、农民、上山下乡和回乡知识青年、复原军人、干部和应届毕业生。');
-INSERT INTO `jc_content_picture` VALUES ('516', '3', '/u/cms/www/201309/12111106jy1l.jpg', '1980年，开考前两名女生在交谈。她们的笑容给沉闷的考场带来一丝轻松的气息。摄影/任曙林');
-INSERT INTO `jc_content_picture` VALUES ('516', '4', '/u/cms/www/201309/12111107ctqg.jpg', '1980年，高中教师于大卫在考场外鼓励学生。摄影/任曙林');
-INSERT INTO `jc_content_picture` VALUES ('516', '5', '/u/cms/www/201309/12111107l4wg.jpg', '1986年，江苏省滨海县只有宋红斌一人通过艺术院校的复试，有参加高考的资格，因此考场里只有他一个人。这张准考证属于宋红斌。');
-INSERT INTO `jc_content_picture` VALUES ('517', '0', '/u/cms/www/201309/12111518vk7v.jpg', '针对富人家的孩子，已经有一整套完善的产业链为他们服务，从高中的升学咨询指导到上文提到的大学管家式服务，而且获利不菲，例如帮助学生申请大学的升学指导服务的收费约为28995美元');
-INSERT INTO `jc_content_picture` VALUES ('517', '1', '/u/cms/www/201309/12111518l3p5.jpg', '在美国，日趋上涨的大学花费已经严重威胁到了低收入家庭的学生，大量学生即使在毕业四五年后还身背学债。而另一方面，一种迎合富人家庭大学生的服务新模式已经出现。');
-INSERT INTO `jc_content_picture` VALUES ('517', '2', '/u/cms/www/201309/12111518igwr.jpg', '216华尔街日报最近就报道了一家新成立的公司“波士顿大学顾问集团');
-INSERT INTO `jc_content_picture` VALUES ('517', '3', '/u/cms/www/201309/12111518kvd2.jpg', '几个波士顿地区的学生接受采访时说，他们雇用“波士顿大学顾问集团”来帮他们完成任务，比如说买300瓶MerleNorman的香水并运到沙特阿拉伯，等待水管工，支付超速罚单等等');
-INSERT INTO `jc_content_picture` VALUES ('517', '4', '/u/cms/www/201309/121115195muw.jpg', '“波士顿大学顾问集团”的创始人AJRich告诉赫芬顿邮报说，这种类型的管家式服务已经早就出现了');
-INSERT INTO `jc_content_picture` VALUES ('517', '5', '/u/cms/www/201309/12111519tyc2.jpg', '他认为他的公司所做的是“赋予学生更多的权利”而不是把他们当婴儿一样纵容，他还说公司的服务事实上很划算：“我们的同行收费可是我们的三倍”。');
-INSERT INTO `jc_content_picture` VALUES ('518', '0', '/u/cms/www/201309/12112124imh5.jpg', '9月7日晚，在武汉华中师范大学佑铭体育馆内，400余名学生家长集体打地铺过夜。楚林/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('518', '1', '/u/cms/www/201309/121121253f1z.jpg', '9月7日晚，在武汉华中师范大学佑铭体育馆内，400余名学生家长集体打地铺过夜。楚林/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('518', '2', '/u/cms/www/201309/121121265tk1.jpg', '9月7日晚，在武汉华中师范大学佑铭体育馆内，400余名学生家长集体打地铺过夜。楚林/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('518', '3', '/u/cms/www/201309/121121267h0z.jpg', '9月7日晚，在武汉华中师范大学佑铭体育馆内，400余名学生家长集体打地铺过夜。楚林/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('518', '4', '/u/cms/www/201309/12112127795n.jpg', '9月7日晚，在武汉华中师范大学佑铭体育馆内，400余名学生家长集体打地铺过夜。楚林/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('518', '5', '/u/cms/www/201309/12112128ltfy.jpg', '9月7日晚，在武汉华中师范大学佑铭体育馆内，400余名学生家长集体打地铺过夜。楚林/东方IC');
-INSERT INTO `jc_content_picture` VALUES ('519', '0', '/u/cms/www/201309/12120435rmvm.jpg', '李冰冰');
-INSERT INTO `jc_content_picture` VALUES ('519', '1', '/u/cms/www/201309/12120436on4w.jpg', '李冰冰');
-INSERT INTO `jc_content_picture` VALUES ('519', '2', '/u/cms/www/201309/121204384v5d.jpg', '李冰冰');
-INSERT INTO `jc_content_picture` VALUES ('519', '3', '/u/cms/www/201309/121204408a3o.jpg', '李冰冰');
-INSERT INTO `jc_content_picture` VALUES ('519', '4', '/u/cms/www/201309/1212044200gm.jpg', '李冰冰');
-INSERT INTO `jc_content_picture` VALUES ('520', '0', '/u/cms/www/201309/12134158qzrx.jpg', '刘德华');
-INSERT INTO `jc_content_picture` VALUES ('520', '1', '/u/cms/www/201309/12134158q84h.jpg', '刘德华');
-INSERT INTO `jc_content_picture` VALUES ('520', '2', '/u/cms/www/201309/12134159kbxa.jpg', '刘德华');
-INSERT INTO `jc_content_picture` VALUES ('520', '3', '/u/cms/www/201309/12134159robe.jpg', '刘德华');
-INSERT INTO `jc_content_picture` VALUES ('520', '4', '/u/cms/www/201309/121341597c2x.jpg', '刘德华');
-INSERT INTO `jc_content_picture` VALUES ('520', '5', '/u/cms/www/201309/12134200cwyl.jpg', '刘德华');
-INSERT INTO `jc_content_picture` VALUES ('521', '0', '/u/cms/www/201309/12134450mwvm.jpg', '全智贤');
-INSERT INTO `jc_content_picture` VALUES ('521', '1', '/u/cms/www/201309/12134450lo6n.jpg', '全智贤');
-INSERT INTO `jc_content_picture` VALUES ('521', '2', '/u/cms/www/201309/12134451j9p9.jpg', '全智贤');
-INSERT INTO `jc_content_picture` VALUES ('521', '3', '/u/cms/www/201309/12134451k1zj.jpg', '全智贤');
-INSERT INTO `jc_content_picture` VALUES ('521', '4', '/u/cms/www/201309/12134452b2g1.jpg', '全智贤');
-INSERT INTO `jc_content_picture` VALUES ('521', '5', '/u/cms/www/201309/12134452bb5z.jpg', '全智贤');
-INSERT INTO `jc_content_picture` VALUES ('522', '0', '/u/cms/www/201309/121348109k92.jpg', '王智');
-INSERT INTO `jc_content_picture` VALUES ('522', '1', '/u/cms/www/201309/121348103ux5.jpg', '王智');
-INSERT INTO `jc_content_picture` VALUES ('522', '2', '/u/cms/www/201309/12134811y9du.jpg', '王智');
-INSERT INTO `jc_content_picture` VALUES ('522', '3', '/u/cms/www/201309/121348110tfi.jpg', '王智');
-INSERT INTO `jc_content_picture` VALUES ('522', '4', '/u/cms/www/201309/12134812unit.jpg', '王智');
-INSERT INTO `jc_content_picture` VALUES ('523', '0', '/u/cms/www/201309/12135148im9s.jpg', '宋祖英升任团长后首带队演出');
-INSERT INTO `jc_content_picture` VALUES ('523', '1', '/u/cms/www/201309/12135149bhlg.jpg', '宋祖英升任团长后首带队演出');
-INSERT INTO `jc_content_picture` VALUES ('523', '2', '/u/cms/www/201309/12135149s2wm.jpg', '宋祖英升任团长后首带队演出');
-INSERT INTO `jc_content_picture` VALUES ('523', '3', '/u/cms/www/201309/12135149ar88.jpg', '宋祖英升任团长后首带队演出');
-INSERT INTO `jc_content_picture` VALUES ('524', '0', '/u/cms/www/201309/12135606e58j.jpg', '杨幂');
-INSERT INTO `jc_content_picture` VALUES ('524', '1', '/u/cms/www/201309/12135607vqhp.jpg', '杨幂');
-INSERT INTO `jc_content_picture` VALUES ('524', '2', '/u/cms/www/201309/12135607ftvv.jpg', '杨幂');
-INSERT INTO `jc_content_picture` VALUES ('524', '3', '/u/cms/www/201309/12135608l3ai.jpg', '杨幂');
-INSERT INTO `jc_content_picture` VALUES ('524', '4', '/u/cms/www/201309/12135608ad8p.jpg', '杨幂');
-INSERT INTO `jc_content_picture` VALUES ('524', '5', '/u/cms/www/201309/12135609wexl.jpg', '杨幂');
-INSERT INTO `jc_content_picture` VALUES ('525', '0', '/u/cms/www/201309/12140434n4th.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('525', '1', '/u/cms/www/201309/12140434ixtu.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('525', '2', '/u/cms/www/201309/12140435relm.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('525', '3', '/u/cms/www/201309/12140436rua8.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('525', '4', '/u/cms/www/201309/12140436wwsc.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('526', '0', '/u/cms/www/201309/12141311nuua.jpg', '张智霖与众空姐');
-INSERT INTO `jc_content_picture` VALUES ('526', '1', '/u/cms/www/201309/12141311xxbj.jpg', '张智霖与众空姐');
-INSERT INTO `jc_content_picture` VALUES ('526', '2', '/u/cms/www/201309/12141312d3p6.jpg', '张智霖与众空姐');
-INSERT INTO `jc_content_picture` VALUES ('526', '3', '/u/cms/www/201309/12141312r6eb.jpg', '张智霖与众空姐');
-INSERT INTO `jc_content_picture` VALUES ('526', '4', '/u/cms/www/201309/1214131399h0.jpg', '张智霖签新公司获直升机接送');
-INSERT INTO `jc_content_picture` VALUES ('526', '5', '/u/cms/www/201309/12141313ndlq.jpg', '张智霖签新公司获直升机接送');
-INSERT INTO `jc_content_picture` VALUES ('527', '0', '/u/cms/www/201309/12142118fe7p.jpg', '何晟铭出席敦煌保护活动');
-INSERT INTO `jc_content_picture` VALUES ('527', '1', '/u/cms/www/201309/12142119m8y5.jpg', '何晟铭出席敦煌保护活动');
-INSERT INTO `jc_content_picture` VALUES ('527', '2', '/u/cms/www/201309/121421197sla.jpg', '何晟铭演唱');
-INSERT INTO `jc_content_picture` VALUES ('527', '3', '/u/cms/www/201309/12142120u2tx.jpg', '何晟铭演唱');
-INSERT INTO `jc_content_picture` VALUES ('527', '4', '/u/cms/www/201309/12142120loqu.jpg', '何晟铭');
-INSERT INTO `jc_content_picture` VALUES ('527', '5', '/u/cms/www/201309/1214212172bk.jpg', '何晟铭、韩栋');
-INSERT INTO `jc_content_picture` VALUES ('528', '0', '/u/cms/www/201309/12142734jwmh.jpg', '宋佳');
-INSERT INTO `jc_content_picture` VALUES ('528', '1', '/u/cms/www/201309/12142735jqmu.jpg', '宋佳');
-INSERT INTO `jc_content_picture` VALUES ('528', '2', '/u/cms/www/201309/12142735rhib.jpg', '宋佳');
-INSERT INTO `jc_content_picture` VALUES ('528', '3', '/u/cms/www/201309/1214273617d5.jpg', '宋佳');
-INSERT INTO `jc_content_picture` VALUES ('528', '4', '/u/cms/www/201309/12142736ue6c.jpg', '宋佳');
-INSERT INTO `jc_content_picture` VALUES ('528', '5', '/u/cms/www/201309/12142737cr9y.jpg', '宋佳');
-INSERT INTO `jc_content_picture` VALUES ('529', '0', '/u/cms/www/201309/1214325480ue.jpg', '吴秀波');
-INSERT INTO `jc_content_picture` VALUES ('529', '1', '/u/cms/www/201309/12143254y1wh.jpg', '吴秀波');
-INSERT INTO `jc_content_picture` VALUES ('529', '2', '/u/cms/www/201309/12143255ukxu.jpg', '吴秀波');
-INSERT INTO `jc_content_picture` VALUES ('529', '3', '/u/cms/www/201309/121432556ttu.jpg', '吴秀波');
-INSERT INTO `jc_content_picture` VALUES ('529', '4', '/u/cms/www/201309/12143255ryzh.jpg', '吴秀波');
-INSERT INTO `jc_content_picture` VALUES ('529', '5', '/u/cms/www/201309/12143256g1bo.jpg', '吴秀波');
-INSERT INTO `jc_content_picture` VALUES ('530', '0', '/u/cms/www/201309/12145434qkiz.jpg', '曾黎');
-INSERT INTO `jc_content_picture` VALUES ('530', '1', '/u/cms/www/201309/12145434959z.jpg', '曾黎');
-INSERT INTO `jc_content_picture` VALUES ('530', '2', '/u/cms/www/201309/121454345gdz.jpg', '曾黎');
-INSERT INTO `jc_content_picture` VALUES ('530', '3', '/u/cms/www/201309/12145435lmi6.jpg', '曾黎');
-INSERT INTO `jc_content_picture` VALUES ('530', '4', '/u/cms/www/201309/12145435u9c1.jpg', '曾黎');
-INSERT INTO `jc_content_picture` VALUES ('531', '0', '/u/cms/www/201309/12150556da16.jpg', '关之琳');
-INSERT INTO `jc_content_picture` VALUES ('531', '1', '/u/cms/www/201309/12150556inf7.jpg', '关之琳');
-INSERT INTO `jc_content_picture` VALUES ('531', '2', '/u/cms/www/201309/12150557etcp.jpg', '关之琳');
-INSERT INTO `jc_content_picture` VALUES ('531', '3', '/u/cms/www/201309/12150557dzrz.jpg', '关之琳');
-INSERT INTO `jc_content_picture` VALUES ('532', '0', '/u/cms/www/201309/12150936264i.jpg', '《中国合伙人》剧组');
-INSERT INTO `jc_content_picture` VALUES ('532', '1', '/u/cms/www/201309/121509368460.jpg', '黄晓明章子怡佟大为');
-INSERT INTO `jc_content_picture` VALUES ('532', '2', '/u/cms/www/201309/12150936cnpa.jpg', '《中国合伙人》剧组');
-INSERT INTO `jc_content_picture` VALUES ('532', '3', '/u/cms/www/201309/12150937xe3g.jpg', '佟大为黄晓明邓超');
-INSERT INTO `jc_content_picture` VALUES ('532', '4', '/u/cms/www/201309/121509371kyv.jpg', '《中国合伙人》剧组');
-INSERT INTO `jc_content_picture` VALUES ('533', '0', '/u/cms/www/201309/12152115n7ee.jpg', '景甜亮相红毯');
-INSERT INTO `jc_content_picture` VALUES ('533', '1', '/u/cms/www/201309/12152115dymp.jpg', '景甜与范冰冰在台下');
-INSERT INTO `jc_content_picture` VALUES ('533', '2', '/u/cms/www/201309/1215211539ic.jpg', '景甜与范冰冰在台下');
-INSERT INTO `jc_content_picture` VALUES ('533', '3', '/u/cms/www/201309/12152115oqbj.jpg', '景甜与范冰冰在台下');
-INSERT INTO `jc_content_picture` VALUES ('533', '4', '/u/cms/www/201309/12152116am9n.jpg', '景甜作为颁奖嘉宾登台');
-INSERT INTO `jc_content_picture` VALUES ('534', '0', '/u/cms/www/201309/12153550461x.jpg', '小宋佳时尚大片');
-INSERT INTO `jc_content_picture` VALUES ('534', '1', '/u/cms/www/201309/12153550ryso.jpg', '小宋佳时尚大片');
-INSERT INTO `jc_content_picture` VALUES ('534', '2', '/u/cms/www/201309/12153551r5kz.jpg', '小宋佳时尚大片');
-INSERT INTO `jc_content_picture` VALUES ('534', '3', '/u/cms/www/201309/12153551igy5.jpg', '小宋佳时尚大片');
-INSERT INTO `jc_content_picture` VALUES ('534', '4', '/u/cms/www/201309/12153551fflz.jpg', '小宋佳时尚大片');
-INSERT INTO `jc_content_picture` VALUES ('534', '5', '/u/cms/www/201309/121535526foq.jpg', '小宋佳时尚大片');
-INSERT INTO `jc_content_picture` VALUES ('535', '0', '/u/cms/www/201309/121542148jkc.jpg', '熊乃瑾清新写真');
-INSERT INTO `jc_content_picture` VALUES ('535', '1', '/u/cms/www/201309/121542159xil.jpg', '熊乃瑾清新写真');
-INSERT INTO `jc_content_picture` VALUES ('535', '2', '/u/cms/www/201309/12154215ryyk.jpg', '熊乃瑾清新写真');
-INSERT INTO `jc_content_picture` VALUES ('535', '3', '/u/cms/www/201309/12154215y02n.jpg', '熊乃瑾清新写真');
-INSERT INTO `jc_content_picture` VALUES ('535', '4', '/u/cms/www/201309/121542158t1n.jpg', '熊乃瑾清新写真');
-INSERT INTO `jc_content_picture` VALUES ('535', '5', '/u/cms/www/201309/12154216egtt.jpg', '熊乃瑾清新写真');
-INSERT INTO `jc_content_picture` VALUES ('536', '0', '/u/cms/www/201309/12154708we6w.jpg', '章子怡');
-INSERT INTO `jc_content_picture` VALUES ('536', '1', '/u/cms/www/201309/12154708kkn6.jpg', '章子怡');
-INSERT INTO `jc_content_picture` VALUES ('536', '2', '/u/cms/www/201309/12154708nsye.jpg', '章子怡');
-INSERT INTO `jc_content_picture` VALUES ('536', '3', '/u/cms/www/201309/12154709iod3.jpg', '章子怡');
-INSERT INTO `jc_content_picture` VALUES ('536', '4', '/u/cms/www/201309/12154709ypkl.jpg', '章子怡');
-INSERT INTO `jc_content_picture` VALUES ('570', '0', '/u/cms/www/201508/15143105qlgz.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('570', '1', '/u/cms/www/201508/15143108cl2s.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('571', '0', '/u/cms/www/201508/1514270879sr.jpg', '');
-INSERT INTO `jc_content_picture` VALUES ('571', '1', '/u/cms/www/201508/15142709bjnb.jpg', '');
 
 -- ----------------------------
 -- Table structure for jc_content_tag
@@ -2001,17 +1569,6 @@ CREATE TABLE `jc_content_topic` (
 -- ----------------------------
 -- Records of jc_content_topic
 -- ----------------------------
-INSERT INTO `jc_content_topic` VALUES ('334', '5');
-INSERT INTO `jc_content_topic` VALUES ('565', '5');
-INSERT INTO `jc_content_topic` VALUES ('567', '5');
-INSERT INTO `jc_content_topic` VALUES ('568', '5');
-INSERT INTO `jc_content_topic` VALUES ('569', '5');
-INSERT INTO `jc_content_topic` VALUES ('570', '5');
-INSERT INTO `jc_content_topic` VALUES ('571', '5');
-INSERT INTO `jc_content_topic` VALUES ('572', '5');
-INSERT INTO `jc_content_topic` VALUES ('573', '5');
-INSERT INTO `jc_content_topic` VALUES ('508', '6');
-INSERT INTO `jc_content_topic` VALUES ('511', '6');
 
 -- ----------------------------
 -- Table structure for jc_content_txt
@@ -2030,49 +1587,6 @@ CREATE TABLE `jc_content_txt` (
 -- ----------------------------
 -- Records of jc_content_txt
 -- ----------------------------
-INSERT INTO `jc_content_txt` VALUES ('172', '<p>【基本介绍】<br />\r\n	无需付费购买，到官方指定下载地址下载安装后即可以使用<br />\r\n	具有灵活点播的功能，随点随看，时间自由掌握<br />\r\n	操作简单，界面简洁明了<br />\r\n	掌握最先进的P2SP传输技术，传输速度更快，更节省带宽<br />\r\n	占用CPU、内存、带宽等系统资源占用少，不影响其它操作。<br />\r\n	支持多种视频文件格式<br />\r\n	播放流畅，首次连接速度快<br />\r\n	采用最新解码技术，使网络观看拖动无延时，达到播放本地文件的效果<br />\r\n	最高清画面，支持网络高清点播，最高码率达到1300。<br />\r\n	采用脉冲式连接和自动重连策略，保证用户稳定、流畅的观看。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('173', '<p>【基本介绍】<br />\r\n	千千静听是一款完全免费的音乐播放软件，拥有自主研发的全新音频引擎，集播放、音效、转换、歌词等众多功能于一身。其小巧精致、操作简捷、功能强大的特点，深得用户喜爱，被网友评为中国十大优秀软件之一，并且成为目前最受欢迎的音乐播放软件。<br />\r\n	<br />\r\n	【软件特色】<br />\r\n	拥有自主研发的全新音频引擎，支持DirectSound、Kernel Streaming和ASIO等高级音频流输出方式、64比特混音、AddIn插件扩展技术，具有资源占用低、运行效率高，扩展能力强等特点。<br />\r\n	<br />\r\n	千千静听支持几乎所有常见的音频格式，包括MP/mp3PRO、AAC/AAC+、M4A/MP4、WMA、APE、MPC、OGG、WAVE、CD、 FLAC、RM、TTA、AIFF、AU等音频格式以及多种MOD和MIDI音乐，以及AVI、VCD、DVD等多种视频文件中的音频流，还支持CUE音轨索引文件。<br />\r\n	<br />\r\n	通过简单便捷的操作，可以在多种音频格式之间进行轻松转换，包括上述所有格式（以及CD或DVD中的音频流）到WAVE、MP3、APE、WMA等格式的转换；通过基于COM接口的AddIn插件或第三方提供的命令行编码器还能支持更多格式的播放</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('329', '<p>暮光之城</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('330', '<p>神魔大陆</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('331', '<p>万众期待，翘首以盼的QQ2011 正式版现在全员发布啦！13大全新强大功能挑战你的娱乐精神，重量级功能玩法让你乐翻天！速来体验手写、语音输入，多人视频，语音消息留言、好友桌面等酷炫新功能带来的神奇！</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('334', '<p class=\"detailPic\"><img alt=\"\" height=\"500\" src=\"http://y2.ifengimg.com/a/2014_19/a0a4fd008ceab2c.jpg\" width=\"344\" /></p>\r\n<p class=\"picIntro\"><span>李克强夫人程虹（据新国际，即新华社国际新闻即时播报微博）</span></p>\r\n<p>中国国务院总理<a href=\"http://renwuku.news.ifeng.com/index/detail/2/likeqiang\" target=\"_blank\">李克强</a>4号至11号，将访问埃塞俄比亚、尼日利亚、安哥拉、肯尼亚非洲四国，并访问非盟总部以及参加第24届世界经济论坛非洲峰会全会。访问期间，中非双方将签署近60份合作文件。这次也是李克强首次以总理身份访问非洲。来看本台记者发自埃塞俄比亚的现场报道。&nbsp;</p>\r\n<p>陈琳：中国总理李克强的专机会在埃塞俄比亚当地时间4号下午抵达首都亚的斯亚贝巴，开始他这次非洲之行的第一站。而在这次<strong>李克强将偕夫人程虹共同外访，这也是他就任中国总理之后第一次偕夫人外访。</strong>在 埃塞俄比亚期间，李克强将与当地进行双边交流，包括与总统、总理会谈，并且与总理见证两国签署多个合作文本，他还将特别到访非盟设在亚的斯亚贝巴的总部， 并在那里进行一场演讲，阐述中国对非洲合作的意愿和努力。在埃塞俄比亚期间，李克强还会参观由多个中资来承建和援建的纪念项目以及与中资机构座谈。在6号 他就会离开当地，转往下一站尼日利亚，之后还会先后访问安哥拉和肯尼亚。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('335', '<dl>\r\n	<dd>\r\n		新增网页翻译功能，在翻译框内输入网址点击翻译，即可得到翻译后的该网址页面。</dd>\r\n	<dd>\r\n		具有多国语言发音功能，日韩法语全部标准朗读。</dd>\r\n	<dd>\r\n		轻松囊括互联网最新流行的词汇。</dd>\r\n	<dd>\r\n		中英日韩法五国语言轻松查询。</dd>\r\n	<dd>\r\n		通过网络查询最新翻译，无限容量词库，翻译永不过时。</dd>\r\n</dl>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('336', '<p>迅雷使用先进的超线程技术基于网格原理，能够将存在于第三方服务器和计算机上的数据文件进行有效整合，通过这种先进的超线程技术，用户能够以更快的速度从 第三方服务器和计算机获取所需的数据文件。这种超线程技术还具有互联网下载负载均衡功能，在不降低用户体验的前提下，迅雷网络可以对服务器资源进行均衡， 有效降低了服务器负载。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('337', '<h2 class=\"leftboxfutitle\">\r\n	YY4.0是多玩YY语音的全新版本，活动中心盛大起航，汇集YY上最好最优质的频道和活动，提供YY上最有价值的内容，不需再为找好 频道而费尽心机。</h2>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('436', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- 功能注释标记：插入视频列表模块begin --></div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n	<link href=\"http://ent.sina.com.cn/css/470/20120928/style_videolist.css\" rel=\"stylesheet\" />\r\n</p>\r\n<div class=\"artical-player-wrap\" style=\"display: block\">\r\n	<div class=\"a-p-hd\">\r\n		<div id=\"J_Article_Player\">视频加载中，请稍候...</div>\r\n		<div class=\"a-p-info\"><label class=\"fl\" style=\"display: none\" suda-uatrack=\"key=videoq&amp;value=autoplay\"><input checked=\"checked\" id=\"J_Video_Autoplay\" type=\"checkbox\" /> 自动播放</label><span id=\"J_Video_Source\">&nbsp;</span></div>\r\n	</div>\r\n	<div class=\"a-p-bd a-p-bd-b\" id=\"J_Play_List_Wrap\" style=\"display: none\">\r\n		<div class=\"a-p-slide\">\r\n			<div class=\"a-p-s-list clearfix\" id=\"J_Play_List\">\r\n				<div class=\"a-p-s-item J_Play_Item\" play-data=\"109132441-1-0\" source-data=\"广东卫视《广东早晨》\" title-data=\"内地夫妇香港机场袭警\" url-data=\"http://video.sina.com.cn/p/news/c/v/2013-07-08/081462644129.html\"><a class=\"a-p-s-img\" href=\"javascript:\" title=\"内地夫妇香港机场袭警\"><img alt=\"内地夫妇香港机场袭警\" height=\"90\" src=\"/showgirlvideov5/u/cms/www/201307/08153408gpvd.jpg\" width=\"120\" /> <i class=\"a-p-s-play\">play</i> <span class=\"a-p-s-txt\">内地夫妇香港机场袭警</span> </a></div>\r\n			</div>\r\n			<a class=\"a-p-s-prev\" href=\"javascript:;\" id=\"J_Player_Prev\">向前</a> <a class=\"a-p-s-next\" href=\"javascript:;\" id=\"J_Player_Next\">向后</a></div>\r\n	</div>\r\n	<script type=\"text/javascript\" src=\"http://i3.sinaimg.cn/ty/sinaui/scrollpic/scrollpic2012070701.min.js\"></script><script type=\"text/javascript\" src=\"http://ent.sina.com.cn/js/470/20120928/videolist.js\"></script><script type=\"text/javascript\">\r\n                                        /*自动播放1*/\r\n                                        var AUTOPLAY = 1;\r\n                                        /*连播1*/\r\n                                        var CONTIPLAY = 1;\r\n                                       /*处理自动播放选项和cookie*/\r\n                                        (function(){\r\n                                            var Tool = CommonTool;\r\n                                            var chk = Tool.byId(\'J_Video_Autoplay\');\r\n                                            var ua = navigator.userAgent.toLowerCase();\r\n                                            var isIOS = /\\((iPhone|iPad|iPod)/i.test(ua);\r\n                                            if(isIOS){\r\n                                              console.log(chk.parentNode.style.display);\r\n                                              chk.parentNode.style.display = \'none\';\r\n                                              return;\r\n                                            }\r\n                                            chk.parentNode.style.display = \'\';\r\n                                            var clickCookie=function(){\r\n                                                Tool.bindEvent(chk,\'change\',function(){\r\n                                                    var chked = chk.checked;\r\n                                                    Tool.writeCookie(\'ArtiVAuto\',(chked?1:0),24*365*10,\'/\',\'.sina.com.cn\');\r\n                                                });\r\n                                            }\r\n                                            var byCookie=function(){\r\n                                                var coo = Tool.readCookie(\'ArtiVAuto\');\r\n                                                if(coo){\r\n                                                    if(parseInt(coo)==0){\r\n                                                        chk.checked = false;\r\n                                                        AUTOPLAY = 0;\r\n                                                    }\r\n                                                }\r\n                                            };\r\n                                            clickCookie();\r\n                                            byCookie();\r\n                                        })();\r\n\r\n                                        /*获取第一个视频vid*/\r\n                                        var firstItem = CommonTool.byClass(\'J_Play_Item\',\'J_Play_List\')[0];\r\n                                        var fInfo = firstItem.getAttribute(\'play-data\').split(\'-\');\r\n                                        var fVid = fInfo[0];\r\n                                        var fPid = fInfo[1];\r\n\r\n                                        var sinaBokePlayerConfig_o = {\r\n                                          container: \"J_Article_Player\",  //Div容器的id\r\n										  width:525,\r\n										  height:430,\r\n                                          playerWidth: 525,   //宽\r\n                                          playerHeight: 430,    //高\r\n                                          autoLoad: 1,  //自动加载\r\n                                          autoPlay: AUTOPLAY, //自动播放\r\n                                          as: 1,  //广告\r\n                                          pid: fPid,\r\n                                          tjAD: 0,  //显示擎天柱广告\r\n                                          tj: 1,  //片尾推荐\r\n                                          continuePlayer : 1, //连续播放\r\n                                          casualPlay: 1,  //任意拖动视频\r\n                                          head: 0,  //播放片头动画\r\n                                          logo: 0,  //显示logo\r\n                                          share :0,\r\n                                          thumbUrl: \"http://p.v.iask.com/95/343/109132441_2.jpg\"\r\n                                        };\r\n                                        window.__onloadFun__ = function(){\r\n                                          SinaBokePlayer_o.addVars(\'HTML5Player_controlBar\', true);\r\n                                          SinaBokePlayer_o.addVars(\'HTML5Player_autoChangeBGColor\', false);\r\n                                          //SinaBokePlayer_o.addVars(\"vid\", fVid);\r\n                                          //SinaBokePlayer_o.addVars(\"pid\", fPid);\r\n                                          SinaBokePlayer_o.showFlashPlayer();\r\n\r\n                                        };\r\n                                      </script><script src=\"http://video.sina.com.cn/js/sinaFlashLoad.js\" charset=\"utf-8\" type=\"text/javascript\"></script><script type=\"text/javascript\">\r\n                                        (function(){\r\n                                          var toggle = function(id,hide){\r\n                                            var e = CommonTool.byId(id);\r\n                                            var par = e.parentNode;\r\n                                            if(hide){\r\n                                              CommonTool.addClass(par,e.className+\'_disabled\');\r\n                                            }else{\r\n                                              CommonTool.removeClass(par,e.className+\'_disabled\');\r\n                                            }\r\n                                          }\r\n                                          var scroll = new ScrollPic();\r\n                                          scroll.scrollContId   = \"J_Play_List\"; //内容容器ID\r\n                                          scroll.arrLeftId      = \"J_Player_Prev\";//左箭头ID\r\n                                          scroll.arrRightId     = \"J_Player_Next\"; //右箭头ID\r\n                                          scroll.listEvent      = \"onclick\"; //切换事件\r\n                                          scroll.frameWidth     = 532;//显示框宽度 **显示框宽度必须是翻页宽度的倍数\r\n\r\n                                          scroll.pageWidth      = 133*3; //翻页宽度\r\n                                          scroll.upright        = false; //垂直滚动\r\n                                          scroll.speed          = 10; //移动速度(单位毫秒，越小越快)\r\n                                          scroll.space          = 15; //每次移动像素(单位px，越大越快)\r\n                                          scroll.autoPlay       = false; //自动播放\r\n                                          scroll.autoPlayTime   = 5; //自动播放间隔时间(秒)\r\n                                          scroll.circularly     = false;\r\n                                          scroll._move = scroll.move;\r\n                                          scroll.move = function(num,quick){\r\n                                                scroll._move(num,quick);\r\n                                                toggle(scroll.arrRightId,scroll.eof);\r\n                                                toggle(scroll.arrLeftId,scroll.bof);\r\n                                          };\r\n                                          scroll.initialize(); //初始化\r\n                                          toggle(scroll.arrLeftId,scroll.bof);\r\n                                        })();\r\n                                      </script><script type=\"text/javascript\">\r\n                                      var VideoList1 = new ArticalVideoList(\'J_Play_List\',{\r\n                                        index : 0,\r\n                                        autoPlay : AUTOPLAY,\r\n                                        contiPlay : CONTIPLAY,\r\n                                        itemClass : \'J_Play_Item\'\r\n                                      });\r\n                                      VideoList1.init();\r\n                                      function playCompleted(tag){\r\n                                        VideoList1.playNext();                                          \r\n                                      };\r\n                                      </script></div>\r\n<!-- 功能注释标记：插入视频列表模块end --><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27603391\' f_id=\'3\' --><!-- video_play_list_html <table id=\"video_play_list\" border=\"1\" cellspacing=\"0px\" cellpadding=\"1px\">\r\n<tbody>\r\n	<tr>\r\n	<td>标题</td>\r\n	<td>vid</td>\r\n	<td>是否打开广告</td>\r\n	<td>媒体来源</td>\r\n	<td>视频截图</td>\r\n	<td>是否联播</td>\r\n	<td>地址</td>\r\n</tr>\r\n	<tr class=\"video_tr\">\r\n	<td>内地夫妇香港机场袭警</td>\r\n	<td>109132441</td>\r\n	<td>0</td>\r\n	<td>广东卫视《广东早晨》</td>\r\n	<td title=\"/showgirlvideov5/u/cms/www/201307/08153408gpvd.jpg\"></td>\r\n	<td>1</td>\r\n	<td>http://video.sina.com.cn/p/news/c/v/2013-07-08/081462644129.html</td>\r\n</tr>\r\n</tbody>\r\n</table> video_play_list_html_end --><!-- video_play_list_data 内地夫妇香港机场袭警|109132441|0|广东卫视《广东早晨》||1|http://video.sina.com.cn/p/news/c/v/2013-07-08/081462644129.html<br> video_play_list_data_end -->\r\n<p>　　南都讯 记者石秋菊 发自香港 航班延误，乘客鼓噪，闹事打砸，这一幕发生在7月5日的香港机场。一对内地夫妇的男事主砸国泰航空的柜台更泼汽水，被香港警方拘捕时，妻子更涉嫌推倒一名警员，最后夫妇两人都被警方带走调查。</p>\r\n<p>　　香港警方表示，涉案夫妇中丈夫姓徐，称任职图书管理员，35岁，妻子姓万，34岁，两人来自江苏，在香港旅行后，原定于乘搭7月5日下午5点35分，香港国泰的CX 364航班，从香港返回上海浦东。</p>\r\n<p>　　据了解，当日下午3点多，夫妻两人到达机场国泰柜台办理好登记手续。随后由于上海浦东发出航空交通流量管制，航班延误，这个航班未能如期出发，航班上一共238名旅客之后滞留在候机大堂。</p>\r\n<p>　　航班延误至当天晚上9点多，徐在向国泰柜位职员查询航班最新情况时，与职员发生了争执，随后情绪激动，用手扫翻柜台上的电脑键盘，一名24岁的郑姓女地勤人员上前制止时，再被他用汽水淋泼，弄污衣服，旁边的32岁周姓男性地勤职员也被汽水泼中，之后两人报警。</p>\r\n<p>　　警员接到报案到场调查后，以涉嫌刑事毁坏及普通伤人将徐拘捕。徐的妻子见到丈夫被捕，也激动地意欲阻止警员，混乱间一名警员被人推倒在地上，之后万妇被其他警员制服，也被以涉嫌袭警罪拘捕。</p>\r\n<p>　　之后国泰发言人回应媒体，有关航班一共延误了16个小时，在7月6日早上9点起飞，航班延误期间，已经安排受影响乘客入住酒店及提供膳食，有关伤人事件也已经交由警方处理。</p>\r\n<p align=\"right\">（稿件来源于南方都市报 原标题：航班延误闹香港机场内地夫妇袭警被拘捕）</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('437', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27603466\' f_id=\'3\' -->\r\n	<p>　　晨报讯(记者 颜斐) 王某嫖娼后骗卖淫女喝下他放入安眠药的饮料，然后待对方熟睡后实施抢劫。近日朝阳区检察院以涉嫌抢劫罪对抢劫卖淫女的王某批准逮捕。</p>\r\n	<p>&nbsp;&nbsp;&nbsp; 今年5月，王某通过微信与张某取得联系，并在微信上谈妥了卖淫嫖娼的价钱。6月2日晚，王某在支付了嫖资后与张某发生了性关系。之后，王某将随身携带的强效安眠药放入饮料中并让张某喝下，趁对方熟睡之机抢走她5000元。张某后报警，王某即被警方抓获。王某还交代，他在今年2月10日还以同样的方法抢走一名卖淫女6000元。</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('438', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27603695\' f_id=\'3\' -->\r\n	<p>　　晨报讯(记者 李庭煊) 尹某谎称自己是中影数字基地的执行导演，以安排彭某做特邀演员为诱饵，骗取其1万元。近日怀柔法院以诈骗罪判处尹某拘役4个月，缓刑6个月。</p>\r\n	<p>　　去年3月，尹某在怀柔区杨宋镇安乐庄村租了一个群众演员大院，招募群众演员。9月彭某前来应聘，尹某谎称自己是影视基地的执行导演，在收取彭某1万元后称可帮彭某做特邀演员。随后尹某安排了10场群众演员的戏给彭某。因自己总没台词，发现自己不是特邀演员后，彭某要求尹某退还她1万元遭绝。为此彭某报警，面对警方的询问，尹某承认了自己的诈骗行为。</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('439', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27603778\' f_id=\'3\' -->\r\n	<p>　　扬子晚报讯 (记者 郭一鹏 通讯员 张晓冬) 穿着拖鞋开车，还在行驶中低头点烟，结果抬头时突然发现前面有辆电动车，司机赶紧踩了一脚刹车，哪知拖鞋打滑，车辆没有控制住直接撞了上去。电动车上两名老人倒地后，其中一人因伤势过重不幸死亡。前不久，南京大厂发生了这样一幕惨剧。</p>\r\n	<p>　　6月底一天清晨5点半，交警十大队接到报警称，有辆轿车追尾电动自行车，撞死了一名老人。司机会不会是酒后驾车？交警对肇事车司机汤某进行酒精测试，结果发现他并未饮酒。随后，交警又对事故原因进行询问，汤某指着自己脚上的拖鞋和一根掉在驾驶座附近的香烟，懊恼地说：&ldquo;都怪我点烟时没在意车子跑偏方向，发现情况后又没踩住刹车。&rdquo;原来，汤某行车至毕洼路时，有些犯困，便想抽烟提神，他一手扶方向盘，另一只手拿着打火机，低头点烟。就在刚点上火时，汤某觉得车子有点跑偏，他抬头一看，发现车子竟然驶进了非机动车道，右前方还有一辆电动自行车。情急之下，汤某赶紧用力踩下刹车，谁知拖鞋突然打滑，竟然没踩住刹车，他再次踩下刹车时，自己的车已经把电动自行车撞翻了。据了解，该事故汤某将承担全部事故责任。</p>\r\n	<p align=\"right\">(原标题：穿拖鞋开车还低头点烟 轿车失控追尾致人死亡)</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('440', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27604006\' f_id=\'3\' -->\r\n	<p>　　晨报讯&nbsp;(记者 颜斐) 发现妻子有了情人郭某，徐某以讨债为名，伙同两个朋友将郭某拘禁3天，其间不仅实施殴打和侮辱行为，还向郭某索要3000万元补偿费。近日，徐某因涉嫌非法拘禁罪和敲诈勒索罪被公诉到朝阳法院，两同伙也因非法拘禁罪被公诉。</p>\r\n	<p>　　据指控，徐某发现妻子与郭某存在不正当关系，遂谎称与郭某存在债务纠纷，找来禹某和孙某帮忙讨债。徐某与禹某事先在朝阳区租了一房屋。今年2月16日晚，徐某三人在一酒店房间内将郭某装入箱子，并带至承租房间内，郭某被拘禁直至2月19日下午6点。在此期间，徐某殴打、侮辱郭某，并录音录像，后向他索要补偿费。郭某在承诺给付3000万元后被送回酒店。后徐某、禹某、孙某被抓获归案。公安机关随案查处钳子、擀面杖、剪刀等工具。</p>\r\n	<p>　　公诉机关认为，徐某非法拘禁他人，且有殴打、侮辱情节，同时在此过程中向被害人勒索钱财，数额特别巨大，其行为应当以非法拘禁罪、敲诈勒索罪追究刑事责任。考虑到敲诈勒索罪系未遂，建议可以比照既遂犯从轻或减轻处罚。禹某、孙某非法限制他人人身自由，应当以非法拘禁罪追究刑事责任。</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('441', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27604829\' f_id=\'3\' -->\r\n	<p>　　本报记者赵志锋</p>\r\n	<p>　　中国区域特色经济研究院，听起来多么唬人的机构。如果不是法院在审理民事案件中查清它的真实面目，不知道这个国字头机构还要存在多久。</p>\r\n	<p>　　在法院司法建议的推动下，今年5月，这个活动在甘肃省的中国区域特色经济研究院西部中心(以下简称西部中心)被注销。此时，它已存在长达8年之久了。在这8年中，不仅兰州市招商局为它办理了外地驻兰办事机构登记证，陇南市招商局还让其承接了水电项目。</p>\r\n	<p>　　而在事过境迁之后，人们发现，西部中心得以注册并从事商业活动的手段一点儿都不高明。</p>\r\n	<p>　　那么，是什么让一个虚构的机构得以从容地通过招商局、发改委两家政府部门的审查呢？</p>\r\n	<p>　<strong>　号称经党中央国务院批准</strong></p>\r\n	<p>　　兰州商人丁某与中国区域特色经济研究院西部中心签订了水电项目&ldquo;内部股权转让合同&rdquo;和&ldquo;联合开发协议&rdquo;，并依约支付了部分定金和转让款。</p>\r\n	<p>　　后来，丁某发现，西部中心并未取得水电项目的立项及批复，遂提出退还定金及转让款的请求，未果。</p>\r\n	<p>　　于是，丁某任总经理的甘肃某商贸公司将中国区域特色经济研究院西部中心、中心主任王某、中国区域特色经济研究院起诉到法院，要求判令三被告双倍返还定金及转让款。</p>\r\n	<p>　　这起诉讼无意间揭开了一个惊人的秘密：法院发现，在甘肃陇南承接水电项目的中国区域特色经济研究院西部中心上级单位&mdash;&mdash;中国区域特色经济研究院根本不存在。</p>\r\n	<p>　　这时，丁某才意识到自己被骗，开始在网上发帖反映情况，并希望有关部门能够查实情况，挽回他公司的经济损失。</p>\r\n	<p>　　兰州城关区法院2012年6月和7月作出的一份民事裁定书及两份司法建议，揭开了兰州市民王某利用伪造的营业执照及文件材料，申请成立西部中心的事实。</p>\r\n	<p>　　2004年8月14日，兰州招商局(现兰州市经济合作服务局)同意了中国区域特色经济研究院在兰州市设立西部中心。</p>\r\n	<p>　　申请设西部中心提交的材料中有一份营业执照和申请报告。这份中国区域特色经济研究院的营业执照显示，登记机关为北京市工商局，住所为北京市圆明园西路2号，企业类型为国有经济。</p>\r\n	<p>　　申请报告这样描述中国区域特色经济研究院：&ldquo;是经党中央、国务院批准成立的专门从事区域特色经济的研究机构，该院已获得&lsquo;国家重大委托课题&rsquo;地位，这是国家最高级课题地位，关系到国家的重要决策。&rdquo;</p>\r\n	<p>　　西部中心设立以后，2009年12月4日，兰州市招商局为其办理了外地驻兰办事机构登记证，负责人为王某，类别为事业，业务范围为经济研究、资料收集、会议组织、新闻发布。</p>\r\n	<p>　　有了登记证后，王某开始在甘肃陇南洽谈开发水电项目，得到了陇南市发改委一位副主任的信任。陇南市发改委将一些水电项目交给了西部中心。</p>\r\n	<p><strong>　　西部中心印章居然有国徽</strong></p>\r\n	<p>　　丁某所在的甘肃某商贸公司是在2010年初与西部中心及其负责人王某产生交集的。当丁某发现西部中心并未取得水电项目的立项及批复时，一纸诉状将西部中心及其负责人王某起诉至兰州市城关区法院。</p>\r\n	<p>　　2012年6月4日，城关区法院作出了民事裁定书。该裁定书称，根据中国区域特色经济研究院提供的营业执照到北京市工商局、国家工商局调取工商档案材料时，发现该研究院没有注册，其营业执照不真实。</p>\r\n	<p>　　法院在向兰州市招商局了解中国区域特色经济研究院西部中心办理驻兰办登记材料时，发现其向兰州市招商局所提供的驻兰办证文件、材料、印章均不真实。</p>\r\n	<p>　　&ldquo;被告中国区域特色经济研究院不存在，西部中心所提供的办证材料不真实，所谓的西部中心形同虚设。&rdquo;民事裁定书称，被告王某是以中国区域特色经济研究院西部中心名称签订涉案合同，故应确认该案无民事案件具备的平等主体。</p>\r\n	<p>　　据此，城关区法院驳回了原告甘肃某商贸公司的起诉。</p>\r\n	<p>　　民事裁定书还载明：&ldquo;该案涉嫌公文、国徽印章等情形。&rdquo;记者在西部中心所签的合同中发现，该中心使用的印章中确实带有国徽。</p>\r\n	<p>　　记者了解到，最高人民法院关于在审理经济纠纷案件中涉及经济犯罪嫌疑若干问题的规定中明确要求，法院作为经济纠纷受理的案件，经审理认为不属经济纠纷案件而有经济犯罪嫌疑的，应当裁定驳回起诉，将有关材料移送公安机关或检察机关。</p>\r\n	<p>　　记者查看该民事裁定书，没发现有将案件材料移送到公安机关或检察院的字样。但兰州市城关区法院于2012年7月3日，分别向兰州市经济合作服务局(原兰州市招商局)和陇南市发改委发出了司法建议书。</p>\r\n	<p>　<strong>　司法建议书直指政府部门失职</strong></p>\r\n	<p>　　在向兰州市经济合作服务局发出的司法建议书中，城关区法院明确指出，&ldquo;中国区域特色经济研究院&rdquo;营业执照、文件等材料均属伪造，其法人主体虚构。</p>\r\n	<p>　　上述司法建议称，&ldquo;因你局办理的驻兰机构证照，使中国区域特色经济研究院西部中心在甘肃陇南承接开发水电项目，并随意签订转让合同，收取转让费等违法行为，在当事人发生纠纷时，又无法找到合法的法人主体进行追偿。&rdquo;</p>\r\n	<p>　　该司法建议中所称的&ldquo;随意签订转让合同&rdquo;，是指西部中心于2010年7月与甘肃某商贸公司签订了&ldquo;马家坝水电站联合开发协议&rdquo;后，又于同年11月和陕西某矿业公司签订了&ldquo;马家坝水电站联合开发协议&rdquo;，将马家坝水电项目控股权再次转让。</p>\r\n	<p>　　城关区法院建议，兰州市经济合作服务局在办理外地驻兰机构登记证时，应该认真审查外地机构的合法性，不能只是形式审查。</p>\r\n	<p>　　在向陇南市发改委发出的司法建议书中，城关区法院也建议，在立项审核水电站工程时，应该认真审查机构的合法性及经济实力，并公开招标，不能只是形式审查。</p>\r\n	<p><strong>　　陇南发改委一副主任涉嫌受贿</strong></p>\r\n	<p>　　记者从检察机关了解到，陇南市发改委负责上述水电项目的那位副主任，因涉嫌受贿，去年底已被甘肃检察机关立案调查，目前案件还在进一步侦查之中。</p>\r\n	<p>　　甘肃某商贸公司的起诉被驳回后，总经理丁某遂向兰州警方报案，称王某涉嫌构成伪造国家公文、证件、印章及合同诈骗。据了解，截至目前，警方还未立案。</p>\r\n	<p>　　记者还获悉，王某因与湖南一家公司签订项目开发合作合同而被兰州警方立案侦查，并将案件移送至兰州市检察机关，检察机关因事实不清等原因退回警方补充侦查。记者从兰州公安部门了解到，该案目前仍在侦查之中。</p>\r\n	<p>　　据了解，兰州市经济合作服务局已经注销了&ldquo;中国区域特色经济研究院西部中心&rdquo;，收回了《外地驻兰办事机构登记证》。今年5月21日，在该局向陇南市发改委发的一份函中称，西部中心在陇南从事了超业务范围经营。</p>\r\n	<p>　　兰州城关区法院的两份司法建议直指兰州市招商局和陇南市发改委有&ldquo;管理漏洞&rdquo;。这一事件发人深省：兰州市招商局缘何让一个伪造材料申请的西部中心披上合法的外衣？陇南市发改委缘何能让一个利用虚假材料申请注册的&ldquo;外地驻兰办事机构&rdquo;轻易拿到水电项目的开发权？</p>\r\n	<p>　　本报兰州7月7日电</p>\r\n	<p align=\"right\">(原标题：伪造国字头研究院承接水电项目)</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('442', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27605794\' f_id=\'3\' -->\r\n	<p>　　法制网记者张冲 法制网通讯员郭佳音</p>\r\n	<p>　　一段摄录于6月25日的视频，清晰地记录了黑龙江省哈尔滨市城管局一名职工的粗暴行为。</p>\r\n	<p>　　画面显示：城管督察车上下来的男子，走到麻辣烫摊前，趁女记者孙晓卓不备一脚将她坐的塑料凳踢飞，孙重重地摔在地上。</p>\r\n	<p>　　目前，这名城管局职工因受到行政拘留10天的处罚，正关押在看守所里。他叫王雷，今年30岁，系哈尔滨市城市管理局职工。</p>\r\n	<p>　　孙晓卓是哈尔滨电视台记者。当天，哈尔滨市道里区卫生监督所工作人员正在对一家无证经营的幼儿园进行检查，孙晓卓和另外一名东北网的记者在场采访。</p>\r\n	<p>　　<strong>无证幼儿园扰民被举报</strong></p>\r\n	<p>　　今年6月8日，有网民在哈尔滨市道里区政府的官方网页&ldquo;民生民意&rdquo;栏目当中留言，&ldquo;我是道里区海富康城小区B高1的居民，我家旁边开了个宝贝幼儿园，每天老师和孩子的吵闹声搞得我退休在家的母亲烦躁难熬，今年已住院两次。我详细了解到：宝贝幼儿园无执照，这样的幼儿园是不是该取谛！老百姓们求您去调查调查这个黑幼儿园吧！谢谢您了！&rdquo;</p>\r\n	<p>　　6月13日，道里区教育局给予回复：&ldquo;教育局相关工作人员于2013年6月7日深入该园，严肃告知办园人，其擅自开办幼儿园的行为已违反了《幼儿园管理条例》第二章第十一条规定，要求其停止违法办园行为，停止招生，对其下发了&lsquo;违法行为限期改正通知书&rsquo;。&rdquo;</p>\r\n	<p>　　幼儿园管理条例》第十一条规定：国家实行幼儿园登记注册制度，未经登记注册，任何单位和个人不得举办幼儿园。</p>\r\n	<p>　　但教育局的《违法行为限期改正通知书》似乎并未起到应有的作用，幼儿园依旧我行我素。</p>\r\n	<p>　　6月17日和6月21日仍然不断有网友在网上反映该家黑幼儿园的情况，道里区教育局的回复分别是&ldquo;关于您反映的情况，教育局相关工作人员多次踏查，积极与办园人沟通，责令其改正非法办园行为。&rdquo;&ldquo;如限期不能改正，将联合相关部门联合执法。&rdquo;</p>\r\n	<p>　　6月25日下午，当地两家媒体东北网民生栏目记者和哈尔滨电视台方圆之间栏目记者实地暗访，发现这家黑幼儿园仍在经营。随后记者分别向道里区卫生监督部门和城管12319热线进行了反映，卫生监督部门派出3名执法人员很快到达幼儿园进行现场检查。</p>\r\n	<p>　　<strong>记者遭质问&ldquo;凭什么采访&rdquo;</strong></p>\r\n	<p>　　6月25日下午4时50分左右，一辆牌照为黑ALP757、内部编号3005的&ldquo;城管督察&rdquo;车停到了幼儿园门前。</p>\r\n	<p>　　现场采访的记者本以为是接到城管指挥热线来查看&ldquo;幼儿园私扒承重墙&rdquo;情况的。岂料车上走下两名身着便装的男子，其中驾驶员进入幼儿园后先是质问卫生监督所执法人员&ldquo;你们凭什么检查？&rdquo;&ldquo;我是孩子家长，你们凭什么采访？&rdquo;随后该男子又将矛头指向了两名记者，&ldquo;你们别管我是幼儿园的员工还是孩子家长，我就问你们凭什么采访，你们把证件拿出来我看看。&rdquo;该男情绪颇为激动，现场一度混乱。</p>\r\n	<p>　　据哈尔滨电视台记者孙晓卓讲，当天的采访其实已经结束了，有卫生监督所的执法检查，所拍摄的画面足够成片了。正准备要离开时这辆城管督察车停到了幼儿园门前，驾驶员下车后有些气急败坏。</p>\r\n	<p>　　<strong>&ldquo;警用数码鹰&rdquo;录下全程</strong></p>\r\n	<p>　　当日17时，道里区康安路派出所接到报警后有三名警员赶到现场维持秩序，其中一名民警胸前佩戴的编号为92780000的&ldquo;警用数码鹰&rdquo;清晰记录当天发生的情况。</p>\r\n	<p>　　《法制日报》记者在视频中看到，因现场混乱，哈尔滨电视台记者孙晓卓先是站在距幼儿园门前20米远的麻辣烫摊前，随后坐到了麻辣烫摊前的塑料凳子上。</p>\r\n	<p>　　民警要求双方一同到派出所解决问题，城管督察车上下来的男子仍然火气很大，走到麻辣烫摊前，趁孙晓卓不备一脚将其坐的塑料凳踢飞，孙重重地摔在地上。&ldquo;这麻辣烫是我家开的，你凭什么坐？！&rdquo;男子口中振振有词，民警见状立即将该男子控制带回派出所。</p>\r\n	<p>　　<strong>城管局职工被拘留10天</strong></p>\r\n	<p>　　经过民警调查证实，攻击电视台记者孙晓卓的男子叫王雷，今年30岁，工作单位系哈尔滨市城市管理局。</p>\r\n	<p>　　孙晓卓的诊断书上记载：&ldquo;尾骨裂隙性骨折不除外&rdquo;。哈尔滨市公安局出具的法医鉴定结果为&ldquo;轻微伤&rdquo;。</p>\r\n	<p>　　根据《中华人民共和国治安管理处罚法》第43条之规定，公安机关对王雷作出了行政拘留10天并处罚金500元的处罚决定。</p>\r\n	<p>　　孙晓卓提供的另外一份录像显示，事发当日23时许，被传唤到派出所的宝贝幼儿园园长及老师做完笔录后，仍然是被白天那辆内部编号为3005的城管督察轿车接走，面对孙晓卓家人的质疑，驾驶该车的男子自称&ldquo;正在出夜勤&rdquo;。</p>\r\n	<p>　　孙晓卓对《法制日报》记者说，当天晚上开城管督察车去派出所接幼儿园园长的男子在事发当天下午也出现过，与王雷一同来到幼儿园，当时从副驾驶下车，始终站在一旁观望整个过程。</p>\r\n	<p>　　《法制日报》记者调查了解到，王雷的单位是哈尔滨市城管局下属的城市环境综合整治办公室(简称环卫办)，这是一个参照公务员标准的财政全额拨款事业单位。而他所驾驶编号3005号城管督察车户籍属于环卫办管辖的一家清洁公司，而这样的城管督察车在环卫办还有七八辆。</p>\r\n	<p>　　<strong>伤人男子系城管局司机</strong></p>\r\n	<p>　　7月3日下午，《法制日报》记者来到环卫办，在该单位的院内，记者看到多辆喷涂蓝白相间颜色的城管督察车辆，如果去掉醒目的&ldquo;城管督察&rdquo;四个字，外形和颜色与警用车辆极为相似。且每辆车上都有内部编号，但并未找到3005号车。</p>\r\n	<p>　　此时，环卫办党组书记郭东升正在院内打电话，听闻记者要了解员工王雷被行拘的事件，连忙说&ldquo;这情况我知道，但我马上要去开会，去发改委开会&rdquo;。&ldquo;那能不能找一个熟悉情况领导给介绍一下情况。&rdquo;</p>\r\n	<p>　　郭东升回到办公楼内，不一会儿，有工作人员通知记者去四楼会议室&ldquo;郭书记正在等候&rdquo;。</p>\r\n	<p>　　记者：王雷在环卫办担任什么职务？</p>\r\n	<p>　　郭东升：以前是我们粪便处理场的工人，前不久刚刚调到办里当司机，我们打算下一步给他退回去。</p>\r\n	<p>　　记者：他当天是在执行公务当中吗？</p>\r\n	<p>　　郭东升：不是，据我们了解他是开车拉着其他职工去垃圾场检查工作，返回单位的途中接到什么人的电话，个人临时决定去幼儿园的。</p>\r\n	<p>　　记者：录像当中显示王雷穿着普通的短裤和T恤，驾驶执法车辆不需要统一着装吗？</p>\r\n	<p>　　郭东升：我们环卫办没有统一的制服，即使开城管督察的车也不需要，因为我们的车辆虽然叫城管督察，但实际上根本没有任何执法权，执法权都在行政执法局那边。</p>\r\n	<p>　　记者：这家幼儿园和门前的麻辣烫摊与王雷本人有关系吗？</p>\r\n	<p>　　郭东升：这个还不清楚，王雷被拘留还没出来，出来后我们会好好调查一下。国家有规定，单位职工不允许从事第二职业，那个麻辣烫摊好像是王雷他妈开的。</p>\r\n	<p>　　<strong>幼儿园园长疑为科长妻子</strong></p>\r\n	<p>　　法制日报》记者随后请郭东升书记看了一下录像。问：当天晚上有人驾驶城管督察编号3005号车去派出所接幼儿园园长，还自称&ldquo;出夜勤&rdquo;，这人是谁？是否属于公车私用？</p>\r\n	<p>　　郭东升：谭宏利，我们固废科的职工，等我们把事情查清楚了都会作出处理。</p>\r\n	<p>　　离开环卫办后，有知情人向《法制日报》记者透露，谭宏利是环卫办固废科科长，幼儿园是其妻子所开，而且谭宏利的妻子也是环卫办职工。王雷是谭宏利提拔到固废科给自己开车的司机，当天接到幼儿园被检查的电话的人不是王雷，是谭宏利。这一说法尚未得到环卫办的证实，本报将持续关注此事进展。</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('443', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27606256\' f_id=\'3\' -->\r\n	<p>　　温都讯 昨晚，市公安局机场分局对&ldquo;<a href=\"http://news.sina.com.cn/s/p/2013-07-01/031927539435.shtml\" target=\"_blank\">6&middot;28瑞安籍乘客殴打国航地勤人员</a>&rdquo;一事作出处理：对殴打国航地勤人员朱某某(女)的陈某某(女)、刘某某(女)均给予行政拘留5日并处200元罚款的处罚。</p>\r\n	<p>　　记者了解到，昨天这两名女乘客从北京返回温州后，到候机楼派出所接受处理。据候机楼派出所相关负责人介绍，此前殴打一事发生后，他们调取现场的监控录像，并向现场目击者了解情况，最终作出了这一处理决定。</p>\r\n	<p>　　机场分局认定，两名女乘客存在殴打朱某某的事实，但殴打结果不构成轻伤，因此对两人给予行政拘留及罚款的处罚。</p>\r\n	<p>　　6月28日晚，瑞安一批旅客搭乘的国航CA1812，原计划于当晚9时飞往北京。因北京天气的原因，到了晚上11时30分，国航决定取消该航班，次日不补班。旅客陈某某、刘某某对航空公司的安排不满，在5号登机口与前来安排航班后续工作的国航工作人员朱某某发生争执，随后两人殴打朱某某。</p>\r\n	<p>　　最近几天，国内多个地方因雷雨天气，出现大面积航班延误或取消。7月6日凌晨，上海虹桥个别旅客因航班取消情绪激动，殴打航空公司地勤人员，还有人哄抢民警工作证件。机场警方将相关当事人带走调查，随后对4名肇事者分别处以拘留及罚款。温都记者 吕进科</p>\r\n	<p>&nbsp;</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('444', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\">\r\n	<div class=\"img_wrapper\" style=\"text-align: center\"><img alt=\"\" src=\"/u/cms/www/201308/281533525eqt.jpg\" style=\"width: 450px; height: 600px\" /></div>\r\n	<div class=\"img_wrapper\" style=\"text-align: center\"><span class=\"img_descr\">男子包裹里全是此类艳照敲诈信</span></div>\r\n	<div class=\"img_wrapper\" style=\"text-align: center\"><img alt=\"\" src=\"/u/cms/www/201308/28153415wq4t.jpg\" style=\"width: 450px; height: 600px\" /></div>\r\n	<div class=\"img_wrapper\" style=\"text-align: center\"><span class=\"img_descr\">艳照敲诈信</span></div>\r\n	<!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27606407\' f_id=\'3\' -->\r\n	<p>　　荆楚网讯 (记者翟方)&ldquo;你好！我是xxx新闻网的记者，我已查到你生活中不为人知的另一面，只要我在网上一传，你将前途尽毁甚至面临牢狱之灾&hellip;&hellip;三天内汇给我25万元人民币，我就毁灭证据。&rdquo;</p>\r\n	<p>　　7月3日下午2时54分，一中年男子走进襄阳市樊城区一家快递公司，准备向多个地区快递100多封有这样内容的信件，收件人全部是一些单位的领导干部，信件内还附有这些官员的&ldquo;艳照&rdquo;。</p>\r\n	<p>　　监控录像显示，该男子戴着眼镜，身着灰色休闲短袖上衣和短裤，脚穿拖鞋，背着一个黑色包。该男子自称是襄阳某网站记者，要寄邀请函。随后，他从包中拿出了一个塑料袋，袋内装了100多封已封好的信件。快递员发现，信件收件人全是各单位的主要领导，而男子神情有异，于是进行试探，要求他自行打开信封接受检查，但男子称会弄坏邀请函，拒绝打开。</p>\r\n	<p>　　快递员掏出电话欲报警，让人意想不到的是，该男子撒腿就逃，工作人员死死抓住门把手不让他出门。僵持几分钟后，该男子丢下物品，跳窗逃走。</p>\r\n	<p>　　民警赶到后检查发现，该男子要邮寄的信件全是对各地官员的敲诈信，信中称有人对收件官员恨之入骨，于是私下花重金雇请该男子对其调查取证，目的是拿到证据后整垮收件官员。敲诈信中称，&ldquo;已查到你生活中不为人知的另一面&rdquo;，并威胁将会把资料传到网上。</p>\r\n	<p>　　同样在信中，该男子又变脸对收件官员&ldquo;大发慈悲&rdquo;，说双方无冤无仇，只要收件官员三天内汇款25万元，便会销毁所有证据或转交给对方，绝不会有第三人知晓。举报信中还留下了一个银行账号，户主名为&ldquo;刘细勇&rdquo;。信件中附有&ldquo;涉事官员&rdquo;裸体怀抱美女的艳照、记者证的封面照片、U盘照片等。快递员称，这些照片都很相似，疑为合成的。</p>\r\n	<p>　　警方当场扣下了这些信件。至昨日，寄信男子尚未落网，相关案情正在进一步调查中。</p>\r\n</div>\r\n<p>&nbsp;</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('445', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27606839\' f_id=\'3\' -->\r\n	<p>　　据江淮晨报报道，铜陵一男子在外花天酒地，借债一万元无钱归还，竟与朋友合伙骗自己老婆。7月3日，该男子声称自己被人&ldquo;绑架&rdquo;，要求妻子拿&ldquo;赎金&rdquo;一万元救自己。最后老婆没骗到，自己的朋友却因吸毒被公安机关依法行政拘留。</p>\r\n	<p>　　7月3日，铜陵市长江路派出所在日常接处警过程中，接到李女士报警，称自己的老公被人绑架了，对方要求她拿一万元钱去赎人。接警后，民警及时与李女士取得了联系。李女士称&ldquo;绑匪&rdquo;打电话给她，声称她老公吴某在他们手上，要求李女士马上拿一万元到某派出所门口，会有人跟她联系，和她接头之后，找她拿钱放人。</p>\r\n	<p>　　民警根据李女士提供的信息，在某派出所门口将前来拿赎金的&ldquo;绑匪&rdquo;王某抓获。通过对王某审讯，民警知道了&ldquo;绑匪&rdquo;的具体藏身地点。民警带着王某来到了某小区某栋某室，民警让王某敲开门，进入室内后，警方立即将房间里的三人控制住。在民警寻找被&ldquo;绑架&rdquo;的吴某时，有一人声称自己就是吴某，民警遂将三人带到了派出所。</p>\r\n	<p>　　经讯问，事情的结果让办案民警瞠目结舌。原来让人担心的&ldquo;绑架&rdquo;情节，竟然是吴某自导自演的一场闹剧，那几个所谓的&ldquo;绑匪&rdquo;都是他的朋友，目的就是骗老婆的钱，想不到老婆会报警。得知真相后，李女士告诉警方，她对老公非常失望。最后，吴某的朋友因吸毒被公安机关依法行政拘留。(记者 方佳伟 通讯员 汪江 吴彬)</p>\r\n	<p align=\"right\">(原标题：男子自导自演绑架为骗老婆一万)</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('446', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27606943\' f_id=\'3\' -->\r\n	<p>　　本报讯 李展辉 钟玲珑 首席记者程呈报道：新娘婚宴上逃婚，新郎痛苦不已索精神损害赔偿。7月4日，泰和县人民法院一审审理了一起婚约纠纷。</p>\r\n	<p>　　2012年9月，吴子华与女子黄晓菊谈起了恋爱，期间，黄晓菊不断向吴子华索要钱财，吴子华先后10次通过银行汇款近3万元给黄晓菊。双方商定2013年4月举行婚礼。结婚当日近百人到现场祝贺，黄晓菊却不同意结婚，并驾车迅速逃离。吴子华将黄晓菊起诉至法院，要求黄晓菊返还其财产2.95万元，并赔偿其精神损失2万元。</p>\r\n	<p>　　法院一审认为吴子华提出要求被告黄晓菊赔偿精神损害赔偿符合法律规定，但其诉请过高，应予核减，故判令黄晓菊返还吴子华财产2.95万元，支付精神损害赔偿5000元。(文中人物均属化名)</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('447', '<div class=\"blkContainerSblkCon BSHARE_POP\" id=\"artibody\"><!-- publish_helper name=\'原始正文\' p_id=\'1\' t_id=\'1\' d_id=\'27606968\' f_id=\'3\' -->\r\n	<p>　　东南网7月8日讯(海峡导报记者 蔡晶晶 通讯员 杨媛 林曼娜)酒后翻墙进别人家，不顾女主人怀有9个月身孕，竟想实施强奸，没能得逞的他还用刀划伤孕妇的婆婆。昨日，漳州市漳浦县检察院以涉嫌强奸罪对黄某龙依法批准逮捕。</p>\r\n	<p>　　4月19日晚上，家住漳浦县深土镇的犯罪嫌疑人黄某龙酒后经过邻居王某家，见王某房间的灯还亮着，于是翻墙而入径直从楼梯上二楼王某的房间。见到王某在屋里看电视，黄某龙关灯将王某按倒，打算强奸她，全然不顾王某已怀有身孕9个月，在王某奋力挣扎并苦苦求饶时，黄某龙仍揪住王某的头发把她拖到床边。此时，睡在床上的王某女儿惊醒，见母亲嘴角流血，便大声哭喊，黄某龙害怕孩子的哭声引来他人，才翻墙离开。</p>\r\n	<p>　　离开王家不一会儿，黄某龙发现自己的手机不见了，怀疑掉落在王某家中，竟在路边捡了把菜刀又折回王某家，打算和王某家人&ldquo;理论&rdquo;，其间挥刀划伤王某的婆婆。后来在邻居的劝架下黄某龙才离开，王某一家随即报警。</p>\r\n</div>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('448', '<p>本报深度记者 朱洪蕾</p>\r\n<p>&ldquo;短时间内杀了七条命，那么多警察，竟然抓不到我，老天助我也，看来我还要继续作案杀人!&rdquo;湖南武冈少年刘洋(化名)安然地坐在网吧里的电脑前敲出这句话。</p>\r\n<p>两个星期内，他和同伴付云强(化名)连续在湖南、广东、云南等地下手，就像是与时间在赛跑。</p>\r\n<p>这场&ldquo;杀人游戏&rdquo;的唯一赌注仅仅是为了获取更多的钱，在他俩看来，只要比打工赚得多。</p>\r\n<p>[NextPage][/NextPage]</p>\r\n<p>而在游戏开始前的半年，两个少年都还坐在学校里，身上并没有显露丝毫邪恶的印迹。</p>\r\n<p>刘洋和付云强曾经是同班同学，同住一个宿舍的上下铺让他俩有了更多的共同话题，相似的家庭背景让两人有了共同的语言。</p>\r\n<p>刘洋出生于1994年，付云强比他还小一岁。父母常年在外打工，刘洋从小就跟着外公外婆长大，只在暑假的时候，才会去爷爷奶奶家住一段时间，与父母相处的时间就更少了。</p>\r\n<p>付云强的家里还要困难，母亲患有眼疾，经常看不清东西，村里人背后就叫她&ldquo;瞎子&rdquo;，没法出去打工，挣钱的任务就交给了付云强的父亲和姐姐。</p>\r\n<p>即便如此，两个家庭都希望孩子能考上大学，用知识来改变生活。</p>\r\n<p>刘洋的成绩曾经在班里名列前茅，还是老师眼里的乖孩子和小才子，作文写得好，画也画得好。</p>\r\n<p>眼看着初中要读完了，一切却都变了。他的一个叔叔和疼爱他的奶奶接连去世，刘洋深受打击，他常想&ldquo;为什么好人不长寿&rdquo;，他的心思也跟着变了，上大学不再是追求的目标。初三下学期，刘洋开始迷恋于上网，经常课也不上就泡在网吧里。幸亏之前的学习底子还比较牢固，顺利帮助他升入高中。</p>\r\n<p>在高中，刘洋遇到了付云强。付云强有些孤僻，不怎么喜欢跟别人交流，老是心事重重，即便老师问他，他也不愿意多说。</p>\r\n<div style=\"page-break-after: always;\"><span style=\"display: none;\">&nbsp;</span></div>\r\n<p>经常上网的刘洋高中成绩一路下滑，甚至受到了老师的劝退。父母觉得是自己没照顾好他，就把他接到身边，希望他能好好读书，但刘洋依然我行我素。</p>\r\n<p>付云强的成绩一直垫底，眼见考大学无望，家里又不富裕，跟父亲商量后，2012年过完春节后不久，他就辍学到外地打工去了。</p>\r\n<p>2012年8月的一天，两个少年又在网上相遇。彼时的刘洋正拿着从家里偷来的几百元钱，泡在县城的网吧里，而不是按学校的要求乖乖呆在学校里补课。</p>\r\n<p>半年未见，付云强聊起了自己的打工生活。他认为，外面的世界很精彩，但是通过打工赚大钱实在太难了。两人在网上一拍即合，决定结伴儿出走，跟电影里演的黑社会一样，通过不正当的手段弄钱花。</p>\r\n<p>不几天，付云强怀揣打工挣来的几百块钱回到了武冈，一来就先给拮据的刘洋买了一堆吃的，让他改善生活。</p>\r\n<p>两人坐下来商量，打工赚钱不好赚，还经常有人拖欠工资，想要赚钱的话，抢劫才是最快捷的方式。考虑到两人都不高，而且身形偏瘦，在城里抢劫肯定不易下手，就把视线转向了农村。</p>\r\n<p>说干就干，付云强买来两把刀，8月21日，两人冒冒失失地到武冈市湾头镇的张某家里打劫。张某夫妇声称没钱，只给了两人90多块钱。一怒之下，他们对着夫妇俩刺了数刀，夫妇俩当场殒命。其实付云强一开始还不想杀人，但怕刘洋说他不够义气，就合力制造了这场血案。</p>\r\n<p>之后，两人赶紧动身来到东莞，继续寻找作案目标。8月25日，以热水器坏了为由，两人将女房东骗至出租屋，持刀威胁并绑住女房东，搜走了现金3000余元和银行卡，在女房东拒绝说出银行卡密码后，两人将她当场刺死。一不做二不休，等到男房东晚上回家，他们又以换房为由将他骗出，逼他说出银行卡密码后将他捅死。</p>\r\n<p>刘洋和付云强像是着了魔。8月29日，两人跑到云南钻进曲靖市富源县大河镇唐某家，将唐某捆绑后抢到90元钱，怕他报警，就将他勒死，然后扬长而去。</p>\r\n<p>是夜，两人住到富源县营上镇吴某家的旅馆。第二天上午，两人让吴某帮忙换牙刷，吴某就背着两岁大的女儿来到两人住的房间。在房间里，他们将怀孕五个月的吴某杀死，看到吴某两岁的女儿在一旁啼哭不止，担心引人注意，又用被子将小女孩捂死，然后来到吴某的卧室，将所有值钱的东西都拿走，再辗转逃到深圳。</p>\r\n<p>其间，两人不忘在网上跟网友分享他们的杀人经历，还收到了&ldquo;真酷!&rdquo;的一致评论。</p>\r\n<p>来到深圳后，两人打算消停一段时间，准备安心打工。刘洋戴着眼镜看着还比较斯文，就被一家饭店留下了，而付云强一时找不到工作，随后决定到上海去投靠一个朋友。</p>\r\n<p>9月6日傍晚，火车还在江西境内，付云强就被铁路公安抓获。随后，刘洋也在深圳落网。</p>\r\n<p>面对警方，两人非常坦然：&ldquo;我杀了人，我在湖南、广东、云南都杀了人。&rdquo;两人面无惧色地将作案情节从头到尾做了完整的复述。</p>\r\n<p>[NextPage][/NextPage]</p>\r\n<p>这一切让人感到无法理解。在后来的庭审中，休庭后，法庭特意邀请心理咨询师对二人分别进行心理评估。</p>\r\n<p>在与心理咨询师沟通后，两人才开始意识到自己的错误。社会调查员通过跟两人接触，认为两人都是留守儿童，父母关爱不够，最后走错路，很大程度上应归结于整个社会的大环境。</p>\r\n<p>在被看押期间，刘洋对自己之前的行为写了一些感受，在感受中，他提到，&ldquo;过去不会思考别人，只会想到自己&rdquo;，&ldquo;自己的冲动做法，害了这么多家庭&rdquo;，&ldquo;不管如何，都无法弥补了&rdquo;。</p>\r\n<p>确实无法弥补，在一审被判死刑后，刘洋会很快走到生命的尽头;付云强被判无期，以后的日子可能都得在监狱里度过了。</p>\r\n<p align=\"center\"><img align=\"\" alt=\"\" border=\"0\" src=\"http://demo7.11077.net/showgirlvideov5/u/cms/www/201307/101732351isd.jpg\" /></p>\r\n', '<p>\r\n	<img alt=\"\" src=\"/showgirlvideov5/u/cms/www/201307/101732073o7k.jpg\" style=\"width: 600px; height: 900px;\" /></p>\r\n', null, null);
-INSERT INTO `jc_content_txt` VALUES ('495', '<p style=\"text-align: center\"><span><font color=\"#000000\"><img _fcksavedurl=\"http://pnewsapp.tc.qq.com/newsapp_bt/0/8498180/640\" alt=\"刘晓庆今日大婚 第四任老公系将门之后政协委员\" src=\"http://pnewsapp.tc.qq.com/newsapp_bt/0/8498180/640\" /></font></span></p>\r\n<p style=\"text-align: center\"><span><a class=\"a-tips-Article-QQ\" href=\"http://datalib.ent.qq.com/star/182/index.shtml\" target=\"_blank\"><!--/keyword--><font color=\"#000000\">刘晓庆<!--keyword--></font></a><!--/keyword-->晒穿花裙子照。</span></p>\r\n<p align=\"center\" style=\"text-transform: none; font: 14px Arial, Verdana, sans-serif; white-space: normal; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-text-stroke-width: 0px\">&nbsp;</p>\r\n<p style=\"text-align: center\"><img _fcksavedurl=\"http://pnewsapp.tc.qq.com/newsapp_bt/0/8500820/640\" alt=\"刘晓庆今日大婚 第四任老公系将门之后政协委员\" src=\"http://pnewsapp.tc.qq.com/newsapp_bt/0/8500820/640\" /></p>\r\n<p align=\"center\" style=\"text-transform: none; font: 10pt 宋体; white-space: normal; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-text-stroke-width: 0px\">刘晓庆团队公布的William先生照片</p>\r\n<p align=\"center\" style=\"text-transform: none; font: 14px Arial, Verdana, sans-serif; white-space: normal; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-text-stroke-width: 0px\">&nbsp;</p>\r\n<p style=\"text-align: center\"><img _fcksavedurl=\"http://pnewsapp.tc.qq.com/newsapp_bt/0/8500821/640\" alt=\"刘晓庆今日大婚 第四任老公系将门之后政协委员\" src=\"http://pnewsapp.tc.qq.com/newsapp_bt/0/8500821/640\" /></p>\r\n<p align=\"center\" style=\"text-transform: none; font: 10pt 宋体; white-space: normal; letter-spacing: normal; color: rgb(0,0,0); word-spacing: 0px; -webkit-text-stroke-width: 0px\">2010年，王晓玉以全国政协委员身份接受新华网采访</p>\r\n<p style=\"text-indent: 2em\">中新网8月21日报道，近日，关于刘晓庆秘密赴美完婚的新闻传得沸沸扬扬，占据各大娱乐版块。8月20日早上，刘晓庆团队发表声明，透露期第四任丈夫王晓玉的情况。声明中透露刘晓庆与第四任丈夫已与去年注册结婚，声明中还称其丈夫比刘晓庆大，是将门之后，事业成功。晚些时分，记者致电刘晓庆身边工作人员，得知刘晓庆将于美国时间8月20日在美国举行婚礼。</p>\r\n<p style=\"text-indent: 2em\"><strong>老公揭秘：政协委员王晓玉</strong></p>\r\n<p style=\"text-indent: 2em\">据知情人士爆料，刘晓庆现任丈夫为商人王晓玉，2010年还担任过全国政协委员。</p>\r\n<p style=\"text-indent: 2em\">爆料称，刘晓庆现任丈夫为香港商人王晓玉，资料显示，1942年出生于安徽的王晓玉拥有众多头衔，包括中华海外联谊会理事、中华全国侨联委员、安徽省政协常委、香港安徽联谊总会会长、顺德锡山家具有限公司董事长、华美贸易公司总经理、第十届全国政协委员。据悉，王晓玉是黄埔后代。其父王剑秋是黄埔武汉分校七期毕业生。王晓玉投资家具厂多年，如今厂已经遍布广东、浙江、上海、山东、天津等地。资料显示，锡山家具专注于高端家具生产，多半出口海外，刘晓庆也曾入股家具连锁店。当时还打起了广告噱头，&ldquo;交一万元订金就可免费乘包机到成都，买2万元家具就可在本月19日与明星刘晓庆共进鸡尾酒会和看烟花。&rdquo;</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('496', '<p style=\"text-align: center\"><span class=\"infoMblog\"><img alt=\"赵本山女儿正式进军娱乐圈 将与潘长江女儿比拼\" src=\"http://img1.gtimg.com/ent/pics/hv1/150/212/1397/90894135.jpg\" /></span></p>\r\n<p style=\"text-align: center\"><span class=\"infoMblog\">潘阳</span></p>\r\n<p align=\"center\">&nbsp;</p>\r\n<p style=\"text-align: center\"><img alt=\"赵本山女儿正式进军娱乐圈 将与潘长江女儿比拼\" src=\"http://img1.gtimg.com/ent/pics/hv1/151/212/1397/90894136.jpg\" /></p>\r\n<p align=\"center\" style=\"font-family: 宋体; font-size: 10.5pt\">赵本山与女儿赵一涵</p>\r\n<p style=\"text-indent: 2em\">新快报8月21日讯 日前，浙江卫视宣布推出全国首档青年励志节目《我不是明星》，<!--keyword--><!--/keyword-->陈宝国<!--keyword-->儿子陈月末、潘长江女儿潘阳等30多位明星子女均已确定加盟。据透露，赵本山女儿赵一涵也有望加盟，藉此正式进军娱乐圈，并将与潘长江女儿潘阳同台对决。</p>\r\n<div __curdisplay=\"block\" class=\"mbSourceCardInfo\" style=\"display: none\">\r\n	<div class=\"arrowBox\">\r\n		<div calss=\"arrow\">&nbsp;</div>\r\n	</div>\r\n	<div __curdisplay=\"block\" class=\"mbloading\" style=\"display: none\">&nbsp;</div>\r\n	<div class=\"mbCardUserDetail\">\r\n		<div class=\"userPic\"><span class=\"infoMblog \"><a bosszone=\"followalltx2\" href=\"http://t.qq.com/chenbaoguo?pref=qqcom.keywordtx2\" rel=\"陈宝国(@chenbaoguo)\" target=\"_blank\" title=\"陈宝国(@chenbaoguo)\"><img src=\"http://t2.qlogo.cn/mbloghead/ec4910a28b805eb55ee4/50\" /></a></span></div>\r\n		<div class=\"userInfo\">\r\n			<div class=\"nick\"><span class=\"infoMblog \"><a bosszone=\"followallname\" href=\"http://t.qq.com/chenbaoguo?pref=qqcom.keywordname\" target=\"_blank\" title=\"陈宝国(@chenbaoguo)\"><span><font size=\"3\">陈宝国</font></span></a></span></div>\r\n			<div class=\"follower\"><span class=\"infoMblog \"><a bosszone=\"followalltz\" href=\"http://t.qq.com/chenbaoguo/follower?pref=qqcom.keywordtz\" target=\"_blank\" title=\"听众：896459人\"><span>听众：</span><span>896459人</span></a></span></div>\r\n			<div class=\"attentBoxWrap\" follow=\"0\" uid=\"chenbaoguo\"><span class=\"infoMblog \"><a bosszone=\"followallst\" class=\"addAttention\" href=\"javascript:;\" title=\"立即收听\"><span>+收听</span></a><a class=\"delAttention\" href=\"http://ent.qq.com/a/20130821/002333.htm#\" style=\"display: none\" title=\"已收听\"><span><font color=\"#666666\">已收听</font></span></a></span></div>\r\n		</div>\r\n		<div class=\"userNew\">\r\n			<div class=\"titleBox\"><span class=\"infoMblog \"><span>最新消息</span> <span class=\"timer\" rel=\"1322634633\" title=\"2011年11月30日 14:30\"><font color=\"#999999\">2011年11月30日 14:30</font></span></span></div>\r\n			<div class=\"news\"><span class=\"infoMblog \">感谢诸位朋友的关心，最近在家调整休息。近来天冷了，大家注意身体。<a bosszone=\"followallmore\" href=\"http://t.qq.com/chenbaoguo?pref=qqcom.keywordmore\" target=\"_blank\"><font color=\"#0b3b8c\">更多</font></a></span></div>\r\n		</div>\r\n	</div>\r\n</div>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 《我不是明星》将邀请娱乐明星、社会名人子女来参赛，有哪些&ldquo;星二代&rdquo;来参赛？据节目组官方微博透露，参赛的选手父母都是众人皆知的一线大牌明星，目前起码有两个&ldquo;影帝&rdquo;、三个一线歌星以及三个上过央视<!--keyword--><!--/keyword-->春晚<!--keyword--><!--/keyword-->小品演员的子女都有意向参加。当中，既有小有名气的，也有尚不出名准备进军演艺圈的。其中&ldquo;影帝&rdquo;陈宝国的儿子陈月末、&ldquo;小品王&rdquo;潘长江的女儿潘阳等已确定加盟，并参与首期节目录制。另据知情人透露，成龙、<!--keyword--><!--/keyword-->曾志伟<!--keyword--><!--/keyword-->、<!--keyword--><!--/keyword-->王菲<!--keyword--><!--/keyword-->、赵本山、谢贤、赵雅芝、<!--keyword--><!--/keyword-->郭德纲<!--keyword--><!--/keyword-->等大腕明星子女也都在节目组的邀请之列，有传赵本山女儿赵一涵也有意借该节目正式进军娱乐圈。</p>\r\n<p style=\"text-indent: 2em\">据悉，赵本山女儿赵一涵多才多艺，几年前远赴新加坡一家知名演艺学校求学，这次加盟也是其国内综艺节目的首秀。值得一提的是，同为东北两大&ldquo;小品王&rdquo;后代，赵一涵和潘阳两人同台对决也备受外界期待，网友笑言，这回两人不仅拼才艺还拼爹。对于赵一涵加盟的消息，节目组表示正积极接洽中。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('498', '<p>&nbsp;</p>\r\n<p style=\"text-align: center\"><!--/keyword--><img alt=\"冯小刚定春晚相声小品类基调：唱赞歌一律不要\" src=\"http://img1.gtimg.com/ent/pics/hv1/10/183/1398/90951625.jpg\" /></p>\r\n<p style=\"text-align: center\">冯小刚<!--keyword--></p>\r\n<p style=\"text-indent: 2em\">成都商报8月21日报道，前日，刚从国外归来的马年<!--keyword--><!--/keyword-->春晚<!--keyword--><!--/keyword-->总导演冯小刚与副总导演赵本山、艺术顾问张国立、刘恒和策划张和平等春晚智囊团首次召开了语言类节目碰头会。此次碰头会从早上开到晚上7点半，&ldquo;贺岁王&rdquo;与&ldquo;小品王&rdquo;在走马上任后的首次碰面为春晚小品、相声等语言类节目的总基调&ldquo;一锤定音&rdquo;。记者获悉本次开会气氛非常轻松，而总导演冯小刚则把敢说敢言的个性展现得淋漓尽致。前日他明确表示，相声小品不能束手束脚，要解放思想，颂赞歌的作品一律不要出现，最喜欢有尖有刺的东西。</p>\r\n<p style=\"text-indent: 2em\">作为电视节目导演界的&ldquo;新人&rdquo;，冯小刚不改其在春晚发布会上的态度，坚决要把针砭时弊的东西带入到语言类节目创作中去，冯小刚曾对春晚语言类节目提出了一个四字方针&mdash;&mdash;&ldquo;干预生活&rdquo;，希望作品能回归讽刺辛辣幽默。前日的碰头会上，冯小刚大胆地提出要摒弃那些煽情、唱赞歌的东西，所有创作者要放开手脚，敢写敢说，呈现出带尖带刺、有棱有角的相声和小品来。冯小刚举例子说，他特别推崇上个世纪八十年代马季和姜昆的讽刺相声，他更举了马季的《宇宙牌香烟》、姜昆的《虎口遐想》和《电梯风波》等作品，认为这才是真正针砭时弊，贴近生活的好作品。</p>\r\n<p style=\"text-indent: 2em\">据悉，赵本山在会上并未发表过多见解，相反多是倾听冯小刚的意见。而尹琪在接受记者采访时则表示，往年春晚作品的创作时间大概在11月份，自己参加本次碰头会也意味着&ldquo;赵氏&rdquo;春晚作品创作时间提前到八月下旬，整整提前了三个多月。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('499', '<p style=\"text-indent: 2em\">我观察到一个现象，就是目前在很多领域，大家对于终极价值的关怀是不够的。人们往往会较多关注法律规定对现实活动的具体影响，而容易忽略法律规定背后所应遵循的基本准则，特别是容易忽略法律的终极价值或伦理价值，这样就缺乏一个最终端的评价标准。</p>\r\n<p style=\"text-indent: 2em\"><strong>社会要公正，就必须透明</strong></p>\r\n<p style=\"text-indent: 2em\">首先是判断终极价值的现实体现，即正义是社会制度的首要价值。正义是非常抽象的，我们要把它落到现实当中去，需要通过具体的原则和方法。在现实社会当中很多发达国家不大讲公开，他们讲&ldquo;透明&rdquo;。透明这个词更加鲜活、精准。我认为一个社会要公正，就必须透明。</p>\r\n<p style=\"text-indent: 2em\">我们交了税以后，要获得的是一种公共产品或者公共服务。如果我们交了税以后，政府不能提供给我们最起码的公共服务，这个财政的正义就缺乏了，这是最基本的要求。比如说农村公共设施是非常落后的，怎么来保障财政正义的实现呢？首先在制度层面必须要明确不同种类的公共产品，在不同政府的分工。我们并没有看到这么一种明确的法律规定，这样的规定应该列入《宪法》。在操作层面、技术层面，我们很希望看到有一个清单，能够告诉民众哪样的公共服务由哪一级政府来提供。</p>\r\n<p style=\"text-indent: 2em\">比如义务教育的问题在于供应不足。在2000年以前，我们义务教育的经费是乡镇政府来保障的，乡镇政府来为义务教育提供服务。后来改为县政府来提供，义务教育到底应该由哪一级政府提供呢？我认为这是中央政府的责任，这个钱可以由中央来出，事情由地方来做。</p>\r\n<p style=\"text-indent: 2em\">政府除了收费、收税之外，它还掌握了一个公共资源。它的收费、租金，包括转让的价格都应该基于市场原则，也就是说政府应该把那些资源给出价最高的人。如果是低价给人家，或者说免费提供给经营者就侵害了老百姓的利益。</p>\r\n<p style=\"text-indent: 2em\">公共罚没收入应以促进法律遵从为原则，如果变成了以收入为目的的话，就完全背离了正义。开车的人都特别担心被贴罚单。什么叫&ldquo;违章停车&rdquo;？有两种原则来定义：一种是交管部门划出一个特殊的区域，说这里是可以停车的，其他地方不能停车。还有一种是划出一个区域，说这个地方不能停，其他地方都可以停车。我们现在采用的是第一种原则，如果采用第一种原则，我们被罚的概率就会增加很多。交管部门很容易就会抓到你，这个执法的弹性就很大。</p>\r\n<p style=\"text-indent: 2em\">&ldquo;罚款发工资&rdquo;是什么意思呢？有一些工作的人手不够，就要聘一些临时工，他们就是靠罚款来养这些人。如果是这样的话，我认为就违背了正义，如果这些临时工确实是工作需要的，就应该让他进编制，你不应该用罚款来保障他。当公共处罚以谋求收入为目的的时候，就与正义背道而驰了。量能课税应合乎比例原则，分担税负的两个原则是受益原则与能力原则：首先采用受益原则将各种特别公共基金与一般公共基金相区别；然后，对于一般公共基金采用能力原则。量能负担原则的衡量指标选择，是收入、消费还是财产？</p>\r\n<p style=\"text-indent: 2em\">量能负担原则的基本含义是没有能力的不交税，能力强的要比能力弱的多交税。所以收入多的人应该比收入少的人多交税，消费多的人应该比消费少的人多交税，财产多的人应该比财产少的人多交税。问题是怎么来确定具体的数额？人头税是否公平呢？当人人都差不多的情况下是公平的，但是现实中人和人的差别很大，所以人头税是不公平的。比例税是不管收入、财产、消费数额多大，都是统一比例的。还有一种标准是累进税，就是说你的收入超过的部分越高，就逐步增加。有的人说累进好，有的人说比例好。比例和累进都能够体现能力原则，当然程度不一样。累进的程度可能更多一点，但是累进不能解释一个能力强的人和一个能力弱的人相比，在多大程度上应该多交多少税。我们人类的理性无法回答这个问题，就只有在实践当中，大家通过互相博弈来解决这个问题。也就是说写在法律当中的，看起来很美，很有逻辑的累进税制，可以说暗含着一些不公平，有一定的武断性。比例税制由于不歧视，对所有人都一样，某种程度上又是公正的。而且比例税制还有一个好处，就是可以消除累进税制规避税收的机会。我的倾向性意见是认为比例税制比较好。</p>\r\n<p style=\"text-indent: 2em\">以上是一些财税正义的具体制度，可是我们发现财和税是不可分割的。你征税是为了某种支出，我们前面讲的是收入取得过程当中的正义。你在收入的时候很正当，但是你拿了钱以后做不正当的事情，我们会发现这都是虚假的。所以财政的收入应该从整体上考虑，也就是说必须要有收支相连的思路来考虑。如果把收和支割裂开，只考虑收入的公正不考虑支出的公正，或者反过来说，我认为在逻辑上会有混乱，而且在实践当中会产生问题。收支相连才能全面落实纳税人的权利，充分体现财税制度的正当性。</p>\r\n<p style=\"text-indent: 2em\"><strong>财税正义应该贯穿终生</strong></p>\r\n<p style=\"text-indent: 2em\">现在提出了一个&ldquo;环保税&rdquo;，有多少人是赞成&ldquo;环保税&rdquo;的？一般认为需要征的逻辑是觉得中国的环境很差，需要征税来保护环境。中国现在环境问题如此的严重，是不是因为征税不足造成的？好像不是，如果不是的话，你这个征税到底能在多大程度上缓解，或者说解决这个环保问题呢？这就让我们思考一个问题，就是为什么要征税？我认为政府向老百姓征税还有其他的原因，它没有说出来的原因就是为了拿钱。钱不够向大家要税，这是不是该有一个正当理由？如果政府告诉大家现在我提供这么多公共服务，确实是钱不够了，老百姓是同意的。你已经收了很多的钱，你又不能说缺钱，你又不能说清楚已经收的钱都已经得到了充分的使用，没有浪费、贪污，你为什么还要向我征税？调控是不是一个正当的理由？在我看来调控论有一定的道理，但不是所有的事实都能支撑它。</p>\r\n<p style=\"text-indent: 2em\">&ldquo;公款不得私用&rdquo;好像是一个尝试，而不是一个原则。什么时候这种公款私用是正当的？第一，个人生活极端的贫困，处在我们贫困线以下，所以我们拿一部分公款来救助他。我认为这就是公正的，因为每个人可能都有这种活不下去的时候。第二，如果个人遭受了公共权力机构的侵害，他应该得到一个补偿，这个给他也是正当的。第三，人人有份，就像澳门一样发一个年终红包。超出这些范围的，我觉得就不太正当了。</p>\r\n<p>[NextPage][/NextPage]</p>\r\n<p style=\"text-indent: 2em\"><strong>下面我举例讨论：</strong></p>\r\n<p style=\"text-indent: 2em\">1.经济适用房由政府买单是否涉嫌公款不当私用？谁在买经济适用房？能买得起经济适用房的人最起码不是最穷的人，在大城市里面这个补贴是很大一部分资金。</p>\r\n<p style=\"text-indent: 2em\">2.公共奖励金及其免税是否具有正当性？奥运会得奖了，我们要不要拿钱来奖励他？中科院的院士每年有1万元的津贴，我们给他免税，你认为正当吗？</p>\r\n<p style=\"text-indent: 2em\">3.政府官员公车补贴是否正当？这就变成了一种隐性的福利，为什么他们不坐公交车，不骑自行车。如果公车公用的话，我认为一个城市里面可以有一个集中的统一调动中心，为什么每个干部都配公车？</p>\r\n<p style=\"text-indent: 2em\">4.政府招商引资时实行的&ldquo;财政返还&rdquo;政策是否具有正当性？这些都是公款，很多政府在花钱的时候，到底有没有正当性的支持？现在我们都默认了，随便怎么用。</p>\r\n<p style=\"text-indent: 2em\">不同财政收支系统的自我平衡原则。财政有不同的收支系统，比如说社保是一个系统，政府经费是另外一个系统，政府有一些基金项目也是独立运行的系统。社保基金的钱不可以跟其他的基金划转，如果划转了就破坏了公正，这也是非常重要的整体原则。</p>\r\n<p style=\"text-indent: 2em\">真正的财税正义，不仅仅是在某个时点或特定时期内的公平正义，应该是终生的。如果有一个办法可以把不同的人，一生当中所得到的财政利益和财政负担计算出来，这个终生正义就有一个基础了。税收优惠是非常普遍的一个现象，这个税收优惠的正当性在哪里？到底该还是不该？有些行业经常会说我这个行业需要发展，当然，特殊的阶段性，短期考虑是有理由的。所以从这个意义上讲，优惠是可以，但是必须要有期限。你不能永远给它优惠，必须要有期限的优惠，没有期限的优惠我认为都是有问题的。</p>\r\n<p style=\"text-indent: 2em\">代际间的公平公正，也是社会制度需要考量的重要方面。社会要发展，人类要进步，所以当代人为后代人多做点努力是正当的。如果反过来说，当代人去侵害后代人的利益就有问题了。当代人忽视后代人的利益，因为后代人还没有出现，你就把他们本该拥有的东西给侵占了，这就违反了代际正义。这种情况一定要通过制度约束，约束当代人过度侵害后代人的情况。这些在财政方面也有一些考虑，但是还不够。比方说资本预算制度就是这样一种考量，如果借钱的话就要通过资本运算来解决。</p>\r\n<p style=\"text-indent: 2em\"><strong>技术手段支持构建&ldquo;税制梦&rdquo;</strong></p>\r\n<p style=\"text-indent: 2em\">最后我想谈一谈我的&ldquo;税制梦&rdquo;，就是基于我前面对正义的考虑。我觉得在现代网络化大数据的时代，可以构想出一个简单透明的制度。就是在国家统一构建一个集中信息处理系统，任何一个单位、个人都在这个系统里面联起来，都有唯一的账号，我觉得在技术上是可以实现的。</p>\r\n<p style=\"text-indent: 2em\">有了这个东西之后，这个账户跟所有的金融机构联网，还要考虑和所有的物流系统联网。联起来以后，征税就会变得非常简单。我们每个人在银行里面都开户，只要有一笔钱进到任何一家银行，那个统一系统的账户里面就可以反映出来。征税方式就是系统自动扣缴，这个时候就不需要税务局了，因为系统可以自动实现把你的税划转到国库。这样就不需要企业交税了，所有的税都可以让个人去交。只要个人有收入，银行系统就自动给你划转。只要你有消费，消费的时候划卡，自动跟你的收款机联起来了，系统里面就自动显示出你买了东西。这样就不用带任何的现金，都是通过网络来实现。我觉得技术上应该是可以实现的，在我的构想当中，这个事情好像很简单。如果这样做的话，你连贪污都不可以了，因为都透明了。</p>\r\n<p style=\"text-indent: 2em\">如果这个构想可以实现，第一，不需要税务局；第二，不需要申报；第三，中介机构不需要有了，逃避税的空间狭窄了。这都是一种构想，不过我认为它不是一个空想，不是一个乌托邦的空想，因为它有技术的可行性支撑。以往很多的构想实现不了，因为它没有技术的条件。我这个设想只是基于现有的基础条件，说不定将来全球一统，没有国家的差别也有可能。我认为这些挑战主要问题还不是技术方面，主要问题是制度、法律、文化、观念、利益阻挠等。这种变革一定是有一个很长的过程，但是不管怎么说，有了这种大方向和大目标的引导，我们就可以通过代代相传的努力来实现它。有了方向的引导，我们才知道那才是我们应该去的地方。所以希望我的税制梦不是梦，希望它成为一个现实。</p>\r\n<p style=\"text-indent: 2em\"><strong>嘉宾简介：</strong></p>\r\n<p style=\"text-indent: 2em\">朱为群，上海财经大学公共经济与管理学院教授、税收系主任、税收学博士生导师，兼任中国税务学会理事、中国国际税收研究会理事、中国财税法研究会理事、全国财政学教学研究会常务理事等职。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('500', '<p style=\"text-align: center\"><img src=\"http://t2.qpic.cn/mblogpic/26276de504f16f64b6f0/2000\" /></p>\r\n<p>&nbsp;</p>\r\n<p>几千年来，谣言不绝如缕。</p>\r\n<p>在古代，因为交通、通讯、传媒、人口等限制，谣言传播的速度与规模不能与近世相提并论。1768年（清乾隆三十三年），一则关于妖术的谣言竟迅速演化成一场全国性的大恐慌，影响波及数千万人，孔飞力在其名著《叫魂&mdash;&mdash;1768年中国妖术大恐慌》中对之作出了精彩叙述与分析。</p>\r\n<p>乾隆帝残酷查处了&ldquo;叫魂案&rdquo;，一颗颗人头像韭菜一样被割掉，并且不可能再长出来。乾隆帝恐惧的并非谣言本身，而是谣言导致的社会集体心理波动与行为变异，更重要的是，通过对谣言案的深入观察，乾隆帝发现自己很可能已经在常规领域失去对官僚的有效控制。上述种种，都对这个异族政权的合法性和稳定性形成威胁，统治者必须严肃应对。</p>\r\n<p>乾隆朝是所谓清代最后一个盛世，嘉道之后，乱世来临，大规模谣言泉涌而出。</p>\r\n<p>在太平天国与清军的对战中，双方都毫不客气地使用了谣言这种非常规武器。洪秀全散播谣言说：&ldquo;予细查满鞑子之始末，其祖宗乃一白狐、一赤狗，交媾成精，遂产妖人，种类日滋，自相配合，并无人伦风化&rdquo;&ldquo;前伪妖康熙暗令鞑子一人管十家，淫乱中国之女子，是欲中国之人尽为胡种也。&rdquo;</p>\r\n<p>清军也立即展开谣言反击战，散播说：&ldquo;（太平军）所过之境，船只无论大小，人民无论贫富，一概抢掠罄尽，寸草不留&rdquo;、&ldquo;其虏入贼中者，剥取衣服，搜括银钱，银满五两而不献贼者，即行斩首。&rdquo;据说曾国藩还炮制了民谣，派人四处传说：&ldquo;天父杀天兄，江山打不通。长毛非正主，依旧让咸丰。&rdquo;</p>\r\n<p>我们当然不能将曾国藩的胜利归于造谣术，但如果他未能有效化解对方的谣言战术，并在己方谣言之上制造并传播新的意识形态（其根基就在《讨粤匪檄》一文），可能胜利会来得更晚。</p>\r\n<p>谣言本身或无法改变历史，但很可能成为历史巨变中的一个关键因素。社会运动有时不需要真相，一个谣传引发的骚动，也可能改变历史。很多人内心追求的未必是真相，而是一场巨变。</p>\r\n<p>1911年10月9日下午，革命党人在汉口不慎引爆炸药。大约同时，&ldquo;清政府正在捕杀革命党人&rdquo;的谣言，于新军中广传。到10月10日，这个谣言更加具体了&mdash;&mdash;&ldquo;清政府正在捉拿没有辫子的革命党人&rdquo;&ldquo;官员已经掌握革命党人的花名册&rdquo;。</p>\r\n<p>当时的新军士兵，不少人都没有辫子，传说中的花名册又都没见过，谁知道自己在不在其中呢？恐惧在新军中蔓延，恐惧滋生新的谣言，新的谣言反过来又加深恐惧。这时候，参加兵变就成了多数士兵自保的最优选择。10日薄暮，一个排长查哨时的普通纠纷，竟激成哗变，最终引发连锁反应，导致辛亥鼎革。</p>\r\n<p>谣言为何能轻易地使人接受并参与传播？1942年美国两位学者做了一个谣言传播与接受的研究，计算出一个&ldquo;信谣指数&rdquo;，结果发现：穷人比富人更易信谣，45岁以上的人比年轻人更易信谣，犹太人比非犹太人更易信谣。</p>\r\n<p>穷人更易信谣是因为他们渴望改变现状；45以上的人更易信谣是因为他们的信息渠道与信息分析能力相对落后；犹太人更易信谣则是因为在战时，犹太人比一般人更缺乏安全感，而当时的谣言往往又是让人恐惧的那种。</p>\r\n<p>法国学者让-诺埃尔《谣言&mdash;&mdash;世界最古老的传媒》一书，对谣言有新颖而独到的见解。他认为，谣言经常是&ldquo;真实的&rdquo;，它之所以令人不舒服，是因为权力无法控制这种信息。</p>\r\n<p>在任何一个地区，当人们希望了解某事而得不到官方答复时，谣言便会甚嚣尘上。谣言是信息的黑市。辟谣往往制止不了谣言，因为谣言不是福尔摩斯，对真相充满感情，谣言是聚集着仇恨的女巫，它只说出人们认为应该如此的&ldquo;事实&rdquo;。人们看上去是在传播新的谣言，实际上是在清算旧账。辟谣注定是无力的，因为辟谣会破除人们的幻想，给狂热者当头浇一盆雪水，唤他们回到平庸的现实中来，爱做白日梦的人们当然不肯买账！</p>\r\n<p>谣言既是社会现象，也是政治现象，它是一种反权力，揭露秘密，提出假设，迫使当局开口说话。谣言还是社会群体心理结构的镜子，因此不论真假，谣言都是有价值的。</p>\r\n<p>在我看来，谣言不但是社会的、政治的，也是历史的。谣言不但可能成为历史事变的导火线，并且可能成为历史事变的解说者。历史中充斥着太多谣言，有些被当场击毙，有些则轻松逃脱，在漫长的时间河流中演变成都市传奇或历史神话。</p>\r\n<p>都市传奇是谣言的连续剧。譬如针刺狂的谣言，1922年在法国巴黎一度盛行，80多年后在中国大陆又化身&ldquo;艾滋针刺狂&rdquo;的传说不胫而走。</p>\r\n<p>神话则是谣言的终极形式。譬如义和团运动，在1901-1920期间曾被认为是愚昧、迷信、野蛮的神话；在1924-1937却被认为是饱含民族自尊与抗击热情的反帝国主义的正义神话；在文革期间更被指认为反封建、反帝国主义的伟大群众运动的神话，且间接为红卫兵哺乳；上世纪80年代以降，它又重返愚昧、野蛮、疯狂的神话，只是不时仍蒙着一层爱国主义的遮羞布。</p>\r\n<p>那么，历史真相究竟如何？然而，&ldquo;绝对客观的历史真相&rdquo;，本身也许就是一个最大的历史神话。</p>\r\n<p>【笔者按：据京华时报报道，昨天全国公安机关集中打击网络有组织制造传播谣言等犯罪专项行动拉开序幕。秦火火、立二拆四等推手被北京警方刑拘，其网络推手公司被查。】</p>\r\n<p>附，《叫魂&mdash;&mdash;1768年中国妖术大恐慌》《谣言&mdash;&mdash;世界最古老的传媒》相关信息：</p>\r\n<p>（1）《叫魂&mdash;&mdash;1768年中国妖术大恐慌》</p>\r\n<p>作者：（美）孔飞力；译者：陈兼/刘昶；出版社：生活&middot;读书&middot;新知三联书店；出版年：2012-5；ISBN：9787108037909</p>\r\n<p>（2）《谣言&mdash;&mdash;世界最古老的传媒》</p>\r\n<p>作者：（法）让-诺埃尔&middot;卡普费雷；译者：郑若麟；出版社：上海人民出版社；出版年：2008-12；ISBN：9787208076495</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('501', '<p style=\"text-indent: 2em\"><strong>【编者按】</strong>二战战败，日本在屈辱和不情愿中，被迫接受了麦克阿瑟的改革。麦克阿瑟通过修改宪法、财阀解体、土地改革等一连串的政策，使满目疮痍的日本迅速崛起。麦克阿瑟在日本到底做了什么？8月14日下午北京涵芬楼书店，旅日作家俞天任先生做客燕山大讲堂发表题为&ldquo;谁在统治日本&rdquo;的演讲，以下为文字实录：</p>\r\n<p style=\"text-indent: 2em\">1945年8月30日道格拉斯&middot;麦克阿瑟五星上将乘坐的&ldquo;巴丹号&rdquo;降落在神奈川县厚木海军飞机场，那时候日本并没有解除武装，他心里没有底，而且在太平洋战争中见识过喊着&ldquo;天皇陛下万岁&rdquo;，冒着枪林弹雨不知道&ldquo;死&rdquo;是什么往上冲的日本兵，虽然美国胜利了，但日本军队那种疯狂对麦克阿瑟来讲是恐怖的。所以于麦克阿瑟而言最重要的是不再让一个疯狂的日本出现。</p>\r\n<p style=\"text-indent: 2em\">他通过审判战犯、修改宪法、财阀解体、土地改革一连串的政策，使日本成为一个和平的国家。现在的日本，不管是言论还是举动，作为一个国家来讲，在这六十几年没干过什么坏事，一个军人把一个国家弄成这样，这是一个奇迹。</p>\r\n<p style=\"text-indent: 2em\">麦克阿瑟让占领军中的一些战前职业为律师的年轻军人们起草了一部&ldquo;和平宪法&rdquo;，这部宪法所反映的，实际上就是年轻人对于国家存在方式的政治理想。最后在一定程度上，麦克阿瑟还使用了刺刀，逼着日本人接受了这部宪法，来代替俗称为&ldquo;明治宪法&rdquo;的那部《大日本帝国宪法》。宪法只是描述了麦克阿瑟脑海里日本社会应有的形象，要达到这个目的，还得进行具体的工作，麦克阿瑟改造日本的过程，几乎就是分别对这六个权力集团采取不同的行动以瓦解或消除他们力量的过程。</p>\r\n<p style=\"text-indent: 2em\">麦克阿瑟采取的第一个行动就是解除日本的军事武装，这是在《波茨坦公告》中已经明言了的条件，因此麦克阿瑟没有遇到任何军事抵抗。根据联合国占领军总部的命令，日本帝国大本营于1945年9月13日废止，其中枢部分的参谋本部和军令部于10月30日正式消失，陆军省和海军省也于12月1日被撤销。日本军部，这半个世纪以来，亚洲和太平洋地区人的噩梦，终于退出了历史舞台。</p>\r\n<p style=\"text-indent: 2em\">麦克阿瑟对于宫廷集团所采取的行动是让日本天皇自己发布所谓&ldquo;人间宣言&rdquo;，从&ldquo;现人神&rdquo;的位置上走下来，这样宫廷集团就失去了赖以存在的理由，而且日后也不能再有人来使用&ldquo;效忠天皇&rdquo;的口号蛊惑人心，煽动骚乱。</p>\r\n<p style=\"text-indent: 2em\">麦克阿瑟当然知道以三菱、三井、住友、安田这四大财阀为首的日本财阀集团，在日本军阀对外扩张的行动中所起的重要作用，也知道他们实际上控制着很大一部分国家权力。麦克阿瑟采取的对策是以占领军的强大武力为后盾，进行&ldquo;财阀解体&rdquo;的行动，把这些庞大复杂的康采恩和辛迪加，分割成了一个个再也无力影响国策的普通企业。</p>\r\n<p style=\"text-indent: 2em\">战前日本农村的土地兼并现象非常严重，由此而产生的无地农民问题，成了日本向外扩张的借口。为了解决这个问题，麦克阿瑟毫无顾忌地从日本的地主那里把土地抢了过来，分给无地的农民们以安定农村局势。</p>\r\n<p style=\"text-indent: 2em\">通过释放政治犯，举行民主选举，鼓励成立工会，推进妇女参政等手段，麦克阿瑟在日本一边推广美国式民主自由的思想，建立新的政党政治，同时也采取将与原政权有关系的人开除公职的方法，摧毁了原来的政治结构。虽然这些做法中，有很多因为朝鲜半岛战争而中断或者发生了变化，但整个方向没有变。在日本一直有一个很有趣的猜想，就是如果没有朝鲜半岛战争的爆发，持坚决反共意识形态的麦克阿瑟，最终会把日本鼓捣成一个什么样的国家？</p>\r\n<p style=\"text-indent: 2em\">在军部、财阀、地主、政党、宫廷这些昔日的权力集团全部瓦解之后，麦克阿瑟准备如何处理日本帝国的官僚队伍呢？现在这个国家已经不再是&ldquo;天皇的神国&rdquo;了，麦克阿瑟教给了日本人一句&ldquo;主权在民&rdquo;的口号。但是和过去的天皇不可能自己去执掌权力一样，民众也不可能自身去直接使用权力，还得靠官僚来代表他们行使国家权力，但原来那支被称为&ldquo;天皇的官吏&rdquo;，为天皇服务的旧文官队伍现在能不能作为为国民服务的&ldquo;公仆&rdquo;（public servant，这也是个麦克阿瑟带来的新名词）而被继续使用呢？如果不能继续使用，已经搭起了&ldquo;民主日本&rdquo;框架的麦克阿瑟，又准备上哪儿去寻找实际运作这个国家的行政官员呢？</p>\r\n<p style=\"text-indent: 2em\">来看看占领军总司令部GHQ对 &ldquo;帝国高等文官&rdquo;们的评价。GHQ是这样评价他们的：&ldquo;这些官僚，也就是说高等文官的大部分出身于东京帝国大学法学部。他们在大学里接受了完整的法律训练，他们被教育为忠诚天皇和同僚的人，他们甚至受过如何谈判和讨价还价的教育。但是在东京帝国大学法学部的课程中行政学却是选修课目，而且几乎没有人选修这门课目，因为高等文官的考试中从来没有出现过行政学的试题。&rdquo;</p>\r\n<p style=\"text-indent: 2em\">这就是麦克阿瑟对他们的评价，麦克阿瑟知道他们忠君的政治倾向，但麦克阿瑟并不认为这是很大的问题。麦克阿瑟直截了当地说：&ldquo;世界上任何国家的官僚集团的本能都是替付工资的人工作。&rdquo;可能对某个官僚来说存在着意识形态的问题，但对于整个官僚集团来说，&ldquo;有奶便是娘&rdquo;才是本能。何况麦克阿瑟除了依靠这支官僚队伍之外也没有别的选择，他在日本不可能找出来能够从事行政管理工作的其他人了，精英化的后果就是除了精英之外就没有了有资格的人。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('507', '<p style=\"text-align: center\"><img alt=\"广州又现“楼歪歪” 三栋居民楼倾斜(图)\" src=\"http://img1.gtimg.com/news/pics/hv1/45/129/1413/91913265.jpg\" /></p>\r\n<p>&nbsp;</p>\r\n<p align=\"center\" class=\"pictext\">居民楼倾斜现场图。 肖雄 摄</p>\r\n<p style=\"text-indent: 2em\">上月初，广州番禺区厦滘村一居民楼因地基下陷，房屋倾斜被拆除，5日晚至今，当地又连续有三栋居民楼发生倾斜。目前，周边十余栋受影响的房屋村民已经全部疏散，当地街道办开放临时安置点接纳受影响群众，而疑似事故元凶的附近工地已停止施工。</p>\r\n<p style=\"text-indent: 2em\">昨日（7日）上午，记者在厦滘村沙滘中路看到，14巷、16巷、18巷都已经被封锁，拉起了警戒线。在现场可以清楚地看到，16巷10号楼高六层，已经向东倾斜约15度，地面下沉约50厘米并裂开，14巷发生沉降的楼房分别有五六层高，楼底地面有多处开裂，其中14巷7号整体下沉明显，房子的大门被突起的地面抵住，已经无法完全打开，隔壁的14巷9号楼房墙角处的地面开裂非常明显，裂缝蜿蜒盘旋了很长，整栋房屋有被推高的趋势。</p>\r\n<p style=\"text-indent: 2em\">昨日下午，番禺洛浦街通报称，将继续全力做好厦滘村房屋下沉倾斜应急处置工作，重点做好排危、警戒及安置工作，继续开放临时安置点接纳受影响群众，并做好临时安置款的发放工作。</p>\r\n<p style=\"text-indent: 2em\">接连出现的沉降事故，让村民们惶恐不安，他们将造成这一切的矛头指向了旁边的&ldquo;厦滘商业大厦&rdquo;工地，怀疑是因为工地挖地基太深，造成了水土流失。&ldquo;厦滘商业大厦&rdquo;项目部的负责人在接受媒体采访时表示，这个项目是经过相关职能部门的审批，证件齐全，并不存在违法施工的行为，而且他们已经采取了相应的措施确保村民的安全。如果项目施工完成后，还会对受损的房屋作施工后的安全鉴定，届时如确定是开发商的责任他们将主动承担。（记者 胥柏波）</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('508', '<p style=\"text-align: center\"><img alt=\"海口酒行发生爆炸两人受伤 玻璃碎片炸飞50米外\" src=\"http://img1.gtimg.com/news/pics/hv1/240/127/1413/91912950.jpg\"/></p><p>&nbsp;</p><p style=\"text-indent: 2em\">【海口一酒行发生爆炸两人受伤】今天早上8点40分左右，海口市蓝天路一家酒行发生爆炸，两人受伤被送往医院。现场破坏严重，50米外能看到被炸飞的玻璃碎片，停在路边的多部车辆受损。目前警方已介入调查。（央视记者毛鑫陈龙）</p>', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('509', '<p style=\"text-indent: 2em\">京华时报讯 由<span class=\"infoMblog\">人民出版社</span>出版的《朱镕基上海讲话实录》于8月12日向全国发行。昨天，人民出版社常务副社长任超做客中新网时介绍，该书首印110万册全部发出，并已取得65万册的销售佳绩。任超表示，该书出版过程中，朱镕基同志要求实事求是，如实呈现当时的一些情况。</p>\r\n<p style=\"text-indent: 2em\"><strong>首印110万册全发出</strong></p>\r\n<p style=\"text-indent: 2em\">任超透露，《朱镕基上海讲话实录》首印110万册全部批发出去。截至前天，实际销售已达65万册。</p>\r\n<p style=\"text-indent: 2em\">任超介绍，朱镕基退休后共出版三本书，均由人民出版社出版。其中，《朱镕基答记者问》2009年出版，首印25万册，发行当日再次加印，半个月后，印数达百万。而《朱镕基讲话实录》2011年出版，首印50万套，一个多月内售罄。</p>\r\n<p style=\"text-indent: 2em\">任超说，由于前两本书出版社对销量的估计不足，首印偏少，造成了一段时间市场脱销，此次为充分地满足读者的需求，所以做出了首印110万册的决定。</p>\r\n<p style=\"text-indent: 2em\"><strong>朱镕基要求尊重原貌</strong></p>\r\n<p style=\"text-indent: 2em\"><strong>任超介绍，该书出版过程中，朱镕基非常注意听取大家意见，1000余本样书多送给中央领导同志、有关专家及当时和他在上海共事过的同事征求意见。而朱镕基同志本人则要求实事求是，如实呈现当时的一些情况。</strong></p>\r\n<p style=\"text-indent: 2em\"><strong>任超透露，朱镕基同志对自己所写的文章都是认真地思考，每篇文章他都要过。他要求尊重原貌，如实呈现当时的一些情况，是怎么回事就怎么回事，实事求是。任超说，朱镕基曾说过，&ldquo;如果人家拿着我的录音和我书里面的内容对不上，这不好&rdquo;。</strong></p>\r\n<p style=\"text-indent: 2em\">任超介绍，他跟朱镕基身边的一个工作人员了解到一个小故事。这本书里面，最后一篇文章是关于街道工作的，有专家提出来，这篇文章可不可以不说了。但是朱镕基认为街道工作是社会管理工作的一个非常重要的基础性工作，这篇要发表，就把这一篇报道出来了。</p>\r\n<p style=\"text-indent: 2em\"><strong>领导人出书将增多</strong></p>\r\n<p style=\"text-indent: 2em\">近年来，我国多位退休领导人都不止一次出版了自己的专著。对此，任超表示，这是一个好事，表明更加开放，更加透明。同时，党和国家领导人处理问题的方法带有普遍性意义，读者可以从中悟到一些东西。&ldquo;过去我们对党中央的一些决策部署和过程不一定很了解，现在通过一些著述，我们可以比较清晰地看到一些决策的脉络。&rdquo;</p>\r\n<p style=\"text-indent: 2em\">任超认为，今后领导人出书可能会越来越多，大家以后也会习以为常。</p>\r\n<p style=\"text-indent: 2em\">京华时报记者张然 综合中新社</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('512', '<p>&nbsp;</p>\r\n<p style=\"margin: 0px 0px 20px; padding: 0px; color: rgb(51, 51, 51); font-family: \'microsoft yahei\'; font-size: 16px; line-height: 30px; text-align: justify; \">9月4日下午，融创集团以21亿元地价款、22.24亿元配建异地医院的出价拿下备受瞩目的北京朝阳区农展馆北路8号0304-622地块，折算楼面地价高达7.3万元/平方米，再度刷新了北京单价地王记录。</p>\r\n<p style=\"margin: 0px 0px 20px; padding: 0px; color: rgb(51, 51, 51); font-family: \'microsoft yahei\'; font-size: 16px; line-height: 30px; text-align: justify; \">　　以此同时，在9月2日，中国指数研究院发布了《2013年8月中国房地产(行情专区)指数系统百城价格指数报告》，报告显示：2013年8月，全国100个城市(新建)住宅平均价格为10442元/平方米，环比7月上涨0.92%。自2012年6月以来连续第15个月环比上涨，涨幅比上月扩大0.05个百分点，其中71个城市环比上涨，29个城市环比下跌。在上涨的城市中，涨幅居前三位的是：福州（楼盘）、徐州（楼盘）、日照（楼盘），而在上涨前十名的城市中，北京是唯一一个一线城市入选的。由此看出，上涨幅度最大的是二、三线城市。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('559', '<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">【环球时报综合报道】日本国内也有人对安倍的发言提出批评。据时事通讯社报道，民主党干事长大畠章宏26日表示，安倍在联大上自称&ldquo;右翼军国主义者&rdquo;的说法是不恰当的，&ldquo;作为国家首脑不应该有这样的言论&rdquo;。而执政同盟公明党内也有干部表示，首相的发言&ldquo;非常欠斟酌&rdquo;，反而有损日本的国际形象。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　安倍所鼓吹的集体自卫权在日本国内更是面临巨大争议。《朝日新闻》8月份进行的民调显示，支持者只占27%，反对者高达59%。自民党的执政盟友公明党也一直对修改宪法持谨慎态度。韩国YTN电视台26日称，虽然安倍政权盘算着明年春天通过以宪法解释的名义将行使集体自卫权合法化，但最大绊脚石来自执政伙伴公明党和日本舆论。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　中国国际问题研究所所长曲星26日接受《环球时报》记者采访时表示，日本之所以被剥夺联合国宪章规定的集体自卫权，是因为它在历史上发动了侵略战争。现在日本的行为仍远远不能让世界人民放心。战争罪犯还在靖国神社像神一样被祭拜，安倍还说出&ldquo;不同的人对侵略有不同解释&rdquo;这样的话，日本政客还公开为慰安妇罪行辩护&hellip;&hellip;</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　&ldquo;日本集体自卫权是新冷战的前奏&rdquo;，韩国《中央日报》25日以此为题对纵容日本扩充武装的美国提出质疑。文章称，如今集体自卫权貌似已成为美日两国为牵制中国的必须选择。美国在二战中让日本投降，却在不到一个世纪的时间里再次让战犯国拿起枪，这真是历史的反讽。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　虽然面对众多反对和质疑，但安倍仍表现出一意孤行的态度。日本新闻网以&ldquo;安倍称自卫队会去地球背面&rdquo;为题说，<strong>安倍抵达纽约接受日本记者团采访时表示，恐怖活动在世界任何地方都会发生，为了世界的安定与和平，自卫队的活动不应该考虑地理因素限制。因此表明了自卫队将跟随美军到世界任何一个角落去行使集体自卫权，而不是像执政的自民党内部分议员提出的&ldquo;限定条件，限定区域&rdquo;的妥协方案。</strong></p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('560', '<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">中新社北京9月27日电 伊斯兰堡消息：巴基斯坦官方26日证实，发生在该国俾路支省的7.7级地震已造成至少355人遇难，另有近700人受伤，数百间房屋坍塌。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　巴基斯坦国家灾害管理局26日发布的声明说，救援人员仍在努力搜救幸存者。有消息说地震实际遇难人数将超过500人。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　据美联社报道，此次地震震中的阿瓦兰是巴基斯坦最贫穷的地区之一，地震摧毁当地90%以上的房屋，受灾居民无家可归，只能用木棍和床单搭建临时避难所过夜。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　地震发生时，家住阿瓦兰的努尔&middot;艾哈迈德正在工作，当他赶回家里时，发现房子已经被夷为平地，妻子和儿子也在地震中遇难，&ldquo;我已经一无所有了&rdquo;，他对媒体记者说。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　卡塔尔半岛电视台网站26日消息说，灾区目前急缺食物、水、帐篷等必需品，由于缺乏药品，前往灾区的医生无法开展及时救治，只能先做当地居民的心理安抚工作。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　&ldquo;我们需要更多帐篷、更多药品和更多食物&rdquo;，俾路支省发言人穆罕默德说，他透露，已有2000包帐篷和食物送达灾区。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　在其他地理位置偏远、基础设施不健全的受灾区域，救援工作很难开展，灾民只能在废墟中翻找食物果腹。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　巴基斯坦军方消息说，已有60辆军车于当地时间25日运载一批救援人员从卡拉奇出发前往灾区，军方还连夜派出1000人的部队和直升机抵达受灾地区。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　英国广播公司消息说，巴基斯坦政府称他们有能力处理这一灾难，目前尚未请求国际援助。(完)</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('561', '<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">当一项规则得到民众首肯并有十分规整的条例、到位的监督力量来照章执行，确保&ldquo;地铁禁食令&rdquo;落地生根时，相关法规才能逐渐转化为公众的自觉自律行为。&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　24日，杭州地铁一号线的九堡站站台上两名女子上演了一场追逐大战。原来一位孕妇在车厢内见一名中年妇女不停地吃东西上前劝说，但对方不听，于是她拿起手机拍照想在网上曝光，结果被对方愤怒追打。这与此前武汉地铁&ldquo;热干面&rdquo;事件如出一辙，拍照曝光是否妥当再次引起网民热议。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　前有武汉泼面姐，后有杭州追打女，关于该不该在地铁上吃东西，该如何劝阻，又一次引发轩然大波。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　吃完饼干吃葡萄，不听劝阻，被拍后恼羞成怒，追打别人，肯定是缺乏修养的野蛮行为；而孕妇在当众劝阻之时，还顺便开了句玩笑，&ldquo;小心等会儿被人打&rdquo;，加上偷拍曝光，未必不会引起对方的逆反心理，也就是说，在这场打斗中，双方都有可待商榷之处。这也给大众提出一个问题：个人的守规意识与法规执行之间、现实生活中的个人自由与公共监督之间往往存在激烈矛盾。比如，在人们意识中，禁食令主要是针对那些味道&ldquo;冲&rdquo;的食品，那么饼干、葡萄、水是否当禁？谁来界定？这禁令到底该由谁来执行？谁来监督？为什么乘客不及时向相关人员报告，或者说地铁监管部门为何不能及时出面，制止纠纷？正是因为缺少有力、到位、明晰的执行条件，地铁禁食及公共规范不由自主地演变成私人恩怨，甚至可能造成人身伤害。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　因此，当地方法规不能单纯依靠个人道德自律和舆论谴责时，就需要客观中立、强有力的第三方约束力量来加以规范。听取大多数民意，细化相关法则，扩大宣传，强化规则意识，让地铁禁食令入脑入心。当一项规则得到民众首肯并有十分规整的条例、到位的监督力量来照章执行，确保&ldquo;地铁禁食令&rdquo;落地生根时，相关法规才能逐渐转化为公众的自觉自律行为。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　同时，我们也要加强公共交通的人性化服务，除了微笑告知、广贴标语、循环播报禁食令外，还不妨在禁食区入口处设立进食区，提醒和帮助脚步匆匆的乘客处理不慎带入的食品，这样，犯规的人就会少一些，关于此类小事的纠葛或戾气也会少一些，市民素养和城市文明也会更上一个台阶。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('562', '<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">&ldquo;我自我检查主要是三条：第一条就是有点急于求成，急于求变心切，一切从人民利益出发的政绩观树得不牢。第二个问题，有时候有些主观决策，知人不深，一切从实际出发的思想路线树立坚持不够。第三个问题，主要是斗志有些松懈，做工不够，缺乏那种拼命苦干实干劲头，拼命劲头在消减。&rdquo;&ldquo;我爱批评人，自己感觉主意正，感觉办法多，就把自己摆在了干部群众之上，奢靡之风我觉得还是有的。比如说，在八项规定之前我们也搞了很多活动，这些活动讲排场，摆好的宴席。&rdquo;做这个自我批评的，不是一般党员干部，而是河北省两位党政主要领导人&mdash;&mdash;省委书记周本顺和省长张庆伟。&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　近日，在河北省委常委党的群众路线教育实践活动专题民主生活会上，人们看到中共久违的批评与自我批评重又出现。党的总书记习近平也专程用四个半天参加了这个民主生活会，并就&ldquo;批评与自我批评&rdquo;对于改进党的作风的重要意义做了讲话，强调批评和自我批评是解决党内矛盾的有力武器，全党同志特别是各级领导干部要本着对自己、对同志、对班子、对党高度负责的精神，大胆使用、经常使用这个武器，切实提高领导班子发现和解决自身问题的能力。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　&ldquo;批评与自我批评&rdquo;是中共在长期的革命斗争中创造的一种解决党员干部工作作风的方式，被誉为共产党的三大优良作风之一。所谓批评，是指对别人的缺点或错误提出意见；所谓自我批评，是指党组织或个人对自己的缺点或错误进行的自我揭露和剖析。从延安整风起，60多年来，&ldquo;批评与自我批评&rdquo;对帮助共产党保持和发扬优良传统和作风，警惕党内出现的各种错误倾向和不正之风，巩固和发展党的团结和统一，起到了一定或者说很大作用。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　不过，不知从什么时候起，&ldquo;批评与自我批评&rdquo;这个共产党的&ldquo;得力武器&rdquo;，在很多领导干部那儿丢失了，虽然党的文件还照样强调要贯彻和发扬&ldquo;批评与自我批评&rdquo;的优良传统，但实际上，真正能够做到批评和自我批评的领导干部极其稀少。大家都是你好我好他好，愿意做&ldquo;好好先生&rdquo;，无论是批评 别人还是自我批评，都言不由衷，怕得罪别人，也怕被别人抓到&ldquo;小辫子&rdquo;，总之，是一团和气。而党风、政风和社会风气也就在这&ldquo;一团和气&rdquo;中遭受破坏。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　因此，在这一优良作风正在消失之当前，此次群众路线教育实践活动重提&ldquo;批评与自我批评&rdquo;，有助于教育实践活动不流于形式和走过场。从新闻报道来看，河北省委常委在班子民主生活会上，在检讨自己工作中存在的不足，以及批评别的常委违反&ldquo;四风&rdquo;要求情况时，还是很认真，触及到了一些问题的，不那么避实求虚。如省委书记周本顺批评秦皇岛市委书记田向利急于求成，急于证明自己，急于让领导认可，而纪委书记臧胜业则批评省长张庆伟听汇报时没耐心，不够尊重干部。这种批评在平时很难听到，尤其是下级批评上级，几乎是没有的。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　但是，在肯定党重拾&ldquo;批评与自我批评&rdquo;这一&ldquo;武器&rdquo;的同时，又必须谨防地方把它作为一阵&ldquo;风&rdquo;来对待，也就是说，只是在教育实践活动时期出于贯彻中央的要求而不得不这样做，整风活动过去后，&ldquo;批评与自我批评&rdquo;又成为文件里的用语。倘若如此，&ldquo;批评与自我批评&rdquo;的效果也就只能管一时。要避免这种情况的出现，我们需要思考三个问题：一，在目前时代，&ldquo;批评与自我批评&rdquo;作为一种解决党的战斗力的方法是否还具可行性；二，如果可行，如何在党和政府的日常工作中保证它得到贯彻落实；三，有没有一种办法，使得&ldquo;批评与自我批评&rdquo;成为党员干部的自觉要求。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　目前看来，尽管时代条件发生变化，但&ldquo;批评与自我批评&rdquo;作为党员干部自我教育和改进工作作风的工具价值并未失去，尤其是在整党这种特定的情况下。当然，要使它得到贯彻落实，成为党员干部的自觉要求，需要制度来保障，它包括这样一些内容：首先，对领导干部提意见和揭露出来的问题，不能抓小辫子，搞打击报复，进行&ldquo;秋后算账&rdquo;；其次，对党委领导班子的民主生活会，要确立议事规则，所有领导班子在生活会上的批评权都是一样的，没有大小之分，批评内容必须在单位或社会公布，真正使生活会成为一个&ldquo;民主&rdquo;的生活会；第三，最重要的是，约束和分解一把手的权力，一把手权力过大，是不可能有真正的&ldquo;批评与自我批评&rdquo;的。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　党应该用制度化和民主化来激活这一被休眠的&ldquo;武器&rdquo;，使&ldquo;批评与自我批评&rdquo;起到长久监督领导干部的作用。</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('563', '<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　近来，北京等大城市都在想狠招恢复蓝天白云，交通污染再度成为众矢之的。各种各样的传闻纷至沓来：减少摇号中签率，实行单双号限行，征收拥堵费。然而，在众多治堵的倡议中，却没有人提到自行车出行，实在不应该，也实在对不住自行车王国的优良传统。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　现在提议恢复自行车路权具有紧迫性。在绿色出行的大环境下，都市内短距离出行选择自行车，最环保、经济和便捷。然而，大部分发达国家已经积重难返，想要恢复自行车路权代价非常高。早在半个世纪前，西方发达国家伴随着汽车化，已经在法理上取消了自行车路权，所有都市道路都划成汽车道。道路设施具有一定的稳定性，一旦规划建设完成，重新改造的成本会相当高。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　相比之下，中国大都市的路权之争正处在十字路口。过去30年，北京的道路规划是一个车进人退的过程。汽车占用的道路越来越宽，自行车的路越走越窄。但是，法理上北京的自行车仍然有自己的路权，道路规划中仍有自行车道。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　但事实上，自行车的路权已经名存实亡。多数自行车道可以随意被划为机动车停车区域，可以随意被汽车占道。在这个十字路口，再往前走一步，就会步发达国家后尘；往后退一步，则恢复自行车路权，使自行车变成最安全、高效、环保和经济的出行方式。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　现在提议恢复自行车路权，具有可行性。其一，公民的环保意识、环保责任感已经比较成熟，自行车出行已成为一种正义选择。只要公权力能够提供合适的环境和途径，只要能保证自行车出行的安全性和便捷性，大部分公民还是愿意为北京的环保作贡献。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　其二，汽车出行的成本快速攀高，自行车出行已成为一种经济的选择。现在北京摇号中签率是130∶1，油价、停车费冷酷上升，养车的成本越来越高。大部分人养车是为了出远门。短距离出行，自行车的成本最合算。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　其三，道路越来越堵，自行车出行已成为一种效率的选择。过去几年，治堵措施的落实总是赶不上汽车保有量的增加，上班族耗在路上的时间成倍增长。越是堵车，自行车方便快速的优点越明显。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　其四，随着汽车越来越普及，人们的面子观已经发生变化，自行车出行已成为一种现代思想的选择。过去，汽车是一种身份地位的象征，自行车是穷人、失败者的标志。现在，汽车日趋普及，象征身份地位的功能下降，而骑自行车作为一种健康、环保的活动，反而变得时髦起来。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　恢复自行车路权看起来是一件小事，实际上体现出在解决现代化难题时，政府要考虑舒适性与环境承受力的平衡，要保护弱势群体和弱势出行者的权益。在涉及环保等公共权益问题时，不能随任市场做主，政府公权力要通过制度发挥主导作用。当年，自行车王国是落后的象征；如今，自行车王国是现代的旗帜。▲(作者是中国现代国际关系研究院中东研究所所长)</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('564', '<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">近年来，在我国可能没有哪个理论术语或概念比&ldquo;新自由主义&rdquo;更让人感到扑朔迷离、甚至混乱不堪的了。之所以如此，既与新自由主义所涉及的内容庞杂有关，也与人们对新自由主义研究不深、归纳不准有关。其实，只要仔细读一读其代表人物的主要作品就不难发现，人们谈论的新自由主义既非一个典型的经济学范畴，也非一个确切的经济学流派，而是一个经济理论、社会思潮和政策主张的&ldquo;混合体&rdquo;，或者用更通俗的话说是一个&ldquo;大杂烩&rdquo;。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　首先，人们通常所谈论的新自由主义，是一个以新自由主义经济理论为主要载体而存在和演进的思想范畴。翻阅一下新自由主义主要代表人物、特别是狭义新自由主义代表人物哈耶克、弗里德曼等人的主要论著便可发现，他们不仅在很大程度上接受和继承了古典经济学和新古典经济学，而且在很多问题上做出了新的解释和正确发挥。例如，哈耶克关于商业循环和货币、信用政策效应的分析以及弗里德曼关于货币理论的阐述等，起到了为现代经济理论建设添砖加瓦、促进经济理论研究深化的作用，他们也因此先后获得诺贝尔经济学奖。然而，他们的很多理论和政策主张、特别是&ldquo;去政府&rdquo;论却充满了不当甚至谬误。归纳起来，他们的&ldquo;去政府&rdquo;论主要包括三个方面内容。一是小政府或不要政府论。哈耶克一直反对政府干预经济。他认为，任何形式的中央集权都是幼稚和有害的，追求计划经济必然导致极权主义。他主张把包括货币发行权在内的市场权力统统归还给参与市场竞争的私人。不过，他的这些理论观点和政策主张直到20世纪70年代&ldquo;滞胀&rdquo;发生后，随着凯恩斯主义的消退，才获得广泛重视。特别是他于1974年获得诺贝尔经济学奖后，在美国，他甚至成了&ldquo;公民拥有充分自由权&rdquo;运动的领袖；在英国，保守的撒切尔夫人也自称是哈耶克的信徒。弗里德曼则从现代货币理论角度，论证和阐明了关于政府干预经济活动会加剧经济波动的观点，并据此提出政府不必干预经济的理论主张。二是私有产权有效论。以科斯为代表的产权理论提出并分析了产权、特别是私有产权对于交易边界的确定及其对于降低交易成本、提升市场效率的意义。三是公共物品供给市场化论。与主流经济学关于政府提供公共物品的理论逻辑不同，弗里德曼等人着力分析和阐述了公共物品和服务(包括教育、公共卫生、社会保险等)市场化的理论观点和政策主张。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　其次，新自由主义又常常以具有特定政治诉求的社会思潮形式表现出来。新自由主义思潮是一种以&ldquo;凯恩斯革命的反革命&rdquo;为主要特征、以夸大的形式把原本具有一定学术价值的经济理论推向市场极端的社会思潮。新自由主义思潮具有多种存在形态，其中，最具典型意义的当推盛行一时的市场万能论。其突出特点是宣扬和鼓吹&ldquo;市场是最有效的资源配置机制&rdquo;，片面夸大市场自修正和自复衡功能，否定政府干预对于弥补市场缺陷、克服市场失灵的积极作用，甚至认为除了维护法制和社会秩序以外的任何形式的政府干预都有损于市场效率及市场的健康运行。哈耶克作为新自由主义思潮的代表人物，早在19世纪40年代初就著书立说，把集体主义和社会主义视为&ldquo;通往奴役之路&rdquo;。他曾不遗余力地宣扬&ldquo;自由主义只关注交换正义，而不关注所谓的分配正义或现在更为盛行的&lsquo;社会&rsquo;正义&rdquo;，甚至声称&ldquo;坚定的自由主义者&hellip;&hellip;必须拒斥分配正义&rdquo;。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　最后，新自由主义还是以具有特定目标指向的政策主张形式存在和发展的。新自由主义政策主张的典型表现形式是&ldquo;华盛顿共识&rdquo;。1989年，由美国国际经济研究所牵头，在美国财政部的支持下，在华盛顿召开了一次旨在解决拉美国家经济衰退的国际研讨会。会后，美国国际经济研究所高级研究员约翰&middot;威廉姆森将会议取得的收获进行了总结和概括，并称之为&ldquo;华盛顿共识&rdquo;。华盛顿共识主要由三大方面内容组成：一是3项改革措施，主要包括加强财经纪律，把政府开支的重点转向经济效益高的领域和有利于改善收入分配的文教卫生和基础设施建设领域，开展包括降低边际税率和扩大税基的改革等；二是4项市场开放原则，主要包括实行利率自由化和更具竞争性的汇率制度以及贸易自由化和放松外国直接投资限制等；三是3项&ldquo;去政府&rdquo;干预要求，主要包括国有企业私有化、放松进入和退出的政府管制以及有效保护私人财产权等。这10个方面的政策主张虽然不乏合理因素，但矛盾和问题同样十分突出，特别是其中的4项市场开放原则和3项&ldquo;去政府&rdquo;干预要求，更是严重脱离了拉美国家的实际，着实误导了这些国家的发展，甚至进一步加深了这些国家的危机。华盛顿共识不仅集中体现了新自由主义思潮的基本要求，而且集中反映了以哈耶克和弗里德曼为代表的&ldquo;狭义新自由主义&rdquo;的政治主张。</p>\r\n<p style=\"margin: 15px 0px; padding: 0px; font-size: 14px; line-height: 23px; color: rgb(51, 51, 51); font-family: 宋体;\">　　一般来说，理论总是通过对实践或事物发展过程的系统观察、分析和研究，借助于特定理论范畴进行抽象和概括形成的能够表明事物内在联系的系统的思想和观点。而思潮通常是特定社会群体对特定理论产生思想共鸣后加以引申、夸大(有时也有误读)而形成的一种影响面较大、传播较快的思想潮、意识流或倾向。特定思潮的形成往往与特定社会群体的利益诉求及心理要求密切相关。因此，与理论相比，思潮更具漫画化特征和形式易变性、界限模糊性、传播迅速性和影响广泛性等特点。至于政策主张，则具有指向明确、要求清晰、强调实践等特点。一定的政策主张是在特定环境下由特定理论和思潮推动形成的特定要求或诉求。新自由主义作为经济理论、社会思潮和政策主张的混合体，带有更大的理论欺骗性和社会影响力。不管新自由主义者所阐述的经济理论有多少合理成分，我们都要高度警惕新自由主义思潮可能带来的社会影响，而且要特别注意防止新自由主义政策主张可能造成的社会危害。▲(作者是中国社会科学院民营经济研究中心主任、研究员、博士生导师)</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('565', '<p>1</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('567', '<p>2</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('569', '<p>1</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('570', '<p>内容</p>\r\n', null, null, null);
-INSERT INTO `jc_content_txt` VALUES ('574', '\n<p>　　天津12日深夜发生的惨烈化学品仓库爆炸震惊了全国。13日，消防、武警、解放军防化部队等多支救援力量赶赴现场，参与到爆炸现场的处置中。鉴于仓库中存放的危险化学品数量多、种类杂，更增加了救援难度，现场火情几度出现反复。不过国家级陆上核生化应急救援队表示，“现场情况基本可控”。</p>\n\n<p>　　<strong>多支救援队伍赶赴现场</strong></p>\n\n<p>　　据报道，天津危险品仓库爆炸发生后，武警天津总队1500人紧急赶至现场参加救援，主要担负火灾现场外围警戒封控、机动备勤等任务。天津滨海新区军事部将野战指挥车开到爆炸现场，用视频实时传输火灾现场情况，为救援决策部门组织力量扑火提供现场依据。</p>\n\n<p>　　天津滨海新区军事部组织了130人的民兵防化应急分队和民兵无人机侦察分队、民兵直升机分队在现场配合扑火救援工作。天津警备区某预备役师125名官兵组成的救援分队也在现场参加救援行动。北京军区254医院组织45人的野战医疗队于13日凌晨在离爆炸现场3公里处开设了野战医疗所。</p>\n\n<p>　　此外由北京军区防化团214名官兵组成的国家级核生化应急救援队，于13日11时从北京出发，摩托化急行军赶赴天津爆炸现场。</p>\n\n<p>　　<strong>危险化学品事故处理不一般</strong></p>\n\n<p>　　按照国务院事故调查组确定的工作思路，由于危化品数量、内容、存储方式不明，决定暂缓扑灭，确定好具体方案再实施；同时密切环保监测，派防化团进现场。一名防化专家13日告诉《环球时报》记者，对于危险化学品的火灾现场，首先需要确认现场的化学品种类和数量，掌握这些情况后才能制订相应的救援和疏散方案。危险化学品通常具备有毒、腐蚀、爆炸、燃烧、助燃等特点，因此它们引起的爆炸与普通火情的应对方法大不相同。针对不同的化学品，还需要选用相应的灭火剂，否则很可能适得其反。例如扑灭普通火灾，利用消防栓中的水就成；而油罐发生火灾时通常选用消防泡沫，既能隔绝空气又能起到降温效果；但电石、硅钙合金等物质遇水会释放大量热能，引起新的燃烧，因此不能用水来扑灭，需要选择沙土来压住火势。13日下午，爆炸现场的起火点多次出现复燃，由于各种化学品混在一起，喷洒灭火剂的效果不一，进一步增加了扑灭难度。</p>\n\n<p>　　该专家表示，处置危险化学品火情时，根据实际情况佩戴合适的防护设备非常重要。他表示，核生化应急救援队携带有最高防护等级的护具，包括全密封的正压防护服，它通过内部充气，确保外部有毒气体无法渗入，使防化官兵可在各种有毒环境中进行搜寻和探测作业；而独立供氧面具则能保证在火场缺氧环境下自由呼吸。</p>\n\n<p>　　<strong>提防周围环境被污染</strong></p>\n\n<p>　　除了扑灭火情外，还需要注意的是对火场周围的环境监测。防化专家表示，这些危险化学品泄漏，很可能对周围的空气、土壤和水造成污染。天津市环境保护局称，根据监测结果，初步确定现场出现的刺激性气体为甲苯、三氯甲烷、环氧乙烷，事故点周边6项常规污染物(PM2.5、PM10、一氧化碳、二氧化硫、二氧化碳、臭氧)未受到明显影响。中科院大气物理所研究员王庚辰13日告诉《环球时报》记者，现在监测的常规污染物不超标，并不代表完全排除了有害物质进入空气的可能，还需要对周边空气进行更多的采样分析。国家城市环境污染控制技术研究中心研究员彭应登表示，由于爆炸产生的高温高压气体会向天空垂直扩散，对地面而言反而可能造成“灯下黑”的现象。另外燃烧产生的污染物很多，检测仪器不一定都能捕捉到。再加上检测点未必能覆盖所有地区，所以危险并不能完全排除，当地居民还是要做好防护工作。防化专家表示，即便没有危险化学品污染空气，但这类建筑材料燃烧时通常会释放出大量含苯化合物，对身体也有危害。据称，有记者在离事故地附近几百米的位置停留了几分钟的时间，就不断呕吐。</p>\n\n<p>　　有媒体乐观猜测，这次爆炸的大气污染物可能在一两天内就会消散。王庚辰表示，是否消散取决两个关键因素：爆炸燃烧产生的污染物总量和当前几天的气象条件。目前火势还未彻底扑灭，产生的污染物总量和种类还很难估算。根据中国气象局13日公布的分析报告，当天爆炸点附近的气象条件不太有利于污染物扩散，14-15日受降水消除和冷空气影响，气象条件有所改善，预计污染物沉降高浓度区域主要位于渤海海面。</p>\n\n<p>　　防化专家提醒说，在应对危险化学品事故时，污水管理非常重要。化学品可能溶于水后随污水渗入土壤甚至城市地下水管道。因此火灾扑灭后，防化部队还需对周围环境进行全面消洗作业，确保污染物无害化。</p>\n', null, null, null);
 
 -- ----------------------------
 -- Table structure for jc_content_type
@@ -2113,14 +1627,6 @@ CREATE TABLE `jc_contenttag` (
 -- ----------------------------
 -- Records of jc_contenttag
 -- ----------------------------
-INSERT INTO `jc_contenttag` VALUES ('565', '1', '0');
-INSERT INTO `jc_contenttag` VALUES ('567', '3', '0');
-INSERT INTO `jc_contenttag` VALUES ('568', '1', '0');
-INSERT INTO `jc_contenttag` VALUES ('569', '1', '0');
-INSERT INTO `jc_contenttag` VALUES ('570', '1', '0');
-INSERT INTO `jc_contenttag` VALUES ('571', '1', '0');
-INSERT INTO `jc_contenttag` VALUES ('572', '3', '0');
-INSERT INTO `jc_contenttag` VALUES ('573', '4', '0');
 
 -- ----------------------------
 -- Table structure for jc_dictionary
@@ -2883,7 +2389,7 @@ CREATE TABLE `jc_log` (
   KEY `fk_jc_log_user` (`user_id`),
   CONSTRAINT `fk_jc_log_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`),
   CONSTRAINT `fk_jc_log_user` FOREIGN KEY (`user_id`) REFERENCES `jc_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 COMMENT='CMS日志表';
 
 -- ----------------------------
 -- Records of jc_log
@@ -3017,6 +2523,27 @@ INSERT INTO `jc_log` VALUES ('126', '1', '1', '3', '2015-11-17 22:37:38', '175.1
 INSERT INTO `jc_log` VALUES ('127', '2', null, '1', '2015-11-17 23:02:25', '175.10.112.116', '/jeeadmin/jeecms/login.do', 'login success', null);
 INSERT INTO `jc_log` VALUES ('128', '2', null, '1', '2015-11-17 23:16:17', '175.10.112.116', '/jeeadmin/jeecms/login.do', 'login success', null);
 INSERT INTO `jc_log` VALUES ('129', '1', null, '1', '2015-11-18 15:15:00', '175.10.115.169', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('130', null, null, '2', '2015-11-19 23:29:49', '175.10.82.167', '/jeeadmin/jeecms/login.do', 'login failure', 'username=admin');
+INSERT INTO `jc_log` VALUES ('131', null, null, '2', '2015-11-19 23:29:51', '175.10.82.167', '/jeeadmin/jeecms/login.do', 'login failure', 'username=admin');
+INSERT INTO `jc_log` VALUES ('132', '1', null, '1', '2015-11-19 23:29:55', '175.10.82.167', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('133', '1', null, '1', '2015-11-20 17:56:13', '175.8.107.201', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('134', '1', null, '1', '2015-11-20 23:23:36', '175.8.107.201', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('135', '1', '1', '3', '2015-11-20 23:25:08', '175.8.107.201', '/jeeadmin/jeecms/acquisition/o_save.do', '增加采集', 'id=4;name=youku- 糖94966116');
+INSERT INTO `jc_log` VALUES ('136', '1', null, '1', '2015-11-21 12:23:33', '175.9.74.11', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('137', '1', '1', '3', '2015-11-21 13:47:17', '175.9.74.11', '/jeeadmin/jeecms/model/o_update.do', '修改模型', 'id=101;name=视频通用模型');
+INSERT INTO `jc_log` VALUES ('138', '1', '1', '3', '2015-11-21 13:48:12', '175.9.74.11', '/jeeadmin/jeecms/model/o_update.do', '修改模型', 'id=6;name=视频');
+INSERT INTO `jc_log` VALUES ('139', '1', '1', '3', '2015-11-21 13:48:32', '175.9.74.11', '/jeeadmin/jeecms/model/o_update.do', '修改模型', 'id=101;name=视频通用模型');
+INSERT INTO `jc_log` VALUES ('140', null, null, '2', '2015-11-21 14:13:09', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login failure', 'username=admin');
+INSERT INTO `jc_log` VALUES ('141', null, null, '2', '2015-11-21 14:13:15', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login failure', 'username=admin');
+INSERT INTO `jc_log` VALUES ('142', '1', null, '1', '2015-11-21 14:13:22', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('143', '1', null, '1', '2015-11-21 15:22:30', '175.9.74.11', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('144', null, null, '2', '2015-11-21 15:26:05', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login failure', 'username=admin');
+INSERT INTO `jc_log` VALUES ('145', '1', null, '1', '2015-11-21 15:26:12', '127.0.0.1', '/jeeadmin/jeecms/login.do', 'login success', null);
+INSERT INTO `jc_log` VALUES ('146', '1', '1', '3', '2015-11-21 16:16:16', '175.9.74.11', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=84;name=GSTAR');
+INSERT INTO `jc_log` VALUES ('147', '1', '1', '3', '2015-11-21 16:16:28', '175.9.74.11', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=83;name=chinajoy');
+INSERT INTO `jc_log` VALUES ('148', '1', '1', '3', '2015-11-21 16:16:41', '175.9.74.11', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=86;name=国内车展');
+INSERT INTO `jc_log` VALUES ('149', '1', '1', '3', '2015-11-21 16:16:51', '175.9.74.11', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=87;name=韩国车展');
+INSERT INTO `jc_log` VALUES ('150', '1', '1', '3', '2015-11-21 16:17:02', '175.9.74.11', '/jeeadmin/jeecms/channel/o_update.do', '修改栏目', 'id=83;name=chinajoy');
 
 -- ----------------------------
 -- Table structure for jc_message
@@ -3075,7 +2602,7 @@ INSERT INTO `jc_model` VALUES ('4', '下载', '4', 'download', 'download', '139'
 INSERT INTO `jc_model` VALUES ('5', '图库', '5', 'pic', 'pic', '139', '139', '310', '310', '5', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('6', '视频', '6', 'video', 'video', '139', '139', '310', '310', '10', '1', '0', '0');
 INSERT INTO `jc_model` VALUES ('8', '招聘', 'job', 'job', 'job', '139', '139', '310', '310', '10', '1', '0', '0');
-INSERT INTO `jc_model` VALUES ('101', '视频通用模型', 'video', 'video', 'video', '139', '139', '310', '310', '10', '1', '0', '0');
+INSERT INTO `jc_model` VALUES ('101', '视频通用模型', 'vedio', 'video', 'video', '139', '139', '310', '310', '10', '1', '0', '0');
 
 -- ----------------------------
 -- Table structure for jc_model_item
@@ -3564,7 +3091,7 @@ CREATE TABLE `jc_search_words` (
   `priority` int(11) NOT NULL DEFAULT '10' COMMENT '优先级',
   `name_initial` varchar(500) NOT NULL DEFAULT '' COMMENT '拼音首字母',
   PRIMARY KEY (`word_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='搜索热词';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='搜索热词';
 
 -- ----------------------------
 -- Records of jc_search_words
@@ -3583,6 +3110,7 @@ INSERT INTO `jc_search_words` VALUES ('14', '刘晓庆', '10', '10', 'lxq');
 INSERT INTO `jc_search_words` VALUES ('15', '广西 ', '1', '10', 'gx');
 INSERT INTO `jc_search_words` VALUES ('17', '国内', '16', '10', 'gn');
 INSERT INTO `jc_search_words` VALUES ('18', '巴基斯坦', '1', '10', 'bjst');
+INSERT INTO `jc_search_words` VALUES ('19', 'gstar', '7', '10', 'gstar');
 
 -- ----------------------------
 -- Table structure for jc_sensitivity
@@ -3668,12 +3196,13 @@ CREATE TABLE `jc_site_access` (
   PRIMARY KEY (`access_id`),
   KEY `fk_jc_access_site` (`site_id`),
   CONSTRAINT `fk_jc_access_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='站点访问表';
 
 -- ----------------------------
 -- Records of jc_site_access
 -- ----------------------------
-INSERT INTO `jc_site_access` VALUES ('10', 'A7E90B080B42FC6C0559FEFF99EDE961', '1', '12:26:01', '2015-11-19', '175.10.80.51', '湖南省', '直接访问', null, null, 'http://ndmxw.com:8080/gstar/615.jhtml', 'http://ndmxw.com:8080/gstar/615.jhtml', '123', '3', 'Win 7', 'chrome 46', '');
+INSERT INTO `jc_site_access` VALUES ('16', '31B2CA95102C89356159F4B393F9EE18', '1', '04:10:42', '2015-11-21', '175.9.74.11', '湖南省', '外部链接', 'http://localhost:8080', null, 'http://ndmxw.com:8080/hgcz/695.jhtml', 'http://ndmxw.com:8080/hgcz/695.jhtml', '0', '1', 'Win 7', 'chrome 46', '');
+INSERT INTO `jc_site_access` VALUES ('17', 'EEDEF147D88A68A49AE42B1B46B11E5F', '1', '04:17:06', '2015-11-21', '175.9.74.11', '湖南省', '直接访问', null, null, 'http://ndmxw.com:8080/gstar/676.jhtml', 'http://ndmxw.com:8080/gstar/672.jhtml', '42', '2', 'Win 7', 'firefox 42', '');
 
 -- ----------------------------
 -- Table structure for jc_site_access_count
@@ -3688,7 +3217,7 @@ CREATE TABLE `jc_site_access_count` (
   PRIMARY KEY (`access_count`),
   KEY `fk_jc_access_count_site` (`site_id`),
   CONSTRAINT `fk_jc_access_count_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='每日统计页数访问情况';
 
 -- ----------------------------
 -- Records of jc_site_access_count
@@ -3724,6 +3253,11 @@ INSERT INTO `jc_site_access_count` VALUES ('28', '3', '1', '2015-11-17', '1');
 INSERT INTO `jc_site_access_count` VALUES ('29', '5', '1', '2015-11-17', '1');
 INSERT INTO `jc_site_access_count` VALUES ('30', '1', '2', '2015-11-18', '1');
 INSERT INTO `jc_site_access_count` VALUES ('31', '2', '1', '2015-11-18', '1');
+INSERT INTO `jc_site_access_count` VALUES ('32', '3', '2', '2015-11-19', '1');
+INSERT INTO `jc_site_access_count` VALUES ('33', '5', '1', '2015-11-19', '1');
+INSERT INTO `jc_site_access_count` VALUES ('34', '9', '1', '2015-11-20', '1');
+INSERT INTO `jc_site_access_count` VALUES ('35', '2', '1', '2015-11-20', '1');
+INSERT INTO `jc_site_access_count` VALUES ('36', '3', '1', '2015-11-20', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_pages
@@ -3740,13 +3274,13 @@ CREATE TABLE `jc_site_access_pages` (
   `site_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`access_pages_id`),
   KEY `fk_jc_access_pages_access` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='访问详细页面表';
 
 -- ----------------------------
 -- Records of jc_site_access_pages
 -- ----------------------------
-INSERT INTO `jc_site_access_pages` VALUES ('15', 'http://ndmxw.com:8080/gstar/615.jhtml', 'A7E90B080B42FC6C0559FEFF99EDE961', '2015-11-19', '12:26:06', '118', '2', '1');
-INSERT INTO `jc_site_access_pages` VALUES ('16', 'http://ndmxw.com:8080/gstar/615.jhtml', 'A7E90B080B42FC6C0559FEFF99EDE961', '2015-11-19', '12:28:04', '0', '3', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('34', 'http://ndmxw.com:8080/hgcz/695.jhtml', '31B2CA95102C89356159F4B393F9EE18', '2015-11-21', '04:10:42', '0', '1', '1');
+INSERT INTO `jc_site_access_pages` VALUES ('35', 'http://ndmxw.com:8080/gstar/676.jhtml', 'EEDEF147D88A68A49AE42B1B46B11E5F', '2015-11-21', '04:17:07', '0', '1', '1');
 
 -- ----------------------------
 -- Table structure for jc_site_access_statistic
@@ -3766,7 +3300,7 @@ CREATE TABLE `jc_site_access_statistic` (
   PRIMARY KEY (`access_statistic_id`),
   KEY `fk_jc_access_statistic_site` (`site_id`),
   CONSTRAINT `fk_jc_access_statistic_site` FOREIGN KEY (`site_id`) REFERENCES `jc_site` (`site_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='访问统计表';
 
 -- ----------------------------
 -- Records of jc_site_access_statistic
@@ -3806,6 +3340,14 @@ INSERT INTO `jc_site_access_statistic` VALUES ('32', '2015-11-17', '13', '1', '6
 INSERT INTO `jc_site_access_statistic` VALUES ('33', '2015-11-18', '4', '2', '3', '1', '8', '1', 'all', '');
 INSERT INTO `jc_site_access_statistic` VALUES ('34', '2015-11-18', '4', '2', '3', '1', '8', '1', 'area', '湖南省');
 INSERT INTO `jc_site_access_statistic` VALUES ('35', '2015-11-18', '4', '2', '3', '1', '8', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('36', '2015-11-19', '11', '2', '3', '3', '594', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('37', '2015-11-19', '11', '2', '3', '3', '594', '1', 'area', '湖南省');
+INSERT INTO `jc_site_access_statistic` VALUES ('38', '2015-11-19', '5', '1', '1', '5', '1365', '1', 'source', '外部链接');
+INSERT INTO `jc_site_access_statistic` VALUES ('39', '2015-11-19', '6', '2', '2', '3', '209', '1', 'source', '直接访问');
+INSERT INTO `jc_site_access_statistic` VALUES ('40', '2015-11-19', '5', '1', '1', '5', '1365', '1', 'link', 'http://101.251.245.230:8080');
+INSERT INTO `jc_site_access_statistic` VALUES ('41', '2015-11-20', '14', '1', '3', '4', '203', '1', 'all', '');
+INSERT INTO `jc_site_access_statistic` VALUES ('42', '2015-11-20', '14', '1', '3', '4', '203', '1', 'area', '湖南省');
+INSERT INTO `jc_site_access_statistic` VALUES ('43', '2015-11-20', '14', '1', '3', '4', '203', '1', 'source', '直接访问');
 
 -- ----------------------------
 -- Table structure for jc_site_attr
@@ -3822,8 +3364,8 @@ CREATE TABLE `jc_site_attr` (
 -- ----------------------------
 -- Records of jc_site_attr
 -- ----------------------------
-INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '244');
-INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '75');
+INSERT INTO `jc_site_attr` VALUES ('1', 'pvTotal', '265');
+INSERT INTO `jc_site_attr` VALUES ('1', 'visitors', '83');
 
 -- ----------------------------
 -- Table structure for jc_site_cfg
@@ -4054,7 +3596,7 @@ CREATE TABLE `jc_user` (
 -- ----------------------------
 -- Records of jc_user
 -- ----------------------------
-INSERT INTO `jc_user` VALUES ('1', '1', 'admin', '', '2011-01-03 00:00:00', '127.0.0.1', '2015-11-18 15:15:00', '175.10.115.169', '1088', '9', '202425', '4568', '2015-08-15', '1', '0', '0');
+INSERT INTO `jc_user` VALUES ('1', '1', 'admin', '', '2011-01-03 00:00:00', '127.0.0.1', '2015-11-21 15:26:12', '127.0.0.1', '1095', '9', '202425', '4568', '2015-08-15', '1', '0', '0');
 INSERT INTO `jc_user` VALUES ('2', '2', 'ndmxw', '', '2015-11-17 22:34:04', '175.10.112.116', '2015-11-17 23:16:17', '175.10.112.116', '2', '8', '0', '0', '2015-11-17', '1', '0', '0');
 
 -- ----------------------------
