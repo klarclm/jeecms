@@ -75,10 +75,11 @@ _background-image: url(../tencent_img/sprite_common.ie6.png);background-repeat: 
 .home_navigation dl dd{float: left;height: 21px;line-height: 21px;line-height: 24px 9;_line-height: 24px;overflow: hidden;margin: 5px 3px 0 0;padding: 0 6px;white-space: nowrap;}
 
 
-.footer{_position: relative;_zoom: 1;_background-image: url(about:blank);background-color: #EBEBEB;clear: both;}
+.footer{_position: relative;_zoom: 1;padding-top:20px;_background-image: url(about:blank);background-color: #EBEBEB;clear: both;}
 .footer_inner{width: 1240px;margin: 25px auto 10px;background-color: #EBEBEB;}
 .mod_footer_partners{position: relative;zoom: 1;background-color: #F7F7F7;padding: 20px 0 15px 160px;border-bottom: 1px solid #DDD;}
 .footer .partner_title{position: absolute;top: 24px;left: 80px;height: 40px;font-size: 14px;color: #979797;vertical-align: top;}
 .footer .partner_links{color: #A1A1A1;line-height: 28px;}
 .footer .partner_links a{display: inline-block;_display: inline;_zoom: 1;padding: 0 8px;color: #6D6D6D;}
 .footer .mod_footer{line-height: 30px;padding: 15px 0;text-align: center;color: #838383;}
+.clear{clear: both; }
