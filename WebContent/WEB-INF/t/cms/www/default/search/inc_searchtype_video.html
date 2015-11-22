@@ -9,7 +9,7 @@
                 </div>
                 [#list tag_list as a]
                 <li class="list_item">
-                    <a href="${a.url}" class="figure" title="${a.title}">
+                    <a href="${a.url}"  target="_blank" class="figure" title="${a.title}">
                         <img style="visibility: visible; " class="lazy"
                              data-original="${a.titleImg!site.defImg}"
                              src="${a.titleImg!site.defImg}" alt="${a.title}"/>
