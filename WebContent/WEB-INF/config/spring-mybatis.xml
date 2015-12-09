@@ -13,7 +13,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springfr
 	<!-- JNDI方式配置数据源 -->
 	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
 		<property name="jndiName" value="${jndiName}"></property> </bean> -->
-	<context:property-placeholder location="file:WebContent/WEB-INF/config/jdbc.properties" />
+	<context:property-placeholder location="/WEB-INF/config/jdbc.properties" />
 	<!-- 配置数据源 dataSource -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${jdbc.driverClassName}"/>
