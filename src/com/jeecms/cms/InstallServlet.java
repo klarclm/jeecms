@@ -30,7 +30,7 @@ public class InstallServlet extends HttpServlet {
 
 		String dbFileName = request.getParameter("dbFileName");
 		String initFileName = request.getParameter("initFileName");
-		String dbXmlFileName = "/WEB-INF/config/jdbc.properties";
+		String dbXmlFileName = "/WEB-INF/classes/config/jdbc.properties";
 		String webXmlFrom = "/install/config/web.xml";
 		String webXmlTo = "/WEB-INF/web.xml";
 		// 创建数据库

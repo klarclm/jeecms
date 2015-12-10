@@ -13,7 +13,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springfr
 	<!-- JNDI方式配置数据源 -->
 	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
 		<property name="jndiName" value="${jndiName}"></property> </bean> -->
-	<context:property-placeholder location="/WEB-INF/config/jdbc.properties" />
+	<context:property-placeholder location="classpath:config/jdbc.properties" />
 	<!-- 配置数据源 dataSource -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="${jdbc.driverClassName}"/>
@@ -87,46 +87,4 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springfr
 
 
 
-	<!-- -hibernate-->
-
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
-		<property name="mappingLocations" value="#{propertyUtils.getList('hibernate.hbm')}"/>
-		<property name="hibernateProperties">
-			<value>
-				hibernate.dialect=${hibernate.dialect}
-				hibernate.show_sql=${hibernate.show_sql}
-				hibernate.format_sql=${hibernate.format_sql}
-				hibernate.use_sql_comments=${hibernate.use_sql_comments}
-				hibernate.query.substitutions=true 1, false 0
-				hibernate.jdbc.batch_size=20
-				hibernate.cache.use_query_cache=true
-			</value>
-		</property>
-		<property name="entityInterceptor">
-			<ref local="treeInterceptor"/>
-		</property>
-		<property name="cacheProvider">
-			<ref local="cacheProvider"/>
-		</property>
-		<property name="lobHandler">
-			<ref bean="lobHandler"/>
-		</property>
-	</bean>
-	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" lazy-init="true"/>
-
-	<bean id="cacheProvider" class="com.jeecms.common.hibernate3.SpringEhCacheProvider">
-		<property name="configLocation">
-			<value>file:WebContent/WEB-INF/config/ehcache-hibernate.xml</value>
-		</property>
-		<property name="diskStoreLocation">
-			<value>file:WebContent/WEB-INF/cache/hibernate</value>
-		</property>
-	</bean>
-	<bean id="treeInterceptor" class="com.jeecms.common.hibernate3.TreeIntercptor"/>
-	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-	<context:annotation-config/>
-	<tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

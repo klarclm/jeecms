@@ -60,7 +60,7 @@ public class MysqlDataAct {
 	private static String COMMA = ",";
 	private static String DISABLEFOREIGN = "SET FOREIGN_KEY_CHECKS = 0;\r\n";
 	private static String ABLEFOREIGN = "SET FOREIGN_KEY_CHECKS = 1;\r\n";
-	private static String dbXmlFileName = "/WEB-INF/config/jdbc.properties";
+	private static String dbXmlFileName = "/WEB-INF/classes/config/jdbc.properties";
 	private static String backup_table;
 	private static final String INVALID_PARAM = "template.invalidParams";
 	private static final Logger log = LoggerFactory.getLogger(ResourceAct.class);

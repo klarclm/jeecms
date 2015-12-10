@@ -23,7 +23,7 @@
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>/WEB-INF/config/firewall.properties</value>
+				<value>classpath:config/firewall.properties</value>
 			</list>
 		</property>
 	</bean>

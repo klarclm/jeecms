@@ -26,15 +26,14 @@ import javax.annotation.Resource;
 * @version 1.0 
 */
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(locations = {  "file:WebContent/WEB-INF/config/application-context.xml" , "file:WebContent/WEB-INF/config/spring-mybatis.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {  "classpath:config/application-context.xml" , "classpath:config/spring-mybatis.xml"})
 public class jcfileMapperTest {
     @Autowired
     jcfileMapper jcfilemapper;
 
     @Before
     public void before() throws Exception {
-        ApplicationContext applicationContext = new FileSystemXmlApplicationContext("WebContent/WEB-INF/conf/*.xml");
     }
 
     @After
@@ -50,9 +49,9 @@ public class jcfileMapperTest {
     public void testGetFilePath() throws Exception {
         boolean isTest = false;
 
-//        jcfile jc = jcfilemapper.selectByPrimaryKey("/u/cms/www/09093304hc6x.jpg");
-//        if (jc.getFileName() == "09093304hc6x.jpg")
-//            isTest = true;
+        jcfile jc = jcfilemapper.selectByPrimaryKey("/u/cms/www/09093304hc6x.jpg");
+        if (jc.getFileName() == "09093304hc6x.jpg")
+            isTest = true;
     }
 
 

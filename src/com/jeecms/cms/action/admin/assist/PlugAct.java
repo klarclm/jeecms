@@ -53,7 +53,7 @@ public class PlugAct {
 	//插件权限配置key
 	private static final String PLUG_PERMS="plug.perms";
 	//插件配置文件前缀
-	private static final String PLUG_FILE_PREFIX="WEB-INF/config";
+	private static final String PLUG_FILE_PREFIX="WEB-INF/classes/config";
 
 	@RequiresPermissions("plug:v_list")
 	@RequestMapping(value = "/plug/v_list.do")

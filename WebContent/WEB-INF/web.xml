@@ -4,15 +4,16 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			/WEB-INF/config/application-context.xml
-			/WEB-INF/config/cache-context.xml
-			/WEB-INF/config/captcha-context.xml
-			/WEB-INF/config/jeecms/jeecore-context.xml
-			/WEB-INF/config/jeecms/jeecms-context.xml
-			/WEB-INF/config/shiro-context.xml
-			/WEB-INF/config/plug/**/*-context.xml
-			/WEB-INF/config/quartz-task.xml
-			/WEB-INF/config/spring-mybatis.xml
+			classpath:config/application-context.xml
+			classpath:config/cache-context.xml
+			classpath:config/captcha-context.xml
+			classpath:config/jeecms/jeecore-context.xml
+			classpath:config/jeecms/jeecms-context.xml
+			classpath:config/shiro-context.xml
+			classpath:config/plug/**/*-context.xml
+			classpath:config/quartz-task.xml
+			classpath:config/spring-mybatis.xml
+			classpath:config/spring-hibernate.xml
 		</param-value>
 	</context-param>
 	<filter>
@@ -138,8 +139,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-				/WEB-INF/config/jeecms-servlet-admin.xml
-				/WEB-INF/config/plug/**/*-servlet-admin-action.xml
+				classpath:config/jeecms-servlet-admin.xml
+				classpath:config/plug/**/*-servlet-admin-action.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
@@ -150,8 +151,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-				/WEB-INF/config/jeecms-servlet-front.xml
-				/WEB-INF/config/plug/**/*-servlet-front-action.xml
+				classpath:config/jeecms-servlet-front.xml
+				classpath:config/plug/**/*-servlet-front-action.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>2</load-on-startup>

@@ -27,7 +27,7 @@ public class UpdateServlet extends HttpServlet {
 		String port = request.getParameter("port");
 
 		String dbFileName = request.getParameter("dbFileName");
-		String dbXmlFileName = "/WEB-INF/config/jdbc.properties";
+		String dbXmlFileName = "/WEB-INF/classes/config/jdbc.properties";
 		String webXmlFrom = "/update/config/web.xml";
 		String webXmlTo = "/WEB-INF/web.xml";
 		try {
