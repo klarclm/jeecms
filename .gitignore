@@ -1,7 +1,7 @@
 *.class
 .idea
 jeecms.iml
-jdbc.properties
+
 
 
 
