@@ -1769,7 +1769,7 @@ CREATE TABLE `jc_vote_topic` (
   KEY `fk_jc_votetopic_site` (`site_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='CMSͶƱ����';
 
-INSERT INTO `jc_vote_topic` VALUES (2,1,'ndmxw��ʾվ�İ��û��ʾ����','showgirlvideov5����ʽ�����ˣ�������ϵͳ�����ƣ�ndmxw��ʾվ��ģ��Ҳһֱ�ڲ��ϵĸİ棬��Դ˴θİ棬showgirlvideo�����Ŷ����������롰showgirlvideo��ʾվ�İ��û��ʾ���顱��ϣ������������������������һ������Ľ���лл��ҵ�֧�֣�',NULL,NULL,NULL,1,1,0,0,0,0,1);
+INSERT INTO `jc_vote_topic` VALUES (2,1,'ndmxw��ʾվ�İ��û��ʾ����','ndmxwv5����ʽ�����ˣ�������ϵͳ�����ƣ�ndmxw��ʾվ��ģ��Ҳһֱ�ڲ��ϵĸİ棬��Դ˴θİ棬ndmxw�����Ŷ����������롰ndmxw��ʾվ�İ��û��ʾ���顱��ϣ������������������������һ������Ľ���лл��ҵ�֧�֣�',NULL,NULL,NULL,1,1,0,0,0,0,1);
 DROP TABLE IF EXISTS `jo_authentication`;
 CREATE TABLE `jo_authentication` (
   `authentication_id` char(32) NOT NULL COMMENT '��֤ID',
@@ -1794,15 +1794,15 @@ INSERT INTO `jo_config` VALUES ('email_host','smtp.126.com');
 INSERT INTO `jo_config` VALUES ('email_password','mingming_chen');
 INSERT INTO `jo_config` VALUES ('email_personal','');
 INSERT INTO `jo_config` VALUES ('email_port',NULL);
-INSERT INTO `jo_config` VALUES ('email_username','showgirlvideov5@126.com');
+INSERT INTO `jo_config` VALUES ('email_username','ndmxwv5@126.com');
 INSERT INTO `jo_config` VALUES ('login_error_interval','30');
 INSERT INTO `jo_config` VALUES ('login_error_times','3');
 INSERT INTO `jo_config` VALUES ('message_forgotpassword_subject','�һ�ndmxw����');
-INSERT INTO `jo_config` VALUES ('message_forgotpassword_text','��л��ʹ��showgirlvideoϵͳ��Ա�����һع��ܣ����ס�����һ���Ϣ��\r\n�û�ID��${uid}\r\n�û�����${username}\r\n����������Ϊ��${resetPwd}\r\n������������������������Ч��\r\nhttp://demo.ndmxw.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
+INSERT INTO `jo_config` VALUES ('message_forgotpassword_text','��л��ʹ��ndmxwϵͳ��Ա�����һع��ܣ����ס�����һ���Ϣ��\r\n�û�ID��${uid}\r\n�û�����${username}\r\n����������Ϊ��${resetPwd}\r\n������������������������Ч��\r\nhttp://demo.ndmxw.com/member/password_reset.jspx?uid=${uid}&key=${resetKey}');
 INSERT INTO `jo_config` VALUES ('message_register_subject','��ӭ��ע��ndmxw�û�');
-INSERT INTO `jo_config` VALUES ('message_register_text','${username}���ã�\r\n��ӭ��ע��showgirlvideoϵͳ��Ա\r\n�����������ӽ��м���\r\nhttp://demo.ndmxw.com/active.jspx?username=${username}&key=${activationCode}');
+INSERT INTO `jo_config` VALUES ('message_register_text','${username}���ã�\r\n��ӭ��ע��ndmxwϵͳ��Ա\r\n�����������ӽ��м���\r\nhttp://demo.ndmxw.com/active.jspx?username=${username}&key=${activationCode}');
 INSERT INTO `jo_config` VALUES ('message_subject','ndmxw��Ա�����һ���Ϣ');
-INSERT INTO `jo_config` VALUES ('message_text','��л��ʹ��showgirlvideoϵͳ��Ա�����һع��ܣ����ס�����һ���Ϣ��\r\n�û�ID��${uid}\r\n�û�����${username}\r\n����������Ϊ��${resetPwd}\r\n������������������������Ч��\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
+INSERT INTO `jo_config` VALUES ('message_text','��л��ʹ��ndmxwϵͳ��Ա�����һع��ܣ����ס�����һ���Ϣ��\r\n�û�ID��${uid}\r\n�û�����${username}\r\n����������Ϊ��${resetPwd}\r\n������������������������Ч��\r\nhttp://localhost/member/password_reset.jspx?uid=${uid}&key=${resetKey}\r\n');
 DROP TABLE IF EXISTS `jo_ftp`;
 CREATE TABLE `jo_ftp` (
   `ftp_id` int(11) NOT NULL auto_increment,
