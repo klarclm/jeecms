@@ -3532,7 +3532,7 @@ CREATE TABLE `jc_friendlink` (
 -- ----------------------------
 -- Records of jc_friendlink
 -- ----------------------------
-INSERT INTO `jc_friendlink` VALUES ('1', '1', '1', 'JEECMS官网', 'http://www.jeecms.com', null, 'jeecms@163.com', 'JEECMS是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。', '34', '1', '1');
+INSERT INTO `jc_friendlink` VALUES ('1', '1', '1', 'ndmxw你的明星网', 'http://www.jeecms.com', null, 'jeecms@163.com', 'JEECMS是JavaEE版网站管理系统（Java Enterprise Edition Content Manage System）的简称。Java凭借其强大、稳定、安全、高效等多方面的优势，一直是企业级应用的首选。', '34', '1', '1');
 INSERT INTO `jc_friendlink` VALUES ('2', '1', '1', 'JEEBBS论坛', 'http://bbs.jeecms.com', null, 'jeecms@163.com', 'JEEBBS论坛', '3', '1', '10');
 INSERT INTO `jc_friendlink` VALUES ('3', '1', '2', '京东商城', 'http://www.360buy.com/', '/u/cms/www/201112/1910271036lr.gif', '', '', '3', '1', '10');
 INSERT INTO `jc_friendlink` VALUES ('4', '1', '2', '当当网', 'http://www.dangdang.com/', '/u/cms/www/201112/191408344rwj.gif', '', '', '1', '1', '10');
