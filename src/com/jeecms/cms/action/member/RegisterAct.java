@@ -107,7 +107,7 @@ public class RegisterAct {
 			} else {
 				try {
 					cmsUserMng.registerMember(username, email, password, ip,
-							null,disabled,userExt,attrs, false, sender, msgTpl);
+							null,disabled,userExt,attrs,true, sender, msgTpl);
 					model.addAttribute("status", 0);
 				} catch (UnsupportedEncodingException e) {
 					// 发送邮件异常
