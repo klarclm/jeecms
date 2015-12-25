@@ -813,19 +813,19 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		this.user = user;
 	}
 
-	public String getvideopathSetStart() {
+	public String getVideopathSetStart() {
 		return videopathSetStart;
 	}
 
-	public void setvideopathSetStart(String videopathSetStart) {
+	public void setVideopathSetStart(String videopathSetStart) {
 		this.videopathSetStart = videopathSetStart;
 	}
 
-	public String getvideopathSetEnd() {
+	public String getVideopathSetEnd() {
 		return videopathSetEnd;
 	}
 
-	public void setvideopathSetEnd(String videopathSetEnd) {
+	public void setVideopathSetEnd(String videopathSetEnd) {
 		this.videopathSetEnd = videopathSetEnd;
 	}
 	/**
@@ -897,19 +897,19 @@ public abstract class BaseCmsAcquisition  implements Serializable {
 		}
 		return this.hashCode;
 	}
-	public String getvideopathStart() {
+	public String getVideopathStart() {
 		return videopathStart;
 	}
 
-	public void setvideopathStart(String videopathStart) {
+	public void setVideopathStart(String videopathStart) {
 		this.videopathStart = videopathStart;
 	}
 
-	public String getvideopathEnd() {
+	public String getVideopathEnd() {
 		return videopathEnd;
 	}
 
-	public void setvideopathEnd(String videopathEnd) {
+	public void setVideopathEnd(String videopathEnd) {
 		this.videopathEnd = videopathEnd;
 	}
 

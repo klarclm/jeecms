@@ -52,6 +52,7 @@
                 <div class="quick_user">
                     [#if user??]
                     <div>欢迎您: ${user.username} &nbsp; ${user.group.name} &nbsp;
+                        <a href="/member/index.jspx">会员中心</a>
                         <a href="/logout.jspx?returnUrl=/" target="_blank">退出登录</a>
                         [#else]
                         <div>

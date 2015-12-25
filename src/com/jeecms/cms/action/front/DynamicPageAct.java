@@ -100,7 +100,7 @@ public class DynamicPageAct {
 		int len = paths.length;
 
 		if (len == 1) {
-			// 单页
+			// 单
 			return channel(paths[0],true, pageNo, params, info, request, response,
 					model);
 		} else if (len == 2) {

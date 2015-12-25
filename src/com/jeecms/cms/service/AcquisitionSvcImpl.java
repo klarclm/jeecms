@@ -283,10 +283,10 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
             String releaseTimeEnd = acqu.getReleaseTimeEnd();
             String descriptionStart = acqu.getDescriptionStart();
             String descriptionEnd = acqu.getDescriptionEnd();
-            String videopathStart = acqu.getvideopathStart();
-            String videopathEnd = acqu.getvideopathEnd();
-            String videopathSetStart = acqu.getvideopathSetStart();
-            String videopathSetEnd = acqu.getvideopathSetEnd();
+            String videopathStart = acqu.getVideopathStart();
+            String videopathEnd = acqu.getVideopathEnd();
+            String videopathSetStart = acqu.getVideopathSetStart();
+            String videopathSetEnd = acqu.getVideopathSetEnd();
 
             history.setAcquisition(acqu);
             try {
