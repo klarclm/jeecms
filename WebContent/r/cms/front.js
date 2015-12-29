@@ -232,6 +232,9 @@ Cms.collect = function(base, cId, operate,showSpanId,hideSpanId) {
 		"cId" : cId,
 		"operate" : operate
 	}, function(data) {
+		if (data.status == 302) {
+			location.href = data.location;
+		}
 		if(data.result){
 			if(operate==1){
 				alert("收藏成功！");
@@ -246,6 +249,7 @@ Cms.collect = function(base, cId, operate,showSpanId,hideSpanId) {
 			alert("请先登录");
 		}
 	}, "json");
+
 }
 /**
  * 列表取消收藏信息

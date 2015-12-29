@@ -57,7 +57,17 @@
             </script>
             [/#if]
         </div>
-        [#include "../common/share.html"/]
+                <span onclick="Cms.collect('${base}','${content.id}',1,'cancelSpan','comfirmSpan')" id="comfirmSpan" style="cursor: pointer;">
+                	<span class="menufl"><img src="../../${res}/img/h5/menu_sc.gif"></span>
+                </span>
+                <span onclick="Cms.collect('${base}','${content.id}',0,'cancelSpan','comfirmSpan')" id="cancelSpan"  style="cursor: pointer;">
+                	<span class="menufl"><img src="../../${res}/img/h5/menu_qxsc.gif"></span>
+                </span>
+        <script type="text/javascript">
+            $(function() {
+                Cms.collectexist("${base}","${content.id}","cancelSpan","comfirmSpan");
+            });
+        </script>
     </div>
 
     <div class="clear"></div>
@@ -67,7 +77,7 @@
             [#if channel.commentControl!=2]
             [#include "inc_comment_input.html"/]
             [#include "inc_comment_list.html"/]
-        [/#if]
+            [/#if]
             <!--网友评论_End-->
         </div>
         <div class="clear"></div>

@@ -25,6 +25,13 @@ public class CasLoginAct {
 		String sol = site.getSolutionPath();
 		model.addAttribute("site",site);
 		FrontUtils.frontData(request, model, site);
+		String returnUrl = request.getParameter("returnUrl");
+		if (returnUrl != null)
+		{
+			returnUrl=returnUrl.replace("：",":");
+			model.addAttribute("returnUrl",returnUrl);
+		}
+
 		return FrontUtils.getTplPath(request, sol, TPLDIR_MEMBER, LOGIN_INPUT);
 	}
 
