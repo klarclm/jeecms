@@ -27,7 +27,7 @@ a:visited, a[tabindex="-1"]:focus {outline: 0 none;}
 .quick_item .divide{position: absolute;top: 6px;right: 0;width: 1px;height: 26px;overflow: hidden;background: #F0F0F0;}
 .quick_txt{display: block;margin-top: 2px;text-align: center;color: #B0B0B0;-webkit-transition: height .2s ease;-moz-transition: height .2s ease;transition: height .2s ease;}
 .quick_history{display: none;_width: 26px;height: 43px;padding: 0 15px;cursor: pointer;-webkit-transition: height .2s ease;-moz-transition: height .2s ease;transition: height .2s ease;}
-.quick_user{display: block;_width: 500px;height: 43px;padding: 0 15px;cursor: pointer;-webkit-transition: height .2s ease;-moz-transition: height .2s ease;transition: height .2s ease;}
+.quick_user{display: block;_width: 500px;height: 43px;padding: 0 15px;-webkit-transition: height .2s ease;-moz-transition: height .2s ease;transition: height .2s ease;}
 
 
 .ico_history_26, .ico_collect_26, .ico_message_26, .ico_upload_26{display: inline-block;zoom: 1;width: 26px;height: 26px;background-image: url(../tencent_img/sprite_common.32.png);
@@ -76,7 +76,7 @@ _background-image: url(../tencent_img/sprite_common.ie6.png);background-repeat: 
 
 
 .footer{_position: relative;_zoom: 1;padding-top:20px;_background-image: url(about:blank);background-color: #EBEBEB;clear: both;}
-.footer_inner{width: 1240px;margin: 25px auto 10px;background-color: #EBEBEB;}
+.footer_inner{margin: 25px auto 10px;background-color: #EBEBEB;}
 .mod_footer_partners{position: relative;zoom: 1;background-color: #F7F7F7;padding: 20px 0 15px 160px;border-bottom: 1px solid #DDD;}
 .footer .partner_title{position: absolute;top: 24px;left: 80px;height: 40px;font-size: 14px;color: #979797;vertical-align: top;}
 .footer .partner_links{color: #A1A1A1;line-height: 28px;}
