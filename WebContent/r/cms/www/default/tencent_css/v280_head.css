@@ -7,7 +7,7 @@ a{color: #2A2A2A;text-decoration: none;}
 a:hover{color: #FF7800;text-decoration: none;}
 a:visited, a[tabindex="-1"]:focus {outline: 0 none;}
 
-.site_head{width:100%;height:77px; z-index:999;position:fixed; background-color:#FFF;}
+.site_head{width:100%;height:77px; z-index:999;background-color:#FFF;}
 .head_inner{position:relative;width:1240px;margin:0 auto; z-index:99;height:77px; background-color:#FFFFFF;}
 /*.site_logo{width: 220px;height: 65px;padding-top: 10px;background: url(../tencent_img/logo.png) 0 -108px no-repeat;-webkit-transition: all .2s ease;-moz-transition: all .2s ease;transition: all .2s ease;font-size:1em;}*/
 /*.site_logo .link_logo {display: block;width: 158px;height: 54px;background: url(../tencent_img/logo.png) 0 0 no-repeat;}*/
@@ -38,7 +38,7 @@ _background-image: url(../tencent_img/sprite_common.ie6.png);background-repeat: 
 
 /*************************/
 .site_navigation{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#E2FFFFFF',endColorstr='#E2F6F6F6') progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=180,strength=6); ZOOM: 1; BACKGROUND: none transparent scroll repeat 0% 0%}
-.site_navigation{position: fixed;_position: absolute;top: 77px;left: 0;z-index: 98;width: 100%;height: 45px;padding-top: 3px;box-shadow: 0 2px 6px rgba(0, 0, 0, .4);overflow: hidden;background-color:#FFFFFF;}
+.site_navigation{top: 77px;left: 0;z-index: 98;width: 100%;height: 45px;padding-top: 3px;box-shadow: 0 2px 6px rgba(0, 0, 0, .4);background-color:#FFFFFF;}
 
 .navigation_main{filter: none;position: relative;z-index: 2;width: 100%;height: 45px;border-bottom: 1px solid #CECECA;}
 .navigation_open{height: 88px;}
@@ -56,7 +56,7 @@ _background-image: url(../tencent_img/sprite_common.ie6.png);background-repeat: 
 .navigation_sub ul{display: inline-block;width: 100%;line-height: 42px;height:42px;-webkit-transition: opacity .4s ease;-moz-transition: opacity .4s ease;transition: opacity .4s ease;}
 .navigation_sub li{display:inline-block;*display:inline;zoom:1;margin:0 13px; line-height:42px;}
 .navigation_sub li .link_nav_sub{-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-0-transition:all .42s ease;transition:all .2s ease}
-
+.navigation_sub{background: antiquewhite}
 .navigation_area .list_item_sel .link_nav{color:#ff7800;text-shadow:0 2px 25px #ff7800;}
 .navigation_area .list_item_sel .nav_sign{display: block;visibility: visible;position: absolute;bottom: -1px;_bottom: -2px;left: 50%;width: 254px;height: 6px;margin-left: -127px;overflow: hidden;background: url(../tencent_img/navigation_sign.png) 0 0 no-repeat;background-image: -webkit-image-set(url(../tencent_img/navigation_sign.png) 1x,url(../tencent_img/navigation_sign@2x.png) 2x);color: #FF7800;text-shadow: 0 2px 25px #FF7800}
 .navigation_area .list_item_sel .navigation_sub{ visibility:visible;display: block;}

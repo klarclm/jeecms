@@ -35,8 +35,8 @@ body{ margin:0; padding:0; overflow:auto;}
 <body>
 <div class="container">
 	[#include "../tencent_include/home_head.html"/]
-    [#include "../include/search_csi.html"/]
-    [#include "../include/navi.html"/]
+
+
     
     <div class="hundred100 mt10">
     	<div class="website">当前位置：<a href="${base}/">首页</a> > [#list channel.nodeList as n]<a target="_blank" href="${n.url}">${n.name}</a>[#if n_has_next] > [/#if][/#list] > 正文</div>
