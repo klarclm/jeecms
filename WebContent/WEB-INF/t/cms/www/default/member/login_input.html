@@ -17,9 +17,9 @@
 
 <body>
 <div class="container">
-    [#include "../tencent_include/home_head.html"/]
+    [#include "../tencent_include/home_head.html"/]        [#if returnUrl??]
+
     <div class="main">
-        [#if returnUrl??]
         <form id="jvForm" action="${base}/login.jspx?returnUrl=${returnUrl}" method="post">
             [#else]
             <form id="jvForm" action="${base}/login.jspx" method="post">

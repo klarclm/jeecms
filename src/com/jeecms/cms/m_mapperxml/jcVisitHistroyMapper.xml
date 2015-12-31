@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jeecms.cms.m_mapper.jcVisitHistroyMapper" >
+  <resultMap id="BaseResultMap" type="com.jeecms.cms.m_entity.jcVisitHistroy" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="content_id" property="contentId" jdbcType="INTEGER" />
+    <result column="visit_time" property="visitTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, content_id, visit_time
+  </sql>
+  <select id="selectByUserid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jc_visit_histroy
+    where user_id = #{user_id,jdbcType=INTEGER}
+  </select>
+  <select id="selectByUseridAndContentid" resultMap="BaseResultMap"   >
+    select
+    <include refid="Base_Column_List" />
+    from jc_visit_histroy
+    where user_id = #{0,jdbcType=INTEGER} AND content_id = #{1,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jc_visit_histroy
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jeecms.cms.m_entity.jcVisitHistroy" >
+    insert into jc_visit_histroy (id, user_id, content_id, 
+      visit_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{contentId,jdbcType=INTEGER}, 
+      #{visitTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jeecms.cms.m_entity.jcVisitHistroy" >
+    insert into jc_visit_histroy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="contentId != null" >
+        content_id,
+      </if>
+      <if test="visitTime != null" >
+        visit_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="contentId != null" >
+        #{contentId,jdbcType=INTEGER},
+      </if>
+      <if test="visitTime != null" >
+        #{visitTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jeecms.cms.m_entity.jcVisitHistroy" >
+    update jc_visit_histroy
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="contentId != null" >
+        content_id = #{contentId,jdbcType=INTEGER},
+      </if>
+      <if test="visitTime != null" >
+        visit_time = #{visitTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jeecms.cms.m_entity.jcVisitHistroy" >
+    update jc_visit_histroy
+    set user_id = #{userId,jdbcType=INTEGER},
+      content_id = #{contentId,jdbcType=INTEGER},
+      visit_time = #{visitTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByUseridContentid" parameterType="com.jeecms.cms.m_entity.jcVisitHistroy" >
+    update jc_visit_histroy
+    set user_id = #{userId,jdbcType=INTEGER},
+    content_id = #{contentId,jdbcType=INTEGER},
+    visit_time = #{visitTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=INTEGER} AND  content_id = #{contentId,jdbcType=INTEGER}
+  </update>
+</mapper>

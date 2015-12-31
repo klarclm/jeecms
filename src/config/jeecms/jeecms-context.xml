@@ -38,6 +38,7 @@
 	<bean id="cms_perm" class="com.jeecms.cms.web.PermistionDirective"/>
 	
 	<!--SERVICE-->
+	<bean id="visitHistorySvcImpl" class="com.jeecms.cms.service.VisitHistorySvcImpl"/>
 	<bean id="contentCountCache" class="com.jeecms.cms.service.ContentCountCacheImpl"/>
 	<bean id="channelCountCache" class="com.jeecms.cms.service.ChannelCountCacheImpl"/>
 	<bean id="cmsSiteFlowCache" class="com.jeecms.cms.service.CmsSiteFlowCacheImpl"/>

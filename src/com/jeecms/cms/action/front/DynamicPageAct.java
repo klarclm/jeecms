@@ -3,11 +3,14 @@ package com.jeecms.cms.action.front;
 import static com.jeecms.common.web.Constants.INDEX;
 
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jeecms.cms.m_entity.jcVisitHistroy;
+import com.jeecms.cms.service.VisitHistorySvc;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -199,6 +202,22 @@ public class DynamicPageAct {
 		// 内容加上关键字
 		txt = cmsKeywordMng.attachKeyword(site.getId(), txt);
 		Paginable pagination = new SimplePage(pageNo, 1, content.getPageCount());
+
+		//更新访问历史
+		if (user != null) {
+			jcVisitHistroy visitHistroy = new jcVisitHistroy();
+			visitHistroy.setUserId(user.getId());
+			visitHistroy.setContentId(content.getId());
+			visitHistroy.setVisitTime(new Timestamp(System.currentTimeMillis()));
+
+			//如userid contid相同就更新时间，如不同则插入新的访问历史
+			if(null != visitHistorySvc.selectByUseridAndContentid(user.getId(), content.getId())){
+				visitHistorySvc.updateByUseridContentid(visitHistroy);
+			}else {
+				visitHistorySvc.insertSelective(visitHistroy);
+			}
+		}
+
 		model.addAttribute("pagination", pagination);
 		FrontUtils.frontPageData(request, model);
 		model.addAttribute("content", content);
@@ -210,6 +229,8 @@ public class DynamicPageAct {
 		return content.getTplContentOrDef();
 	}
 
+	@Autowired
+	private VisitHistorySvc visitHistorySvc;
 	@Autowired
 	private ChannelMng channelMng;
 	@Autowired

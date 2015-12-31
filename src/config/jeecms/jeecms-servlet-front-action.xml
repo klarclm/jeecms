@@ -36,7 +36,7 @@
 	<bean id="guestbookMemberAct" class="com.jeecms.cms.action.member.GuestbookMemberAct"/>
 	<bean id="collectionMemberAct" class="com.jeecms.cms.action.member.CollectionMemberAct"/>
 	<bean id="messageAct" class="com.jeecms.cms.action.member.MessageAct"/>
-
+	<bean id="VisitHistoryMemberAct" class="com.jeecms.cms.action.member.VisitHistoryMemberAct"/>
 	<bean id="siteFlowAct" class="com.jeecms.cms.action.front.CmsSiteFlowAct"/>
 	<bean id="resumeAct" class="com.jeecms.cms.action.member.ResumeAct"/>
 	<bean id="swfUploadAct" class="com.jeecms.cms.action.member.SwfUploadAct"/>
