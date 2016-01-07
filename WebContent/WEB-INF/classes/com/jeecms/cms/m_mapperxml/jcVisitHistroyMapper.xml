@@ -10,11 +10,12 @@
   <sql id="Base_Column_List" >
     id, user_id, content_id, visit_time
   </sql>
-  <select id="selectByUserid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByUseridOrderByTime" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from jc_visit_histroy
     where user_id = #{user_id,jdbcType=INTEGER}
+    ORDER BY visit_time
   </select>
   <select id="selectByUseridAndContentid" resultMap="BaseResultMap"   >
     select

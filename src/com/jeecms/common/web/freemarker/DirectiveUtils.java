@@ -49,6 +49,11 @@ public abstract class DirectiveUtils {
 	public static final String PARAM_TPL_SUB = "tplSub";
 
 	/**
+	 * 输出参数：对象数据
+	 */
+	public static final String OUT_DIY1 = "out_diy1";
+
+	/**
 	 * 将params的值复制到variable中
 	 * 
 	 * @param env

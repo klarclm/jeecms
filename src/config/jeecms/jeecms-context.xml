@@ -33,7 +33,7 @@
 	<bean id="cms_vote_list" class="com.jeecms.cms.action.directive.CmsVoteListDirective"/>
 	<bean id="cms_model" class="com.jeecms.cms.action.directive.CmsModelDirective"/>
 	<bean id="cms_score_group" class="com.jeecms.cms.action.directive.ScoreGroupDirective"/>
-	
+	<bean id="cms_visithistory_content_page" class="com.jeecms.cms.action.directive.CMSVisitHistoryContentDirective"/>
 	<!--后台权限标签-->
 	<bean id="cms_perm" class="com.jeecms.cms.web.PermistionDirective"/>
 	

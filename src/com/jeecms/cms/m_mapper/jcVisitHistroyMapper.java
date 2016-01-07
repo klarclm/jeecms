@@ -2,6 +2,8 @@ package com.jeecms.cms.m_mapper;
 
 import com.jeecms.cms.m_entity.jcVisitHistroy;
 
+import java.util.List;
+
 public interface jcVisitHistroyMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -9,7 +11,7 @@ public interface jcVisitHistroyMapper {
 
     int insertSelective(jcVisitHistroy record);
 
-    jcVisitHistroy selectByUserid(Integer user_id);
+    List<jcVisitHistroy> selectByUseridOrderByTime(Integer user_id);
 
     jcVisitHistroy selectByUseridAndContentid(Integer user_id, Integer content_id);
 
